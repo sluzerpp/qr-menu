@@ -53,7 +53,7 @@ button, input {
   align-items: center;
   gap: 16px;
   border: 1px solid var(--line-strong-red);
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   line-height: 100%;
 }
@@ -66,6 +66,11 @@ button, input {
      object-position: center;
 }
 
+@media (max-width: 1440px) {
+  .btn-provider {
+    font-size: 14px;
+  }
+}
 .auth {
   display: flex;
   height: 100vh;
@@ -129,12 +134,17 @@ button, input {
   align-items: center;
 }
 .auth p {
-  font-size: 14px;
+  font-size: 18px;
   font-family: var(--montserrat);
   line-height: 150%;
   text-align: center;
 }
 
+@media (max-width: 1440px) {
+  .auth p {
+    font-size: 14px;
+  }
+}
 @media (max-width: 1080px) {
   .auth__container {
     padding: 40px 30px;
@@ -178,9 +188,10 @@ button, input {
   border-radius: 4px;
   color: var(--button-white);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   transition: background 0.15s linear;
+  font-family: var(--montserrat);
 }
 .btn:hover {
   background-color: #AC391F;
@@ -194,13 +205,18 @@ button, input {
   cursor: initial;
 }
 
+@media (max-width: 1440px) {
+  .btn {
+    font-size: 14px;
+  }
+}
 .input-wrapper {
   display: grid;
   gap: 8px;
   width: 100%;
 }
 .input-wrapper p {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   text-align: left;
   line-height: 150%;
@@ -209,10 +225,15 @@ button, input {
   color: var(--text-strong-red);
 }
 
+@media (max-width: 1440px) {
+  .input-wrapper p {
+    font-size: 16px;
+  }
+}
 .text-input {
   height: 50px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: var(--montserrat);
   outline: transparent;
   padding: 14.5px 20px;
@@ -232,6 +253,11 @@ button, input {
   border: 1px solid var(--bg-bright-orange);
 }
 
+@media (max-width: 1440px) {
+  .text-input {
+    font-size: 14px;
+  }
+}
 .checkbox {
   display: flex;
   justify-content: flex-start;
@@ -240,6 +266,7 @@ button, input {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  font-size: 18px;
 }
 .checkbox input {
   width: 0;
@@ -254,8 +281,8 @@ button, input {
 }
 .checkbox span {
   display: block;
-  width: 13.5px;
-  height: 13.5px;
+  width: 18px;
+  height: 18px;
   margin: 1.25px;
   border-radius: 1.5px;
   border: 1.5px solid var(--line-gray);
@@ -265,8 +292,8 @@ button, input {
 .checkbox span::before {
   display: block;
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -279,8 +306,8 @@ button, input {
 .checkbox span::after {
   display: block;
   content: "";
-  width: 8px;
-  height: 5.8px;
+  width: 12px;
+  height: 8.7px;
   background-image: url('data:image/svg+xml,<svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.77486 4.575L7.01236 0.3375C7.11236 0.2375 7.23111 0.1875 7.36861 0.1875C7.50611 0.1875 7.62486 0.2375 7.72486 0.3375C7.82486 0.4375 7.87486 0.55625 7.87486 0.69375C7.87486 0.83125 7.82486 0.95 7.72486 1.05L3.12486 5.65C3.02486 5.75 2.90819 5.8 2.77486 5.8C2.64153 5.8 2.52486 5.75 2.42486 5.65L0.274859 3.5C0.174859 3.4 0.126943 3.28125 0.131109 3.14375C0.135276 3.00625 0.187359 2.8875 0.287359 2.7875C0.387359 2.6875 0.506109 2.6375 0.643609 2.6375C0.781109 2.6375 0.899859 2.6875 0.999859 2.7875L2.77486 4.575Z" fill="white"/></svg>');
   background-position: center;
   background-repeat: no-repeat;
@@ -305,11 +332,29 @@ button, input {
   opacity: 1;
 }
 
+@media (max-width: 1440px) {
+  .checkbox {
+    font-size: 14px;
+  }
+  .checkbox span {
+    width: 13.5px;
+    height: 13.5px;
+  }
+  .checkbox span::before {
+    width: 6px;
+    height: 6px;
+  }
+  .checkbox span::after {
+    width: 8px;
+    height: 5.8px;
+  }
+}
 .link {
   display: inline-block;
   color: var(--button-bright-orange);
   text-decoration: none;
   position: relative;
+  font-size: 18px;
 }
 .link::after {
   display: block;
@@ -319,4 +364,10 @@ button, input {
   position: absolute;
   bottom: 0;
   background-color: var(--button-bright-orange);
+}
+
+@media (max-width: 1440px) {
+  .link {
+    font-size: 14px;
+  }
 }

@@ -106,12 +106,17 @@ button, input {
   align-items: center;
 }
 .auth p {
-  font-size: 14px;
+  font-size: 18px;
   font-family: var(--montserrat);
   line-height: 150%;
   text-align: center;
 }
 
+@media (max-width: 1440px) {
+  .auth p {
+    font-size: 14px;
+  }
+}
 @media (max-width: 1080px) {
   .auth__container {
     padding: 40px 30px;
@@ -155,9 +160,10 @@ button, input {
   border-radius: 4px;
   color: var(--button-white);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   transition: background 0.15s linear;
+  font-family: var(--montserrat);
 }
 .btn:hover {
   background-color: #AC391F;
@@ -171,13 +177,18 @@ button, input {
   cursor: initial;
 }
 
+@media (max-width: 1440px) {
+  .btn {
+    font-size: 14px;
+  }
+}
 .input-wrapper {
   display: grid;
   gap: 8px;
   width: 100%;
 }
 .input-wrapper p {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   text-align: left;
   line-height: 150%;
@@ -186,10 +197,15 @@ button, input {
   color: var(--text-strong-red);
 }
 
+@media (max-width: 1440px) {
+  .input-wrapper p {
+    font-size: 16px;
+  }
+}
 .text-input {
   height: 50px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: var(--montserrat);
   outline: transparent;
   padding: 14.5px 20px;
@@ -209,11 +225,17 @@ button, input {
   border: 1px solid var(--bg-bright-orange);
 }
 
+@media (max-width: 1440px) {
+  .text-input {
+    font-size: 14px;
+  }
+}
 .link {
   display: inline-block;
   color: var(--button-bright-orange);
   text-decoration: none;
   position: relative;
+  font-size: 18px;
 }
 .link::after {
   display: block;
@@ -223,4 +245,10 @@ button, input {
   position: absolute;
   bottom: 0;
   background-color: var(--button-bright-orange);
+}
+
+@media (max-width: 1440px) {
+  .link {
+    font-size: 14px;
+  }
 }
