@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <title>Registration</title>
+  </head>
+  <body>
+    <div class="auth">
+      <div class="auth__content">
+        <div class="logo-big">
+          <img src="./assets/imgs/logo.svg" alt="dnm logo">
+        </div>
+        <div class="auth__container">
+          <div class="auth__group">
+            <h2 class="auth__title">
+              Регистрация
+            </h2>
+            <div class="auth__providers">
+              <div class="btn-provider">
+                <img src="./assets/imgs/google.svg" alt="google icon">
+                GOOGLE
+              </div>
+              <div class="btn-provider">
+                <img src="./assets/imgs/facebook.svg" alt="facebook icon">
+                FACEBOOK
+              </div>
+            </div>
+          </div>
+          <form action="#" class="auth__form">
+            <div class="auth__inputs">
+              <label class="input-wrapper" for="name">
+                <p>Ваше имя <span>*</span></p>
+                <input type="text" id="name" autocomplete="name"
+                  placeholder="Олег" class="text-input text-input_grey">
+              </label>
+              <label class="input-wrapper" for="email">
+                <p>Ваша почта <span>*</span></p>
+                <input type="email" id="email" autocomplete="email"
+                  placeholder="dnm@gmail.com" class="text-input text-input_grey">
+              </label>
+              <p>У вас уже есть аккаунт? <a href="#" class="auth__link">Войти</a></p>
+            </div>
+            <button type="submit" class="btn">Регистрация</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

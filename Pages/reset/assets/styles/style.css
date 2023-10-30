@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+@font-face {
+  font-family: "Days One";
+  src: url("../fonts/DaysOne-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+:root {
+  --text-black: #150704;
+  --text-strong-red: #D4492A;
+  --text-dark-grey: #8A8381;
+  --button-bright-orange: #ED9139;
+  --button-strong-red: #D4492A;
+  --button-white: #FFFFFF;
+  --line-strong-red: #D4492A;
+  --line-gray: #D9D7D7;
+  --line-purple: #5E31BD;
+  --bg-purple: #5E31BD;
+  --bg-gray: #D9D7D7;
+  --bg-bright-gray: #F5F5F5;
+  --bg-bright-orange: #ED9139;
+  --montserrat: "Montserrat", sans-serif;
+  --daysOne: "Days One", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: var(--montserrat);
+}
+
+button, input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: none;
+  border: none;
+}
+
+.auth {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 85px 0;
+}
+.auth__content {
+  display: grid;
+  gap: 60px;
+  max-width: 600px;
+  width: 100%;
+}
+.auth__container {
+  display: grid;
+  padding: 40px;
+  border-radius: 30px;
+  gap: 30px;
+  width: 100%;
+  justify-content: stretch;
+  border: 3px solid var(--line-strong-red);
+}
+.auth__title {
+  text-align: center;
+  font-family: var(--daysOne);
+  font-size: 35px;
+  font-style: normal;
+  line-height: 130%;
+  color: var(--text-black);
+}
+.auth__providers {
+  display: flex;
+  gap: 12px;
+  justify-content: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.auth__inputs {
+  display: grid;
+  justify-content: stretch;
+  gap: 15px;
+  width: 100%;
+}
+.auth__group {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+.auth__form {
+  display: grid;
+  gap: 20px;
+}
+.auth__form .link {
+  margin: 0 auto;
+  width: -moz-max-content;
+  width: max-content;
+}
+.auth__checkbox {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.auth p {
+  font-size: 14px;
+  font-family: var(--montserrat);
+  line-height: 150%;
+  text-align: center;
+}
+
+@media (max-width: 1080px) {
+  .auth__container {
+    padding: 40px 30px;
+  }
+}
+@media (max-width: 720px) {
+  .auth {
+    padding: 10px;
+  }
+  .auth__content {
+    gap: 28px;
+  }
+  .auth__container {
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 560px) {
+  .auth__title {
+    font-size: 20px;
+  }
+  .auth__providers {
+    flex-direction: column;
+  }
+}
+.logo-big {
+  width: 127px;
+  display: flex;
+  justify-self: center;
+}
+.logo-big > img {
+  width: 100%;
+}
+
+.btn {
+  display: flex;
+  padding: 10px 20px;
+  height: 58px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--line-strong-red);
+  border-radius: 4px;
+  color: var(--button-white);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s linear;
+}
+.btn:hover {
+  background-color: #AC391F;
+}
+.btn:focus {
+  background-color: #AC391F;
+  border: 1px solid var(--button-bright-orange);
+}
+.btn:disabled {
+  background-color: var(--bg-gray);
+  cursor: initial;
+}
+
+.input-wrapper {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+.input-wrapper p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 150%;
+}
+.input-wrapper span {
+  color: var(--text-strong-red);
+}
+
+.text-input {
+  height: 50px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: var(--montserrat);
+  outline: transparent;
+  padding: 14.5px 20px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+.text-input_grey {
+  background-color: var(--bg-bright-gray);
+}
+.text-input::-moz-placeholder {
+  color: var(--text-dark-grey);
+}
+.text-input::placeholder {
+  color: var(--text-dark-grey);
+}
+.text-input:focus {
+  border: 1px solid var(--bg-bright-orange);
+}
+
+.link {
+  display: inline-block;
+  color: var(--button-bright-orange);
+  text-decoration: none;
+  position: relative;
+}
+.link::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--button-bright-orange);
+}
