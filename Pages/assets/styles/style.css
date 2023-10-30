@@ -269,12 +269,6 @@ button, input {
           user-select: none;
   font-size: 18px;
 }
-.checkbox div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2.25px;
-}
 .checkbox input {
   width: 0;
   height: 0;
@@ -330,11 +324,11 @@ button, input {
 .checkbox:hover span::before {
   scale: 1;
 }
-.checkbox input:checked + div > span {
+.checkbox input:checked + span {
   border-color: var(--line-purple);
   background-color: var(--bg-purple);
 }
-.checkbox input:checked + div > span::after {
+.checkbox input:checked + span::after {
   opacity: 1;
 }
 
