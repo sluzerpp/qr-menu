@@ -12,6 +12,7 @@
   --button-bright-orange: #ED9139;
   --button-strong-red: #D4492A;
   --button-white: #FFFFFF;
+  --button-green: #42D42A;
   --line-strong-red: #D4492A;
   --line-gray: #D9D7D7;
   --line-purple: #5E31BD;
@@ -268,6 +269,12 @@ button, input {
           user-select: none;
   font-size: 18px;
 }
+.checkbox div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.25px;
+}
 .checkbox input {
   width: 0;
   height: 0;
@@ -283,7 +290,6 @@ button, input {
   display: block;
   width: 18px;
   height: 18px;
-  margin: 1.25px;
   border-radius: 1.5px;
   border: 1.5px solid var(--line-gray);
   transition: border-color 0.15s linear;
@@ -324,11 +330,11 @@ button, input {
 .checkbox:hover span::before {
   scale: 1;
 }
-.checkbox input:checked + span {
+.checkbox input:checked + div > span {
   border-color: var(--line-purple);
   background-color: var(--bg-purple);
 }
-.checkbox input:checked + span::after {
+.checkbox input:checked + div > span::after {
   opacity: 1;
 }
 

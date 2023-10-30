@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+@font-face {
+  font-family: "Days One";
+  src: url("../fonts/DaysOne-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+:root {
+  --text-black: #150704;
+  --text-strong-red: #D4492A;
+  --text-dark-grey: #8A8381;
+  --button-bright-orange: #ED9139;
+  --button-strong-red: #D4492A;
+  --button-white: #FFFFFF;
+  --button-green: #42D42A;
+  --line-strong-red: #D4492A;
+  --line-gray: #D9D7D7;
+  --line-purple: #5E31BD;
+  --bg-purple: #5E31BD;
+  --bg-gray: #D9D7D7;
+  --bg-bright-gray: #F5F5F5;
+  --bg-bright-orange: #ED9139;
+  --montserrat: "Montserrat", sans-serif;
+  --daysOne: "Days One", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: var(--montserrat);
+}
+
+button, input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: none;
+  border: none;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.radio-button div {
+  display: inline-block;
+  background-color: var(--bg-gray);
+  width: 24px;
+  height: 15px;
+  border-radius: 9999px;
+  position: relative;
+}
+.radio-button input {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  opacity: 0;
+  position: absolute;
+  left: -100%;
+  padding: 0;
+  margin: 0;
+  top: -100%;
+}
+.radio-button span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 1.5px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: left 0.1s ease-in-out;
+  background-color: var(--button-white);
+}
+.radio-button input:checked + div {
+  background-color: var(--button-green);
+}
+.radio-button input:checked + div span {
+  left: calc(100% - 1.5px - 12px);
+}
+.radio-button_large {
+  width: -moz-max-content;
+  width: max-content;
+  height: initial;
+}
+.radio-button_large div {
+  width: 49px;
+  height: 28px;
+}
+.radio-button_large span {
+  left: 2px;
+  width: 24px;
+  height: 24px;
+}
+.radio-button_large input:checked + div span {
+  left: calc(100% - 2px - 24px);
+}
+
+.round-radio-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 18px;
+  color: var(--text-black);
+}
+.round-radio-button input {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  opacity: 0;
+  position: absolute;
+  left: -100%;
+  padding: 0;
+  margin: 0;
+  top: -100%;
+}
+.round-radio-button div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.33px;
+}
+.round-radio-button span {
+  display: block;
+  width: 17.73px;
+  height: 17.73px;
+  border: 1.5px solid var(--line-gray);
+  border-radius: 50%;
+  position: relative;
+  transition: border-color 0.15s linear;
+}
+.round-radio-button span::before {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left top;
+  background-color: var(--bg-purple);
+  transform: translate3d(-50%, -50%, 0);
+  scale: 0;
+}
+.round-radio-button:hover span {
+  border-color: var(--line-purple);
+}
+.round-radio-button input:checked + div > span {
+  border-color: var(--line-purple);
+}
+.round-radio-button input:checked + div > span::before {
+  scale: 1;
+}
+
+@media (max-width: 1440px) {
+  .round-radio-button {
+    font-size: 14px;
+  }
+  .round-radio-button span {
+    width: 13.33px;
+    height: 13.33px;
+  }
+  .round-radio-button span::before {
+    width: 6.5px;
+    height: 6.5px;
+  }
+}
