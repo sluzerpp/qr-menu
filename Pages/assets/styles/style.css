@@ -130,7 +130,7 @@ button, input {
   width: max-content;
 }
 .auth__checkbox {
-  height: 40px;
+  padding: 13px 0;
   display: flex;
   align-items: center;
 }
@@ -225,10 +225,18 @@ button, input {
 .input-wrapper span {
   color: var(--text-strong-red);
 }
+.input-wrapper__error {
+  display: inline-block;
+  color: var(--text-strong-red);
+  font-size: 14px;
+}
 
 @media (max-width: 1440px) {
   .input-wrapper p {
     font-size: 16px;
+  }
+  .input-wrapper__error {
+    font-size: 14px;
   }
 }
 .text-input {

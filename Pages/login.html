@@ -34,6 +34,7 @@
                 <p>Ваше имя <span>*</span></p>
                 <input type="text" id="name" autocomplete="name"
                   placeholder="Олег" class="text-input text-input_grey">
+                <p class="input-wrapper__error">Ошибочка!</p>
               </label>
               <label class="input-wrapper" for="email">
                 <p>Ваша почта <span>*</span></p>
@@ -41,11 +42,13 @@
                   placeholder="dnm@gmail.com" class="text-input text-input_grey">
               </label>
               <div class="auth__checkbox">
-                <label for="rememberme" class="checkbox">
-                  <input type="checkbox" name="rememberme" id="rememberme">
-                  <span></span>
-                  Запомните меня
-                </label>
+                <div class="input-wrapper">
+                  <label for="rememberme" class="checkbox">
+                    <input type="checkbox" name="rememberme" id="rememberme">
+                    <span></span>
+                    Запомните меня
+                  </label>
+                </div>
               </div>
               <p><a href="#" class="link">Забыли пароль?</a></p>
             </div>
