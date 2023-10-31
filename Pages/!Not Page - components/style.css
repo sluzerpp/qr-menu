@@ -10,6 +10,7 @@
   --text-strong-red: #D4492A;
   --text-dark-grey: #8A8381;
   --text-error: #F84147;
+  --text-dark-grayish: #8A8381;
   --button-bright-orange: #ED9139;
   --button-strong-red: #D4492A;
   --button-white: #FFFFFF;
@@ -17,12 +18,18 @@
   --line-strong-red: #D4492A;
   --line-gray: #D9D7D7;
   --line-purple: #5E31BD;
+  --line-grayish-red: #FBEDEA;
   --bg-purple: #5E31BD;
   --bg-gray: #D9D7D7;
   --bg-bright-gray: #F5F5F5;
   --bg-bright-orange: #ED9139;
+  --bg-white: #fff;
   --montserrat: "Montserrat", sans-serif;
   --daysOne: "Days One", sans-serif;
+  --header-height: 90px;
+  --header-height-sm: 50px;
+  --aside-width: 282px;
+  --icon-black: #150704;
 }
 
 *,
@@ -45,6 +52,15 @@ button, input {
   border: none;
 }
 
+.background {
+  background-color: #FFF7F3;
+}
+
+.content {
+  padding-top: calc(var(--header-height) + 30px);
+  padding-left: var(--aside-width);
+}
+
 .radio-button {
   display: flex;
   justify-content: center;
@@ -54,14 +70,6 @@ button, input {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-}
-.radio-button div {
-  display: inline-block;
-  background-color: var(--bg-gray);
-  width: 24px;
-  height: 15px;
-  border-radius: 9999px;
-  position: relative;
 }
 .radio-button input {
   width: 0;
@@ -75,7 +83,17 @@ button, input {
   top: -100%;
 }
 .radio-button span {
+  display: inline-block;
+  background-color: var(--bg-gray);
+  width: 24px;
+  height: 15px;
+  border-radius: 9999px;
+  position: relative;
+  transition: background 0.1s ease-in-out;
+}
+.radio-button span::after {
   display: block;
+  content: "";
   width: 12px;
   height: 12px;
   position: absolute;
@@ -86,10 +104,10 @@ button, input {
   transition: left 0.1s ease-in-out;
   background-color: var(--button-white);
 }
-.radio-button input:checked + div {
+.radio-button input:checked + span {
   background-color: var(--button-green);
 }
-.radio-button input:checked + div span {
+.radio-button input:checked + span::after {
   left: calc(100% - 1.5px - 12px);
 }
 .radio-button_large {
@@ -97,16 +115,16 @@ button, input {
   width: max-content;
   height: initial;
 }
-.radio-button_large div {
+.radio-button_large span {
   width: 49px;
   height: 28px;
 }
-.radio-button_large span {
+.radio-button_large span::after {
   left: 2px;
   width: 24px;
   height: 24px;
 }
-.radio-button_large input:checked + div span {
+.radio-button_large input:checked + span::after {
   left: calc(100% - 2px - 24px);
 }
 
@@ -159,10 +177,10 @@ button, input {
 .round-radio-button:hover span {
   border-color: var(--line-purple);
 }
-.round-radio-button input:checked + div > span {
+.round-radio-button input:checked + span {
   border-color: var(--line-purple);
 }
-.round-radio-button input:checked + div > span::before {
+.round-radio-button input:checked + span::before {
   scale: 1;
 }
 
