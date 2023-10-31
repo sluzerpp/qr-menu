@@ -30,16 +30,24 @@
           </div>
           <form action="#" class="auth__form">
             <div class="auth__inputs">
-              <label class="input-wrapper" for="name">
-                <p>Ваше имя <span>*</span></p>
+              <div class="input-wrapper">
+                <label for="name">
+                  Ваша почта <span>*</span>
+                </label>
                 <input type="text" id="name" autocomplete="name"
-                  placeholder="Олег" class="text-input text-input_grey">
-              </label>
-              <label class="input-wrapper" for="email">
-                <p>Ваша почта <span>*</span></p>
+                  placeholder="Олег"
+                  class="text-input text-input_grey">
+                <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
+              </div>
+              <div class="input-wrapper">
+                <label for="email">
+                  Ваша почта <span>*</span>
+                </label>
                 <input type="email" id="email" autocomplete="email"
-                  placeholder="dnm@gmail.com" class="text-input text-input_grey">
-              </label>
+                  placeholder="dnm@gmail.com"
+                  class="text-input text-input_grey">
+                <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
+              </div>
               <p>У вас уже есть аккаунт? <a href="#" class="link">Войти</a></p>
             </div>
             <button type="submit" class="btn">Регистрация</button>

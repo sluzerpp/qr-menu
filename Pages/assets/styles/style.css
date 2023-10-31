@@ -9,6 +9,7 @@
   --text-black: #150704;
   --text-strong-red: #D4492A;
   --text-dark-grey: #8A8381;
+  --text-error: #F84147;
   --button-bright-orange: #ED9139;
   --button-strong-red: #D4492A;
   --button-white: #FFFFFF;
@@ -216,27 +217,25 @@ button, input {
   gap: 8px;
   width: 100%;
 }
-.input-wrapper p {
+.input-wrapper label {
   font-size: 20px;
   font-weight: 500;
   text-align: left;
   line-height: 150%;
 }
-.input-wrapper span {
+.input-wrapper label > span {
   color: var(--text-strong-red);
 }
-.input-wrapper__error {
+.input-wrapper > .input-wrapper__error {
   display: inline-block;
-  color: var(--text-strong-red);
+  color: var(--text-error);
   font-size: 14px;
+  text-align: left;
 }
 
 @media (max-width: 1440px) {
-  .input-wrapper p {
+  .input-wrapper label {
     font-size: 16px;
-  }
-  .input-wrapper__error {
-    font-size: 14px;
   }
 }
 .text-input {
