@@ -48,7 +48,7 @@ button, input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: none;
+  background: none;
   border: none;
 }
 
@@ -59,6 +59,23 @@ button, input {
 .content {
   padding-top: calc(var(--header-height) + 30px);
   padding-left: var(--aside-width);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-bright-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-gray);
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-gray);
 }
 
 .radio-button {
