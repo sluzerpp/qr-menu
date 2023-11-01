@@ -541,6 +541,15 @@ body {
 .icon-btn:hover {
   background-color: var(--bg-gray);
 }
+.icon-btn_purple {
+  background-color: var(--bg-purple);
+}
+.icon-btn_purple svg {
+  fill: none;
+}
+.icon-btn_purple:hover {
+  background-color: #4a2795;
+}
 
 .tip-btn {
   width: 18px;
@@ -552,6 +561,12 @@ body {
 }
 .tip-btn svg {
   height: 18px;
+}
+
+.support-btn {
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
 }
 
 .aside {
