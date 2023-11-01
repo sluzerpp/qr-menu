@@ -42,7 +42,7 @@
 function onSelectOptionClick(elem) {
   const target = elem;
   const value = target.dataset.value;
-  const content = target.innerHTML;
+  const content = target.textContent;
   if (!value) return;
   const valueElem = target.parentElement.parentElement.querySelector('.custom-select__value');
   if (!valueElem) return;
@@ -70,3 +70,13 @@ function closeAllSelects(target = null) {
 document.addEventListener('click', (event) => {
   closeAllSelects(event.target);
 });
+
+function onTutorialItemClick(elem) {
+  if (elem.parentElement.classList.contains('open')) {
+    elem.parentElement.classList.remove('open');
+    elem.parentElement.classList.add('close');
+  } else {
+    elem.parentElement.classList.add('open');
+    elem.parentElement.classList.remove('close');
+  }
+}

@@ -11,6 +11,7 @@
   --text-dark-grey: #8A8381;
   --text-error: #F84147;
   --text-dark-grayish: #8A8381;
+  --text-white: #fff;
   --button-bright-orange: #ED9139;
   --button-strong-red: #D4492A;
   --button-white: #FFFFFF;
@@ -52,7 +53,7 @@ button, input {
   border: none;
 }
 
-.background {
+body {
   background-color: #FFF7F3;
 }
 
