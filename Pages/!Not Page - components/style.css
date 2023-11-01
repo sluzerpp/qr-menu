@@ -59,6 +59,7 @@ button, input {
 .content {
   padding-top: calc(var(--header-height) + 30px);
   padding-left: var(--aside-width);
+  padding-right: 30px;
 }
 
 ::-webkit-scrollbar {

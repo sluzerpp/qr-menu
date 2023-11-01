@@ -59,6 +59,7 @@ button, input {
 .content {
   padding-top: calc(var(--header-height) + 30px);
   padding-left: var(--aside-width);
+  padding-right: 30px;
 }
 
 ::-webkit-scrollbar {
@@ -213,7 +214,7 @@ button, input {
   width: 100%;
 }
 
-.btn, .btn-primary {
+.btn, .btn-secondary {
   display: flex;
   padding: 10px 20px;
   height: 50px;
@@ -230,38 +231,41 @@ button, input {
   gap: 10px;
   border: 1px solid transparent;
 }
-.btn svg, .btn-primary svg {
+.btn svg, .btn-secondary svg {
   height: 18px;
   fill: var(--button-white);
 }
-.btn:hover, .btn-primary:hover {
+.btn:hover, .btn-secondary:hover {
   background-color: #AC391F;
 }
-.btn:focus, .btn-primary:focus {
+.btn:focus, .btn-secondary:focus {
   background-color: #AC391F;
   border: 1px solid var(--button-bright-orange);
 }
-.btn:disabled, .btn-primary:disabled {
+.btn:disabled, .btn-secondary:disabled {
   background-color: var(--bg-gray);
   cursor: initial;
 }
 
-.btn-primary {
+.btn-secondary {
   background-color: var(--line-grayish-red);
   color: var(--text-strong-red);
 }
-.btn-primary svg {
+.btn-secondary svg {
   fill: var(--text-strong-red);
 }
-.btn-primary:hover {
+.btn-secondary:hover {
   color: var(--button-white);
 }
-.btn-primary:hover svg {
+.btn-secondary:hover svg {
   fill: var(--button-white);
+}
+.btn-secondary_transparent {
+  background-color: transparent;
 }
 
 @media (max-width: 1440px) {
-  .btn, .btn-primary {
+  .btn, .btn-secondary {
     font-size: 14px;
   }
 }
@@ -533,7 +537,7 @@ button, input {
   width: var(--aside-width);
   height: calc(100vh - var(--header-height) - 30px);
   display: flex;
-  padding: 0 30px 20px;
+  padding: 0 30px 40px;
   flex-direction: column;
   justify-content: space-between;
   color: var(--text-dark-grayish);
@@ -668,10 +672,18 @@ button, input {
 
 .main {
   border-radius: 30px;
-  background-color: #999;
+  background-color: var(--bg-white);
+  height: calc(100vh - var(--header-height) - 70px);
   padding: 30px;
   display: flex;
+  align-items: flex-start;
   gap: 20px;
+}
+.main__frame {
+  background-color: var(--bg-bright-gray);
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
 }
 
 .custom-select {
@@ -690,6 +702,7 @@ button, input {
   border-radius: 4px;
   background-color: var(--button-white);
   position: relative;
+  border: 1px solid transparent;
 }
 .custom-select__value {
   display: flex;
@@ -727,6 +740,9 @@ button, input {
 }
 .custom-select.open .custom-select__options {
   max-height: 270px;
+}
+.custom-select.open .custom-select__btn {
+  border: 1px solid var(--button-bright-orange);
 }
 .custom-select__option {
   display: flex;
