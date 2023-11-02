@@ -71,12 +71,3 @@ document.addEventListener('click', (event) => {
   closeAllSelects(event.target);
 });
 
-function onTutorialItemClick(elem) {
-  if (elem.parentElement.classList.contains('open')) {
-    elem.parentElement.classList.remove('open');
-    elem.parentElement.classList.add('close');
-  } else {
-    elem.parentElement.classList.add('open');
-    elem.parentElement.classList.remove('close');
-  }
-}

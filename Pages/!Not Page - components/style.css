@@ -80,6 +80,19 @@ body {
   background: var(--bg-gray);
 }
 
+@media (max-width: 1080px) {
+  .content {
+    padding-left: 30px;
+  }
+}
+@media (max-width: 720px) {
+  .content {
+    padding-top: calc(var(--header-height));
+    padding-left: 0;
+    padding-right: 0;
+    overflow-y: auto;
+  }
+}
 .radio-button {
   display: flex;
   justify-content: center;
