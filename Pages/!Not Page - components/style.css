@@ -61,10 +61,14 @@ body {
   padding-top: calc(var(--header-height) + 30px);
   padding-left: var(--aside-width);
   padding-right: 30px;
+  overflow-y: auto;
+  height: 100vh;
+  padding-bottom: 40px;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -91,6 +95,10 @@ body {
     padding-left: 0;
     padding-right: 0;
     overflow-y: auto;
+    padding-bottom: 0;
+  }
+  .content:has(.main__empty) {
+    padding-top: calc(var(--header-height) + 16px);
   }
 }
 .radio-button {
