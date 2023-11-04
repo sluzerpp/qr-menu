@@ -11,6 +11,7 @@
   --text-dark-grey: #8A8381;
   --text-error: #F84147;
   --text-dark-grayish: #8A8381;
+  --text-grayish: #A19C9B;
   --text-white: #fff;
   --button-bright-orange: #ED9139;
   --button-strong-red: #D4492A;
@@ -20,6 +21,7 @@
   --line-gray: #D9D7D7;
   --line-purple: #5E31BD;
   --line-grayish-red: #FBEDEA;
+  --bg-strong-red: #D4492A;
   --bg-purple: #5E31BD;
   --bg-gray: #D9D7D7;
   --bg-bright-gray: #F5F5F5;
@@ -31,6 +33,7 @@
   --header-height-sm: 50px;
   --aside-width: 282px;
   --icon-black: #150704;
+  --error: #F84147;
 }
 
 *,
@@ -110,6 +113,7 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  position: relative;
 }
 .radio-button input {
   width: 0;
@@ -134,8 +138,8 @@ body {
 .radio-button span::after {
   display: block;
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   position: absolute;
   left: 1.5px;
   border-radius: 50%;
@@ -148,7 +152,7 @@ body {
   background-color: var(--button-green);
 }
 .radio-button input:checked + span::after {
-  left: calc(100% - 1.5px - 12px);
+  left: calc(100% - 1.5px - 11px);
 }
 .radio-button_large {
   width: -moz-max-content;
@@ -236,4 +240,76 @@ body {
     width: 6.5px;
     height: 6.5px;
   }
+}
+.time-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--bg-gray);
+  background-color: var(--bg-white);
+  outline: transparent;
+  color: var(--text-black);
+  width: 60px;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  font-family: var(--montserrat);
+  height: 38px;
+}
+.time-input::-webkit-calendar-picker-indicator {
+  background: none;
+  display: none;
+}
+.time-input::-moz-placeholder {
+  color: var(--bg-gray);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.time-input::placeholder {
+  color: var(--bg-gray);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.time-input:focus {
+  border: 1px solid var(--button-bright-orange);
+}
+.time-input:valid:not(:-moz-placeholder-shown) {
+  background-color: var(--bg-bright-gray);
+  border: 1px solid var(--bg-bright-gray);
+}
+.time-input:valid:not(:placeholder-shown) {
+  background-color: var(--bg-bright-gray);
+  border: 1px solid var(--bg-bright-gray);
+}
+.time-input.error {
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+.time-input_small {
+  height: 32px;
+  padding: 8px 0;
+  width: 50px;
+}
+.time-input:disabled:not(:is(.filled)) {
+  font-size: 0;
+  color: transparent;
+  border: 1px solid var(--bg-bright-gray);
+}
+.time-input:disabled:not(:is(.filled))::-moz-placeholder {
+  font-size: 0;
+  color: transparent;
+}
+.time-input:disabled:not(:is(.filled))::placeholder {
+  font-size: 0;
+  color: transparent;
+}
+.time-input.filled {
+  background-color: var(--bg-bright-gray);
+  border: 1px solid var(--bg-bright-gray);
+  color: var(--text-black);
 }

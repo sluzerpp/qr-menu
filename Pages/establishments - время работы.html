@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Settings</title>
   </head>
-  <body class="open-tutorial">
+  <body>
 
     <header class="header">
       <div class="logo">
@@ -120,7 +120,7 @@
           <nav class="aside-nav">
             <div class="aside-nav__group">
               <ul>
-                <li class="aside-nav__item disabled">
+                <li class="aside-nav__item aside-nav__item_active">
                   <a href="#">
                     <svg viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -232,7 +232,7 @@
                 Управление
               </h4>
               <ul>
-                <li class="aside-nav__item aside-nav__item_active">
+                <li class="aside-nav__item">
                   <a href="#">
                     <svg viewBox="0 0 20 20" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -286,7 +286,7 @@
       <nav class="aside-nav">
         <div class="aside-nav__group">
           <ul>
-            <li class="aside-nav__item disabled">
+            <li class="aside-nav__item aside-nav__item_active">
               <a href="#">
                 <svg viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -398,7 +398,7 @@
             Управление
           </h4>
           <ul>
-            <li class="aside-nav__item aside-nav__item_active">
+            <li class="aside-nav__item">
               <a href="#">
                 <svg viewBox="0 0 20 20" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -428,188 +428,508 @@
     <div class="content">
       <main class="main">
         <div class="main__wrapper">
+          <div class="main__column">
+            <div class="main__menu">
+              <a href="#" class="main__menu-btn">
+                Основные сведения
+              </a>
+              <a href="#" class="main__menu-btn main__menu-btn_active">
+                Время работы
+              </a>
+              <a href="#" class="main__menu-btn">
+                Контактные данные
+              </a>
+              <a href="#" class="main__menu-btn">
+                Социальные сети
+              </a>
+            </div>
+          </div>
           <div class="main__frame">
 
             <div class="main__header">
               <h3 class="main__title">
-                Основные настройки
+                Время работы
               </h3>
               <div class="main__header-controls">
                 <button class="btn-secondary btn-secondary_transparent">
                   Отменить
                 </button>
-                <button class="btn" disabled>Сохранить</button>
+                <button class="btn">Сохранить</button>
               </div>
             </div>
 
-            <div class="main__group">
-              <div class="main__group-title">Язык и валюта</div>
-              <div class="main__group-content main__group-content_two-columns">
-                <div class="input-wrapper">
-                  <span>Язык <span>*</span></span>
-                  <div class="custom-select" data-current-value="google">
-                    <button class="custom-select__btn"
-                      onclick="onSelectOpenBtnClick(this)">
-                      <span class="custom-select__value">
-                        Google
-                      </span>
-                      <span class="custom-select__arrow">
-                        <svg width="18" height="18" viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                            fill="#150704" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div class="custom-select__options">
-                      <button data-value="google"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
-                      </button>
-                      <button data-value="facebook"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
-                      </button>
+            <div class="main__table">
+              <div class="time-table">
+                <div class="time-table__content">
+                  <div class="time-table__header">
+                    <div class="time-table__day-column">
+                      Рабочие дни
+                    </div>
+                    <div class="time-table__start-column">
+                      Начало
+                    </div>
+                    <div class="time-table__breaks">
+                      <div class="time-table__breaks-column">
+                        Перерыв
+                        <button class="small-btn">
+                          <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 12 12" fill="none">
+                            <path
+                              d="M4.24902 5V9C4.24902 9.2761 4.47288 9.5 4.74902 9.5C5.02516 9.5 5.24902 9.2761 5.24902 9V5C5.24902 4.72386 5.02516 4.5 4.74902 4.5C4.47288 4.5 4.24902 4.72386 4.24902 5Z" />
+                            <path
+                              d="M6.75 4.5C7.02614 4.5 7.25 4.72386 7.25 5V9C7.25 9.2761 7.02614 9.5 6.75 9.5C6.47386 9.5 6.25 9.2761 6.25 9V5C6.25 4.72386 6.47386 4.5 6.75 4.5Z" />
+                            <path
+                              d="M7.75 2H10.75C11.0261 2 11.25 2.22386 11.25 2.5C11.25 2.77614 11.0261 3 10.75 3H10.1975L9.4446 9.7761C9.3039 11.0422 8.2338 12 6.95991 12H4.54008C3.26621 12 2.19605 11.0422 2.05537 9.7761L1.30247 3H0.75C0.47386 3 0.25 2.77614 0.25 2.5C0.25 2.22386 0.47386 2 0.75 2H3.75C3.75 0.89543 4.64543 0 5.75 0C6.85457 0 7.75 0.89543 7.75 2ZM5.75 1C5.19772 1 4.75 1.44772 4.75 2H6.75C6.75 1.44772 6.30229 1 5.75 1ZM2.30863 3L3.04925 9.6656C3.13366 10.4253 3.77575 11 4.54008 11H6.95991C7.72423 11 8.3663 10.4253 8.4507 9.6656L9.1914 3H2.30863Z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="time-table__end-column">
+                      Конец
                     </div>
                   </div>
-                  <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
+                  <div class="time-table__rows">
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="monday" class="radio-button">
+                          <input type="checkbox" name="monday" id="monday">
+                          <span></span>
+                        </label>
+                        Понедельник
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="monday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="monday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="monday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="monday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="tuesday" class="radio-button">
+                          <input type="checkbox" name="tuesday" id="tuesday">
+                          <span></span>
+                        </label>
+                        Вторник
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="tuesday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="tuesday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="tuesday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="tuesday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="wednesday" class="radio-button">
+                          <input type="checkbox" name="wednesday" id="wednesday">
+                          <span></span>
+                        </label>
+                        Среда
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="wednesday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="wednesday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="wednesday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="wednesday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="thursday" class="radio-button">
+                          <input type="checkbox" name="thursday" id="thursday">
+                          <span></span>
+                        </label>
+                        Четверг
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="thursday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="thursday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="thursday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="thursday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="friday" class="radio-button">
+                          <input type="checkbox" name="friday" id="friday">
+                          <span></span>
+                        </label>
+                        Пятница
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="friday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="friday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="friday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="friday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="saturday" class="radio-button">
+                          <input type="checkbox" name="saturday" id="saturday">
+                          <span></span>
+                        </label>
+                        Суббота
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="saturday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="saturday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="saturday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="saturday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                    <div class="time-table__row">
+                      <div class="time-table__day-column">
+                        <label for="sunday" class="radio-button">
+                          <input type="checkbox" name="sunday" id="sunday">
+                          <span></span>
+                        </label>
+                        Воскресенье
+                      </div>
+                      <div class="time-table__start-column">
+                        <input class="time-input" id="sunday-start"
+                          type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="08:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                      <div class="time-table__breaks">
+                        <div class="time-table__breaks-column">
+                          <input class="time-input time-input_small"
+                            id="sunday-break-start-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                          <input class="time-input time-input_small"
+                            id="sunday-break-end-1" type="text"
+                            pattern="[0-9]{2}:[0-9]{2}"
+                            placeholder="00:00"
+                            oninput="onTimeInputHandler(this)">
+                        </div>
+                      </div>
+                      <div class="time-table__end-column">
+                        <input class="time-input" id="sunday-end" type="text"
+                          pattern="[0-9]{2}:[0-9]{2}"
+                          placeholder="17:00"
+                          oninput="onTimeInputHandler(this)">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="input-wrapper">
-                  <span>Валюта <span>*</span></span>
-                  <div class="custom-select" data-current-value="google">
-                    <button class="custom-select__btn"
-                      onclick="onSelectOpenBtnClick(this)">
-                      <span class="custom-select__value">
-                        Google
-                      </span>
-                      <span class="custom-select__arrow">
-                        <svg width="18" height="18" viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                            fill="#150704" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div class="custom-select__options">
-                      <button data-value="google"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
-                      </button>
-                      <button data-value="facebook"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
-                      </button>
-                    </div>
-                  </div>
-                  <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
+                <div class="time-table__footer">
+                  Перерывы
+                  <button class="btn-secondary">
+                    <svg viewBox="0 0 19 18" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.45089 9.37898H3.21411C3.01178 9.37898 2.84218 9.31015 2.70531 9.17249C2.56844 9.03481 2.5 8.86422 2.5 8.66071C2.5 8.45719 2.56844 8.28799 2.70531 8.1531C2.84218 8.01821 3.01178 7.95077 3.21411 7.95077L8.45089 7.95077V2.71399C8.45089 2.51165 8.51972 2.34205 8.65739 2.20518C8.79507 2.06831 8.96566 1.99988 9.16917 1.99988C9.37269 1.99988 9.54189 2.06831 9.67678 2.20518C9.81166 2.34205 9.87911 2.51165 9.87911 2.71399V7.95077L15.1159 7.95077C15.3182 7.95077 15.4878 8.0196 15.6247 8.15727C15.7616 8.29495 15.83 8.46554 15.83 8.66904C15.83 8.87256 15.7616 9.04177 15.6247 9.17665C15.4878 9.31154 15.3182 9.37898 15.1159 9.37898L9.87911 9.37898L9.87911 14.6158C9.87911 14.8181 9.81028 14.9877 9.67261 15.1246C9.53493 15.2614 9.36434 15.3299 9.16083 15.3299C8.95731 15.3299 8.78811 15.2614 8.65322 15.1246C8.51834 14.9877 8.45089 14.8181 8.45089 14.6158L8.45089 9.37898Z"
+                        fill="#D4492A" />
+                    </svg>
+                    Добавить
+                  </button>
                 </div>
               </div>
             </div>
 
-            <div class="main__group">
-              <div class="main__group-title">Дата</div>
-              <div class="main__group-content main__group-content_two-columns">
-                <div class="input-wrapper">
-                  <span>Формат даты:</span>
-                  <div class="custom-select" data-current-value="google">
-                    <button class="custom-select__btn"
-                      onclick="onSelectOpenBtnClick(this)">
-                      <span class="custom-select__value">
-                        Google
-                      </span>
-                      <span class="custom-select__arrow">
-                        <svg width="18" height="18" viewBox="0 0 18 18"
-                          fill="none"
+            <div class="main__list">
+              <h3 class="main__list-title">Исключение (другое время работы):
+                <button class="tip-btn"></button></h3>
+              <ul class="main__list-items">
+                <li class="main__list-item">
+                  <div class="main__list-item-content">
+                    <label for="exception1" class="radio-button">
+                      <input type="checkbox" name="exception1" id="exception1">
+                      <span></span>
+                    </label>
+                    <div class="main__list-item-text">
+                      <h4 class="main__list-item-title">Ремонт</h4>
+                      <p class="main__list-item-dates">21.08.2023 - 22.08.2023</p>
+                    </div>
+                    <div class="main__list-item-controls">
+                      <button class="small-btn">
+                        <svg viewBox="0 0 12 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.53 1.79543L10.205 2.47043C10.6 2.86043 10.6 3.49543 10.205 3.88543L3.59 10.5004H1.5V8.41043L6.7 3.20543L8.115 1.79543C8.505 1.40543 9.14 1.40543 9.53 1.79543ZM2.5 9.50043L3.205 9.53043L8.115 4.61543L7.41 3.91043L2.5 8.82043V9.50043Z"
+                            fill="#D4492A" />
+                        </svg>
+                      </button>
+                      <button class="small-btn">
+                        <svg viewBox="0 0 12 12" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path
-                            d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                            fill="#150704" />
+                            d="M4.49902 5V9C4.49902 9.2761 4.72288 9.5 4.99902 9.5C5.27516 9.5 5.49902 9.2761 5.49902 9V5C5.49902 4.72386 5.27516 4.5 4.99902 4.5C4.72288 4.5 4.49902 4.72386 4.49902 5Z"
+                            fill="#D4492A" />
+                          <path
+                            d="M7 4.5C7.27614 4.5 7.5 4.72386 7.5 5V9C7.5 9.2761 7.27614 9.5 7 9.5C6.72386 9.5 6.5 9.2761 6.5 9V5C6.5 4.72386 6.72386 4.5 7 4.5Z"
+                            fill="#D4492A" />
+                          <path
+                            d="M8 2H11C11.2761 2 11.5 2.22386 11.5 2.5C11.5 2.77614 11.2761 3 11 3H10.4475L9.6946 9.7761C9.5539 11.0422 8.4838 12 7.20991 12H4.79008C3.51621 12 2.44605 11.0422 2.30537 9.7761L1.55247 3H1C0.72386 3 0.5 2.77614 0.5 2.5C0.5 2.22386 0.72386 2 1 2H4C4 0.89543 4.89543 0 6 0C7.10457 0 8 0.89543 8 2ZM6 1C5.44772 1 5 1.44772 5 2H7C7 1.44772 6.55229 1 6 1ZM2.55863 3L3.29925 9.6656C3.38366 10.4253 4.02575 11 4.79008 11H7.20991C7.97423 11 8.6163 10.4253 8.7007 9.6656L9.4414 3H2.55863Z"
+                            fill="#D4492A" />
                         </svg>
-                      </span>
-                    </button>
-                    <div class="custom-select__options">
-                      <button data-value="google"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
-                      </button>
-                      <button data-value="facebook"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
                       </button>
                     </div>
                   </div>
-                  <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
-                </div>
-                <div class="input-wrapper">
-                  <span>Первый день недели:</span>
-                  <div class="custom-select" data-current-value="google">
-                    <button class="custom-select__btn"
-                      onclick="onSelectOpenBtnClick(this)">
-                      <span class="custom-select__value">
-                        Google
-                      </span>
-                      <span class="custom-select__arrow">
-                        <svg width="18" height="18" viewBox="0 0 18 18"
-                          fill="none"
+
+                  <div class="main__list-item-times">
+                    <input class="time-input filled" id="exception1-start"
+                      type="text"
+                      pattern="[0-9]{2}:[0-9]{2}"
+                      placeholder="17:00"
+                      value="11:00"
+                      disabled
+                      oninput="onTimeInputHandler(this)">
+                    <input class="time-input filled" id="exception1-end"
+                      type="text"
+                      pattern="[0-9]{2}:[0-9]{2}"
+                      placeholder="17:00"
+                      value="17:00"
+                      disabled
+                      oninput="onTimeInputHandler(this)">
+                  </div>
+                </li>
+                <li class="main__list-item">
+                  <div class="main__list-item-content">
+                    <label for="exception2" class="radio-button">
+                      <input type="checkbox" name="exception2" id="exception2">
+                      <span></span>
+                    </label>
+                    <div class="main__list-item-text">
+                      <h4 class="main__list-item-title">Ремонт</h4>
+                      <p class="main__list-item-dates">21.08.2023 - 22.08.2023</p>
+                    </div>
+                    <div class="main__list-item-controls">
+                      <button class="small-btn">
+                        <svg viewBox="0 0 12 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.53 1.79543L10.205 2.47043C10.6 2.86043 10.6 3.49543 10.205 3.88543L3.59 10.5004H1.5V8.41043L6.7 3.20543L8.115 1.79543C8.505 1.40543 9.14 1.40543 9.53 1.79543ZM2.5 9.50043L3.205 9.53043L8.115 4.61543L7.41 3.91043L2.5 8.82043V9.50043Z"
+                            fill="#D4492A" />
+                        </svg>
+                      </button>
+                      <button class="small-btn">
+                        <svg viewBox="0 0 12 12" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path
-                            d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                            fill="#150704" />
+                            d="M4.49902 5V9C4.49902 9.2761 4.72288 9.5 4.99902 9.5C5.27516 9.5 5.49902 9.2761 5.49902 9V5C5.49902 4.72386 5.27516 4.5 4.99902 4.5C4.72288 4.5 4.49902 4.72386 4.49902 5Z"
+                            fill="#D4492A" />
+                          <path
+                            d="M7 4.5C7.27614 4.5 7.5 4.72386 7.5 5V9C7.5 9.2761 7.27614 9.5 7 9.5C6.72386 9.5 6.5 9.2761 6.5 9V5C6.5 4.72386 6.72386 4.5 7 4.5Z"
+                            fill="#D4492A" />
+                          <path
+                            d="M8 2H11C11.2761 2 11.5 2.22386 11.5 2.5C11.5 2.77614 11.2761 3 11 3H10.4475L9.6946 9.7761C9.5539 11.0422 8.4838 12 7.20991 12H4.79008C3.51621 12 2.44605 11.0422 2.30537 9.7761L1.55247 3H1C0.72386 3 0.5 2.77614 0.5 2.5C0.5 2.22386 0.72386 2 1 2H4C4 0.89543 4.89543 0 6 0C7.10457 0 8 0.89543 8 2ZM6 1C5.44772 1 5 1.44772 5 2H7C7 1.44772 6.55229 1 6 1ZM2.55863 3L3.29925 9.6656C3.38366 10.4253 4.02575 11 4.79008 11H7.20991C7.97423 11 8.6163 10.4253 8.7007 9.6656L9.4414 3H2.55863Z"
+                            fill="#D4492A" />
                         </svg>
-                      </span>
-                    </button>
-                    <div class="custom-select__options">
-                      <button data-value="google"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
-                      </button>
-                      <button data-value="facebook"
-                        onclick="onSelectOptionClick(this)"
-                        class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
                       </button>
                     </div>
                   </div>
-                  <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
-                </div>
-              </div>
+
+                  <div class="main__list-item-times">
+                    <input class="time-input filled" id="exception2-start"
+                      type="text"
+                      pattern="[0-9]{2}:[0-9]{2}"
+                      placeholder="17:00"
+                      value="11:00"
+                      disabled
+                      oninput="onTimeInputHandler(this)">
+                    <input class="time-input filled" id="exception2-end"
+                      type="text"
+                      pattern="[0-9]{2}:[0-9]{2}"
+                      placeholder="17:00"
+                      value="17:00"
+                      disabled
+                      oninput="onTimeInputHandler(this)">
+                  </div>
+                </li>
+              </ul>
+              <button class="btn-secondary">
+                <svg viewBox="0 0 19 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.45089 9.37911H3.21411C3.01178 9.37911 2.84218 9.31028 2.70531 9.17261C2.56844 9.03493 2.5 8.86434 2.5 8.66083C2.5 8.45731 2.56844 8.28811 2.70531 8.15322C2.84218 8.01834 3.01178 7.95089 3.21411 7.95089L8.45089 7.95089V2.71411C8.45089 2.51178 8.51972 2.34218 8.65739 2.20531C8.79507 2.06844 8.96566 2 9.16917 2C9.37269 2 9.54189 2.06844 9.67678 2.20531C9.81166 2.34218 9.87911 2.51178 9.87911 2.71411V7.95089L15.1159 7.95089C15.3182 7.95089 15.4878 8.01972 15.6247 8.15739C15.7616 8.29507 15.83 8.46566 15.83 8.66917C15.83 8.87269 15.7616 9.04189 15.6247 9.17678C15.4878 9.31166 15.3182 9.37911 15.1159 9.37911L9.87911 9.37911L9.87911 14.6159C9.87911 14.8182 9.81028 14.9878 9.67261 15.1247C9.53493 15.2616 9.36434 15.33 9.16083 15.33C8.95731 15.33 8.78811 15.2616 8.65322 15.1247C8.51834 14.9878 8.45089 14.8182 8.45089 14.6159L8.45089 9.37911Z"
+                    fill="#D4492A" />
+                </svg>
+                Добавить
+              </button>
             </div>
 
-            <div class="switch">
-              <p class="switch__text">
-                Подсказки
-                <button class="tip-btn">
-                  <svg viewBox="0 0 18 18" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9 1.125C11.0886 1.125 13.0916 1.95469 14.5685 3.43153C16.0453 4.90838 16.875 6.91142 16.875 9C16.875 11.0886 16.0453 13.0916 14.5685 14.5685C13.0916 16.0453 11.0886 16.875 9 16.875C6.91142 16.875 4.90838 16.0453 3.43153 14.5685C1.95469 13.0916 1.125 11.0886 1.125 9C1.125 6.91142 1.95469 4.90838 3.43153 3.43153C4.90838 1.95469 6.91142 1.125 9 1.125ZM9.41738 4.491C8.50163 4.491 7.78387 4.75087 7.25175 5.27063C6.70725 5.79037 6.44737 6.50812 6.44737 7.42387H7.85813C7.85813 6.90412 7.95713 6.49575 8.1675 6.21112C8.40263 5.86462 8.78625 5.70375 9.33075 5.70375C9.7515 5.70375 10.0856 5.81512 10.3207 6.05025C10.5435 6.28537 10.6673 6.60713 10.6673 7.0155C10.6673 7.32487 10.5559 7.62188 10.3331 7.89412L10.1846 8.06738C9.38025 8.78512 8.89762 9.30487 8.73675 9.639C8.5635 9.97312 8.48925 10.3815 8.48925 10.8517V11.025H9.91237V10.8517C9.91237 10.5547 9.97425 10.2949 10.098 10.0474C10.2094 9.82463 10.3703 9.61425 10.593 9.42862C11.187 8.90887 11.5459 8.57475 11.6573 8.451C11.9543 8.055 12.1151 7.54763 12.1151 6.92887C12.1151 6.174 11.8676 5.58 11.3726 5.14687C10.8776 4.70137 10.2218 4.491 9.41738 4.491ZM9.19463 11.6314C8.9423 11.6245 8.69756 11.718 8.514 11.8912C8.42338 11.9766 8.35216 12.0805 8.30519 12.1958C8.25822 12.3111 8.23658 12.4351 8.24175 12.5595C8.24175 12.8317 8.32837 13.0545 8.514 13.2278C8.69618 13.4046 8.94075 13.5024 9.19463 13.5C9.46688 13.5 9.68962 13.4134 9.87525 13.2401C9.9678 13.153 10.041 13.0474 10.09 12.9301C10.139 12.8128 10.1629 12.6866 10.1599 12.5595C10.1622 12.4355 10.1393 12.3122 10.0925 12.1974C10.0457 12.0825 9.976 11.9783 9.88762 11.8912C9.69929 11.7177 9.45066 11.6244 9.19463 11.6314Z"
-                      fill="#ED9139" />
-                  </svg>
-                </button>
-              </p>
-              <label for="tips" class="radio-button radio-button_large">
-                <input type="checkbox" name="tips" id="tips">
-                <span></span>
-              </label>
+            <div class="main__list">
+              <h3 class="main__list-title">Нерабочие дни:
+                <button class="tip-btn"></button></h3>
+              <ul class="main__list-items">
+                <li class="main__list-item">
+                  <div class="main__list-item-content">
+                    <label for="nonworking1" class="radio-button">
+                      <input type="checkbox" name="nonworking1" id="nonworking1">
+                      <span></span>
+                    </label>
+                    <div class="main__list-item-text">
+                      <h4 class="main__list-item-title">Внеплановые выходные</h4>
+                      <p class="main__list-item-dates">21.08.2023 - 22.08.2023</p>
+                    </div>
+                    <div class="main__list-item-controls">
+                      <button class="small-btn">
+                        <svg viewBox="0 0 12 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.53 1.79543L10.205 2.47043C10.6 2.86043 10.6 3.49543 10.205 3.88543L3.59 10.5004H1.5V8.41043L6.7 3.20543L8.115 1.79543C8.505 1.40543 9.14 1.40543 9.53 1.79543ZM2.5 9.50043L3.205 9.53043L8.115 4.61543L7.41 3.91043L2.5 8.82043V9.50043Z"
+                            fill="#D4492A" />
+                        </svg>
+                      </button>
+                      <button class="small-btn">
+                        <svg viewBox="0 0 12 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M4.49902 5V9C4.49902 9.2761 4.72288 9.5 4.99902 9.5C5.27516 9.5 5.49902 9.2761 5.49902 9V5C5.49902 4.72386 5.27516 4.5 4.99902 4.5C4.72288 4.5 4.49902 4.72386 4.49902 5Z"
+                            fill="#D4492A" />
+                          <path
+                            d="M7 4.5C7.27614 4.5 7.5 4.72386 7.5 5V9C7.5 9.2761 7.27614 9.5 7 9.5C6.72386 9.5 6.5 9.2761 6.5 9V5C6.5 4.72386 6.72386 4.5 7 4.5Z"
+                            fill="#D4492A" />
+                          <path
+                            d="M8 2H11C11.2761 2 11.5 2.22386 11.5 2.5C11.5 2.77614 11.2761 3 11 3H10.4475L9.6946 9.7761C9.5539 11.0422 8.4838 12 7.20991 12H4.79008C3.51621 12 2.44605 11.0422 2.30537 9.7761L1.55247 3H1C0.72386 3 0.5 2.77614 0.5 2.5C0.5 2.22386 0.72386 2 1 2H4C4 0.89543 4.89543 0 6 0C7.10457 0 8 0.89543 8 2ZM6 1C5.44772 1 5 1.44772 5 2H7C7 1.44772 6.55229 1 6 1ZM2.55863 3L3.29925 9.6656C3.38366 10.4253 4.02575 11 4.79008 11H7.20991C7.97423 11 8.6163 10.4253 8.7007 9.6656L9.4414 3H2.55863Z"
+                            fill="#D4492A" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <button class="btn-secondary">
+                <svg viewBox="0 0 19 18" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.45089 9.37911H3.21411C3.01178 9.37911 2.84218 9.31028 2.70531 9.17261C2.56844 9.03493 2.5 8.86434 2.5 8.66083C2.5 8.45731 2.56844 8.28811 2.70531 8.15322C2.84218 8.01834 3.01178 7.95089 3.21411 7.95089L8.45089 7.95089V2.71411C8.45089 2.51178 8.51972 2.34218 8.65739 2.20531C8.79507 2.06844 8.96566 2 9.16917 2C9.37269 2 9.54189 2.06844 9.67678 2.20531C9.81166 2.34218 9.87911 2.51178 9.87911 2.71411V7.95089L15.1159 7.95089C15.3182 7.95089 15.4878 8.01972 15.6247 8.15739C15.7616 8.29507 15.83 8.46566 15.83 8.66917C15.83 8.87269 15.7616 9.04189 15.6247 9.17678C15.4878 9.31166 15.3182 9.37911 15.1159 9.37911L9.87911 9.37911L9.87911 14.6159C9.87911 14.8182 9.81028 14.9878 9.67261 15.1247C9.53493 15.2616 9.36434 15.33 9.16083 15.33C8.95731 15.33 8.78811 15.2616 8.65322 15.1247C8.51834 14.9878 8.45089 14.8182 8.45089 14.6159L8.45089 9.37911Z"
+                    fill="#D4492A" />
+                </svg>
+                Добавить
+              </button>
             </div>
 
           </div>
@@ -639,6 +959,8 @@
         </defs>
       </svg>
     </button>
+
     <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/timeInput.js"></script>
   </body>
 </html>
