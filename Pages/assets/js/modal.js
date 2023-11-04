@@ -21,3 +21,17 @@ function onCloseTutorialBtn() {
 function toggleMobileMenu() {
   document.body.classList.toggle('open-mobile');
 }
+
+function onTipBtnClick(elem) {
+  const tutorialItemsElem = document.querySelector('.tutorial__items');
+  const ids = elem.dataset.path.split('.');
+  const elems = ids.map((id) => {
+    return document.getElementById(id);
+  });
+  for (let elem of elems) {
+    elem.classList.add('open');
+  }
+  const lastElem = elems[elems.length - 1];
+  document.body.classList.add('open-tutorial');
+  tutorialItemsElem.scrollTo(0, lastElem.offsetTop)
+} 

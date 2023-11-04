@@ -597,7 +597,8 @@
             <div class="switch">
               <p class="switch__text">
                 Подсказки
-                <button class="tip-btn">
+                <button class="tip-btn" data-path="settings.main-settings"
+                  onclick="onTipBtnClick(this)">
                   tip
                 </button>
               </p>
@@ -634,7 +635,7 @@
           </button>
         </div>
         <div class="tutorial__items">
-          <div class="tutorial__item">
+          <div class="tutorial__item" id="settings">
             <div class="tutorial__item-header"
               onclick="onTutorialItemClick(this)">
               <h3 class="tutorial__item-title">
@@ -652,7 +653,7 @@
             <div class="tutorial__item-wrapper">
               <ul>
 
-                <li class="tutorial__item tutorial__sub-item">
+                <li class="tutorial__item tutorial__sub-item" id="main-settings">
                   <div class="tutorial__item-header"
                     onclick="onTutorialItemClick(this)">
                     <h3 class="tutorial__item-title">
