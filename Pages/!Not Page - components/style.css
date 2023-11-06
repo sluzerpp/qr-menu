@@ -21,6 +21,7 @@
   --line-gray: #D9D7D7;
   --line-purple: #5E31BD;
   --line-grayish-red: #FBEDEA;
+  --line-bright-orange: #ED9139;
   --bg-strong-red: #D4492A;
   --bg-purple: #5E31BD;
   --bg-gray: #D9D7D7;
@@ -65,7 +66,7 @@ body {
   padding-left: var(--aside-width);
   padding-right: 30px;
   overflow-y: auto;
-  height: 100vh;
+  height: 100dvh;
   padding-bottom: 40px;
 }
 
@@ -114,6 +115,7 @@ body {
      -moz-user-select: none;
           user-select: none;
   position: relative;
+  user-select: none;
 }
 .radio-button input {
   width: 0;

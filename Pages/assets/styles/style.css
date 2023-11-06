@@ -21,6 +21,7 @@
   --line-gray: #D9D7D7;
   --line-purple: #5E31BD;
   --line-grayish-red: #FBEDEA;
+  --line-bright-orange: #ED9139;
   --bg-strong-red: #D4492A;
   --bg-purple: #5E31BD;
   --bg-gray: #D9D7D7;
@@ -65,7 +66,7 @@ body {
   padding-left: var(--aside-width);
   padding-right: 30px;
   overflow-y: auto;
-  height: 100vh;
+  height: 100dvh;
   padding-bottom: 40px;
 }
 
@@ -134,16 +135,19 @@ body {
 }
 .auth {
   display: flex;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
   padding: 85px 0;
+  min-height: 100vh;
 }
 .auth__content {
   display: grid;
   gap: 60px;
   max-width: 600px;
   width: 100%;
+  top: 0;
 }
 .auth__container {
   display: grid;
@@ -302,13 +306,37 @@ body {
   gap: 8px;
   width: 100%;
 }
-.input-wrapper > span, .input-wrapper > label {
+.input-wrapper > div {
+  display: flex;
+  gap: 4px;
+}
+.input-wrapper__header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.input-wrapper__header > span, .input-wrapper__header > label {
   font-size: 20px;
   font-weight: 500;
   text-align: left;
   line-height: 150%;
+  width: -moz-max-content;
+  width: max-content;
 }
-.input-wrapper > span > span, .input-wrapper > label > span {
+.input-wrapper__header > span > span, .input-wrapper__header > label > span {
+  color: var(--text-strong-red);
+}
+.input-wrapper:not(:has(.input-wrapper__header)) > span, .input-wrapper:not(:has(.input-wrapper__header)) > label {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 150%;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.input-wrapper:not(:has(.input-wrapper__header)) > span > span, .input-wrapper:not(:has(.input-wrapper__header)) > label > span {
   color: var(--text-strong-red);
 }
 .input-wrapper > .input-wrapper__error {
@@ -322,6 +350,12 @@ body {
   .input-wrapper > span, .input-wrapper > label {
     font-size: 16px;
   }
+  .input-wrapper__header > span, .input-wrapper__header > label {
+    font-size: 16px;
+  }
+  .input-wrapper:not(:has(.input-wrapper__header)) > span, .input-wrapper:not(:has(.input-wrapper__header)) > label {
+    font-size: 16px;
+  }
 }
 .text-input {
   height: 50px;
@@ -332,7 +366,7 @@ body {
   padding: 14.5px 20px;
   width: 100%;
   border: 1px solid transparent;
-  background-color: var(--bg-white);
+  background-color: var(--bg-white) !important;
 }
 .text-input_grey {
   background-color: var(--bg-bright-gray);
@@ -345,6 +379,9 @@ body {
 }
 .text-input:focus {
   border: 1px solid var(--bg-bright-orange);
+}
+.text-input:valid {
+  background-color: var(--bg-white) !important;
 }
 
 @media (max-width: 1440px) {
@@ -693,7 +730,7 @@ body {
 }
 .aside {
   width: var(--aside-width);
-  height: calc(100vh - var(--header-height) - 30px);
+  height: calc(100dvh - var(--header-height) - 30px);
   display: flex;
   padding: 0 30px 40px;
   flex-direction: column;
@@ -837,7 +874,7 @@ body {
 .main {
   border-radius: 30px;
   background-color: var(--bg-white);
-  min-height: calc(100vh - var(--header-height) - 70px);
+  min-height: calc(100dvh - var(--header-height) - 70px);
   padding: 30px;
   display: flex;
   align-items: flex-start;
@@ -1134,7 +1171,7 @@ body {
     background-color: transparent;
     flex-direction: column;
     min-height: auto;
-    height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
     overflow-y: auto;
     border-radius: 0;
     gap: 0;
@@ -1158,7 +1195,7 @@ body {
     grid-auto-rows: max-content;
   }
   .main:has(.main__empty) .main {
-    height: calc(100vh - var(--header-height) - 16px);
+    height: calc(100dvh - var(--header-height) - 16px);
   }
   .main:has(.main__empty) .main__wrapper {
     background-color: var(--bg-white);
@@ -1284,6 +1321,18 @@ body {
 .custom-select__option:hover {
   background-color: #FAFAFA;
 }
+.custom-select_number {
+  width: 113px;
+  min-width: 113px;
+}
+.custom-select_number .custom-select__btn img {
+  width: 32px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
 
 .switch {
   display: flex;
@@ -1311,6 +1360,7 @@ body {
      -moz-user-select: none;
           user-select: none;
   position: relative;
+  user-select: none;
 }
 .radio-button input {
   width: 0;
@@ -1374,7 +1424,7 @@ body {
   justify-content: flex-end;
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   top: 0;
   left: 0;
   z-index: 50;
@@ -1416,6 +1466,7 @@ body {
   display: grid;
   overflow-y: auto;
   align-items: flex-start;
+  scroll-behavior: smooth;
 }
 .tutorial__item {
   position: relative;
@@ -1756,14 +1807,26 @@ body.open-tutorial .tutorial {
   fill: var(--bg-strong-red);
 }
 
+.drag-btn {
+  cursor: grab;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.56083 15C6.19944 15 5.89063 14.8713 5.63438 14.614C5.37812 14.3566 5.25 14.0472 5.25 13.6858C5.25 13.3244 5.37868 13.0156 5.63604 12.7594C5.89339 12.5031 6.20277 12.375 6.56417 12.375C6.92556 12.375 7.23438 12.5037 7.49063 12.761C7.74688 13.0184 7.875 13.3278 7.875 13.6892C7.875 14.0506 7.74632 14.3594 7.48896 14.6156C7.23161 14.8719 6.92223 15 6.56083 15ZM11.4358 15C11.0744 15 10.7656 14.8713 10.5094 14.614C10.2531 14.3566 10.125 14.0472 10.125 13.6858C10.125 13.3244 10.2537 13.0156 10.511 12.7594C10.7684 12.5031 11.0778 12.375 11.4392 12.375C11.8006 12.375 12.1094 12.5037 12.3656 12.761C12.6219 13.0184 12.75 13.3278 12.75 13.6892C12.75 14.0506 12.6213 14.3594 12.364 14.6156C12.1066 14.8719 11.7972 15 11.4358 15ZM6.56083 10.3125C6.19944 10.3125 5.89063 10.1838 5.63438 9.92646C5.37812 9.66911 5.25 9.35973 5.25 8.99833C5.25 8.63694 5.37868 8.32812 5.63604 8.07188C5.89339 7.81563 6.20277 7.6875 6.56417 7.6875C6.92556 7.6875 7.23438 7.81618 7.49063 8.07354C7.74688 8.33089 7.875 8.64027 7.875 9.00167C7.875 9.36306 7.74632 9.67188 7.48896 9.92813C7.23161 10.1844 6.92223 10.3125 6.56083 10.3125ZM11.4358 10.3125C11.0744 10.3125 10.7656 10.1838 10.5094 9.92646C10.2531 9.66911 10.125 9.35973 10.125 8.99833C10.125 8.63694 10.2537 8.32812 10.511 8.07188C10.7684 7.81563 11.0778 7.6875 11.4392 7.6875C11.8006 7.6875 12.1094 7.81618 12.3656 8.07354C12.6219 8.33089 12.75 8.64027 12.75 9.00167C12.75 9.36306 12.6213 9.67188 12.364 9.92813C12.1066 10.1844 11.7972 10.3125 11.4358 10.3125ZM6.56083 5.625C6.19944 5.625 5.89063 5.49632 5.63438 5.23896C5.37812 4.98161 5.25 4.67223 5.25 4.31083C5.25 3.94944 5.37868 3.64063 5.63604 3.38438C5.89339 3.12812 6.20277 3 6.56417 3C6.92556 3 7.23438 3.12868 7.49063 3.38604C7.74688 3.64339 7.875 3.95277 7.875 4.31417C7.875 4.67556 7.74632 4.98438 7.48896 5.24063C7.23161 5.49688 6.92223 5.625 6.56083 5.625ZM11.4358 5.625C11.0744 5.625 10.7656 5.49632 10.5094 5.23896C10.2531 4.98161 10.125 4.67223 10.125 4.31083C10.125 3.94944 10.2537 3.64063 10.511 3.38438C10.7684 3.12812 11.0778 3 11.4392 3C11.8006 3 12.1094 3.12868 12.3656 3.38604C12.6219 3.64339 12.75 3.95277 12.75 4.31417C12.75 4.67556 12.6213 4.98438 12.364 5.24063C12.1066 5.49688 11.7972 5.625 11.4358 5.625Z" fill="%23D9D7D7"/></svg>');
+}
+
 .modal {
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
-  display: flex;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 20;
@@ -1783,9 +1846,9 @@ body.open-tutorial .tutorial {
   background-color: var(--bg-white);
   z-index: 1;
   overflow-y: auto;
-  max-height: calc(100vh - 112px);
+  max-height: calc(100dvh - 112px);
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   padding: 30px;
   font-family: var(--montserrat);
   color: var(--text-black);
@@ -1794,6 +1857,8 @@ body.open-tutorial .tutorial {
   max-width: 678px;
   margin: 0 16px;
   gap: 32px;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 .modal__header {
   position: relative;
@@ -1843,6 +1908,30 @@ body.open-tutorial .tutorial {
   min-width: 180px;
 }
 
+body.open-add-exception #add-exception {
+  display: flex;
+}
+
+body.open-edit-exception #edit-exception {
+  display: flex;
+}
+
+body.open-delete-exception #delete-exception {
+  display: flex;
+}
+
+body.open-add-nonworking-days #add-nonworking-days {
+  display: flex;
+}
+
+body.open-edit-nonworking-days #edit-nonworking-days {
+  display: flex;
+}
+
+body.open-delete-nonworking-days #delete-nonworking-days {
+  display: flex;
+}
+
 @media (max-width: 1080px) {
   .modal {
     padding-left: 0;
@@ -1861,6 +1950,51 @@ body.open-tutorial .tutorial {
     min-width: auto;
   }
 }
+.date-input {
+  width: 130px;
+  height: 50px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: var(--bg-bright-gray);
+  border: 1px solid transparent;
+}
+.date-input:has(input[type=text]:focus-visible) {
+  border: 1px solid var(--line-bright-orange);
+}
+.date-input input[type=date] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  font-size: 0;
+  color: transparent;
+}
+.date-input input[type=text] {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  font-family: var(--montserrat);
+  outline: transparent;
+  padding: 0;
+  margin: 0;
+  min-width: 71px;
+  max-width: 80px;
+  width: auto;
+}
+.date-input__picker-btn {
+  display: block;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.date-input__picker-btn svg {
+  height: 18px;
+}
+
 .exception-form {
   display: flex;
   flex-direction: column;
@@ -1868,20 +2002,24 @@ body.open-tutorial .tutorial {
 }
 .exception-form__two-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   gap: 49px;
   position: relative;
   width: 100%;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
 }
-.exception-form__two-columns::after {
+.exception-form__two-columns > *:first-child {
+  position: relative;
+}
+.exception-form__two-columns > *:first-child::after {
   display: block;
   content: "";
   height: 100%;
   position: absolute;
   width: 1px;
-  left: 50%;
+  right: -24px;
   background-color: var(--bg-bright-gray);
   position: absolute;
 }
@@ -1892,6 +2030,9 @@ body.open-tutorial .tutorial {
   align-items: center;
   width: -moz-max-content;
   width: max-content;
+}
+.exception-form__times .time-input {
+  height: 50px;
 }
 .exception-form__times::after {
   display: block;
@@ -1904,12 +2045,135 @@ body.open-tutorial .tutorial {
   font-family: var(--montserrat);
   color: var(--text-black);
 }
+.exception-form__period {
+  display: none;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  width: 100%;
+}
+.exception-form__period::after {
+  display: block;
+  content: "-";
+  position: absolute;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  font-family: var(--montserrat);
+  color: var(--text-black);
+}
+.exception-form__dates {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 24px;
+  justify-content: flex-start;
+}
+.exception-form__dates .btn-secondary {
+  width: -moz-max-content;
+  width: max-content;
+}
+.exception-form__date {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.exception-form__switch:has(input[type=checkbox]:checked) + .exception-form__two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+.exception-form__switch:has(input[type=checkbox]:checked) + .exception-form__two-columns .exception-form__period {
+  display: flex;
+}
+.exception-form__switch:has(input[type=checkbox]:checked) + .exception-form__two-columns .exception-form__dates {
+  display: none;
+}
+.exception-form__switch:has(input[type=checkbox]:checked) + .input-wrapper {
+  justify-content: flex-start;
+}
+.exception-form__switch:has(input[type=checkbox]:checked) + .input-wrapper .exception-form__period {
+  display: flex;
+}
+.exception-form__switch:has(input[type=checkbox]:checked) + .input-wrapper .exception-form__dates {
+  display: none;
+}
 
 @media (max-width: 560px) {
   .exception-form__two-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .exception-form__two-columns::after {
     display: none;
   }
+  .exception-form__period > * {
+    width: 100%;
+  }
+  .exception-form__dates {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+.wrapper-img {
+  display: flex;
+  position: relative;
+  gap: 12px;
+}
+.wrapper-img__img {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border: 0.5px dashed rgba(94, 49, 189, 0.5);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.wrapper-img__img img {
+  max-width: 20px;
+  max-height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.wrapper-img__img::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.53 1.79445L10.205 2.46945C10.6 2.85945 10.6 3.49445 10.205 3.88445L3.59 10.4995H1.5V8.40945L6.7 3.20445L8.115 1.79445C8.505 1.40445 9.14 1.40445 9.53 1.79445ZM2.5 9.49945L3.205 9.52945L8.115 4.61445L7.41 3.90945L2.5 8.81945V9.49945Z" fill="%23D4492A"/></svg>');
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  cursor: pointer;
+}
+.wrapper-img__img:hover::after {
+  opacity: 1;
+}
+.wrapper-img_checkbox:has(input[type=checkbox]) .wrapper-img__img img {
+  filter: contrast(0) opacity(0.5);
+}
+.wrapper-img_checkbox:has(input[type=checkbox]) .wrapper-img__img::after {
+  display: none;
+}
+.wrapper-img_checkbox:has(input[type=checkbox]:checked) .wrapper-img__img img {
+  filter: contrast(1) opacity(1);
+}
+.wrapper-img_checkbox:has(input[type=checkbox]:checked) .wrapper-img__img::after {
+  display: block;
+}
+.wrapper-img.dragging {
+  opacity: 0.4;
 }

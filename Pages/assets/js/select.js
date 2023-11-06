@@ -42,12 +42,15 @@
 function onSelectOptionClick(elem) {
   const target = elem;
   const value = target.dataset.value;
-  const content = target.textContent;
+  let content = target.textContent;
   if (!value) return;
   const valueElem = target.parentElement.parentElement.querySelector('.custom-select__value');
   if (!valueElem) return;
   const selectElem = target.parentElement.parentElement;
   if (!selectElem) return;
+  if (selectElem.classList.contains('custom-select_number')) {
+    content = target.innerHTML;
+  }
   selectElem.dataset.currentValue = value;
   valueElem.innerHTML = content;
   selectElem.classList.remove('open');
@@ -71,3 +74,18 @@ document.addEventListener('click', (event) => {
   closeAllSelects(event.target);
 });
 
+function onNumberSelectOptionClick(elem) {
+  onSelectOptionClick(elem);
+  const selectElem = elem.parentElement.parentElement;
+  const inputElem = selectElem.nextElementSibling;
+
+  inputElem.dataset.format = selectElem.dataset.currentValue;
+  inputElem.value = selectElem.dataset.currentValue;
+}
+
+function onNumberInput(elem) {
+  const format = elem.dataset.format;
+  const inputValue = elem.value.replace(/\D/g, '').slice(format.length - 1);
+
+  elem.value = format+inputValue;
+}
