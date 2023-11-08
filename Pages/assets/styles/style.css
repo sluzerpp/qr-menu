@@ -2492,6 +2492,10 @@ body.open-delete-social #delete-social {
   top: 0;
 }
 
+.category-list {
+  display: flex;
+  flex-direction: column;
+}
 .category-list .main__header {
   width: 100%;
 }
