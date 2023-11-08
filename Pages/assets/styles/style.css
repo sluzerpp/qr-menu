@@ -2499,9 +2499,13 @@ body.open-delete-social #delete-social {
 .category-list .main__header {
   width: 100%;
 }
+.category-list__content {
+  width: 100%;
+}
 .category-list__content ul {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .category-list__item {
   display: grid;
@@ -2512,4 +2516,14 @@ body.open-delete-social #delete-social {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+}
+.category-list__item-left {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.category-list__item-right {
+  display: flex;
+  gap: 8px;
 }
