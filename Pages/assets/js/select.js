@@ -89,3 +89,18 @@ function onNumberInput(elem) {
 
   elem.value = format+inputValue;
 }
+
+function onHierarchySelectClick(event) {
+  event.preventDefault();
+  const text = event.target.parentElement.textContent;
+  const value = event.target.value;
+  const select = event.currentTarget.parentElement;
+  select.dataset.currentValue = value;
+  const valueElem = select.querySelector('.select-hierarchy__value');
+  valueElem.textContent = text;
+  select.classList.remove('open');
+}
+
+function openSelectDropdown(elem) {
+  elem.closest('.select-hierarchy__option_with-list').classList.toggle('open');
+}

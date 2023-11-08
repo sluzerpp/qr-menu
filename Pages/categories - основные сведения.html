@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Settings</title>
   </head>
-  <body class="open-tutorial">
+  <body>
 
     <header class="header">
       <div class="logo">
@@ -428,44 +428,173 @@
     <div class="content">
       <main class="main">
         <div class="main__wrapper">
-          <div class="main__empty">
-            <h3 class="main__empty-title">
-              У вас пока нет добавленных заведений
-            </h3>
-            <h4 class="main__empty-subtitle">
-              Добавьте своё первое заведение
-            </h4>
-            <div class="main__empty-controls">
-              <button class="btn">
-                <svg viewBox="0 0 19 18" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M8.45089 9.37892H3.21411C3.01178 9.37892 2.84218 9.31009 2.70531 9.17243C2.56844 9.03475 2.5 8.86416 2.5 8.66065C2.5 8.45713 2.56844 8.28793 2.70531 8.15304C2.84218 8.01815 3.01178 7.95071 3.21411 7.95071L8.45089 7.95071V2.71392C8.45089 2.51159 8.51972 2.34199 8.65739 2.20512C8.79507 2.06825 8.96566 1.99982 9.16917 1.99982C9.37269 1.99982 9.54189 2.06825 9.67678 2.20512C9.81166 2.34199 9.87911 2.51159 9.87911 2.71392V7.95071L15.1159 7.95071C15.3182 7.95071 15.4878 8.01954 15.6247 8.15721C15.7616 8.29489 15.83 8.46548 15.83 8.66898C15.83 8.8725 15.7616 9.04171 15.6247 9.17659C15.4878 9.31148 15.3182 9.37892 15.1159 9.37892L9.87911 9.37892L9.87911 14.6157C9.87911 14.818 9.81028 14.9876 9.67261 15.1245C9.53493 15.2614 9.36434 15.3298 9.16083 15.3298C8.95731 15.3298 8.78811 15.2614 8.65322 15.1245C8.51834 14.9876 8.45089 14.818 8.45089 14.6157L8.45089 9.37892Z"
-                    fill="white" />
-                </svg>
-                Добавить
-              </button>
+          <div class="main__frame category-new">
+
+            <div class="main__header">
+              <h3 class="main__title">
+                Основные сведения
+              </h3>
+              <div class="main__header-controls">
+                <button class="btn-secondary btn-secondary_transparent">
+                  Отменить
+                </button>
+                <button class="btn" disabled>Сохранить</button>
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <span>Название категории <span>*</span></span>
+              <input type="text" id="category-name"
+                class="text-input">
+            </div>
+
+            <div class="input-wrapper">
+              <span>Описание</span>
+              <div class="textarea">
+                <textarea maxlength="1000" name="category-description"
+                  id="category-description" on></textarea>
+                <p class="textarea__length">0 / 1000</p>
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <span>URL-адрес</span>
+              <input type="text" id="category-url"
+                class="text-input">
+            </div>
+
+            <div class="switch">
+              <p class="switch__text">
+                Родительская категория
+                <button class="tip-btn" data-path="settings.main-settings"
+                  onclick="onTipBtnClick(this)">
+                  tip
+                </button>
+              </p>
+              <label for="is-parent" class="radio-button radio-button_large">
+                <input type="checkbox" class="category-new__switch"
+                  name="is-parent" id="is-parent">
+                <span></span>
+              </label>
+            </div>
+
+            <div class="input__wrapper">
+              <div class="input-wrapper__header">
+                <span>Выбрать категорию <span>*</span></span>
+                <button class="tip-btn"></button>
+              </div>
+              <div class="select-hierarchy custom-select"
+                data-current-value>
+                <button class="select-hierarchy__btn custom-select__btn"
+                  onclick="onSelectOpenBtnClick(this)">
+                  <span class="select-hierarchy__value">
+                    Не выбрано
+                  </span>
+                  <span class="select-hierarchy__arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                        fill="#150704" />
+                    </svg>
+                  </span>
+                </button>
+                <div class="select-hierarchy__options"
+                  onchange="onHierarchySelectClick(event)">
+                  <div
+                    class="select-hierarchy__option select-hierarchy__option_with-list">
+                    <div class="select-hierarchy__option-content">
+                      <div class="select-hierarchy__option-arrow"
+                        onclick="openSelectDropdown(this)"></div>
+                      <label for="category1" class="round-radio-button">
+                        <input type="radio" value="category1"
+                          name="parent-category"
+                          id="category1">
+                        <span></span>
+                        Категория 1
+                      </label>
+                    </div>
+                    <ul>
+                      <li
+                        class="select-hierarchy__option select-hierarchy__option_with-list">
+                        <div class="select-hierarchy__option-content">
+                          <div class="select-hierarchy__option-arrow"
+                            onclick="openSelectDropdown(this)"></div>
+                          <label for="subcategory1" class="round-radio-button">
+                            <input type="radio" value="subcategory1"
+                              name="parent-category"
+                              id="subcategory1">
+                            <span></span>
+                            Подкатегория 1
+                          </label>
+                        </div>
+                        <ul>
+                          <li class="select-hierarchy__option">
+                            <label for="subsubcategory1"
+                              class="round-radio-button">
+                              <input type="radio" value="subsubcategory1"
+                                name="parent-category"
+                                id="subsubcategory1">
+                              <span></span>
+                              Подподкатегория 1
+                            </label>
+                          </li>
+                          <li class="select-hierarchy__option">
+                            <label for="subsubcategory2"
+                              class="round-radio-button">
+                              <input type="radio" value="subsubcategory2"
+                                name="parent-category"
+                                id="subsubcategory2">
+                              <span></span>
+                              Подподкатегория 2
+                            </label>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="select-hierarchy__option">
+                        <label for="subcategory2" class="round-radio-button">
+                          <input type="radio" value="subcategory2"
+                            name="parent-category"
+                            id="subcategory2">
+                          <span></span>
+                          Подкатегория 2
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
-      </main>
-    </div>
 
-    <button class="icon-btn icon-btn_purple support-btn">
-      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_4476_5296)">
-          <path
-            d="M3.85711 8.99998V5.61855C3.86715 4.95388 4.00825 4.29772 4.27231 3.68767C4.53638 3.07762 4.91823 2.52567 5.39598 2.06345C5.87373 1.60123 6.43798 1.23782 7.05642 0.994048C7.67486 0.750273 8.33532 0.630925 8.99997 0.642841C9.66461 0.630925 10.3251 0.750273 10.9435 0.994048C11.5619 1.23782 12.1262 1.60123 12.604 2.06345C13.0817 2.52567 13.4635 3.07762 13.7276 3.68767C13.9917 4.29772 14.1328 4.95388 14.1428 5.61855V8.99998M11.5714 15.75C12.2534 15.75 12.9074 15.4791 13.3897 14.9968C13.8719 14.5146 14.1428 13.8605 14.1428 13.1786V10.2857M11.5714 15.75C11.5714 16.1762 11.4021 16.585 11.1007 16.8864C10.7993 17.1878 10.3905 17.3571 9.96425 17.3571H8.03568C7.60944 17.3571 7.20066 17.1878 6.89926 16.8864C6.59786 16.585 6.42854 16.1762 6.42854 15.75C6.42854 15.3237 6.59786 14.915 6.89926 14.6136C7.20066 14.3122 7.60944 14.1428 8.03568 14.1428H9.96425C10.3905 14.1428 10.7993 14.3122 11.1007 14.6136C11.4021 14.915 11.5714 15.3237 11.5714 15.75ZM1.92854 7.07141H3.21425C3.38475 7.07141 3.54826 7.13914 3.66882 7.2597C3.78938 7.38026 3.85711 7.54377 3.85711 7.71427V11.5714C3.85711 11.7419 3.78938 11.9054 3.66882 12.026C3.54826 12.1465 3.38475 12.2143 3.21425 12.2143H1.92854C1.58754 12.2143 1.26052 12.0788 1.0194 11.8377C0.778281 11.5966 0.642822 11.2695 0.642822 10.9286V8.35713C0.642822 8.01613 0.778281 7.68911 1.0194 7.44799C1.26052 7.20687 1.58754 7.07141 1.92854 7.07141ZM16.0714 12.2143H14.7857C14.6152 12.2143 14.4517 12.1465 14.3311 12.026C14.2106 11.9054 14.1428 11.7419 14.1428 11.5714V7.71427C14.1428 7.54377 14.2106 7.38026 14.3311 7.2597C14.4517 7.13914 14.6152 7.07141 14.7857 7.07141H16.0714C16.4124 7.07141 16.7394 7.20687 16.9805 7.44799C17.2216 7.68911 17.3571 8.01613 17.3571 8.35713V10.9286C17.3571 11.2695 17.2216 11.5966 16.9805 11.8377C16.7394 12.0788 16.4124 12.2143 16.0714 12.2143Z"
-            stroke="white" stroke-width="1.28571" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </g>
-        <defs>
-          <clippath>
-            <rect width="18" height="18" fill="white" />
-          </clippath>
-        </defs>
-      </svg>
-    </button>
-    <script src="./assets/js/modal.js"></script>
-  </body>
-</html>
+          <div class="main__mobile-controls">
+            <button class="btn-secondary btn-secondary_transparent">
+              Отменить
+            </button>
+            <button class="btn" disabled>Сохранить</button>
+          </div>
+        </main>
+      </div>
+
+      <button class="icon-btn icon-btn_purple support-btn">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_4476_5296)">
+            <path
+              d="M3.85711 8.99998V5.61855C3.86715 4.95388 4.00825 4.29772 4.27231 3.68767C4.53638 3.07762 4.91823 2.52567 5.39598 2.06345C5.87373 1.60123 6.43798 1.23782 7.05642 0.994048C7.67486 0.750273 8.33532 0.630925 8.99997 0.642841C9.66461 0.630925 10.3251 0.750273 10.9435 0.994048C11.5619 1.23782 12.1262 1.60123 12.604 2.06345C13.0817 2.52567 13.4635 3.07762 13.7276 3.68767C13.9917 4.29772 14.1328 4.95388 14.1428 5.61855V8.99998M11.5714 15.75C12.2534 15.75 12.9074 15.4791 13.3897 14.9968C13.8719 14.5146 14.1428 13.8605 14.1428 13.1786V10.2857M11.5714 15.75C11.5714 16.1762 11.4021 16.585 11.1007 16.8864C10.7993 17.1878 10.3905 17.3571 9.96425 17.3571H8.03568C7.60944 17.3571 7.20066 17.1878 6.89926 16.8864C6.59786 16.585 6.42854 16.1762 6.42854 15.75C6.42854 15.3237 6.59786 14.915 6.89926 14.6136C7.20066 14.3122 7.60944 14.1428 8.03568 14.1428H9.96425C10.3905 14.1428 10.7993 14.3122 11.1007 14.6136C11.4021 14.915 11.5714 15.3237 11.5714 15.75ZM1.92854 7.07141H3.21425C3.38475 7.07141 3.54826 7.13914 3.66882 7.2597C3.78938 7.38026 3.85711 7.54377 3.85711 7.71427V11.5714C3.85711 11.7419 3.78938 11.9054 3.66882 12.026C3.54826 12.1465 3.38475 12.2143 3.21425 12.2143H1.92854C1.58754 12.2143 1.26052 12.0788 1.0194 11.8377C0.778281 11.5966 0.642822 11.2695 0.642822 10.9286V8.35713C0.642822 8.01613 0.778281 7.68911 1.0194 7.44799C1.26052 7.20687 1.58754 7.07141 1.92854 7.07141ZM16.0714 12.2143H14.7857C14.6152 12.2143 14.4517 12.1465 14.3311 12.026C14.2106 11.9054 14.1428 11.7419 14.1428 11.5714V7.71427C14.1428 7.54377 14.2106 7.38026 14.3311 7.2597C14.4517 7.13914 14.6152 7.07141 14.7857 7.07141H16.0714C16.4124 7.07141 16.7394 7.20687 16.9805 7.44799C17.2216 7.68911 17.3571 8.01613 17.3571 8.35713V10.9286C17.3571 11.2695 17.2216 11.5966 16.9805 11.8377C16.7394 12.0788 16.4124 12.2143 16.0714 12.2143Z"
+              stroke="white" stroke-width="1.28571" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </g>
+          <defs>
+            <clippath>
+              <rect width="18" height="18" fill="white" />
+            </clippath>
+          </defs>
+        </svg>
+      </button>
+      <script src="./assets/js/modal.js"></script>
+      <script src="./assets/js/select.js"></script>
+      <script src="./assets/js/inputs.js"></script>
+    </body>
+  </html>

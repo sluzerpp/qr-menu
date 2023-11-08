@@ -62,3 +62,26 @@ function onDateInputHandler(elem) {
     }
   }
 }
+
+const textAreas = document.querySelectorAll('.textarea');
+
+const formatLength = (length, maxLength) => `${length} / ${maxLength}`;
+
+textAreas.forEach((textarea) => {
+  const input = textarea.querySelector('textarea');
+  const lengthElem = textarea.querySelector('.textarea__length');
+
+  const length = input.value.length;
+  const maxLength = input.maxLength;
+
+  lengthElem.textContent = formatLength(length, maxLength);
+
+  input.addEventListener('input', () => {
+    const currentLength = input.value.length;
+    lengthElem.textContent = formatLength(currentLength, maxLength);
+
+    if (input.scrollHeight > textarea.clientHeight) {
+      textarea.style.height = `${input.scrollHeight}px`;
+    }
+  });
+});

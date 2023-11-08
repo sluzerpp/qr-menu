@@ -199,8 +199,8 @@ body {
 }
 .round-radio-button span {
   display: block;
-  width: 17.73px;
-  height: 17.73px;
+  width: 18px;
+  height: 18px;
   border: 1.5px solid var(--line-gray);
   border-radius: 50%;
   position: relative;
@@ -209,8 +209,8 @@ body {
 .round-radio-button span::before {
   display: block;
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -235,8 +235,8 @@ body {
     font-size: 14px;
   }
   .round-radio-button span {
-    width: 13.33px;
-    height: 13.33px;
+    width: 14px;
+    height: 14px;
   }
   .round-radio-button span::before {
     width: 6.5px;
