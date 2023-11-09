@@ -2115,6 +2115,10 @@ body.open-delete-social #delete-social {
   display: flex;
 }
 
+body.open-delete-category #delete-category {
+  display: flex;
+}
+
 @media (max-width: 1080px) {
   .modal {
     padding-left: 0;
