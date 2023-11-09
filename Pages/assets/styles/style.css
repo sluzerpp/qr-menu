@@ -491,6 +491,9 @@ body {
   bottom: 0;
   background-color: var(--button-bright-orange);
 }
+.link_outer {
+  color: var(--bg-strong-red);
+}
 
 @media (max-width: 1440px) {
   .link {
