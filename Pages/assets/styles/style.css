@@ -2516,6 +2516,9 @@ body.open-delete-social #delete-social {
   width: 100%;
   border-top: 1px solid var(--bg-gray);
 }
+.categories__item.dragging {
+  filter: grayscale(1) opacity(0.5);
+}
 .categories__item-content {
   display: flex;
   width: 100%;
