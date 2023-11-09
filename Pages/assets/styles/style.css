@@ -2524,16 +2524,6 @@ body.open-delete-social #delete-social {
   padding: 20px 0;
   position: relative;
 }
-.categories__item-content.dragover::after {
-  display: block;
-  position: absolute;
-  content: "/";
-  width: 80%;
-  left: 20%;
-  background-color: rgba(51, 51, 51, 0.1254901961);
-  bottom: 0;
-  text-align: center;
-}
 .categories__item_section > .categories__item-content {
   padding: 20px 0;
 }

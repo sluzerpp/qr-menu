@@ -443,7 +443,9 @@
               class="categories__item draggable categories__item_section"
               draggable="true" ondragstart="onDragStart(event, this)"
               ondragend="onDragEnd(event, this)">
-              <div class="categories__item-content">
+              <div class="categories__item-content"
+                ondragover="onItemDragOver(event, this)"
+                onmouseout="onItemDragEnd(event, this)">
                 <div class="categories__item-left">
                   <button class="drag-btn"></button>
                   <button class="categories__item-btn"
@@ -488,7 +490,9 @@
                 <li class="categories__item draggable" draggable="true"
                   ondragstart="onDragStart(event, this)"
                   ondragend="onDragEnd(event, this)">
-                  <div class="categories__item-content">
+                  <div class="categories__item-content"
+                    ondragover="onItemDragOver(event, this)"
+                    onmouseout="onItemDragEnd(event, this)">
                     <div class="categories__item-left">
                       <button class="drag-btn"></button>
                       <button class="categories__item-btn"
@@ -533,7 +537,9 @@
                     <li class="categories__item draggable" draggable="true"
                       ondragstart="onDragStart(event, this)"
                       ondragend="onDragEnd(event, this)">
-                      <div class="categories__item-content">
+                      <div class="categories__item-content"
+                        ondragover="onItemDragOver(event, this)"
+                        onmouseout="onItemDragEnd(event, this)">
                         <div class="categories__item-left">
                           <button class="drag-btn"></button>
                           <button class="categories__item-btn"
@@ -571,6 +577,8 @@
                           </button>
                         </div>
                       </div>
+                      <ul class="categories__item-list"
+                        ondragover="onListDragOver(event, this)"></ul>
                     </li>
 
                   </ul>
@@ -585,7 +593,9 @@
               class="categories__item draggable categories__item_section"
               draggable="true" ondragstart="onDragStart(event, this)"
               ondragend="onDragEnd(event, this)">
-              <div class="categories__item-content">
+              <div class="categories__item-content"
+                ondragover="onItemDragOver(event, this)"
+                onmouseout="onItemDragEnd(event, this)">
                 <div class="categories__item-left">
                   <button class="drag-btn"></button>
                   <button class="categories__item-btn"
@@ -630,7 +640,9 @@
                 <li class="categories__item draggable" draggable="true"
                   ondragstart="onDragStart(event, this)"
                   ondragend="onDragEnd(event, this)">
-                  <div class="categories__item-content">
+                  <div class="categories__item-content"
+                    ondragover="onItemDragOver(event, this)"
+                    onmouseout="onItemDragEnd(event, this)">
                     <div class="categories__item-left">
                       <button class="drag-btn"></button>
                       <button class="categories__item-btn"
@@ -675,7 +687,9 @@
                     <li class="categories__item draggable" draggable="true"
                       ondragstart="onDragStart(event, this)"
                       ondragend="onDragEnd(event, this)">
-                      <div class="categories__item-content">
+                      <div class="categories__item-content"
+                        ondragover="onItemDragOver(event, this)"
+                        onmouseout="onItemDragEnd(event, this)">
                         <div class="categories__item-left">
                           <button class="drag-btn"></button>
                           <button class="categories__item-btn"
@@ -713,49 +727,8 @@
                           </button>
                         </div>
                       </div>
-                    </li>
-
-                    <li class="categories__item draggable" draggable="true"
-                      ondragstart="onDragStart(event, this)"
-                      ondragend="onDragEnd(event, this)">
-                      <div class="categories__item-content">
-                        <div class="categories__item-left">
-                          <button class="drag-btn"></button>
-                          <button class="categories__item-btn"
-                            onclick="onCategoryDropdownClick(this)">
-                            <span class="categories__item-arrow">
-                            </span>
-                            Подкатегория 3
-                          </button>
-                          <span class="categories__item-count">
-                            (215)
-                          </span>
-                        </div>
-                        <div class="categories__item-right">
-                          <button class="small-btn">
-                            <svg viewBox="0 0 12 12" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.53 1.79543L10.205 2.47043C10.6 2.86043 10.6 3.49543 10.205 3.88543L3.59 10.5004H1.5V8.41043L6.7 3.20543L8.115 1.79543C8.505 1.40543 9.14 1.40543 9.53 1.79543ZM2.5 9.50043L3.205 9.53043L8.115 4.61543L7.41 3.91043L2.5 8.82043V9.50043Z"
-                                fill="#D4492A" />
-                            </svg>
-                          </button>
-                          <button class="small-btn">
-                            <svg viewBox="0 0 12 12" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M4.49902 5V9C4.49902 9.2761 4.72288 9.5 4.99902 9.5C5.27516 9.5 5.49902 9.2761 5.49902 9V5C5.49902 4.72386 5.27516 4.5 4.99902 4.5C4.72288 4.5 4.49902 4.72386 4.49902 5Z"
-                                fill="#D4492A" />
-                              <path
-                                d="M7 4.5C7.27614 4.5 7.5 4.72386 7.5 5V9C7.5 9.2761 7.27614 9.5 7 9.5C6.72386 9.5 6.5 9.2761 6.5 9V5C6.5 4.72386 6.72386 4.5 7 4.5Z"
-                                fill="#D4492A" />
-                              <path
-                                d="M8 2H11C11.2761 2 11.5 2.22386 11.5 2.5C11.5 2.77614 11.2761 3 11 3H10.4475L9.6946 9.7761C9.5539 11.0422 8.4838 12 7.20991 12H4.79008C3.51621 12 2.44605 11.0422 2.30537 9.7761L1.55247 3H1C0.72386 3 0.5 2.77614 0.5 2.5C0.5 2.22386 0.72386 2 1 2H4C4 0.89543 4.89543 0 6 0C7.10457 0 8 0.89543 8 2ZM6 1C5.44772 1 5 1.44772 5 2H7C7 1.44772 6.55229 1 6 1ZM2.55863 3L3.29925 9.6656C3.38366 10.4253 4.02575 11 4.79008 11H7.20991C7.97423 11 8.6163 10.4253 8.7007 9.6656L9.4414 3H2.55863Z"
-                                fill="#D4492A" />
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
+                      <ul class="categories__item-list"
+                        ondragover="onListDragOver(event, this)"></ul>
                     </li>
 
                   </ul>
