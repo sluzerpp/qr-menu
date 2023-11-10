@@ -314,6 +314,7 @@ body {
 .input-wrapper > div {
   display: flex;
   gap: 4px;
+  width: 100%;
 }
 .input-wrapper__header {
   display: flex;
