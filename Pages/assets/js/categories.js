@@ -1,4 +1,5 @@
-function onCategoryDropdownClick(elem) {
+function onCategoryDropdownClick(e, elem) {
+  e.stopPropagation();
   const item = elem.closest('.categories__item:has(.categories__item-content:not(:empty))');
   if (item === elem.parentElement.parentElement.parentElement) {
     item.classList.toggle('open');
