@@ -48,7 +48,7 @@ function onSelectOptionClick(elem) {
   if (!valueElem) return;
   const selectElem = target.parentElement.parentElement;
   if (!selectElem) return;
-  if (selectElem.classList.contains('custom-select_number')) {
+  if (selectElem.classList.contains('custom-select_number') || selectElem.classList.contains('custom-select_with-img')) {
     content = target.innerHTML;
   }
   selectElem.dataset.currentValue = value;

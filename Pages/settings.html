@@ -424,7 +424,7 @@
     <div class="content">
       <main class="main">
         <div class="main__wrapper">
-          <div class="main__frame">
+          <div class="main__frame settings">
 
             <div class="main__header">
               <h3 class="main__title">
@@ -443,10 +443,12 @@
               <div class="main__group-content main__group-content_two-columns">
                 <div class="input-wrapper">
                   <span>Язык <span>*</span></span>
-                  <div class="custom-select" data-current-value="google">
+                  <div class="custom-select custom-select_with-img"
+                    data-current-value="google">
                     <button class="custom-select__btn"
                       onclick="onSelectOpenBtnClick(this)">
                       <span class="custom-select__value">
+                        <img src="./assets/imgs/google.svg" alt="icon">
                         Google
                       </span>
                       <span class="custom-select__arrow">
@@ -478,11 +480,11 @@
                 </div>
                 <div class="input-wrapper">
                   <span>Валюта <span>*</span></span>
-                  <div class="custom-select" data-current-value="google">
+                  <div class="custom-select" data-current-value="usd">
                     <button class="custom-select__btn"
                       onclick="onSelectOpenBtnClick(this)">
                       <span class="custom-select__value">
-                        Google
+                        USD - US Dollar
                       </span>
                       <span class="custom-select__arrow">
                         <svg width="18" height="18" viewBox="0 0 18 18"
@@ -495,17 +497,45 @@
                       </span>
                     </button>
                     <div class="custom-select__options">
-                      <button data-value="google"
+                      <button data-value="usd"
                         onclick="onSelectOptionClick(this)"
                         class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
+                        USD - US Dollar
                       </button>
-                      <button data-value="facebook"
+                      <button data-value="eur"
                         onclick="onSelectOptionClick(this)"
                         class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
+                        EUR - Euro
+                      </button>
+                      <button data-value="chf"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        CHF - Swiss franc
+                      </button>
+                      <button data-value="gbp"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        GBP - Pound Sterling
+                      </button>
+                      <button data-value="pln"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        PLN - Polish zloty
+                      </button>
+                      <button data-value="uah"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        UAH - Ukrainian hryvnia
+                      </button>
+                      <button data-value="rub"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        RUB - Russian ruble
+                      </button>
+                      <button data-value="try"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        TRY - Turkish Lira
                       </button>
                     </div>
                   </div>
@@ -519,11 +549,11 @@
               <div class="main__group-content main__group-content_two-columns">
                 <div class="input-wrapper">
                   <span>Формат даты:</span>
-                  <div class="custom-select" data-current-value="google">
+                  <div class="custom-select" data-current-value="dd.mm.yyyy">
                     <button class="custom-select__btn"
                       onclick="onSelectOpenBtnClick(this)">
                       <span class="custom-select__value">
-                        Google
+                        ДД.ММ.ГГГГ
                       </span>
                       <span class="custom-select__arrow">
                         <svg width="18" height="18" viewBox="0 0 18 18"
@@ -536,17 +566,20 @@
                       </span>
                     </button>
                     <div class="custom-select__options">
-                      <button data-value="google"
+                      <button data-value="dd.mm.yyyy"
                         onclick="onSelectOptionClick(this)"
                         class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
+                        ДД.ММ.ГГГГ
                       </button>
-                      <button data-value="facebook"
+                      <button data-value="mm.dd.yyyy"
                         onclick="onSelectOptionClick(this)"
                         class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
+                        ММ.ДД.ГГГГ
+                      </button>
+                      <button data-value="yyyy.mm.dd"
+                        onclick="onSelectOptionClick(this)"
+                        class="custom-select__option">
+                        ГГГГ.ММ.ДД
                       </button>
                     </div>
                   </div>
@@ -554,11 +587,11 @@
                 </div>
                 <div class="input-wrapper">
                   <span>Первый день недели:</span>
-                  <div class="custom-select" data-current-value="google">
+                  <div class="custom-select" data-current-value="monday">
                     <button class="custom-select__btn"
                       onclick="onSelectOpenBtnClick(this)">
                       <span class="custom-select__value">
-                        Google
+                        Понедельник
                       </span>
                       <span class="custom-select__arrow">
                         <svg width="18" height="18" viewBox="0 0 18 18"
@@ -571,17 +604,15 @@
                       </span>
                     </button>
                     <div class="custom-select__options">
-                      <button data-value="google"
+                      <button data-value="monday"
                         onclick="onSelectOptionClick(this)"
                         class="custom-select__option">
-                        <img src="./assets/imgs/google.svg" alt="icon">
-                        Google
+                        Понедельник
                       </button>
-                      <button data-value="facebook"
+                      <button data-value="sunday"
                         onclick="onSelectOptionClick(this)"
                         class="custom-select__option">
-                        <img src="./assets/imgs/facebook.svg" alt="icon">
-                        Facebook
+                        Воскресенье
                       </button>
                     </div>
                   </div>
