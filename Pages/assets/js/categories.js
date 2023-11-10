@@ -8,7 +8,9 @@ function onCategoryDropdownClick(e, elem) {
 
 function onDragStart(e, elem) {
   e.stopPropagation();
-  elem.classList.add('dragging');
+  if (window.innerWidth > 1080 || e.target.classList.contains('drag-btn')) {
+    elem.classList.add('dragging');
+  }
 }
 
 function onDragEnd(e, elem) {
