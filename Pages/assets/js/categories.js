@@ -9,7 +9,6 @@ function onCategoryDropdownClick(e, elem) {
 function onDragStart(e, elem) {
   e.stopPropagation();
   elem.classList.add('dragging');
-  elem.classList.remove('open');
 }
 
 function onDragEnd(e, elem) {
