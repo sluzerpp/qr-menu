@@ -1,11 +1,22 @@
-// // onTimeInputHandler
+const rows = document.querySelectorAll('.time-table__row');
 
-// const days = []
+rows.forEach((row) => {
+  const checkbox = row.querySelector('input[type="checkbox"]');
 
-// function onStartTimeInputHandler() {
-//   onTimeInputHandler(elem);
-//   const target = event.target;
-//   const value = Number(target.value);
-//   const endTimeInput = target.closest('')
-//   if (value)
-// }
+  const inputs = row.querySelectorAll('.time-input');
+
+  if (checkbox.checked) {
+    inputs.forEach((input) => input.disabled = null);
+  } else {
+    inputs.forEach((input) => input.disabled = true);
+  }
+
+  checkbox.addEventListener('change', () => {
+    const inputs = row.querySelectorAll('.time-input');
+    if (checkbox.checked) {
+      inputs.forEach((input) => input.disabled = null);
+    } else {
+      inputs.forEach((input) => input.disabled = true);
+    }
+  });
+});
