@@ -7,8 +7,8 @@ function onCategoryDropdownClick(e, elem) {
 }
 
 function onDragStart(e, elem) {
-  e.stopPropagation();
   if (window.innerWidth > 1080 || e.target.classList.contains('drag-btn')) {
+    e.stopPropagation();
     elem.classList.add('dragging');
   }
 }
@@ -19,8 +19,10 @@ function onDragEnd(e, elem) {
 }
 
 function onListDragOver(e, list) {
-  e.preventDefault();
   const draggable = document.querySelector('.dragging');
+  if (draggable) {
+    e.preventDefault();
+  }
   if (![...list.childNodes].includes(draggable)) return;
   e.stopPropagation();
   const afterElement = getDragAfterElement(draggable, e.clientY || e.touches[0].clientY);
