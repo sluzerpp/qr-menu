@@ -10,6 +10,7 @@ function onDragStart(e, elem) {
   if (window.innerWidth > 1080 || e.target.classList.contains('drag-btn')) {
     e.stopPropagation();
     elem.classList.add('dragging');
+    elem.classList.remove('open');
   }
 }
 
@@ -35,6 +36,8 @@ function onListDragOver(e, list) {
 
 function getDragAfterElement(draggable, y) {
   const draggableElements = [...draggable.parentElement.querySelectorAll('.draggable:not(.dragging)')]
+
+  draggableElements.forEach((elem) => elem.classList.remove('open'));
 
   return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect()

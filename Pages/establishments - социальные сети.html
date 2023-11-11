@@ -455,11 +455,11 @@
                 <div class="main__group">
                   <div class="main__group-content"
                     ondragover="onListDragOver(event, this)"
-                    ontouchmove="onListTouchMove(event, this)">
+                    ontouchmove="onListDragOver(event, this)">
 
-                    <div draggable="true" ondragstart="onDragStart(this)"
+                    <div draggable="true" ondragstart="onDragStart(event, this)"
                       ondragend="onDragEnd(this)"
-                      ontouchstart="onDragStart(this)"
+                      ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
@@ -481,9 +481,9 @@
                       </div>
                     </div>
 
-                    <div draggable="true" ondragstart="onDragStart(this)"
+                    <div draggable="true" ondragstart="onDragStart(event, this)"
                       ondragend="onDragEnd(this)"
-                      ontouchstart="onDragStart(this)"
+                      ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
@@ -504,9 +504,9 @@
                       </div>
                     </div>
 
-                    <div draggable="true" ondragstart="onDragStart(this)"
+                    <div draggable="true" ondragstart="onDragStart(event, this)"
                       ondragend="onDragEnd(this)"
-                      ontouchstart="onDragStart(this)"
+                      ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
@@ -527,9 +527,9 @@
                       </div>
                     </div>
 
-                    <div draggable="true" ondragstart="onDragStart(this)"
+                    <div draggable="true" ondragstart="onDragStart(event, this)"
                       ondragend="onDragEnd(this)"
-                      ontouchstart="onDragStart(this)"
+                      ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
