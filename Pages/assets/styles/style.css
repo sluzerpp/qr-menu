@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 @font-face {
   font-family: "Days One";
@@ -1021,6 +1022,25 @@ body {
 }
 .main__header-controls > * {
   width: 180px;
+}
+.main__header-group {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 8px;
+}
+.main__count {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.main__count svg {
+  width: 18px;
+  height: 18px;
 }
 .main__title {
   font-size: 20px;
@@ -2132,6 +2152,10 @@ body.open-delete-category #delete-category {
   display: flex;
 }
 
+body.open-delete-option #delete-option {
+  display: flex;
+}
+
 @media (max-width: 1080px) {
   .modal {
     padding-left: 0;
@@ -2650,6 +2674,10 @@ body.open-delete-category #delete-category {
 }
 .hierarchy-list__item-right {
   display: flex;
+  gap: 16px;
+}
+.hierarchy-list__item-icons {
+  display: flex;
   gap: 8px;
 }
 .hierarchy-list__item-arrow {
@@ -2702,6 +2730,7 @@ body.open-delete-category #delete-category {
 }
 .hierarchy-list__item:has(.hierarchy-list__item).open > .hierarchy-list__item-list {
   display: flex;
+  overflow: visible;
 }
 .hierarchy-list__item:has(.hierarchy-list__item).open > .hierarchy-list__item-content .hierarchy-list__item-arrow {
   rotate: 0deg;
@@ -2744,5 +2773,63 @@ body.open-delete-category #delete-category {
 @media (max-width: 560px) {
   .hierarchy-list__item-list {
     margin-left: 8px;
+  }
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.icon::after {
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 5;
+  content: "Текст";
+  display: none;
+  padding: 8px 20px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  font-family: var(--montserrat);
+  color: var(--text-black);
+  position: absolute;
+  right: 50%;
+  top: calc(100% - 4px);
+  background-color: var(--bg-white);
+  border-radius: 4px;
+  border: 1px solid var(--bg-bright-gray);
+  box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.03);
+}
+.icon:hover::after {
+  display: block;
+}
+.icon_exclamation {
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="%23ED9139"/><path d="M12 18.8466C11.725 18.8466 11.4896 18.7487 11.2938 18.5529C11.0979 18.357 11 18.1216 11 17.8466C11 17.5716 11.0979 17.3362 11.2938 17.1403C11.4896 16.9445 11.725 16.8466 12 16.8466C12.275 16.8466 12.5104 16.9445 12.7063 17.1403C12.9021 17.3362 13 17.5716 13 17.8466C13 18.1216 12.9021 18.357 12.7063 18.5529C12.5104 18.7487 12.275 18.8466 12 18.8466ZM11.9969 15.0389C11.7951 15.0389 11.6234 14.9673 11.4817 14.8242C11.3401 14.6811 11.2692 14.5091 11.2692 14.3081V4.88507C11.2692 4.68411 11.3411 4.51206 11.4848 4.36895C11.6285 4.22585 11.8013 4.1543 12.0031 4.1543C12.2049 4.1543 12.3766 4.22585 12.5183 4.36895C12.6599 4.51206 12.7308 4.68411 12.7308 4.88507V14.3081C12.7308 14.5091 12.6589 14.6811 12.5152 14.8242C12.3715 14.9673 12.1987 15.0389 11.9969 15.0389Z" fill="white"/></svg>');
+}
+.icon_exclamation::after {
+  content: "Обязательная группа";
+}
+.icon_variety {
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="%23ED9139"/><path fill-rule="evenodd" clip-rule="evenodd" d="M14.8242 16.267C17.1113 16.267 18.9654 14.3567 18.9654 12.0003C18.9654 9.64391 17.1113 7.73366 14.8242 7.73366C12.5371 7.73366 10.683 9.64391 10.683 12.0003C10.683 14.3567 12.5371 16.267 14.8242 16.267ZM14.8242 17.3337C17.6831 17.3337 20.0006 14.9458 20.0006 12.0003C20.0006 9.05481 17.6831 6.66699 14.8242 6.66699C11.9653 6.66699 9.64771 9.05481 9.64771 12.0003C9.64771 14.9458 11.9653 17.3337 14.8242 17.3337Z" fill="white"/><path d="M15.6869 12.0003C15.6869 14.9458 13.3693 17.3337 10.5105 17.3337C7.65157 17.3337 5.33398 14.9458 5.33398 12.0003C5.33398 9.05481 7.65157 6.66699 10.5105 6.66699C13.3693 6.66699 15.6869 9.05481 15.6869 12.0003Z" fill="white"/></svg>');
+}
+.icon_variety::after {
+  content: "Можно выбрать несколько вариантов";
+}
+.icon_money {
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="%23ED9139"/><path d="M11.9865 20.5C11.8442 20.5 11.7253 20.4522 11.6298 20.3567C11.5343 20.2612 11.4865 20.1423 11.4865 20V18.4654C10.6981 18.3628 10.0173 18.1096 9.4442 17.7058C8.87114 17.3019 8.41601 16.7442 8.07883 16.0327C8.02626 15.9148 8.0285 15.7875 8.08555 15.651C8.1426 15.5144 8.23587 15.4199 8.36535 15.3673C8.4833 15.3186 8.60959 15.3196 8.7442 15.3702C8.87882 15.4208 8.97434 15.5071 9.03075 15.6289C9.3269 16.2314 9.71408 16.6939 10.1923 17.0164C10.6705 17.3388 11.2968 17.5 12.0711 17.5C12.8314 17.5 13.5259 17.3106 14.1548 16.9317C14.7836 16.5529 15.0981 15.9423 15.0981 15.1C15.0981 14.3885 14.8666 13.817 14.4038 13.3856C13.941 12.9542 13.075 12.5346 11.8058 12.1269C10.5134 11.7154 9.60382 11.2452 9.0769 10.7164C8.54997 10.1875 8.2865 9.49872 8.2865 8.65C8.2865 7.72052 8.64292 6.97821 9.35575 6.42307C10.0686 5.86794 10.7788 5.56794 11.4865 5.52307V4C11.4865 3.85768 11.5343 3.73878 11.6298 3.64328C11.7253 3.54776 11.8442 3.5 11.9865 3.5C12.1288 3.5 12.2477 3.54776 12.3433 3.64328C12.4388 3.73878 12.4865 3.85768 12.4865 4V5.52307C13.0814 5.58461 13.609 5.73749 14.0692 5.98172C14.5295 6.22596 14.9224 6.57307 15.2481 7.02307C15.3211 7.13717 15.3407 7.25705 15.3067 7.3827C15.2727 7.50833 15.191 7.60384 15.0615 7.66922C14.9436 7.73077 14.8205 7.74456 14.6923 7.71057C14.5641 7.67661 14.4493 7.60065 14.3481 7.4827C14.0929 7.17243 13.7811 6.92275 13.4125 6.73365C13.0439 6.54455 12.5852 6.45 12.0365 6.45C11.2647 6.45 10.6134 6.65417 10.0827 7.0625C9.55191 7.47083 9.28653 8 9.28653 8.65C9.28653 9.2641 9.50448 9.76153 9.94038 10.1423C10.3763 10.5231 11.2493 10.9205 12.5596 11.3346C13.7737 11.7192 14.667 12.2131 15.2394 12.8164C15.8118 13.4196 16.0981 14.1769 16.0981 15.0885C16.0981 16.0923 15.7449 16.8897 15.0385 17.4808C14.332 18.0718 13.4814 18.4038 12.4865 18.4769V20C12.4865 20.1423 12.4388 20.2612 12.3433 20.3567C12.2477 20.4522 12.1288 20.5 11.9865 20.5Z" fill="white"/></svg>');
+}
+.icon_money::after {
+  content: "Влияет на цену";
+}
+
+@media (max-width: 560px) {
+  .icon::after {
+    max-width: 200px;
+    white-space: wrap;
   }
 }
