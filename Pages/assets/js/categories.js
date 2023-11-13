@@ -17,39 +17,16 @@ function onDragStart(e, elem) {
 function onDragEnd(e, elem) {
   e.stopPropagation();
   elem.classList.remove('dragging');
-  const dragovers = document.querySelectorAll('.dragover');
-  dragovers.forEach((dragover) => dragover.classList.remove('dragover'));
-}
-
-function onItemDragOver(e, elem) {
-  e.preventDefault();
-  const draggable = document.querySelector('.dragging');
-  const list = elem.parentElement.querySelector('.categories__item-list');
-  const draggableStyles = window.getComputedStyle(draggable.parentElement);
-  const leftMargin = parseInt(draggableStyles.marginLeft);
-  const offsetWithoutMargin = draggable.offsetLeft - leftMargin;
-  if (!list || (list.offsetLeft !== draggable.offsetLeft && offsetWithoutMargin !== elem.offsetLeft)) return;
-  if (!elem.parentElement.classList.contains('open')) {
-    elem.parentElement.classList.add('open');
-  }
-  if (list.children.length > 0) return;
-  elem.classList.add('dragover');
-  const box = elem.getBoundingClientRect();
-  const offset = box.left + box.width / 5;
-  if ((e.clientX || e.touches[0].clientX) >= offset) {
-    e.stopPropagation();
-    if (draggable.contains(list)) return;
-    list.appendChild(draggable);
-  }
 }
 
 function onListDragOver(e, list) {
   const draggable = document.querySelector('.dragging');
+  if (!draggable) return;
   if (draggable) {
     e.preventDefault();
   }
-  if (![...list.childNodes].includes(draggable) && list.offsetLeft !== draggable.offsetLeft) return;
   e.stopPropagation();
+  if (![...list.childNodes].includes(draggable)) return;
   const afterElement = getDragAfterElement(list, e.clientY || e.touches[0].clientY);
   if (afterElement == null) {
     list.appendChild(draggable)
@@ -73,3 +50,23 @@ function getDragAfterElement(list, y) {
     }
   }, { offset: Number.NEGATIVE_INFINITY }).element
 }
+
+function toggleControlsDropdown(elem) {
+  elem.parentElement.classList.toggle('open');
+}
+
+const categoriesContentElem = document.querySelector('.categories__content');
+
+document.addEventListener('click', (e) => {
+  const target = e.target;
+  const dropdowns = categoriesContentElem.querySelectorAll('.categories__item-dropdown.open');
+  dropdowns.forEach((dropdown) => {
+    if (!target.classList.contains('more-btn') && !dropdown.contains(target)) {
+      dropdown.classList.remove('open')
+    }
+  });
+  const closestDropdown = e.target.closest('.categories__item-dropdown');
+  if (!target.classList.contains('more-btn') && closestDropdown && closestDropdown.contains(target)) {
+    closestDropdown.classList.add('open');
+  }
+});
