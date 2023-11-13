@@ -61,7 +61,7 @@ document.addEventListener('click', (e) => {
   const target = e.target;
   const dropdowns = categoriesContentElem.querySelectorAll('.categories__item-dropdown.open');
   dropdowns.forEach((dropdown) => {
-    if (!target.classList.contains('more-btn') && !dropdown.contains(target)) {
+    if (!(target.classList.contains('more-btn') && dropdown.contains(target))) {
       dropdown.classList.remove('open')
     }
   });
