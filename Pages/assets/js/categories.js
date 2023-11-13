@@ -17,6 +17,30 @@ function onDragStart(e, elem) {
 function onDragEnd(e, elem) {
   e.stopPropagation();
   elem.classList.remove('dragging');
+  const dragovers = document.querySelectorAll('.dragover');
+  dragovers.forEach((dragover) => dragover.classList.remove('dragover'));
+}
+
+function onItemDragOver(e, elem) {
+  e.preventDefault();
+  const draggable = document.querySelector('.dragging');
+  const list = elem.parentElement.querySelector('.categories__item-list');
+  const draggableStyles = window.getComputedStyle(draggable.parentElement);
+  const leftMargin = parseInt(draggableStyles.marginLeft);
+  const offsetWithoutMargin = draggable.offsetLeft - leftMargin;
+  if (!list || (list.offsetLeft !== draggable.offsetLeft && offsetWithoutMargin !== elem.offsetLeft)) return;
+  if (!elem.parentElement.classList.contains('open')) {
+    elem.parentElement.classList.add('open');
+  }
+  if (list.children.length > 0) return;
+  elem.classList.add('dragover');
+  const box = elem.getBoundingClientRect();
+  const offset = box.left + box.width / 5;
+  if ((e.clientX || e.touches[0].clientX) >= offset) {
+    e.stopPropagation();
+    if (draggable.contains(list)) return;
+    list.appendChild(draggable);
+  }
 }
 
 function onListDragOver(e, list) {
@@ -24,9 +48,9 @@ function onListDragOver(e, list) {
   if (draggable) {
     e.preventDefault();
   }
-  if (![...list.childNodes].includes(draggable)) return;
+  if (![...list.childNodes].includes(draggable) && list.offsetLeft !== draggable.offsetLeft) return;
   e.stopPropagation();
-  const afterElement = getDragAfterElement(draggable, e.clientY || e.touches[0].clientY);
+  const afterElement = getDragAfterElement(list, e.clientY || e.touches[0].clientY);
   if (afterElement == null) {
     list.appendChild(draggable)
   } else {
@@ -34,8 +58,8 @@ function onListDragOver(e, list) {
   }
 }
 
-function getDragAfterElement(draggable, y) {
-  const draggableElements = [...draggable.parentElement.querySelectorAll('.draggable:not(.dragging)')]
+function getDragAfterElement(list, y) {
+  const draggableElements = [...list.querySelectorAll('.draggable:not(.dragging)')]
 
   draggableElements.forEach((elem) => elem.classList.remove('open'));
 
