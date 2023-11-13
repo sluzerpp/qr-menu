@@ -1,6 +1,6 @@
-function onCategoryDropdownClick(e, elem) {
+function onHierarchyDropdownClick(e, elem) {
   e.stopPropagation();
-  const item = elem.closest('.categories__item:has(.categories__item-content:not(:empty))');
+  const item = elem.closest('.hierarchy-list__item:has(.hierarchy-list__item-content:not(:empty))');
   if (item === elem.parentElement.parentElement.parentElement) {
     item.classList.toggle('open');
   }
@@ -55,17 +55,17 @@ function toggleControlsDropdown(elem) {
   elem.parentElement.classList.toggle('open');
 }
 
-const categoriesContentElem = document.querySelector('.categories__content');
+const hierarchylistContentElem = document.querySelector('.hierarchy-list__content');
 
 document.addEventListener('click', (e) => {
   const target = e.target;
-  const dropdowns = categoriesContentElem.querySelectorAll('.categories__item-dropdown.open');
+  const dropdowns = hierarchylistContentElem.querySelectorAll('.hierarchy-list__item-dropdown.open');
   dropdowns.forEach((dropdown) => {
     if (!(target.classList.contains('more-btn') && dropdown.contains(target))) {
       dropdown.classList.remove('open')
     }
   });
-  const closestDropdown = e.target.closest('.categories__item-dropdown');
+  const closestDropdown = e.target.closest('.hierarchy-list__item-dropdown');
   if (!target.classList.contains('more-btn') && closestDropdown && closestDropdown.contains(target)) {
     closestDropdown.classList.add('open');
   }
