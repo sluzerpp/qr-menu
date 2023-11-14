@@ -24,12 +24,17 @@ function toggleMobileMenu() {
 
 function onTipBtnClick(elem) {
   const tutorialItemsElem = document.querySelector('.tutorial__items');
+  if (!tutorialItemsElem) {
+    return;
+  }
   const ids = elem.dataset.path.split('.');
   const elems = ids.map((id) => {
     return document.getElementById(id);
   });
   for (let elem of elems) {
-    elem.classList.add('open');
+    if (elem) {
+      elem.classList.add('open');
+    }
   }
   const lastElem = elems[elems.length - 1];
   document.body.classList.add('open-tutorial');

@@ -71,6 +71,8 @@ textAreas.forEach((textarea) => {
   const input = textarea.querySelector('textarea');
   const lengthElem = textarea.querySelector('.textarea__length');
 
+  const initHeight = input.getBoundingClientRect().height;
+
   const length = input.value.length;
   const maxLength = input.maxLength;
 
@@ -79,6 +81,11 @@ textAreas.forEach((textarea) => {
   input.addEventListener('input', () => {
     const currentLength = input.value.length;
     lengthElem.textContent = formatLength(currentLength, maxLength);
+
+    if (currentLength === 0) {
+      textarea.style.height = `${initHeight}px`;
+      return;
+    }
 
     if (input.scrollHeight > textarea.clientHeight) {
       textarea.style.height = `${input.scrollHeight}px`;

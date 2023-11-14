@@ -63,3 +63,35 @@ function onHierarchySelectClick(event) {
 function openSelectDropdown(elem) {
   elem.closest('.select-hierarchy__option_with-list').classList.toggle('open');
 }
+
+function onHierarchyMultiplySelectClick(event) {
+  event.preventDefault();
+  const text = event.target.parentElement.textContent;
+  const value = event.target.value;
+  const select = event.currentTarget.parentElement;
+  const valueElem = select.querySelector('.select-hierarchy__value');
+  let textsArray = [];
+  if (!valueElem.textContent.includes('Не выбрано')) {
+    textsArray = valueElem.textContent.split(', ');
+  }
+  let valuesArray = [];
+  if (select.dataset.currentValue) {
+    valuesArray = select.dataset.currentValue.split(', ');
+  }
+  if (event.target.checked) {
+    valuesArray.push(value);
+    textsArray.push(text);
+  } else {
+    valuesArray = valuesArray.filter((val) => val !== value);
+    textsArray = textsArray.filter((val) => val !== text);
+  }
+  
+  if (valuesArray.length > 0) {
+    select.dataset.currentValue = valuesArray.join(', ');
+    valueElem.textContent = textsArray.join(', ');
+  } else {
+    select.dataset.currentValue = '';
+    valueElem.textContent = 'Не выбрано';
+  }
+  
+}
