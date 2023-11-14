@@ -88,6 +88,15 @@ body {
   background: var(--bg-gray);
 }
 
+.error-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  color: var(--Error, #F84147);
+  font-family: var(--montserrat);
+}
+
 @media (max-width: 1080px) {
   .content {
     padding-left: 30px;

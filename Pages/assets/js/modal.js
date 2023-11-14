@@ -35,3 +35,11 @@ function onTipBtnClick(elem) {
   document.body.classList.add('open-tutorial');
   tutorialItemsElem.scrollTo(0, lastElem.offsetTop)
 } 
+
+function toggleBodyClass(className, constraint = null, event = null) {
+  if (constraint && event && event.target === constraint) {
+    document.body.classList.toggle(className);
+  } else {
+    document.body.classList.toggle(className);
+  }
+}
