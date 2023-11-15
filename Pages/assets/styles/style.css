@@ -2206,6 +2206,9 @@ body {
     flex-direction: column;
     gap: 8px;
   }
+  .main__list-item-times {
+    gap: 6px;
+  }
   .main:has(.main__empty) {
     height: calc(100dvh - var(--header-height) - 16px);
   }
@@ -3000,6 +3003,28 @@ body.open-add-group #add-group {
 }
 .varients__item-switch {
   padding-left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.varients__item-switch .switch[data-varient=price] {
+  display: none;
+}
+.varients__item-switch:has(input[data-varient=switch]:checked) .switch[data-varient=price] {
+  display: flex;
+}
+.varients__item .input-wrapper__group div[data-varient=select] {
+  display: none;
+}
+.varients__item:has(input[data-varient=switch]:checked) .input-wrapper__group div[data-varient=select] {
+  display: flex;
+}
+.varients__item:has(input[data-varient=switch]:checked) .input-wrapper__group input[data-varient=text] {
+  display: none;
+}
+.varients-add {
+  width: -moz-max-content;
+  width: max-content;
 }
 
 @media (max-width: 560px) {
