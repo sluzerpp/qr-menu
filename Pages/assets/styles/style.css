@@ -577,6 +577,10 @@ body {
   border: 1px solid transparent;
   background-color: var(--bg-white);
 }
+.text-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .text-input_grey {
   background-color: var(--bg-bright-gray);
 }
@@ -1032,6 +1036,20 @@ body {
     padding-left: 8px;
   }
 }
+.badge {
+  border-radius: 4px;
+  background-color: var(--bg-bright-gray);
+  padding: 4px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--montserrat);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 15px */
+}
+
 .input-wrapper {
   display: grid;
   align-items: flex-start;
@@ -1044,6 +1062,22 @@ body {
   gap: 4px;
   width: 100%;
   align-items: center;
+}
+.input-wrapper__group_with-badge {
+  background-color: var(--bg-white);
+  padding-right: 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  height: 50px;
+}
+.input-wrapper__group_with-badge input {
+  height: 48px;
+}
+.input-wrapper__group_with-badge input:focus {
+  border-color: transparent;
+}
+.input-wrapper__group_with-badge:has(input:focus-visible) {
+  border: 1px solid var(--bg-bright-orange);
 }
 .input-wrapper__header {
   display: flex;
@@ -2993,6 +3027,32 @@ body.open-add-group #add-group {
   flex-direction: column;
   gap: 24px;
 }
+.varients__price {
+  max-width: 110px;
+  display: none;
+}
+.varients__header {
+  position: relative;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+.varients .trash-btn {
+  margin-top: 32px;
+}
+.varients__group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 492px;
+}
+.varients:has(input[data-varient=switch]:checked) .varients__price {
+  display: grid;
+}
+.varients:has(input[data-varient=switch]:checked) .varients__group {
+  width: 100%;
+  max-width: 618px;
+}
 .varients__item {
   display: flex;
   flex-direction: column;
@@ -3028,15 +3088,36 @@ body.open-add-group #add-group {
 }
 
 @media (max-width: 560px) {
+  .varients__group {
+    flex-direction: column;
+  }
+  .varients__price {
+    width: 100%;
+    max-width: 100%;
+  }
   .varients__item {
     position: relative;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--bg-gray);
+  }
+  .varients__item-switch {
+    padding-left: 0;
   }
   .varients__item-switch .switch {
     flex-direction: column;
     align-items: flex-start;
   }
+  .varients__item .input-wrapper > span {
+    display: flex;
+    padding-left: 23px;
+  }
+  .varients__item .drag-btn {
+    position: absolute;
+    top: 3px;
+  }
   .varients__item .trash-btn {
     position: absolute;
+    margin-top: 0;
     top: 0;
     right: 0;
   }
