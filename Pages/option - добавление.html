@@ -621,6 +621,7 @@
                       <div
                         class="input-wrapper__group input-wrapper__group_with-badge">
                         <input type="number" name="product-price"
+                          readonly value="0.6"
                           id="varient1-price"
                           class="text-input">
                         <div class="badge">
@@ -631,7 +632,8 @@
                   </div>
                   <button class="trash-btn"></button>
                 </div>
-                <div class="varients__item-switch main__width-492px">
+                <div class="varients__item-switch main__width-492px"
+                  onclick="onSwitchesChange(event, this)">
                   <div
                     class="switch switch_small switch_transparent ">
                     <p class="switch__text">
@@ -658,10 +660,10 @@
                         tip
                       </button>
                     </p>
-                    <label for="varient1-price"
+                    <label for="varient1-price-switch"
                       class="radio-button radio-button_large">
-                      <input type="checkbox"
-                        name="varient1-price" id="varient1-price">
+                      <input type="checkbox" data-varient="product-price"
+                        name="varient1-price-switch" id="varient1-price-switch">
                       <span></span>
                     </label>
                   </div>
@@ -743,7 +745,7 @@
                         </div>
                         <input type="text" data-varient="text"
                           name="varient2-product"
-                          id="varient2-product"
+                          id="varient2-product" readonly
                           class="text-input main__width-492px">
 
                       </div>
@@ -752,7 +754,8 @@
                       <span>Цена</span>
                       <div
                         class="input-wrapper__group input-wrapper__group_with-badge">
-                        <input type="number" name="product-price"
+                        <input type="text" readonly
+                          name="product-price" value="0.6"
                           id="varient2-price"
                           class="text-input">
                         <div class="badge">
@@ -763,7 +766,8 @@
                   </div>
                   <button class="trash-btn"></button>
                 </div>
-                <div class="varients__item-switch main__width-492px">
+                <div class="varients__item-switch main__width-492px"
+                  onclick="onSwitchesChange(event, this)">
                   <div
                     class="switch switch_small switch_transparent ">
                     <p class="switch__text">
@@ -790,10 +794,10 @@
                         tip
                       </button>
                     </p>
-                    <label for="varient2-price"
+                    <label for="varient2-price-switch"
                       class="radio-button radio-button_large">
-                      <input type="checkbox"
-                        name="varient2-price" id="varient2-price">
+                      <input type="checkbox" data-varient="product-price"
+                        name="varient2-price-switch" id="varient2-price-switch">
                       <span></span>
                     </label>
                   </div>
@@ -1005,5 +1009,6 @@
       <script src="./assets/js/select.js"></script>
       <script src="./assets/js/inputs.js"></script>
       <script src="./assets/js/dragAndDrop.js"></script>
+      <script src="./assets/js/optionAdd.js"></script>
     </body>
   </html>

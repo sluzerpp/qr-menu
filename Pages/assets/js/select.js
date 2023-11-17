@@ -42,7 +42,7 @@ function onNumberSelectOptionClick(elem) {
   inputElem.value = selectElem.dataset.currentValue;
 }
 
-function onNumberInput(elem) {
+function onPhoneNumberInput(elem) {
   const format = elem.dataset.format;
   const inputValue = elem.value.replace(/\D/g, '').slice(format.length - 1);
 

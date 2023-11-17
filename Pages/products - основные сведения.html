@@ -448,15 +448,100 @@
             </div>
 
             <div class="main__group">
-              <div class="main__group-content">
-                <div class="input-wrapper">
-                  <label for="organization">
-                    Название <span>*</span>
-                  </label>
-                  <input type="text" id="organization"
-                    autocomplete="organization"
-                    class="text-input">
+              <div class="input-wrapper">
+                <div
+                  class="main__group-content main__group-content_two-columns main__group_grid-1fr-110px">
+                  <div class="input-wrapper">
+                    <label for="organization">
+                      Название <span>*</span>
+                    </label>
+                    <input type="text" id="product-name"
+                      class="text-input">
+                  </div>
+                  <div class="input-wrapper">
+                    <span>Цена</span>
+                    <div
+                      class="input-wrapper__group input-wrapper__group_with-badge">
+                      <input type="text" name="product-price" id="product-price"
+                        class="text-input text-input_error"
+                        oninput="onNumberInput(this)">
+                      <div class="badge">
+                        USD
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <p class="input-wrapper__error">Основная цена не может быть
+                  меньше скидочной. Скидка установлена в «Мучное»</p>
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <span>Скидки</span>
+              <div class="discounts-list">
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <div class="discounts-list__item">
+                  Мучное
+                </div>
+                <label class="discounts-list__arrow">
+                  <input type="checkbox">
+                  <svg viewBox="0 0 19 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9.49961 11.8063C9.42461 11.8063 9.35586 11.7938 9.29336 11.7688C9.23086 11.7438 9.16836 11.7 9.10586 11.6375L5.39336 7.925C5.28086 7.8125 5.22461 7.68125 5.22461 7.53125C5.22461 7.38125 5.28086 7.25 5.39336 7.1375C5.50586 7.025 5.64023 6.96875 5.79648 6.96875C5.95273 6.96875 6.08711 7.025 6.19961 7.1375L9.49961 10.4375L12.7996 7.1375C12.9121 7.025 13.0434 6.96875 13.1934 6.96875C13.3434 6.96875 13.4746 7.025 13.5871 7.1375C13.6996 7.25 13.7559 7.38438 13.7559 7.54063C13.7559 7.69688 13.6996 7.83125 13.5871 7.94375L9.89336 11.6375C9.83086 11.7 9.76836 11.7438 9.70586 11.7688C9.64336 11.7938 9.57461 11.8063 9.49961 11.8063Z"
+                      fill="#150704" />
+                  </svg>
+                </label>
               </div>
             </div>
 
@@ -492,17 +577,6 @@
                 </div>
               </div>
               <!-- <p class="input-wrapper__error">Ошибка!</p> -->
-            </div>
-
-            <div class="input-wrapper">
-              <span>Цена</span>
-              <div class="input-wrapper__group input-wrapper__group_with-badge">
-                <input type="number" name="product-price" id="product-price"
-                  class="text-input">
-                <div class="badge">
-                  USD
-                </div>
-              </div>
             </div>
 
             <div class="input-wrapper">
@@ -585,6 +659,72 @@
               </div>
             </div>
 
+            <div class="main__group">
+              <div class="main__group-content main__group-content_two-columns">
+                <div class="input-wrapper">
+                  <span>Вес блюда</span>
+                  <div
+                    class="input-wrapper__group input-wrapper__group_with-badge">
+                    <input type="text" oninput="onNumberInput(this)"
+                      name="product-price" id="product-price"
+                      class="text-input">
+                    <div class="custom-select badge-select"
+                      data-current-value="gr">
+                      <button class="custom-select__btn"
+                        onclick="onSelectOpenBtnClick(this)">
+                        <span class="custom-select__value">
+                          гр.
+                        </span>
+                        <span class="custom-select__arrow">
+                          <svg viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                              fill="#150704" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="custom-select__options">
+                        <button data-value="gr"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          гр.
+                        </button>
+                        <button data-value="kg"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          кг.
+                        </button>
+                        <button data-value="l"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          л.
+                        </button>
+                        <button data-value="ml"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          мл.
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrapper">
+                  <span>Время приготовления</span>
+                  <div
+                    class="input-wrapper__group input-wrapper__group_with-badge">
+                    <input type="text" oninput="onNumberInput(this)"
+                      name="product-price" id="product-price"
+                      class="text-input">
+                    <div class="badge">
+                      мин
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="switch">
               <p class="switch__text">
                 Показывать товар
@@ -595,7 +735,7 @@
               </p>
               <label for="show-product" class="radio-button radio-button_large">
                 <input type="checkbox"
-                  name="show-product" id="show-product">
+                  name="show-product" id="show-product" checked>
                 <span></span>
               </label>
             </div>

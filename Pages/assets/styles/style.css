@@ -593,6 +593,9 @@ body {
 .text-input:focus {
   border: 1px solid var(--bg-bright-orange);
 }
+.text-input_error {
+  border: 1px solid var(--error);
+}
 
 @media (max-width: 1440px) {
   .text-input {
@@ -839,7 +842,6 @@ body {
   max-height: 0;
   overflow-y: auto;
   border-radius: 4px;
-  border: 1px solid var(--bg-gray-2, #F5F5F5);
   box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.03);
   z-index: 10;
 }
@@ -848,6 +850,7 @@ body {
 }
 .custom-select.open .custom-select__options {
   max-height: 270px;
+  border: 1px solid var(--bg-bright-gray, #F5F5F5);
 }
 .custom-select.open .custom-select__btn {
   border: 1px solid var(--button-bright-orange);
@@ -933,7 +936,7 @@ body {
   max-height: 0;
   overflow-y: auto;
   border-radius: 4px;
-  border: 1px solid var(--bg-gray-2, #F5F5F5);
+  border: 1px solid var(--bg-bright-gray, #F5F5F5);
   box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.03);
   height: -moz-max-content;
   height: max-content;
@@ -1021,6 +1024,43 @@ body {
   rotate: 180deg;
 }
 
+.badge-select {
+  width: -moz-max-content;
+  width: max-content;
+  height: auto;
+  border: 1px solid transparent;
+  background-color: var(--bg-bright-gray, #F5F5F5);
+  border-radius: 4px;
+}
+.badge-select .custom-select__btn {
+  height: auto;
+  padding: 4px 2px 4px 6px;
+  border: none;
+  border: 1px solid transparent;
+  background-color: var(--bg-bright-gray, #F5F5F5);
+}
+.badge-select .custom-select__options {
+  max-width: initial;
+  width: auto;
+  top: calc(100% + 3px);
+  right: 0;
+}
+.badge-select .custom-select__option {
+  font-size: 12px;
+  padding: 6px 16px;
+}
+.badge-select .custom-select__value {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  overflow: initial;
+}
+.badge-select .custom-select__arrow {
+  width: 12px;
+  height: 12px;
+}
+
 @media (max-width: 1080px) {
   .select-hierarchy__option_with-list > ul {
     padding-left: 30px;
@@ -1069,12 +1109,21 @@ body {
   border-radius: 4px;
   border: 1px solid transparent;
   height: 50px;
+  gap: 0;
+}
+.input-wrapper__group_with-badge .text-input_error {
+  border-color: transparent;
 }
 .input-wrapper__group_with-badge input {
   height: 48px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 .input-wrapper__group_with-badge input:focus {
   border-color: transparent;
+}
+.input-wrapper__group_with-badge:has(.text-input_error) {
+  border: 1px solid var(--error);
 }
 .input-wrapper__group_with-badge:has(input:focus-visible) {
   border: 1px solid var(--bg-bright-orange);
@@ -2077,6 +2126,11 @@ body {
 .main__group-content_two-columns {
   grid-template-columns: 1fr 1fr;
 }
+.main__group_grid-1fr-110px {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 24px;
+}
 .main__mobile-controls {
   border-radius: 8px 8px 0 0;
   border-top: 1px solid var(--bg-gray);
@@ -2194,7 +2248,7 @@ body {
     max-width: 100%;
     align-items: center;
     overflow-x: auto;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .main:has(.main__column):has(.main__menu) .main__menu-btn {
     white-space: nowrap;
@@ -3046,10 +3100,10 @@ body.open-add-group #add-group {
   width: 100%;
   max-width: 492px;
 }
-.varients:has(input[data-varient=switch]:checked) .varients__price {
+.varients:has(input[data-varient=product-price]:checked) .varients__price {
   display: grid;
 }
-.varients:has(input[data-varient=switch]:checked) .varients__group {
+.varients:has(input[data-varient=product-price]:checked) .varients__group {
   width: 100%;
   max-width: 618px;
 }
@@ -3121,4 +3175,42 @@ body.open-add-group #add-group {
     top: 0;
     right: 0;
   }
+}
+.discounts-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 2px;
+}
+.discounts-list__item {
+  background-color: #DEEBFF;
+  padding: 0 6px;
+  color: #25387B;
+  font-family: var(--montserrat);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  border-radius: 4px;
+}
+.discounts-list__item:nth-child(n+11) {
+  display: none;
+}
+.discounts-list__arrow {
+  border-radius: 4px;
+  width: 23px;
+  height: 23px;
+  padding: 1px 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DEEBFF;
+  cursor: pointer;
+  transition: rotate 0.15s linear;
+}
+.discounts-list:has(input[type=checkbox]:checked) .discounts-list__item {
+  display: block;
+}
+.discounts-list:has(input[type=checkbox]:checked) .discounts-list__arrow {
+  rotate: 180deg;
 }

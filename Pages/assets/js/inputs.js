@@ -92,3 +92,14 @@ textAreas.forEach((textarea) => {
     }
   });
 });
+
+function onNumberInput(elem) {
+  let inputValue = elem.value;
+  inputValue = inputValue.replace(/[^\d.,]/g, '');
+
+  inputValue = inputValue.replace(/([.,])[.,]+/g, '$1');
+
+  inputValue = inputValue.replace(/([.,]\d{2})\d+$/g, '$1');
+
+  elem.value = inputValue;
+}
