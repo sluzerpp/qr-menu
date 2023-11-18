@@ -93,13 +93,73 @@ textAreas.forEach((textarea) => {
   });
 });
 
-function onNumberInput(elem) {
+function onNumberInput(elem, event = null) {
   let inputValue = elem.value;
   inputValue = inputValue.replace(/[^\d.,]/g, '');
 
   inputValue = inputValue.replace(/([.,])[.,]+/g, '$1');
 
-  inputValue = inputValue.replace(/([.,]\d{2})\d+$/g, '$1');
+  inputValue = inputValue.replace(/([.,]\d{2})[\d.,]+$/g, '$1');
 
   elem.value = inputValue;
+}
+
+function toggleDropdown(elem, parentSelector) {
+  elem.closest(parentSelector).classList.toggle('open');
+}
+
+function onSwitchListChange(elem) {
+  if (elem.checked) {
+    const inputs = elem.closest('.switch_list').querySelectorAll('.switch__list input[type="checkbox"]');
+    inputs.forEach((input) => {
+      input.checked = true;
+      input.onchange();
+    });
+  }
+}
+
+const selected = [];
+
+const selectedContainer = document.querySelector('.product-selected-options');
+
+function onProductOptionChange(option) {
+  if (option.checked) {
+    const exist = selected.find((item) => item.option === option);
+    if (!exist) {
+      const group = option.dataset.groupName || '';
+      const name = option.closest('.switch').textContent.trim();
+      const item = createSelectedItem(name, group);
+      selected.push({ option: option, item: item });
+      selectedContainer.appendChild(item);
+    } else {
+      selectedContainer.appendChild(exist.item);
+    }
+  } else {
+    const exist = selected.find((item) => item.option === option);
+    if (exist) {
+      exist.item.remove();
+    }
+  }
+}
+
+function createSelectedItem(title, group) {
+  const item = document.createElement('div');
+  item.className = 'product-selected-options__item draggable';
+  item.draggable = true;
+  item.ondragstart = (event) => {
+    onDragStart(event, item);
+  }
+  item.ondragend = () => {
+    onDragEnd(item);
+  }
+  item.ontouchstart = (event) => {
+    onDragStart(event, item);
+  }
+  item.ontouchend = () => {
+    onDragEnd(item);
+  }
+  const btn = document.createElement('button');
+  btn.className = 'drag-btn';
+  item.append(btn, `${title} (${group})`);
+  return item;
 }
