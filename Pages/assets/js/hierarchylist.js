@@ -51,22 +51,3 @@ function getDragAfterElement(list, y) {
   }, { offset: Number.NEGATIVE_INFINITY }).element
 }
 
-function toggleControlsDropdown(elem) {
-  elem.parentElement.classList.toggle('open');
-}
-
-const hierarchylistContentElem = document.querySelector('.hierarchy-list__content');
-
-document.addEventListener('click', (e) => {
-  const target = e.target;
-  const dropdowns = hierarchylistContentElem.querySelectorAll('.hierarchy-list__item-dropdown.open');
-  dropdowns.forEach((dropdown) => {
-    if (!(target.classList.contains('more-btn') && dropdown.contains(target))) {
-      dropdown.classList.remove('open')
-    }
-  });
-  const closestDropdown = e.target.closest('.hierarchy-list__item-dropdown');
-  if (!target.classList.contains('more-btn') && closestDropdown && closestDropdown.contains(target)) {
-    closestDropdown.classList.add('open');
-  }
-});

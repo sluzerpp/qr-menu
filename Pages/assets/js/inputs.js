@@ -163,3 +163,32 @@ function createSelectedItem(title, group) {
   item.append(btn, `${title} (${group})`);
   return item;
 }
+
+document.addEventListener('click', (e) => {
+  const target = e.target;
+  const dropdowns = document.querySelectorAll('.controls-dropdown.open');
+  dropdowns.forEach((dropdown) => {
+    if (!(target.classList.contains('more-btn') && dropdown.contains(target))) {
+      dropdown.classList.remove('open')
+    }
+  });
+  const closestDropdown = e.target.closest('.controls-dropdown');
+  if (!target.classList.contains('more-btn') && closestDropdown && closestDropdown.contains(target)) {
+    closestDropdown.classList.add('open');
+  }
+});
+
+function onSelectAllCheckboxChange(checkbox) {
+  if (checkbox.checked) {
+    const checkboxes = document.querySelectorAll('.products__list-content input[type="checkbox"]');
+    checkboxes.forEach((check) => check.checked = true);
+  }
+}
+
+function onPricingCheckboxChange(checkbox) {
+  if (!checkbox.checked) {
+    const checkboxes = document.querySelectorAll('.products__list input[type="checkbox"]');
+    console.log(checkboxes);
+    checkboxes.forEach((check) => check.checked = false);
+  }
+}
