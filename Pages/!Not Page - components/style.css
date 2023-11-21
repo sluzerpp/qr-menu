@@ -111,7 +111,7 @@ body {
     overflow-y: auto;
     padding-bottom: 0;
   }
-  .content:has(.main__empty) {
+  .content:has(.main__empty, .main__wrapper_without-frames) {
     padding-top: calc(var(--header-height) + 16px);
   }
 }
