@@ -192,3 +192,15 @@ function onPricingCheckboxChange(checkbox) {
     checkboxes.forEach((check) => check.checked = false);
   }
 }
+
+function onPasswordIconClick(icon) {
+  const wrapper = icon.parentElement;
+  const input = wrapper.firstElementChild;
+  if (wrapper.classList.contains('view')) {
+    input.setAttribute('type', 'password');
+    wrapper.classList.remove('view');
+  } else {
+    input.setAttribute('type', 'text');
+    wrapper.classList.add('view');
+  }
+}
