@@ -15,14 +15,14 @@ function datePickerBtnClick(elem) {
   }
 }
 
-function onDateInputChange(elem) {
+function onDateInputChange(elem, empty = '') {
   const inputDate = new Date(elem.value);
   const textInput = elem.nextElementSibling;
   const dateFormat = textInput.dataset.format;
 
   if (isNaN(inputDate)) {
-    elem.value = '';
-    textInput.value = '';
+    elem.value = empty;
+    textInput.value = empty;
     return;
   }
 
@@ -108,6 +108,15 @@ function toggleDropdown(elem, parentSelector) {
   elem.closest(parentSelector).classList.toggle('open');
 }
 
+function toggleFixedDropdown(elem, parentSelector) {
+  const parent = elem.closest(parentSelector);
+  parent.classList.toggle('fixed');
+  const rect = elem.getBoundingClientRect();
+  const dropdown = parent.querySelector(parentSelector + '__content');
+  dropdown.style.right = (window.innerWidth - rect.right) + 'px'; 
+  dropdown.style.top = rect.top + rect.height + 8 + 'px'; 
+}
+
 function onSwitchListChange(elem) {
   if (elem.checked) {
     const inputs = elem.closest('.switch_list').querySelectorAll('.switch__list input[type="checkbox"]');
@@ -166,15 +175,17 @@ function createSelectedItem(title, group) {
 
 document.addEventListener('click', (e) => {
   const target = e.target;
-  const dropdowns = document.querySelectorAll('.controls-dropdown.open');
+  const dropdowns = [...document.querySelectorAll('.controls-dropdown.open'), ...document.querySelectorAll('.controls-dropdown.fixed')];
   dropdowns.forEach((dropdown) => {
     if (!(target.classList.contains('more-btn') && dropdown.contains(target))) {
       dropdown.classList.remove('open')
+      dropdown.classList.remove('fixed')
     }
   });
   const closestDropdown = e.target.closest('.controls-dropdown');
   if (!target.classList.contains('more-btn') && closestDropdown && closestDropdown.contains(target)) {
     closestDropdown.classList.add('open');
+    closestDropdown.classList.add('fixed');
   }
 });
 
@@ -202,5 +213,13 @@ function onPasswordIconClick(icon) {
   } else {
     input.setAttribute('type', 'text');
     wrapper.classList.add('view');
+  }
+}
+
+function selectDatePickerBtnClick(elem) {
+  const dateElem = elem.firstElementChild;
+  if ('showPicker' in dateElem) {
+    dateElem.showPicker();
+    dateElem.focus();
   }
 }
