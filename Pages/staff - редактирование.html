@@ -120,7 +120,7 @@
           <nav class="aside-nav">
             <div class="aside-nav__group">
               <ul>
-                <li class="aside-nav__item">
+                <li class="aside-nav__item aside-nav__item_active">
                   <a href="#">
                     <svg viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +130,7 @@
                     Заведение
                   </a>
                 </li>
-                <li class="aside-nav__item aside-nav__item_active">
+                <li class="aside-nav__item">
                   <a href="#">
                     <svg viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -282,7 +282,7 @@
       <nav class="aside-nav">
         <div class="aside-nav__group">
           <ul>
-            <li class="aside-nav__item">
+            <li class="aside-nav__item aside-nav__item_active">
               <a href="#">
                 <svg viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -292,7 +292,7 @@
                 Заведение
               </a>
             </li>
-            <li class="aside-nav__item aside-nav__item_active">
+            <li class="aside-nav__item">
               <a href="#">
                 <svg viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -417,22 +417,284 @@
       </div>
     </aside>
 
-    <div class="content">
-      <main class="main">
+    <div class="content content-white">
+      <main class="main content-white__main">
         <div class="main__wrapper">
-          <div class="main__empty">
-            <h3 class="main__empty-title">
-              У вас пока нет добавленных категорий
-            </h3>
-            <h4 class="main__empty-subtitle">
-              Добавьте свою первую категорию
-            </h4>
-            <div class="main__empty-controls">
-              <button class="btn">
-                Добавить
-              </button>
+          <div class="main__frame overflow-x">
+            <div class="main__header">
+              <div class="main__header-group">
+                <h3 class="main__title">
+                  Редактирование сотрудника
+                </h3>
+              </div>
+
+              <div class="main__header-controls">
+                <button class="btn-secondary btn-secondary_transparent">
+                  Отменить
+                </button>
+                <button class="btn" disabled>Сохранить</button>
+              </div>
             </div>
+
+            <div class="employee">
+              <div class="employee__aside">
+                <div class="employee__img">
+                  <img
+                    src="https://minsknews.by/wp-content/uploads/2021/10/250px-Elon_Musk_Royal_Society.jpg"
+                    alt="employee image">
+                </div>
+                <label class="employee__upload">
+                  <input type="file" name="employee-image" accept="image/*"
+                    id="employee-image">
+                  <span>Загрузить новую фотографию</span>
+                  PNG, JPEG
+                </label>
+              </div>
+              <div class="employee__main overflow-x">
+                <div class="employee__group">
+                  <div class="employee__two-columns">
+                    <div class="input-wrapper">
+                      <span>Имя <span>*</span></span>
+                      <input type="text" name="name" id="name"
+                        class="text-input">
+                    </div>
+                    <div class="input-wrapper">
+                      <span>Номер телефона</span>
+                      <input type="text" name="phone" id="phone"
+                        class="text-input">
+                    </div>
+                  </div>
+                  <div class="input-wrapper">
+                    <span>Должность <span>*</span></span>
+                    <input type="text" name="position" id="position"
+                      class="text-input">
+                  </div>
+                </div>
+                <div class="employee__group overflow-x">
+                  <div class="employee__group-title">
+                    Ответственные зоны
+                    <button class="tip-btn"
+                      data-path="settings.main-settings"
+                      onclick="onTipBtnClick(this)">
+                      tip
+                    </button>
+                  </div>
+                  <div class="employee__zones overflow-x">
+                    <div class="employee__zones-header">
+                      <div class="employee__zones-section">
+                        Раздел кабинета
+                      </div>
+                      <div class="employee__zones-column">
+                        Просмотр
+                      </div>
+                      <div class="employee__zones-column">
+                        Редактирование
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        Заведение
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="establishment-view"
+                          class="radio-button">
+                          <input type="checkbox" name="establishment-view"
+                            id="establishment-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="establishment-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="establishment-edit"
+                            id="establishment-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        Категории
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="categories-view"
+                          class="radio-button">
+                          <input type="checkbox" name="categories-view"
+                            id="categories-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="categories-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="categories-edit"
+                            id="categories-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        Опции
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="options-view"
+                          class="radio-button">
+                          <input type="checkbox" name="options-view"
+                            id="options-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="options-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="options-edit"
+                            id="options-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        Меню
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="menu-view"
+                          class="radio-button">
+                          <input type="checkbox" name="menu-view"
+                            id="menu-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="menu-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="menu-edit"
+                            id="menu-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        QR - коды
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="qr-codes-view"
+                          class="radio-button">
+                          <input type="checkbox" name="qr-codes-view"
+                            id="qr-codes-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="qr-codes-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="qr-codes-edit"
+                            id="qr-codes-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="employee__zones-row employee__zones-row_offset-left">
+                      <div class="employee__zones-section">
+                        Купоны
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="coupons-view"
+                          class="radio-button">
+                          <input type="checkbox" name="coupons-view"
+                            id="coupons-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="coupons-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="coupons-edit"
+                            id="coupons-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="employee__zones-row employee__zones-row_offset-left">
+                      <div class="employee__zones-section">
+                        Скидки
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="discounts-view"
+                          class="radio-button">
+                          <input type="checkbox" name="discounts-view"
+                            id="discounts-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="discounts-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="discounts-edit"
+                            id="discounts-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        Персонал
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="staff-view"
+                          class="radio-button">
+                          <input type="checkbox" name="staff-view"
+                            id="staff-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="staff-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="staff-edit"
+                            id="staff-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="employee__zones-row">
+                      <div class="employee__zones-section">
+                        Настройки
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="settings-view"
+                          class="radio-button">
+                          <input type="checkbox" name="settings-view"
+                            id="settings-view">
+                          <span></span>
+                        </label>
+                      </div>
+                      <div class="employee__zones-column">
+                        <label for="settings-edit"
+                          class="radio-button">
+                          <input type="checkbox" name="settings-edit"
+                            id="settings-edit">
+                          <span></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+        </div>
+
+        <div class="main__mobile-controls">
+          <button class="btn-secondary btn-secondary_transparent">
+            Отменить
+          </button>
+          <button class="btn" disabled>Сохранить</button>
         </div>
       </main>
     </div>
@@ -452,6 +714,8 @@
         </defs>
       </svg>
     </button>
+
     <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/inputs.js"></script>
   </body>
 </html>
