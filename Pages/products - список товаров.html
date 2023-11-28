@@ -418,9 +418,9 @@
     </aside>
 
     <div class="content content-white">
-      <main class="main content-white__main">
+      <main class="main content-white__main overflow-x">
         <div class="main__wrapper">
-          <div class="main__frame">
+          <div class="main__frame overflow-x">
             <div class="main__header">
               <div class="main__header-group">
                 <h3 class="main__title">
@@ -470,169 +470,275 @@
                 </button>
 
                 <div class="products__controls-content">
-                  <div class="products__controls-selects">
 
-                    <div class="input-wrapper">
-                      <div class="input-wrapper__header">
-                        <span>
-                          <svg class="filter-icon" width="18" height="18"
-                            viewBox="0 0 18 18"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
-                              fill="#A19C9B" />
-                          </svg>
-                          Категории
+                  <div class="input-wrapper">
+                    <div class="input-wrapper__header">
+                      <span>
+                        <svg class="filter-icon" width="18" height="18"
+                          viewBox="0 0 18 18"
+                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
+                            fill="#A19C9B" />
+                        </svg>
+                        Категории
+                      </span>
+                    </div>
+                    <div class="select-hierarchy custom-select"
+                      data-current-value>
+                      <button class="select-hierarchy__btn custom-select__btn"
+                        onclick="onSelectOpenBtnClick(this)">
+                        <span class="select-hierarchy__value">
+                          Не выбрано
                         </span>
-                      </div>
-                      <div class="select-hierarchy custom-select"
-                        data-current-value>
-                        <button class="select-hierarchy__btn custom-select__btn"
-                          onclick="onSelectOpenBtnClick(this)">
-                          <span class="select-hierarchy__value">
-                            Не выбрано
-                          </span>
-                          <span class="select-hierarchy__arrow">
-                            <svg width="18" height="18" viewBox="0 0 18 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                                fill="#150704" />
-                            </svg>
-                          </span>
-                        </button>
-                        <div class="select-hierarchy__options"
-                          onchange="onHierarchyMultiplySelectClick(event)">
-                          <div
-                            class="select-hierarchy__option select-hierarchy__option_with-list">
-                            <div class="select-hierarchy__option-content">
-                              <div class="select-hierarchy__option-arrow"
-                                onclick="openSelectDropdown(this)"></div>
-                              <label for="category1" class="checkbox">
-                                <input type="checkbox" value="category1"
-                                  id="category1">
-                                <span></span>
-                                Категория 1
-                              </label>
-                            </div>
-                            <ul>
-                              <li
-                                class="select-hierarchy__option select-hierarchy__option_with-list">
-                                <div class="select-hierarchy__option-content">
-                                  <div class="select-hierarchy__option-arrow"
-                                    onclick="openSelectDropdown(this)"></div>
-                                  <label for="subcategory1" class="checkbox">
-                                    <input type="checkbox" value="subcategory1"
-                                      id="subcategory1">
-                                    <span></span>
-                                    Подкатегория 1
-                                  </label>
-                                </div>
-                                <ul>
-                                  <li class="select-hierarchy__option">
-                                    <label for="subsubcategory1"
-                                      class="checkbox">
-                                      <input type="checkbox"
-                                        value="subsubcategory1"
-                                        id="subsubcategory1">
-                                      <span></span>
-                                      Подподкатегория 1
-                                    </label>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
+                        <span class="select-hierarchy__arrow">
+                          <svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                              fill="#150704" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="select-hierarchy__options"
+                        onchange="onHierarchyMultiplySelectClick(event)">
+                        <div
+                          class="select-hierarchy__option select-hierarchy__option_with-list">
+                          <div class="select-hierarchy__option-content">
+                            <div class="select-hierarchy__option-arrow"
+                              onclick="openSelectDropdown(this)"></div>
+                            <label for="category1" class="checkbox">
+                              <input type="checkbox" value="category1"
+                                id="category1">
+                              <span></span>
+                              Категория 1
+                            </label>
                           </div>
+                          <ul>
+                            <li
+                              class="select-hierarchy__option select-hierarchy__option_with-list">
+                              <div class="select-hierarchy__option-content">
+                                <div class="select-hierarchy__option-arrow"
+                                  onclick="openSelectDropdown(this)"></div>
+                                <label for="subcategory1" class="checkbox">
+                                  <input type="checkbox" value="subcategory1"
+                                    id="subcategory1">
+                                  <span></span>
+                                  Подкатегория 1
+                                </label>
+                              </div>
+                              <ul>
+                                <li class="select-hierarchy__option">
+                                  <label for="subsubcategory1"
+                                    class="checkbox">
+                                    <input type="checkbox"
+                                      value="subsubcategory1"
+                                      id="subsubcategory1">
+                                    <span></span>
+                                    Подподкатегория 1
+                                  </label>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="input-wrapper">
-                      <div class="input-wrapper__header">
-                        <span>
-                          <svg class="filter-icon" width="18" height="18"
-                            viewBox="0 0 18 18"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
-                              fill="#A19C9B" />
-                          </svg>
-                          Статус
+                  <div class="input-wrapper">
+                    <div class="input-wrapper__header">
+                      <span>
+                        <svg class="filter-icon" width="18" height="18"
+                          viewBox="0 0 18 18"
+                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
+                            fill="#A19C9B" />
+                        </svg>
+                        Статус
+                      </span>
+                    </div>
+                    <div class="custom-select" data-current-value>
+                      <button class="custom-select__btn"
+                        onclick="onSelectOpenBtnClick(this)">
+                        <span class="custom-select__value">
+                          Не выбрано
                         </span>
-                      </div>
-                      <div class="custom-select" data-current-value>
-                        <button class="custom-select__btn"
-                          onclick="onSelectOpenBtnClick(this)">
-                          <span class="custom-select__value">
-                            Не выбрано
-                          </span>
-                          <span class="custom-select__arrow">
-                            <svg width="18" height="18" viewBox="0 0 18 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                                fill="#150704" />
-                            </svg>
-                          </span>
+                        <span class="custom-select__arrow">
+                          <svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                              fill="#150704" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="custom-select__options">
+                        <button data-value
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Не выбрано
                         </button>
-                        <div class="custom-select__options">
-                          <button data-value="on"
-                            onclick="onSelectOptionClick(this)"
-                            class="custom-select__option">
-                            Включено
-                          </button>
-                          <button data-value="off"
-                            onclick="onSelectOptionClick(this)"
-                            class="custom-select__option">
-                            Выключено
-                          </button>
-                        </div>
+                        <button data-value="on"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Включено
+                        </button>
+                        <button data-value="off"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Выключено
+                        </button>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="input-wrapper">
-                      <div class="input-wrapper__header">
-                        <span>
-                          <svg class="filter-icon" width="18" height="18"
-                            viewBox="0 0 18 18"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
-                              fill="#A19C9B" />
-                          </svg>
-                          Скидки
+                  <div class="input-wrapper">
+                    <div class="input-wrapper__header">
+                      <span>
+                        <svg class="filter-icon" width="18" height="18"
+                          viewBox="0 0 18 18"
+                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
+                            fill="#A19C9B" />
+                        </svg>
+                        Скидки
+                      </span>
+                    </div>
+                    <div class="custom-select" data-current-value>
+                      <button class="custom-select__btn"
+                        onclick="onSelectOpenBtnClick(this)">
+                        <span class="custom-select__value">
+                          Не выбрано
                         </span>
-                      </div>
-                      <div class="custom-select" data-current-value>
-                        <button class="custom-select__btn"
-                          onclick="onSelectOpenBtnClick(this)">
-                          <span class="custom-select__value">
-                            Не выбрано
-                          </span>
-                          <span class="custom-select__arrow">
-                            <svg width="18" height="18" viewBox="0 0 18 18"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                                fill="#150704" />
-                            </svg>
-                          </span>
+                        <span class="custom-select__arrow">
+                          <svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                              fill="#150704" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="custom-select__options">
+                        <button data-value
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Не выбрано
                         </button>
-                        <div class="custom-select__options">
-                          <button data-value="with-discount"
-                            onclick="onSelectOptionClick(this)"
-                            class="custom-select__option">
-                            Со скидкой
-                          </button>
-                          <button data-value="without-discount"
-                            onclick="onSelectOptionClick(this)"
-                            class="custom-select__option">
-                            Без скидки
-                          </button>
-                        </div>
+                        <button data-value="with-discount"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Со скидкой
+                        </button>
+                        <button data-value="without-discount"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Без скидки
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="input-wrapper">
+                    <div class="input-wrapper__header">
+                      <span>
+                        <svg class="filter-icon" width="18" height="18"
+                          viewBox="0 0 18 18"
+                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
+                            fill="#A19C9B" />
+                        </svg>
+                        Тип
+                      </span>
+                    </div>
+                    <div class="custom-select" data-current-value>
+                      <button class="custom-select__btn"
+                        onclick="onSelectOpenBtnClick(this)">
+                        <span class="custom-select__value">
+                          Не выбрано
+                        </span>
+                        <span class="custom-select__arrow">
+                          <svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                              fill="#150704" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="custom-select__options">
+                        <button data-value
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Не выбрано
+                        </button>
+                        <button data-value="dish"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Блюдо
+                        </button>
+                        <button data-value="product"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Товар
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="input-wrapper">
+                    <div class="input-wrapper__header">
+                      <span>
+                        <svg class="filter-icon" width="18" height="18"
+                          viewBox="0 0 18 18"
+                          fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8.24961 15C8.03711 15 7.85898 14.9281 7.71523 14.7844C7.57148 14.6406 7.49961 14.4625 7.49961 14.25V9.75L3.01836 4.03125C2.84336 3.81875 2.81836 3.59375 2.94336 3.35625C3.06836 3.11875 3.26211 3 3.52461 3H14.4746C14.7371 3 14.9309 3.11875 15.0559 3.35625C15.1809 3.59375 15.1559 3.81875 14.9809 4.03125L10.4996 9.75V14.25C10.4996 14.4625 10.4277 14.6406 10.284 14.7844C10.1402 14.9281 9.96211 15 9.74961 15H8.24961ZM8.99961 9.825L13.4996 4.125H4.49961L8.99961 9.825Z"
+                            fill="#A19C9B" />
+                        </svg>
+                        Вариации
+                      </span>
+                    </div>
+                    <div class="custom-select" data-current-value>
+                      <button class="custom-select__btn"
+                        onclick="onSelectOpenBtnClick(this)">
+                        <span class="custom-select__value">
+                          Не выбрано
+                        </span>
+                        <span class="custom-select__arrow">
+                          <svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                              fill="#150704" />
+                          </svg>
+                        </span>
+                      </button>
+                      <div class="custom-select__options">
+                        <button data-value
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Не выбрано
+                        </button>
+                        <button data-value="dish"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          С вариантами
+                        </button>
+                        <button data-value="product"
+                          onclick="onSelectOptionClick(this)"
+                          class="custom-select__option">
+                          Без вариантов
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -641,6 +747,7 @@
                     <button class="btn-secondary">Применить</button>
                     <button class="btn-secondary btn-secondary_transparent">Сбросить</button>
                   </div>
+
                 </div>
               </div>
 
@@ -762,67 +869,147 @@
                     </div>
                   </div>
 
-                  <div class="products__list-header__empty"></div>
+                  <div class="products__list-empty"></div>
                 </div>
 
                 <ul class="products__list-content"
                   ondragover="onListDragOver(event, this)"
                   ontouchmove="onListDragOver(event, this)">
-                  <li draggable="true" class="products__item draggable"
+                  <li draggable="true" class="products__item open draggable"
                     ondragstart="onDragStart(event, this)"
                     ondragend="onDragEnd(this)"
                     ontouchstart="onDragStart(event, this)"
                     ontouchend="onDragEnd(this)">
-                    <div class="products__item-name">
-                      <button class="drag-btn"></button>
-                      <div class="input-wrapper products__item-checkbox">
-                        <label for="product1" class="checkbox">
-                          <input type="checkbox" name="product1" id="product1">
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="products__item-group">
-                        <div class="products__item-img">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
-                            alt="product image">
+                    <div class="products__item-content">
+                      <div class="products__item-name">
+                        <button class="drag-btn"></button>
+                        <div class="input-wrapper products__item-checkbox">
+                          <label for="product1" class="checkbox">
+                            <input type="checkbox" name="product1" id="product1">
+                            <span></span>
+                          </label>
                         </div>
-                        Лимонный стейк из телятины
+                        <div class="products__item-group">
+                          <div class="products__item-img">
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
+                              alt="product image">
+                          </div>
+                          <div class="products__item-title">
+                            Лимонный стейк из телятины
+                            <button
+                              onclick="toggleDropdown(this, '.products__item')"
+                              class="products__item-varients-btn">
+                              <svg class="products__item-arrow" width="16"
+                                height="16" viewBox="0 0 16 16"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M7.99922 10.05C7.93255 10.05 7.87144 10.0389 7.81589 10.0167C7.76033 9.99444 7.70477 9.95556 7.64922 9.9L4.34922 6.6C4.24922 6.5 4.19922 6.38333 4.19922 6.25C4.19922 6.11667 4.24922 6 4.34922 5.9C4.44922 5.8 4.56866 5.75 4.70755 5.75C4.84644 5.75 4.96589 5.8 5.06589 5.9L7.99922 8.83333L10.9326 5.9C11.0326 5.8 11.1492 5.75 11.2826 5.75C11.4159 5.75 11.5326 5.8 11.6326 5.9C11.7326 6 11.7826 6.11944 11.7826 6.25833C11.7826 6.39722 11.7326 6.51667 11.6326 6.61667L8.34922 9.9C8.29366 9.95556 8.23811 9.99444 8.18255 10.0167C8.127 10.0389 8.06589 10.05 7.99922 10.05Z"
+                                  fill="#D4492A" />
+                              </svg>
+                              Вариации
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="products__item-columns">
-                      <div class="products__item-column">
-                        <a href="#">2</a>
-                      </div>
-                      <div class="products__item-column">
-                        15
-                      </div>
-                      <div
-                        class="products__item-column products__item-column_centered">
-                        <a href="#">3 Скидки</a>
-                      </div>
-                      <div
-                        class="products__item-column products__item-column_centered">
+                      <div class="products__item-columns">
+                        <div class="products__item-column">
+                          <a href="#">2</a>
+                        </div>
+                        <div class="products__item-column">
+                          15
+                        </div>
                         <div
-                          class="status-icon status-icon_green">
-                          Включено
+                          class="products__item-column products__item-column_centered">
+                          <a href="#">3 Скидки</a>
+                        </div>
+                        <div
+                          class="products__item-column products__item-column_centered">
+                          <div
+                            class="status-icon status-icon_green">
+                            Включено
+                          </div>
+                        </div>
+                      </div>
+                      <div class="controls-dropdown">
+                        <span class="more-btn"
+                          onclick="toggleDropdown(this, '.controls-dropdown')"></span>
+                        <div class="controls-dropdown__content">
+                          <button class="controls-dropdown__item">
+                            Редактировать
+                          </button>
+                          <button class="controls-dropdown__item">
+                            Копировать
+                          </button>
+                          <button
+                            class="controls-dropdown__item controls-dropdown__item_red">
+                            Удалить
+                          </button>
                         </div>
                       </div>
                     </div>
-                    <div class="controls-dropdown">
-                      <span class="more-btn"
-                        onclick="toggleDropdown(this, '.controls-dropdown')"></span>
-                      <div class="controls-dropdown__content">
-                        <button class="controls-dropdown__item">
-                          Редактировать
-                        </button>
-                        <button class="controls-dropdown__item">
-                          Копировать
-                        </button>
-                        <button
-                          class="controls-dropdown__item controls-dropdown__item_red">
-                          Удалить
-                        </button>
+                    <div class="products__item-varients">
+                      <div class="products__item-varient">
+                        <div class="products__item-name">
+                          <div class="products__item-group">
+                            <div class="products__item-img">
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
+                                alt="product image">
+                            </div>
+                            30 см
+                          </div>
+                        </div>
+                        <div class="products__item-columns">
+                          <div class="products__item-column">
+                          </div>
+                          <div class="products__item-column">
+                            15
+                          </div>
+                          <div
+                            class="products__item-column products__item-column_centered">
+                            <a href="#">3 Скидки</a>
+                          </div>
+                          <div
+                            class="products__item-column products__item-column_centered">
+                            <div
+                              class="status-icon status-icon_green">
+                              Включено
+                            </div>
+                          </div>
+                        </div>
+                        <div class="products__list-empty"></div>
+                      </div>
+                      <div class="products__item-varient">
+                        <div class="products__item-name">
+                          <div class="products__item-group">
+                            <div class="products__item-img">
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
+                                alt="product image">
+                            </div>
+                            40 см
+                          </div>
+                        </div>
+                        <div class="products__item-columns">
+                          <div class="products__item-column">
+                          </div>
+                          <div class="products__item-column">
+                            15
+                          </div>
+                          <div
+                            class="products__item-column products__item-column_centered">
+                            <a href="#">3 Скидки</a>
+                          </div>
+                          <div
+                            class="products__item-column products__item-column_centered">
+                            <div
+                              class="status-icon status-icon_green">
+                              Включено
+                            </div>
+                          </div>
+                        </div>
+                        <div class="products__list-empty"></div>
                       </div>
                     </div>
                   </li>
@@ -831,56 +1018,58 @@
                     ondragend="onDragEnd(this)"
                     ontouchstart="onDragStart(event, this)"
                     ontouchend="onDragEnd(this)">
-                    <div class="products__item-name">
-                      <button class="drag-btn"></button>
-                      <div class="input-wrapper products__item-checkbox">
-                        <label for="product2" class="checkbox">
-                          <input type="checkbox" name="product2" id="product2">
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="products__item-group">
-                        <div class="products__item-img">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
-                            alt="product image">
+                    <div class="products__item-content">
+                      <div class="products__item-name">
+                        <button class="drag-btn"></button>
+                        <div class="input-wrapper products__item-checkbox">
+                          <label for="product2" class="checkbox">
+                            <input type="checkbox" name="product2" id="product2">
+                            <span></span>
+                          </label>
                         </div>
-                        Греческий салат
+                        <div class="products__item-group">
+                          <div class="products__item-img">
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
+                              alt="product image">
+                          </div>
+                          Греческий салат
+                        </div>
                       </div>
-                    </div>
-                    <div class="products__item-columns">
-                      <div class="products__item-column">
-                        <a href="#">2</a>
-                      </div>
-                      <div class="products__item-column">
-                        15
-                      </div>
-                      <div
-                        class="products__item-column products__item-column_centered">
-                        <a href="#">3 Скидки</a>
-                      </div>
-                      <div
-                        class="products__item-column products__item-column_centered">
+                      <div class="products__item-columns">
+                        <div class="products__item-column">
+                          <a href="#">2</a>
+                        </div>
+                        <div class="products__item-column">
+                          15
+                        </div>
                         <div
-                          class="status-icon status-icon_red">
-                          Выключено
+                          class="products__item-column products__item-column_centered">
+                          <a href="#">3 Скидки</a>
+                        </div>
+                        <div
+                          class="products__item-column products__item-column_centered">
+                          <div
+                            class="status-icon status-icon_red">
+                            Выключено
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="controls-dropdown">
-                      <span class="more-btn"
-                        onclick="toggleDropdown(this, '.controls-dropdown')"></span>
-                      <div class="controls-dropdown__content">
-                        <button class="controls-dropdown__item">
-                          Редактировать
-                        </button>
-                        <button class="controls-dropdown__item">
-                          Копировать
-                        </button>
-                        <button
-                          class="controls-dropdown__item controls-dropdown__item_red">
-                          Удалить
-                        </button>
+                      <div class="controls-dropdown">
+                        <span class="more-btn"
+                          onclick="toggleDropdown(this, '.controls-dropdown')"></span>
+                        <div class="controls-dropdown__content">
+                          <button class="controls-dropdown__item">
+                            Редактировать
+                          </button>
+                          <button class="controls-dropdown__item">
+                            Копировать
+                          </button>
+                          <button
+                            class="controls-dropdown__item controls-dropdown__item_red">
+                            Удалить
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -889,56 +1078,58 @@
                     ondragend="onDragEnd(this)"
                     ontouchstart="onDragStart(event, this)"
                     ontouchend="onDragEnd(this)">
-                    <div class="products__item-name">
-                      <button class="drag-btn"></button>
-                      <div class="input-wrapper products__item-checkbox">
-                        <label for="product3" class="checkbox">
-                          <input type="checkbox" name="product3" id="product3">
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="products__item-group">
-                        <div class="products__item-img">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
-                            alt="product image">
+                    <div class="products__item-content">
+                      <div class="products__item-name">
+                        <button class="drag-btn"></button>
+                        <div class="input-wrapper products__item-checkbox">
+                          <label for="product3" class="checkbox">
+                            <input type="checkbox" name="product3" id="product3">
+                            <span></span>
+                          </label>
                         </div>
-                        Крем-суп со шпинатом
+                        <div class="products__item-group">
+                          <div class="products__item-img">
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
+                              alt="product image">
+                          </div>
+                          Крем-суп со шпинатом
+                        </div>
                       </div>
-                    </div>
-                    <div class="products__item-columns">
-                      <div class="products__item-column">
-                        <a href="#">2</a>
-                      </div>
-                      <div class="products__item-column">
-                        15
-                      </div>
-                      <div
-                        class="products__item-column products__item-column_centered">
-                        <a href="#">3 Скидки</a>
-                      </div>
-                      <div
-                        class="products__item-column products__item-column_centered">
+                      <div class="products__item-columns">
+                        <div class="products__item-column">
+                          <a href="#">2</a>
+                        </div>
+                        <div class="products__item-column">
+                          15
+                        </div>
                         <div
-                          class="status-icon status-icon_green">
-                          Включено
+                          class="products__item-column products__item-column_centered">
+                          <a href="#">3 Скидки</a>
+                        </div>
+                        <div
+                          class="products__item-column products__item-column_centered">
+                          <div
+                            class="status-icon status-icon_green">
+                            Включено
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="controls-dropdown">
-                      <span class="more-btn"
-                        onclick="toggleDropdown(this, '.controls-dropdown')"></span>
-                      <div class="controls-dropdown__content">
-                        <button class="controls-dropdown__item">
-                          Редактировать
-                        </button>
-                        <button class="controls-dropdown__item">
-                          Копировать
-                        </button>
-                        <button
-                          class="controls-dropdown__item controls-dropdown__item_red">
-                          Удалить
-                        </button>
+                      <div class="controls-dropdown">
+                        <span class="more-btn"
+                          onclick="toggleDropdown(this, '.controls-dropdown')"></span>
+                        <div class="controls-dropdown__content">
+                          <button class="controls-dropdown__item">
+                            Редактировать
+                          </button>
+                          <button class="controls-dropdown__item">
+                            Копировать
+                          </button>
+                          <button
+                            class="controls-dropdown__item controls-dropdown__item_red">
+                            Удалить
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </li>

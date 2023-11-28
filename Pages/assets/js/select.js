@@ -64,26 +64,44 @@ function openSelectDropdown(elem) {
   elem.closest('.select-hierarchy__option_with-list').classList.toggle('open');
 }
 
-function onHierarchyMultiplySelectClick(event) {
+function onHierarchyMultiplySelectClick(event, checkbox) {
   event.preventDefault();
-  const value = event.target.value;
+  const target = checkbox || event.target
+  const value = target.value;
   const select = event.currentTarget.parentElement;
+  const option = target.closest('.select-hierarchy__option');
   const valueElem = select.querySelector('.select-hierarchy__value');
-  let valuesArray = [];
-  if (select.dataset.currentValue) {
-    valuesArray = select.dataset.currentValue.split(', ');
-  }
-  if (event.target.checked) {
-    valuesArray.push(value);
+  if (!option.classList.contains('select-hierarchy__option_with-list')) {
+    let valuesArray = [];
+    if (select.dataset.currentValue) {
+      valuesArray = select.dataset.currentValue.split(', ');
+    }
+    if (target.checked) {
+      if (valuesArray.includes(value)) return;
+      valuesArray.push(value);
+    } else {
+      valuesArray = valuesArray.filter((val) => val !== value);
+    }
+    if (valuesArray.length > 0) {
+      select.dataset.currentValue = valuesArray.join(', ');
+      valueElem.textContent = `Выбрано - ${valuesArray.length}`;
+    } else {
+      select.dataset.currentValue = '';
+      valueElem.textContent = 'Не выбрано';
+    }
   } else {
-    valuesArray = valuesArray.filter((val) => val !== value);
+    const options = option.querySelectorAll('.select-hierarchy__option');
+    options.forEach((option) => {
+      const checkbox = option.querySelector('input');
+      checkbox.checked = target.checked;
+      event.target = checkbox;
+      onHierarchyMultiplySelectClick(event, checkbox);
+    });
   }
-  if (valuesArray.length > 0) {
-    select.dataset.currentValue = valuesArray.join(', ');
-    valueElem.textContent = `Выбрано - ${valuesArray.length}`;
-  } else {
-    select.dataset.currentValue = '';
-    valueElem.textContent = 'Не выбрано';
-  }
+  
+  
+}
+
+function updateHierarchyOptionSublings(option) {
   
 }
