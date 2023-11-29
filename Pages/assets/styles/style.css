@@ -3925,13 +3925,6 @@ body.open-conflict #conflict {
   width: 100%;
   max-width: 492px;
 }
-.varients:has(input[data-varient=product-price]:checked) .varients__price {
-  display: grid;
-}
-.varients:has(input[data-varient=product-price]:checked) .varients__group {
-  width: 100%;
-  max-width: 618px;
-}
 .varients__item {
   display: flex;
   flex-direction: column;
@@ -3961,9 +3954,20 @@ body.open-conflict #conflict {
 .varients__item:has(input[data-varient=switch]:checked) .input-wrapper__group input[data-varient=text] {
   display: none;
 }
+.varients__item:has(input[data-varient=product-price]:not(:checked)) .varients__price input {
+  font-size: 0;
+}
 .varients-add {
   width: -moz-max-content;
   width: max-content;
+}
+
+body:has(#affects:checked) .varients__price {
+  display: grid;
+}
+body:has(#affects:checked) .varients__group {
+  width: 100%;
+  max-width: 618px;
 }
 
 @media (max-width: 560px) {

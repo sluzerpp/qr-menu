@@ -105,3 +105,11 @@ function onHierarchyMultiplySelectClick(event, checkbox) {
 function updateHierarchyOptionSublings(option) {
   
 }
+
+function resetHierarchySelect(select) {
+  const valueElem = select.querySelector('.select-hierarchy__value');
+  valueElem.textContent = 'Не выбрано';
+  select.dataCurrentValue = '';
+  const options = select.querySelectorAll('input');
+  options.forEach((option) => option.checked = false);
+}
