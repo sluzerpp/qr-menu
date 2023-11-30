@@ -2,7 +2,6 @@ function onSelectOptionClick(elem) {
   const target = elem;
   const value = target.dataset.value;
   let content = target.textContent;
-  if (!value) return;
   const valueElem = target.parentElement.parentElement.querySelector('.custom-select__value');
   if (!valueElem) return;
   const selectElem = target.parentElement.parentElement;

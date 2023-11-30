@@ -93,13 +93,18 @@ textAreas.forEach((textarea) => {
   });
 });
 
-function onNumberInput(elem, event = null) {
+function onNumberInput(elem, fraction = true) {
   let inputValue = elem.value;
-  inputValue = inputValue.replace(/[^\d.,]/g, '');
+  
+  if (fraction) {
+    inputValue = inputValue.replace(/[^\d.,]/g, '');
 
-  inputValue = inputValue.replace(/([.,])[.,]+/g, '$1');
+    inputValue = inputValue.replace(/([.,])[.,]+/g, '$1');
 
-  inputValue = inputValue.replace(/([.,]\d{2})[\d.,]+$/g, '$1');
+    inputValue = inputValue.replace(/([.,]\d{2})[\d.,]+$/g, '$1');
+  } else {
+    inputValue = inputValue.replace(/[^\d]/g, '');
+  }
 
   elem.value = inputValue;
 }
@@ -224,3 +229,33 @@ function selectDatePickerBtnClick(elem) {
   }
 }
 
+function onControllerNumberInputMinusClick(elem) {
+  const input = elem.nextElementSibling;
+  let currentValue = parseInt(input.value);
+
+  if (isNaN(currentValue)) {
+    currentValue = 0;
+  }
+  currentValue -= 1;
+
+  currentValue = currentValue < 0 ? 0 : currentValue;
+
+  input.value = currentValue;
+
+  onNumberInput(input, false)
+}
+
+function onControllerNumberInputPlusClick(elem) {
+  const input = elem.previousElementSibling;
+  let currentValue = parseInt(input.value);
+  
+  if (isNaN(currentValue)) {
+    currentValue = 0;
+  }
+  
+  currentValue += 1;
+
+  input.value = currentValue;
+
+  onNumberInput(input, false)
+}
