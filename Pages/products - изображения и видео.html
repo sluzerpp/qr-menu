@@ -422,10 +422,10 @@
         <div class="main__wrapper">
           <div class="main__column">
             <div class="main__menu">
-              <a href="#" class="main__menu-btn main__menu-btn_active">
+              <a href="#" class="main__menu-btn">
                 Основные сведения
               </a>
-              <a href="#" class="main__menu-btn">
+              <a href="#" class="main__menu-btn main__menu-btn_active">
                 Изображения и видео
               </a>
               <a href="#" class="main__menu-btn">
@@ -451,11 +451,8 @@
               <div class="product-media__main-img">
                 <div class="input-wrapper">
                   <span>Главное изображение</span>
-                  <div class="block-media-input">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/1/1b/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_307.jpg"
-                      alt="product1">
-                    <button class="trash-btn"></button>
+                  <div class="block-media-input"
+                    onclick="toggleBodyClass('open-upload-main', this, event)">
                   </div>
                 </div>
               </div>
@@ -544,9 +541,9 @@
                       <button class="trash-btn"></button>
                     </div>
 
-                    <div class="block-media-input block-media-input_medium">
-                      <button class="drag-btn"></button>
-                      <button class="trash-btn"></button>
+                    <div
+                      onclick="toggleBodyClass('open-upload-additional')"
+                      class="block-media-input block-media-input_medium">
                     </div>
 
                     <!-- YOUTUBE VIDEO -->
@@ -599,9 +596,11 @@
     </button>
 
     <div class="modal" id="upload-main">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-upload-main', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-upload-main')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -643,9 +642,11 @@
     </div>
 
     <div class="modal" id="upload-additional">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-upload-additional', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-upload-additional')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
