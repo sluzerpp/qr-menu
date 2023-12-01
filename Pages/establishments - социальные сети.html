@@ -462,21 +462,21 @@
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
-                        <img src="./assets/imgs/google.svg" alt="contact icon">
+                        <img src="./assets/imgs/icons/mail.svg"
+                          alt="contact icon">
                       </button>
                       <div class="input-wrapper">
                         <span class="input-wrapper__header">
                           <button class="drag-btn"></button>
-                          <label for="whatsapp-radio" class="radio-button">
-                            <input type="checkbox" name="whatsapp-radio"
-                              id="whatsapp-radio">
+                          <label for="instagram-radio" class="radio-button">
+                            <input type="checkbox" name="instagram-radio"
+                              id="instagram-radio">
                             <span></span>
                           </label>
-                          <span>WhatsApp</span>
+                          <span>Instagram</span>
                         </span>
-
-                        <input type="text" id="whatsapp-contact"
-                          class="text-input">
+                        <input type="text" id="instagram-contact"
+                          class="text-input text-input_link">
                       </div>
                     </div>
 
@@ -486,20 +486,21 @@
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
-                        <img src="./assets/imgs/google.svg" alt="contact icon">
+                        <img src="./assets/imgs/icons/facebook.svg"
+                          alt="contact icon">
                       </button>
                       <div class="input-wrapper">
                         <span class="input-wrapper__header">
                           <button class="drag-btn"></button>
-                          <label for="telegram-radio" class="radio-button">
-                            <input type="checkbox" name="telegram-radio"
-                              id="telegram-radio">
+                          <label for="facebook" class="radio-button">
+                            <input type="checkbox" name="facebook-radio"
+                              id="facebook-radio">
                             <span></span>
                           </label>
-                          <span>Telegram</span>
+                          <span>Facebook</span>
                         </span>
-                        <input type="text" id="telegram-contact"
-                          class="text-input">
+                        <input type="text" id="facebook-contact"
+                          class="text-input text-input_link">
                       </div>
                     </div>
 
@@ -509,20 +510,22 @@
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
-                        <img src="./assets/imgs/google.svg" alt="contact icon">
+                        <img src="./assets/imgs/icons/twitter.svg"
+                          alt="contact icon">
                       </button>
                       <div class="input-wrapper">
                         <span class="input-wrapper__header">
                           <button class="drag-btn"></button>
-                          <label for="viber-radio" class="radio-button">
-                            <input type="checkbox" name="viber-radio"
-                              id="viber-radio">
+                          <label for="twitter-radio" class="radio-button">
+                            <input type="checkbox" name="twitter-radio"
+                              id="twitter-radio">
                             <span></span>
                           </label>
-                          <span>Viber</span>
+                          <span>Twitter</span>
                         </span>
-                        <input type="text" id="viber-contact"
-                          class="text-input">
+
+                        <input type="text" id="twitter-contact"
+                          class="text-input text-input_link">
                       </div>
                     </div>
 
@@ -532,7 +535,8 @@
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
                       <button class="wrapper-img__img">
-                        <img src="./assets/imgs/google.svg" alt="contact icon">
+                        <img src="./assets/imgs/icons/mail.svg"
+                          alt="contact icon">
                       </button>
                       <div class="input-wrapper">
                         <span class="input-wrapper__header">
@@ -545,7 +549,39 @@
                           <span>Youtube</span>
                         </span>
                         <input type="text" id="youtube-contact"
-                          class="text-input">
+                          class="text-input text-input_link">
+                      </div>
+                    </div>
+
+                    <div draggable="true" ondragstart="onDragStart(event, this)"
+                      ondragend="onDragEnd(this)"
+                      ontouchstart="onDragStart(event, this)"
+                      ontouchend="onDragEnd(this)"
+                      class="wrapper-img draggable wrapper-img_checkbox">
+                      <button class="wrapper-img__img">
+                      </button>
+                      <div class="input-wrapper">
+                        <span class="input-wrapper__header">
+                          <div class="input-wrapper__header-flex">
+                            <div class="input-wrapper__header-group">
+                              <button class="drag-btn"></button>
+                              <label for="linkedin-radio" class="radio-button">
+                                <input type="checkbox" name="linkedin-radio"
+                                  id="linkedin-radio">
+                                <span></span>
+                              </label>
+                              <span>LinkedIn</span>
+                            </div>
+                            <div class="input-wrapper__header-group">
+                              <button class="edit-btn"
+                                onclick="toggleBodyClass('open-edit-social')"></button>
+                              <button class="trash-btn"
+                                onclick="toggleBodyClass('open-delete-social')"></button>
+                            </div>
+                          </div>
+                        </span>
+                        <input type="text" id="linkedin-contact"
+                          class="text-input text-input_link">
                       </div>
                     </div>
 
@@ -554,7 +590,8 @@
 
                 <div class="main__group">
                   <div class="main__group-content">
-                    <button class="btn-secondary btn_min-width">
+                    <button class="btn-secondary btn_min-width"
+                      onclick="toggleBodyClass('open-add-social')">
                       <svg viewBox="0 0 18 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -596,9 +633,11 @@
     </button>
 
     <div class="modal" id="add-social">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-add-social', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-add-social')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -663,9 +702,11 @@
     </div>
 
     <div class="modal" id="edit-social">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-edit-social', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-edit-social')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -729,9 +770,11 @@
     </div>
 
     <div class="modal" id="delete-social">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-delete-social', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-delete-social')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
