@@ -1,12 +1,79 @@
-function onTimeInputHandler(elem) {
-  const inputValue = elem.value.replace(/\D/g, '').slice(0, 4);
+const regex = /^(0[0-9]?|1[0-9]?|2[0-3]?)((:)([0-5][0-9]?)?)?$/;
 
-  if (inputValue.length > 2) {
-    elem.value = `${inputValue.slice(0, 2)}:${inputValue.slice(2)}`;
+function validateTimeInput(value) {
+  return regex.test(value);
+}
+
+const prevValues = new Map();
+
+function onTimeInputHandler(elem) {
+  const currentValue = elem.value;
+  const prevValue = prevValues.get(elem) || '';
+
+  if (!prevValue.includes(':') && prevValue !== currentValue && !currentValue.includes(':')) {
+    if (currentValue.length === 2) {
+      elem.value += ':';
+    } else if(currentValue.length === 3) {
+      elem.value = currentValue.slice(0, 2) + ':' + currentValue.slice(2);
+    }
+  }
+  
+  const isValidInput = validateTimeInput(elem.value);
+
+  if (!isValidInput && currentValue) {
+    elem.value = prevValue;
   } else {
-    elem.value = inputValue;
+    prevValues.set(elem, currentValue || '');
+  }  
+}
+
+const timePeriodInputs = new Map();
+
+function onTimePeriodInputsHandler(elem, event, classStart, classEnd) {
+  const currentInput = event.target;
+
+  const inputs = timePeriodInputs.get(elem);
+  let inputStart, inputEnd;
+  if (inputs) {
+    inputStart = inputs.inputStart;
+    inputEnd = inputs.inputEnd;
+  }
+
+  if (currentInput.classList.contains(classStart)) {
+    if (!inputEnd) {
+      inputEnd = elem.querySelector(`.${classEnd}`);
+      timePeriodInputs.set(elem, { inputStart, inputEnd });
+    }
+    const startValue = currentInput.value;
+    const endValue = inputEnd.value;
+    if (validateTimeInput(startValue) && validateTimeInput(endValue)) {
+      if (startValue > endValue) {
+        currentInput.setCustomValidity('Начальное время не может быть больше конечного!');
+        currentInput.reportValidity();
+      } else {
+        currentInput.setCustomValidity('');
+      }
+    }
+  } else if (currentInput.classList.contains(classEnd)) {
+    if (!inputStart) {
+      inputStart = elem.querySelector(`.${classStart}`);
+      timePeriodInputs.set(elem, { inputStart, inputEnd });
+    }
+    const startValue = inputStart.value;
+    const endValue = currentInput.value;
+    console.log(startValue, endValue);
+    if (validateTimeInput(startValue) && validateTimeInput(endValue)) {
+      if (startValue > endValue) {
+        currentInput.setCustomValidity('Конечное время не может быть меньше начального!');
+        currentInput.reportValidity();
+      } else {
+        currentInput.setCustomValidity('');
+      }
+    }
   }
 }
+
+
 
 function datePickerBtnClick(elem) {
   const dateElem = elem.nextElementSibling;

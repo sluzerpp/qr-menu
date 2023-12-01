@@ -1199,13 +1199,17 @@ body {
   width: 113px;
   min-width: 113px;
 }
-.custom-select_number .custom-select__btn img {
+.custom-select_number .custom-select__btn, .custom-select_number .custom-select__option {
+  gap: 8px;
+}
+.custom-select_number .custom-select__btn img, .custom-select_number .custom-select__option img {
   width: 32px;
   height: 24px;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+  border-radius: 0;
 }
 
 .select-hierarchy {
@@ -3915,7 +3919,7 @@ body.open-conflict #conflict {
   display: block;
   position: absolute;
   content: "";
-  background-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.53 1.79445L10.205 2.46945C10.6 2.85945 10.6 3.49445 10.205 3.88445L3.59 10.4995H1.5V8.40945L6.7 3.20445L8.115 1.79445C8.505 1.40445 9.14 1.40445 9.53 1.79445ZM2.5 9.49945L3.205 9.52945L8.115 4.61445L7.41 3.90945L2.5 8.81945V9.49945Z" fill="%23D4492A"/></svg>');
+  background-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.7 5.39929C8.59955 5.29896 8.46339 5.24261 8.32143 5.24261C8.17946 5.24261 8.0433 5.29896 7.94286 5.39929L6.53571 6.80643V1.53571C6.53571 1.39363 6.47927 1.25737 6.37881 1.15691C6.27834 1.05644 6.14208 1 6 1C5.85792 1 5.72166 1.05644 5.62119 1.15691C5.52073 1.25737 5.46429 1.39363 5.46429 1.53571V6.80643L4.05714 5.39929C3.95559 5.30466 3.82127 5.25314 3.68248 5.25559C3.5437 5.25804 3.41128 5.31426 3.31313 5.41241C3.21498 5.51057 3.15875 5.64298 3.1563 5.78177C3.15385 5.92056 3.20537 6.05487 3.3 6.15643L5.62143 8.47786L6 8.85714L6.37857 8.47857L8.7 6.15714C8.74978 6.10739 8.78927 6.04832 8.81622 5.9833C8.84316 5.91828 8.85703 5.84859 8.85703 5.77821C8.85703 5.70783 8.84316 5.63814 8.81622 5.57313C8.78927 5.50811 8.74978 5.44904 8.7 5.39929ZM2.07143 7.25C2.07143 7.17965 2.05757 7.10999 2.03065 7.04499C2.00373 6.97999 1.96427 6.92094 1.91452 6.87119C1.86478 6.82145 1.80572 6.78199 1.74072 6.75506C1.67573 6.72814 1.60607 6.71429 1.53571 6.71429C1.46536 6.71429 1.3957 6.72814 1.33071 6.75506C1.26571 6.78199 1.20665 6.82145 1.15691 6.87119C1.10716 6.92094 1.0677 6.97999 1.04078 7.04499C1.01386 7.10999 1 7.17965 1 7.25V9.57143C1 9.95031 1.15051 10.3137 1.41842 10.5816C1.68633 10.8495 2.04969 11 2.42857 11H9.57143C9.95031 11 10.3137 10.8495 10.5816 10.5816C10.8495 10.3137 11 9.95031 11 9.57143V7.25C11 7.10792 10.9436 6.97166 10.8431 6.87119C10.7426 6.77073 10.6064 6.71429 10.4643 6.71429C10.3222 6.71429 10.1859 6.77073 10.0855 6.87119C9.98501 6.97166 9.92857 7.10792 9.92857 7.25V9.57143C9.92857 9.66615 9.89094 9.75699 9.82397 9.82397C9.75699 9.89094 9.66615 9.92857 9.57143 9.92857H2.42857C2.33385 9.92857 2.24301 9.89094 2.17603 9.82397C2.10906 9.75699 2.07143 9.66615 2.07143 9.57143V7.25Z" fill="%23D4492A"/></svg>');
   width: 100%;
   height: 100%;
   background-color: var(--bg-white);
@@ -3973,7 +3977,6 @@ body.open-conflict #conflict {
 .wrapper-img_checkbox:has(input[type=checkbox]) .text-input {
   filter: grayscale(1) opacity(0.5);
   position: relative;
-  color: transparent;
 }
 .wrapper-img_checkbox:has(input[type=checkbox]:checked) .wrapper-img__img img {
   filter: grayscale(0) opacity(1);
