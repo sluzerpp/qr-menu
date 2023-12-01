@@ -4069,9 +4069,6 @@ body.open-conflict #conflict {
 .varients__item:has(input[data-varient=switch]:checked) .input-wrapper__group input[data-varient=text] {
   display: none;
 }
-.varients__item:has(input[data-varient=product-price]:not(:checked)) .varients__price input {
-  font-size: 0;
-}
 .varients-add {
   width: -moz-max-content;
   width: max-content;

@@ -527,7 +527,8 @@
               <label for="affects"
                 class="radio-button radio-button_large">
                 <input type="checkbox"
-                  name="affects" id="affects">
+                  name="affects" id="affects"
+                  onchange="onAffectsSwitchChange(this)">
                 <span></span>
               </label>
             </div>
@@ -620,8 +621,7 @@
                       <span>Цена</span>
                       <div
                         class="input-wrapper__group input-wrapper__group_with-badge">
-                        <input type="number" name="product-price"
-                          readonly value="0.6"
+                        <input type="number" name="varient1-price"
                           id="varient1-price"
                           class="text-input">
                         <div class="badge">
@@ -746,7 +746,7 @@
                         </div>
                         <input type="text" data-varient="text"
                           name="varient2-product"
-                          id="varient2-product" readonly
+                          id="varient2-product"
                           class="text-input main__width-492px">
 
                       </div>
@@ -755,8 +755,8 @@
                       <span>Цена</span>
                       <div
                         class="input-wrapper__group input-wrapper__group_with-badge">
-                        <input type="text" readonly
-                          name="product-price" value="0.6"
+                        <input type="text"
+                          name="varient2-price"
                           id="varient2-price"
                           class="text-input">
                         <div class="badge">
@@ -843,9 +843,11 @@
     </button>
 
     <div class="modal" id="delete-group">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-delete-group', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-delete-group')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -868,9 +870,11 @@
     </div>
 
     <div class="modal" id="edit-group">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-edit-group', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-edit-group')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -924,8 +928,10 @@
               <div
                 class="input-wrapper__group input-wrapper__group_mobile-column">
                 <input type="text" id="add-group-name"
-                  class="text-input text-input_grey">
-                <button class="btn-secondary"><svg viewBox="0 0 19 18"
+                  class="text-input text-input_grey"
+                  oninput="onGroupAddNameInput(this)">
+                <button onclick="onGroupAddBtnClick()" class="btn-secondary"><svg
+                    viewBox="0 0 19 18"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M8.45089 9.37898H3.21411C3.01178 9.37898 2.84218 9.31015 2.70531 9.17249C2.56844 9.03481 2.5 8.86422 2.5 8.66071C2.5 8.45719 2.56844 8.28799 2.70531 8.1531C2.84218 8.01821 3.01178 7.95077 3.21411 7.95077L8.45089 7.95077V2.71399C8.45089 2.51165 8.51972 2.34205 8.65739 2.20518C8.79507 2.06831 8.96566 1.99988 9.16917 1.99988C9.37269 1.99988 9.54189 2.06831 9.67678 2.20518C9.81166 2.34205 9.87911 2.51165 9.87911 2.71399V7.95077L15.1159 7.95077C15.3182 7.95077 15.4878 8.0196 15.6247 8.15727C15.7616 8.29495 15.83 8.46554 15.83 8.66904C15.83 8.87256 15.7616 9.04177 15.6247 9.17665C15.4878 9.31154 15.3182 9.37898 15.1159 9.37898L9.87911 9.37898L9.87911 14.6158C9.87911 14.8181 9.81028 14.9877 9.67261 15.1246C9.53493 15.2614 9.36434 15.3299 9.16083 15.3299C8.95731 15.3299 8.78811 15.2614 8.65322 15.1246C8.51834 14.9877 8.45089 14.8181 8.45089 14.6158L8.45089 9.37898Z" />
@@ -952,8 +958,10 @@
                       Для кофе
                     </div>
                     <div class="modal-form__list-item-group">
-                      <button class="edit-btn edit-btn_gray"></button>
-                      <button class="trash-btn trash-btn_gray"></button>
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-group')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-group')"></button>
                     </div>
                   </div>
                   <p class="error-text modal-form__list-desktop-error">Данную
@@ -974,8 +982,10 @@
                       Для пиццы
                     </div>
                     <div class="modal-form__list-item-group">
-                      <button class="edit-btn edit-btn_gray"></button>
-                      <button class="trash-btn trash-btn_gray"></button>
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-group')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-group')"></button>
                     </div>
                   </div>
                 </li>
@@ -991,8 +1001,10 @@
                       Для мороженного
                     </div>
                     <div class="modal-form__list-item-group">
-                      <button class="edit-btn edit-btn_gray"></button>
-                      <button class="trash-btn trash-btn_gray"></button>
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-group')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-group')"></button>
                     </div>
                   </div>
                 </li>
@@ -1002,7 +1014,7 @@
         </div>
         <div class="modal__controls">
           <button class="btn-secondary btn-secondary_transparent">Отменить</button>
-          <button class="btn">Сохранить</button>
+          <button class="btn" id="save-add-group" disabled>Сохранить</button>
         </div>
       </div>
     </div>

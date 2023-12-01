@@ -164,11 +164,11 @@ function onNumberInput(elem, fraction = true) {
   let inputValue = elem.value;
   
   if (fraction) {
-    inputValue = inputValue.replace(/[^\d.,]/g, '');
+    inputValue = inputValue.replace(/[^\d,]/g, '');
 
-    inputValue = inputValue.replace(/([.,])[.,]+/g, '$1');
+    inputValue = inputValue.replace(/([,])[,]+/g, '$1');
 
-    inputValue = inputValue.replace(/([.,]\d{2})[\d.,]+$/g, '$1');
+    inputValue = inputValue.replace(/([,]\d{2})[\d,]+$/g, '$1');
   } else {
     inputValue = inputValue.replace(/[^\d]/g, '');
   }

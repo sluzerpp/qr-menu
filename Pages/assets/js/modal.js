@@ -41,11 +41,31 @@ function onTipBtnClick(elem) {
   tutorialItemsElem.scrollTo(0, lastElem.offsetTop)
 } 
 
+let prevState = '';
+
 function toggleBodyClass(className, constraint = null, event = null) {
-  console.log('here');
   if (constraint && event && event.target === constraint) {
-    document.body.classList.toggle(className);
+    if (!document.body.classList.contains(className)) {
+      if (document.body.className) {
+        prevState = document.body.className;
+      }
+    } else {
+      document.body.className = prevState;
+      prevState = '';
+      return;
+    }
+    document.body.className = (className);
   } else {
-    document.body.classList.toggle(className);
+    if (!document.body.classList.contains(className)) {
+      if (document.body.className) {
+        prevState = document.body.className;
+      }
+    } else {
+      document.body.className = prevState;
+      prevState = '';
+      return;
+    }
+    document.body.className = (className);
   }
+  
 }
