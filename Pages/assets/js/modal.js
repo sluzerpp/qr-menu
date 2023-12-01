@@ -42,6 +42,7 @@ function onTipBtnClick(elem) {
 } 
 
 function toggleBodyClass(className, constraint = null, event = null) {
+  console.log('here');
   if (constraint && event && event.target === constraint) {
     document.body.classList.toggle(className);
   } else {
