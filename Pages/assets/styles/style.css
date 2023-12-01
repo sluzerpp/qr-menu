@@ -4379,10 +4379,11 @@ body:has(#affects:checked) .varients__group {
 .products__controls-content .select-hierarchy__options {
   bottom: auto;
   top: calc(100% + 2px);
+  min-width: 100%;
   width: -moz-max-content;
   width: max-content;
-  min-width: 100%;
-  max-width: 250px;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 .products__controls-content .select-hierarchy__arrow {
   rotate: 180deg;
@@ -4829,6 +4830,13 @@ body:has(#affects:checked) .varients__group {
   .product-discounts__item-column {
     width: calc(50% - 8px);
     flex: initial;
+  }
+  .products__pricing-controls {
+    flex-direction: column;
+  }
+  .products__pricing-controls .input-wrapper, .products__pricing-controls .custom-select, .products__pricing-controls .text-input, .products__pricing-controls .btn, .products__pricing-controls .btn-secondary {
+    width: 100%;
+    max-width: 100%;
   }
   .product__inputs-group {
     display: grid;

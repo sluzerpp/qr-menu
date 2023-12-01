@@ -433,7 +433,7 @@
                       d="M6.7519 5.32625L6.75303 4.43525C6.75362 3.8389 6.99094 3.26718 7.41283 2.84571C7.83472 2.42424 8.40668 2.1875 9.00303 2.1875C10.2428 2.1875 11.2474 3.19212 11.2474 4.43187V5.324C13.0592 5.86396 14.6164 7.03742 15.6348 8.6302C16.6532 10.223 17.0649 12.1289 16.7948 14H1.20565C0.935964 12.1295 1.34763 10.2244 2.36555 8.63215C3.38348 7.0399 4.93984 5.8666 6.75078 5.32625H6.7519ZM1.68828 15.125H16.3133C16.4625 15.125 16.6055 15.1843 16.711 15.2898C16.8165 15.3952 16.8758 15.5383 16.8758 15.6875C16.8758 15.8367 16.8165 15.9798 16.711 16.0852C16.6055 16.1907 16.4625 16.25 16.3133 16.25H1.68828C1.53909 16.25 1.39602 16.1907 1.29053 16.0852C1.18504 15.9798 1.12578 15.8367 1.12578 15.6875C1.12578 15.5383 1.18504 15.3952 1.29053 15.2898C1.39602 15.1843 1.53909 15.125 1.68828 15.125ZM2.25078 12.875H15.7508C15.7508 11.9886 15.5762 11.1108 15.237 10.2919C14.8977 9.47294 14.4005 8.72882 13.7737 8.10203C13.147 7.47523 12.4028 6.97803 11.5839 6.63881C10.7649 6.29959 9.8872 6.125 9.00078 6.125C8.11435 6.125 7.23661 6.29959 6.41766 6.63881C5.59872 6.97803 4.8546 7.47523 4.22781 8.10203C3.60101 8.72882 3.10381 9.47294 2.76459 10.2919C2.42537 11.1108 2.25078 11.9886 2.25078 12.875ZM10.1224 5V4.43187C10.1224 4.135 10.0045 3.85028 9.79454 3.64036C9.58462 3.43043 9.2999 3.3125 9.00303 3.3125C8.70485 3.3125 8.41887 3.43087 8.20793 3.64161C7.99698 3.85234 7.87832 4.1382 7.87803 4.43638V5H10.1224Z"
                       fill="#A19C9B" />
                   </svg>
-                  100 товаров
+                  3 товаров
                 </div>
               </div>
 
@@ -875,7 +875,7 @@
                 <ul class="products__list-content"
                   ondragover="onListDragOver(event, this)"
                   ontouchmove="onListDragOver(event, this)">
-                  <li draggable="true" class="products__item open draggable"
+                  <li draggable="true" class="products__item draggable"
                     ondragstart="onDragStart(event, this)"
                     ondragend="onDragEnd(this)"
                     ontouchstart="onDragStart(event, this)"
@@ -973,8 +973,8 @@
                           <div
                             class="products__item-column products__item-column_centered">
                             <div
-                              class="status-icon status-icon_green">
-                              Включено
+                              class="status-icon status-icon_red">
+                              Выключено
                             </div>
                           </div>
                         </div>
@@ -1152,11 +1152,12 @@
                   </button>
                 </div>
 
-                <div class="custom-select custom-select_top" data-current-value>
+                <div class="custom-select custom-select_top"
+                  data-current-value="20">
                   <button class="custom-select__btn"
                     onclick="onSelectOpenBtnClick(this)">
                     <span class="custom-select__value">
-                      Не выбрано
+                      По 20 позиций
                     </span>
                     <span class="custom-select__arrow">
                       <svg width="18" height="18" viewBox="0 0 18 18"
