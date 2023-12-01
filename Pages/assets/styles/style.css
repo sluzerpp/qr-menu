@@ -4258,6 +4258,7 @@ body:has(#affects:checked) .varients__group {
 }
 .main:has(.product-options__empty) .main__frame {
   display: flex;
+  height: 100%;
 }
 
 .product-options {

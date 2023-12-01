@@ -196,6 +196,12 @@ function onSwitchListChange(elem) {
       input.checked = true;
       input.onchange();
     });
+  } else {
+    const inputs = elem.closest('.switch_list').querySelectorAll('.switch__list input[type="checkbox"]');
+    inputs.forEach((input) => {
+      input.checked = false;
+      input.onchange();
+    });
   }
 }
 
@@ -204,6 +210,9 @@ const selected = [];
 const selectedContainer = document.querySelector('.product-selected-options');
 
 function onProductOptionChange(option) {
+  const list = option.closest('.switch_list')
+  const groupSwitch = list.querySelector('.switch__content input[type="checkbox"]'); 
+  const inputs = list.querySelectorAll('.switch__list input[type="checkbox"]');
   if (option.checked) {
     const exist = selected.find((item) => item.option === option);
     if (!exist) {
@@ -215,11 +224,13 @@ function onProductOptionChange(option) {
     } else {
       selectedContainer.appendChild(exist.item);
     }
+    groupSwitch.checked = [...inputs].every((input) => input.checked);
   } else {
     const exist = selected.find((item) => item.option === option);
     if (exist) {
       exist.item.remove();
     }
+    groupSwitch.checked = [...inputs].every((input) => input.checked);
   }
 }
 
