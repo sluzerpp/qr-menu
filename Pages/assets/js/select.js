@@ -5,6 +5,9 @@ function onSelectOptionClick(elem) {
   const valueElem = target.parentElement.parentElement.querySelector('.custom-select__value');
   if (!valueElem) return;
   const selectElem = target.parentElement.parentElement;
+  if (selectElem.classList.contains('disabled-select')) {
+    return;
+  }
   if (!selectElem) return;
   if (selectElem.classList.contains('custom-select_number') || selectElem.classList.contains('custom-select_with-img')) {
     content = target.innerHTML;
@@ -15,8 +18,11 @@ function onSelectOptionClick(elem) {
 }
 
 function onSelectOpenBtnClick(elem) {
-  const selectELem = elem.parentElement;
-  selectELem.classList.toggle('open');
+  const selectElem = elem.parentElement;
+  if (selectElem.classList.contains('disabled-select')) {
+    return;
+  }
+  selectElem.classList.toggle('open');
 }
 
 function closeAllSelects(target = null) {
@@ -53,6 +59,10 @@ function onHierarchySelectClick(event) {
   const text = event.target.parentElement.textContent;
   const value = event.target.value;
   const select = event.currentTarget.parentElement;
+  if (select.classList.contains('disabled-select')) {
+    event.target.checked = false;
+    return;
+  }
   select.dataset.currentValue = value;
   const valueElem = select.querySelector('.select-hierarchy__value');
   valueElem.textContent = text;
@@ -68,6 +78,10 @@ function onHierarchyMultiplySelectClick(event, checkbox) {
   const target = checkbox || event.target
   const value = target.value;
   const select = event.currentTarget.parentElement;
+  if (select.classList.contains('disabled-select')) {
+    event.target.checked = false;
+    return;
+  }
   const option = target.closest('.select-hierarchy__option');
   const valueElem = select.querySelector('.select-hierarchy__value');
   if (!option.classList.contains('select-hierarchy__option_with-list')) {

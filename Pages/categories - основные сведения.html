@@ -464,19 +464,21 @@
                 </button>
               </p>
               <label for="is-parent" class="radio-button radio-button_large">
-                <input type="checkbox" class="category-new__switch"
+                <input type="checkbox" onchange="onIsParentSwitchChange(this)"
+                  class="category-new__switch"
                   name="is-parent" id="is-parent">
                 <span></span>
               </label>
             </div>
 
-            <div class="input-wrapper category-new__select">
+            <div class="input-wrapper category-new__select"
+              id="parent-select-wrapper">
               <div class="input-wrapper__header">
                 <span>Выбрать родительскую категорию <span>*</span></span>
                 <button class="tip-btn"></button>
               </div>
               <div class="select-hierarchy custom-select"
-                data-current-value>
+                data-current-value id="parent-select">
                 <button class="select-hierarchy__btn custom-select__btn"
                   onclick="onSelectOpenBtnClick(this)">
                   <span class="select-hierarchy__value">
@@ -604,5 +606,6 @@
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/select.js"></script>
     <script src="./assets/js/inputs.js"></script>
+    <script src="./assets/js/categoryAdd.js"></script>
   </body>
 </html>

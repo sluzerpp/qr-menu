@@ -2104,20 +2104,6 @@ body {
     width: 230px;
   }
 }
-.category-new:has(.category-new__switch:checked) .category-new__select {
-  filter: grayscale(1) opacity(0.5);
-  position: relative;
-}
-.category-new:has(.category-new__switch:checked) .category-new__select::after {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-}
-
 .content-white {
   overflow-y: auto;
 }
