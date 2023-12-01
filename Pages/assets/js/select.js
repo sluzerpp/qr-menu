@@ -84,25 +84,24 @@ function onHierarchyMultiplySelectClick(event, checkbox) {
   }
   const option = target.closest('.select-hierarchy__option');
   const valueElem = select.querySelector('.select-hierarchy__value');
-  if (!option.classList.contains('select-hierarchy__option_with-list')) {
-    let valuesArray = [];
-    if (select.dataset.currentValue) {
-      valuesArray = select.dataset.currentValue.split(', ');
-    }
-    if (target.checked) {
-      if (valuesArray.includes(value)) return;
-      valuesArray.push(value);
-    } else {
-      valuesArray = valuesArray.filter((val) => val !== value);
-    }
-    if (valuesArray.length > 0) {
-      select.dataset.currentValue = valuesArray.join(', ');
-      valueElem.textContent = `Выбрано - ${valuesArray.length}`;
-    } else {
-      select.dataset.currentValue = '';
-      valueElem.textContent = 'Не выбрано';
-    }
+  let valuesArray = [];
+  if (select.dataset.currentValue) {
+    valuesArray = select.dataset.currentValue.split(', ');
+  }
+  if (target.checked) {
+    if (valuesArray.includes(value)) return;
+    valuesArray.push(value);
   } else {
+    valuesArray = valuesArray.filter((val) => val !== value);
+  }
+  if (valuesArray.length > 0) {
+    select.dataset.currentValue = valuesArray.join(', ');
+    valueElem.textContent = `Выбрано - ${valuesArray.length}`;
+  } else {
+    select.dataset.currentValue = '';
+    valueElem.textContent = 'Не выбрано';
+  }
+  if (option.classList.contains('select-hierarchy__option_with-list')) {
     const options = option.querySelectorAll('.select-hierarchy__option');
     options.forEach((option) => {
       const checkbox = option.querySelector('input');
@@ -111,8 +110,6 @@ function onHierarchyMultiplySelectClick(event, checkbox) {
       onHierarchyMultiplySelectClick(event, checkbox);
     });
   }
-  
-  
 }
 
 function updateHierarchyOptionSublings(option) {

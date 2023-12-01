@@ -417,8 +417,9 @@
       </div>
     </aside>
 
-    <div class="content product">
-      <main class="main">
+    <main class="content product">
+      <form class="main" onchange="onFormDataChange(this)"
+        oninput="onFormDataChange(this)">
         <div class="main__wrapper">
           <div class="main__column">
             <div class="main__menu">
@@ -443,7 +444,7 @@
                 <button class="btn-secondary btn-secondary_transparent">
                   Отменить
                 </button>
-                <button class="btn">Сохранить</button>
+                <button class="btn save-btn" disabled>Сохранить</button>
               </div>
             </div>
 
@@ -488,14 +489,14 @@
                   <label for="product-name">
                     Название <span>*</span>
                   </label>
-                  <input type="text" id="product-name"
+                  <input required type="text" id="product-name"
                     class="text-input">
                 </div>
                 <div class="input-wrapper">
                   <label for="product-name">
                     Код товара <span>*</span>
                   </label>
-                  <input type="text" id="product-code"
+                  <input required type="text" id="product-code"
                     class="text-input">
                 </div>
                 <div class="input-wrapper" id="product-price-wrapper">
@@ -597,16 +598,21 @@
               </div>
               <div class="switch__additional">
 
-                <div class="product-varients">
+                <div class="product-varients"
+                  ondragover="onListDragOver(event, this)"
+                  ontouchmove="onListDragOver(event, this)">
 
-                  <div class="product-varient">
+                  <div ondragstart="onDragStart(event, this)"
+                    ondragend="onDragEnd(this)"
+                    ontouchstart="onDragStart(event, this)"
+                    ontouchend="onDragEnd(this)" draggable="true"
+                    class="product-varient draggable">
                     <div class="drag-btn"></div>
                     <div class="product-varient__data">
+                      <button class="trash-btn trash-btn_gray"></button>
                       <div class="product-varient__group">
                         <label
-                          class="block-media-input draggable block-media-input_small">
-                          <input type="file" name="product-varient-1-img"
-                            id="product-varient-1-img">
+                          class="block-media-input block-media-input_small">
                           <img
                             src="https://pizzahome.by/wp-content/uploads/2022/06/4-sezona-klassika-1.jpg"
                             alt="product varient image">
@@ -618,11 +624,17 @@
                             class="text-input text-input_grey">
                         </div>
                         <div class="input-wrapper product-varient__price">
-                          <span>Цена <span>*</span></span>
-                          <input type="text" name="product-varient-1-name"
-                            id="product-varient-1-name"
-                            class="text-input text-input_grey"
-                            oninput="onNumberInput(this)">
+                          <span>Цена</span>
+                          <div
+                            class="input-wrapper__group input-wrapper__group_with-badge">
+                            <input type="text" name="product-price"
+                              id="product-price"
+                              class="text-input text-input_grey"
+                              oninput="onNumberInput(this)">
+                            <div class="badge badge_white">
+                              USD
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="product-varient__group">
@@ -728,14 +740,17 @@
                     </div>
                   </div>
 
-                  <div class="product-varient">
+                  <div ondragstart="onDragStart(event, this)"
+                    ondragend="onDragEnd(this)"
+                    ontouchstart="onDragStart(event, this)"
+                    ontouchend="onDragEnd(this)" draggable="true"
+                    class="product-varient draggable">
                     <div class="drag-btn"></div>
                     <div class="product-varient__data">
+                      <button class="trash-btn trash-btn_gray"></button>
                       <div class="product-varient__group">
                         <label
-                          class="block-media-input draggable block-media-input_small">
-                          <input type="file" name="product-varient-2-img"
-                            id="product-varient-2-img">
+                          class="block-media-input block-media-input_small">
                         </label>
                         <div class="input-wrapper">
                           <span>Название <span>*</span></span>
@@ -744,11 +759,17 @@
                             class="text-input text-input_grey">
                         </div>
                         <div class="input-wrapper product-varient__price">
-                          <span>Цена <span>*</span></span>
-                          <input type="text" name="product-varient-2-name"
-                            id="product-varient-2-name"
-                            class="text-input text-input_grey"
-                            oninput="onNumberInput(this)">
+                          <span>Цена</span>
+                          <div
+                            class="input-wrapper__group input-wrapper__group_with-badge">
+                            <input type="text" name="product-price"
+                              id="product-price"
+                              class="text-input text-input_grey"
+                              oninput="onNumberInput(this)">
+                            <div class="badge badge_white">
+                              USD
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="product-varient__group">
@@ -854,16 +875,16 @@
                     </div>
                   </div>
 
-                  <button class="btn-secondary btn-secondary_transparent">
-                    <svg viewBox="0 0 18 18" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7.95089 9.37911H2.71411C2.51178 9.37911 2.34218 9.31028 2.20531 9.17261C2.06844 9.03493 2 8.86434 2 8.66083C2 8.45731 2.06844 8.28811 2.20531 8.15322C2.34218 8.01834 2.51178 7.95089 2.71411 7.95089L7.95089 7.95089L7.95089 2.71411C7.95089 2.51178 8.01972 2.34218 8.15739 2.20531C8.29507 2.06844 8.46566 2 8.66917 2C8.87269 2 9.04189 2.06844 9.17678 2.20531C9.31166 2.34218 9.37911 2.51178 9.37911 2.71411V7.95089L14.6159 7.95089C14.8182 7.95089 14.9878 8.01972 15.1247 8.15739C15.2616 8.29507 15.33 8.46566 15.33 8.66917C15.33 8.87269 15.2616 9.04189 15.1247 9.17678C14.9878 9.31166 14.8182 9.37911 14.6159 9.37911L9.37911 9.37911L9.37911 14.6159C9.37911 14.8182 9.31028 14.9878 9.17261 15.1247C9.03493 15.2616 8.86434 15.33 8.66083 15.33C8.45731 15.33 8.28811 15.2616 8.15322 15.1247C8.01834 14.9878 7.95089 14.8182 7.95089 14.6159L7.95089 9.37911Z" />
-                    </svg>
-                    Добавить вариант
-                  </button>
-
                 </div>
+
+                <button class="btn-secondary btn-secondary_transparent">
+                  <svg viewBox="0 0 18 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.95089 9.37911H2.71411C2.51178 9.37911 2.34218 9.31028 2.20531 9.17261C2.06844 9.03493 2 8.86434 2 8.66083C2 8.45731 2.06844 8.28811 2.20531 8.15322C2.34218 8.01834 2.51178 7.95089 2.71411 7.95089L7.95089 7.95089L7.95089 2.71411C7.95089 2.51178 8.01972 2.34218 8.15739 2.20531C8.29507 2.06844 8.46566 2 8.66917 2C8.87269 2 9.04189 2.06844 9.17678 2.20531C9.31166 2.34218 9.37911 2.51178 9.37911 2.71411V7.95089L14.6159 7.95089C14.8182 7.95089 14.9878 8.01972 15.1247 8.15739C15.2616 8.29507 15.33 8.46566 15.33 8.66917C15.33 8.87269 15.2616 9.04189 15.1247 9.17678C14.9878 9.31166 14.8182 9.37911 14.6159 9.37911L9.37911 9.37911L9.37911 14.6159C9.37911 14.8182 9.31028 14.9878 9.17261 15.1247C9.03493 15.2616 8.86434 15.33 8.66083 15.33C8.45731 15.33 8.28811 15.2616 8.15322 15.1247C8.01834 14.9878 7.95089 14.8182 7.95089 14.6159L7.95089 9.37911Z" />
+                  </svg>
+                  Добавить вариант
+                </button>
 
               </div>
             </div>
@@ -1039,10 +1060,10 @@
           <button class="btn-secondary btn-secondary_transparent">
             Отменить
           </button>
-          <button class="btn" disabled>Сохранить</button>
+          <button class="btn save-btn" disabled>Сохранить</button>
         </div>
-      </main>
-    </div>
+      </form>
+    </main>
 
     <button class="icon-btn icon-btn_purple support-btn">
       <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1063,5 +1084,7 @@
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/select.js"></script>
     <script src="./assets/js/inputs.js"></script>
+    <script src="./assets/js/dragAndDrop.js"></script>
+    <script src="./assets/js/validation.js"></script>
   </body>
 </html>
