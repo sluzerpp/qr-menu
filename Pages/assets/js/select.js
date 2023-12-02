@@ -54,7 +54,7 @@ function onPhoneNumberInput(elem) {
   elem.value = format+inputValue;
 }
 
-function onHierarchySelectClick(event) {
+function onHierarchySelectClick(event, callback = null) {
   event.preventDefault();
   const text = event.target.parentElement.textContent;
   const value = event.target.value;
@@ -67,6 +67,9 @@ function onHierarchySelectClick(event) {
   const valueElem = select.querySelector('.select-hierarchy__value');
   valueElem.textContent = text;
   select.classList.remove('open');
+  if (callback) {
+    callback(value, select);
+  }
 }
 
 function openSelectDropdown(elem) {
