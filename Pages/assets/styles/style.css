@@ -1,10 +1,16 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
 @font-face {
   font-family: "Days One";
   src: url("../fonts/DaysOne-Regular.ttf");
   font-style: normal;
   font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("ttf-variations");
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("ttf") tech("variations");
+  font-weight: 100 1000;
+  font-style: normal;
 }
 :root {
   --text-black: #150704;
@@ -4084,6 +4090,7 @@ body:has(#affects:checked) .varients__group {
   display: flex;
   flex-wrap: wrap;
   gap: 3px 2px;
+  list-style: none;
 }
 .discounts-list__item {
   background-color: #DEEBFF;
@@ -4095,9 +4102,6 @@ body:has(#affects:checked) .varients__group {
   font-weight: 400;
   line-height: 150%; /* 21px */
   border-radius: 4px;
-}
-.discounts-list__item:nth-child(n+11) {
-  display: none;
 }
 .discounts-list__arrow {
   border-radius: 4px;
@@ -4111,10 +4115,7 @@ body:has(#affects:checked) .varients__group {
   cursor: pointer;
   transition: rotate 0.15s linear;
 }
-.discounts-list:has(input[type=checkbox]:checked) .discounts-list__item {
-  display: block;
-}
-.discounts-list:has(input[type=checkbox]:checked) .discounts-list__arrow {
+.discounts-list__arrow.open {
   rotate: 180deg;
 }
 
@@ -4759,6 +4760,9 @@ body:has(#affects:checked) .varients__group {
   grid-template-columns: minmax(200px, 1fr) minmax(110px, 200px);
 }
 .product:has(#product-varients:checked) #weight-time-group {
+  display: none;
+}
+.product:has(#product-varients:checked) .product__discounts {
   display: none;
 }
 

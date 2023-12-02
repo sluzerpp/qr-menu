@@ -140,7 +140,7 @@
                     Категории
                   </a>
                 </li>
-                <li class="aside-nav__item">
+                <li class="aside-nav__item aside-nav__item_active">
                   <a href="#">
                     <svg viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@
                     Опции
                   </a>
                 </li>
-                <li class="aside-nav__item aside-nav__item_active">
+                <li class="aside-nav__item">
                   <a href="#">
                     <svg viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -302,7 +302,7 @@
                 Категории
               </a>
             </li>
-            <li class="aside-nav__item">
+            <li class="aside-nav__item aside-nav__item_active">
               <a href="#">
                 <svg viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -312,7 +312,7 @@
                 Опции
               </a>
             </li>
-            <li class="aside-nav__item aside-nav__item_active">
+            <li class="aside-nav__item">
               <a href="#">
                 <svg viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -417,789 +417,414 @@
       </div>
     </aside>
 
-    <main class="content product">
-      <form class="main" onchange="onFormDataChange(this)"
-        oninput="onFormDataChange(this)">
+    <div class="content options">
+      <main class="main">
         <div class="main__wrapper">
-          <div class="main__column">
-            <div class="main__menu">
-              <a href="#" class="main__menu-btn main__menu-btn_active">
-                Основные сведения
-              </a>
-              <a href="#" class="main__menu-btn">
-                Изображения и видео
-              </a>
-              <a href="#" class="main__menu-btn">
-                Опции
-              </a>
-            </div>
-          </div>
           <div class="main__frame">
 
             <div class="main__header">
               <h3 class="main__title">
-                Основные сведения
+                Редактирование опции
               </h3>
               <div class="main__header-controls">
                 <button class="btn-secondary btn-secondary_transparent">
                   Отменить
                 </button>
-                <button class="btn save-btn" disabled>Сохранить</button>
+                <button class="btn" disabled>Сохранить</button>
               </div>
             </div>
 
             <div class="input-wrapper">
-              <span>Тип <span>*</span></span>
-              <div class="custom-select" data-current-value id="product-type">
-                <button class="custom-select__btn"
-                  onclick="onSelectOpenBtnClick(this)">
-                  <span class="custom-select__value">
-                    Не выбрано
-                  </span>
-                  <span class="custom-select__arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                        fill="#150704" />
-                    </svg>
-                  </span>
-                </button>
-                <div class="custom-select__options">
-                  <button data-value="product"
-                    onclick="onSelectOptionClick(this)"
-                    class="custom-select__option">
-                    Товар
-                  </button>
-                  <button data-value="dish"
-                    onclick="onSelectOptionClick(this)"
-                    class="custom-select__option">
-                    Блюдо
-                  </button>
-                </div>
-              </div>
-              <!-- <p class="input-wrapper__error">Ошибка!</p> -->
+              <span>Название <span>*</span></span>
+              <input type="text" id="option-name"
+                class="text-input">
             </div>
 
-            <div class="main__group">
-              <div
-                class="main__group-content main__group-content_two-columns product__inputs-group">
-                <div class="input-wrapper">
-                  <label for="product-name">
-                    Название <span>*</span>
-                  </label>
-                  <input required type="text" id="product-name"
-                    class="text-input">
-                </div>
-                <div class="input-wrapper">
-                  <label for="product-name">
-                    Код товара <span>*</span>
-                  </label>
-                  <input required type="text" id="product-code"
-                    class="text-input">
-                </div>
-                <div class="input-wrapper" id="product-price-wrapper">
-                  <span>Цена</span>
-                  <div
-                    class="input-wrapper__group input-wrapper__group_with-badge">
-                    <input type="text" name="product-price" id="product-price"
-                      class="text-input"
-                      oninput="onNumberInput(this)">
-                    <div class="badge">
-                      USD
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="main__group" id="weight-time-group">
-              <div class="main__group-content main__group-content_two-columns">
-                <div class="input-wrapper">
-                  <span>Вес блюда</span>
-                  <div
-                    class="input-wrapper__group input-wrapper__group_with-badge">
-                    <input type="text" oninput="onNumberInput(this)"
-                      name="product-weight" id="product-weight"
-                      class="text-input">
-                    <div class="custom-select badge-select"
-                      data-current-value="gr">
-                      <button class="custom-select__btn"
-                        onclick="onSelectOpenBtnClick(this)">
-                        <span class="custom-select__value">
-                          гр.
-                        </span>
-                        <span class="custom-select__arrow">
-                          <svg viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                              fill="#150704" />
-                          </svg>
-                        </span>
-                      </button>
-                      <div class="custom-select__options">
-                        <button data-value="gr"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
-                          гр.
-                        </button>
-                        <button data-value="kg"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
-                          кг.
-                        </button>
-                        <button data-value="l"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
-                          л.
-                        </button>
-                        <button data-value="ml"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
-                          мл.
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-wrapper cooking-time">
-                  <span>Время приготовления</span>
-                  <div
-                    class="input-wrapper__group input-wrapper__group_with-badge">
-                    <input type="text" oninput="onNumberInput(this)"
-                      name="product-time" id="product-time"
-                      class="text-input">
-                    <div class="badge">
-                      мин
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="switch switch_with-additional">
-              <div class="switch__content">
-                <p class="switch__text">
-                  Вариации
-                  <button class="tip-btn" data-path="settings.main-settings"
-                    onclick="onTipBtnClick(this)">
-                    tip
+            <div class="input-wrapper input-wrapper_gap-16px">
+              <span>Группа <span>*</span></span>
+              <div class="input-wrapper__group">
+                <div class="custom-select main__width-492px" data-current-value>
+                  <button class="custom-select__btn"
+                    onclick="onSelectOpenBtnClick(this)">
+                    <span class="custom-select__value">
+                      Не выбрано
+                    </span>
+                    <span class="custom-select__arrow">
+                      <svg width="18" height="18" viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                          fill="#150704" />
+                      </svg>
+                    </span>
                   </button>
-                </p>
-                <label for="product-varients"
-                  class="radio-button radio-button_large">
-                  <input type="checkbox"
-                    name="product-varients" onchange="initOnChange()"
-                    id="product-varients">
-                  <span></span>
-                </label>
-              </div>
-              <div class="switch__additional">
-
-                <div class="product-varients"
-                  ondragover="onListDragOver(event, this)"
-                  ontouchmove="onListDragOver(event, this)">
-
-                  <div ondragstart="onDragStart(event, this)"
-                    ondragend="onDragEnd(this)"
-                    ontouchstart="onDragStart(event, this)"
-                    ontouchend="onDragEnd(this)" draggable="true"
-                    class="product-varient draggable">
-                    <div class="drag-btn"></div>
-                    <div class="product-varient__data">
-                      <button class="trash-btn trash-btn_gray"></button>
-                      <div class="product-varient__group">
-                        <label
-                          class="block-media-input block-media-input_small">
-                          <img
-                            src="https://pizzahome.by/wp-content/uploads/2022/06/4-sezona-klassika-1.jpg"
-                            alt="product varient image">
-                        </label>
-                        <div class="input-wrapper">
-                          <span>Название <span>*</span></span>
-                          <input type="text" name="product-varient-1-name"
-                            id="product-varient-1-name"
-                            class="text-input text-input_grey">
-                        </div>
-                        <div class="input-wrapper product-varient__price">
-                          <span>Цена</span>
-                          <div
-                            class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" name="product-price"
-                              id="product-price"
-                              class="text-input text-input_grey"
-                              oninput="onNumberInput(this)">
-                            <div class="badge badge_white">
-                              USD
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="product-varient__group">
-                        <div class="input-wrapper">
-                          <span>Вес блюда</span>
-                          <div
-                            class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" oninput="onNumberInput(this)"
-                              name="product-varient-1-weight"
-                              id="product-varient-1-weight"
-                              class="text-input text-input_grey">
-                            <div
-                              class="custom-select badge-select badge-select_white"
-                              data-current-value="gr">
-                              <button class="custom-select__btn"
-                                onclick="onSelectOpenBtnClick(this)">
-                                <span class="custom-select__value">
-                                  гр.
-                                </span>
-                                <span class="custom-select__arrow">
-                                  <svg viewBox="0 0 18 18"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                      d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                                      fill="#150704" />
-                                  </svg>
-                                </span>
-                              </button>
-                              <div class="custom-select__options">
-                                <button data-value="gr"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  гр.
-                                </button>
-                                <button data-value="kg"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  кг.
-                                </button>
-                                <button data-value="l"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  л.
-                                </button>
-                                <button data-value="ml"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  мл.
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="input-wrapper cooking-time">
-                          <span>Время приготовления</span>
-                          <div
-                            class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" oninput="onNumberInput(this)"
-                              name="product-varient-1-time"
-                              id="product-varient-1-time"
-                              class="text-input text-input_grey">
-                            <div class="badge badge_white">
-                              мин
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="switch switch_small switch_transparent">
-                        <p class="switch__text">
-                          Статус
-                          <button class="tip-btn"
-                            data-path="settings.main-settings"
-                            onclick="onTipBtnClick(this)">
-                            tip
-                          </button>
-                        </p>
-                        <label for="product-varient-1-status"
-                          class="radio-button radio-button_large">
-                          <input type="checkbox"
-                            name="product-varient-1-status"
-                            id="product-varient-1-status" checked>
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="switch switch_small switch_transparent">
-                        <p class="switch__text">
-                          Основная цена
-                          <button class="tip-btn"
-                            data-path="settings.main-settings"
-                            onclick="onTipBtnClick(this)">
-                            tip
-                          </button>
-                        </p>
-                        <label for="product-varient-1-is-main"
-                          class="radio-button radio-button_large">
-                          <input type="radio"
-                            name="is-main"
-                            id="product-varient-1-is-main" checked>
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="input-wrapper product-varient__discounts">
-                        <span>Скидки</span>
-                        <ul
-                          class="discounts-list">
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Очень длинная скидка
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <label class="discounts-list__arrow">
-                            <svg viewBox="0 0 19 19" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M9.49961 11.8063C9.42461 11.8063 9.35586 11.7938 9.29336 11.7688C9.23086 11.7438 9.16836 11.7 9.10586 11.6375L5.39336 7.925C5.28086 7.8125 5.22461 7.68125 5.22461 7.53125C5.22461 7.38125 5.28086 7.25 5.39336 7.1375C5.50586 7.025 5.64023 6.96875 5.79648 6.96875C5.95273 6.96875 6.08711 7.025 6.19961 7.1375L9.49961 10.4375L12.7996 7.1375C12.9121 7.025 13.0434 6.96875 13.1934 6.96875C13.3434 6.96875 13.4746 7.025 13.5871 7.1375C13.6996 7.25 13.7559 7.38438 13.7559 7.54063C13.7559 7.69688 13.6996 7.83125 13.5871 7.94375L9.89336 11.6375C9.83086 11.7 9.76836 11.7438 9.70586 11.7688C9.64336 11.7938 9.57461 11.8063 9.49961 11.8063Z"
-                                fill="#150704" />
-                            </svg>
-                          </label>
-                        </ul>
-                      </div>
-                    </div>
+                  <div class="custom-select__options">
+                    <button data-value="for-coffee"
+                      onclick="onSelectOptionClick(this)"
+                      class="custom-select__option">
+                      Для кофе
+                    </button>
+                    <button data-value="for-pizza"
+                      onclick="onSelectOptionClick(this)"
+                      class="custom-select__option">
+                      Для пиццы
+                    </button>
                   </div>
-
-                  <div ondragstart="onDragStart(event, this)"
-                    ondragend="onDragEnd(this)"
-                    ontouchstart="onDragStart(event, this)"
-                    ontouchend="onDragEnd(this)" draggable="true"
-                    class="product-varient draggable">
-                    <div class="drag-btn"></div>
-                    <div class="product-varient__data">
-                      <button class="trash-btn trash-btn_gray"></button>
-                      <div class="product-varient__group">
-                        <label
-                          class="block-media-input block-media-input_small">
-                        </label>
-                        <div class="input-wrapper">
-                          <span>Название <span>*</span></span>
-                          <input type="text" name="product-varient-2-name"
-                            id="product-varient-2-name"
-                            class="text-input text-input_grey">
-                        </div>
-                        <div class="input-wrapper product-varient__price">
-                          <span>Цена</span>
-                          <div
-                            class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" name="product-price"
-                              id="product-price"
-                              class="text-input text-input_grey"
-                              oninput="onNumberInput(this)">
-                            <div class="badge badge_white">
-                              USD
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="product-varient__group">
-                        <div class="input-wrapper">
-                          <span>Вес блюда</span>
-                          <div
-                            class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" oninput="onNumberInput(this)"
-                              name="product-varient-2-weight"
-                              id="product-varient-2-weight"
-                              class="text-input text-input_grey">
-                            <div
-                              class="custom-select badge-select badge-select_white"
-                              data-current-value="gr">
-                              <button class="custom-select__btn"
-                                onclick="onSelectOpenBtnClick(this)">
-                                <span class="custom-select__value">
-                                  гр.
-                                </span>
-                                <span class="custom-select__arrow">
-                                  <svg viewBox="0 0 18 18"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                      d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                                      fill="#150704" />
-                                  </svg>
-                                </span>
-                              </button>
-                              <div class="custom-select__options">
-                                <button data-value="gr"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  гр.
-                                </button>
-                                <button data-value="kg"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  кг.
-                                </button>
-                                <button data-value="l"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  л.
-                                </button>
-                                <button data-value="ml"
-                                  onclick="onSelectOptionClick(this)"
-                                  class="custom-select__option">
-                                  мл.
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="input-wrapper cooking-time">
-                          <span>Время приготовления</span>
-                          <div
-                            class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" oninput="onNumberInput(this)"
-                              name="product-varient-2-time"
-                              id="product-varient-2-time"
-                              class="text-input text-input_grey">
-                            <div class="badge badge_white">
-                              мин
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="switch switch_small switch_transparent">
-                        <p class="switch__text">
-                          Статус
-                          <button class="tip-btn"
-                            data-path="settings.main-settings"
-                            onclick="onTipBtnClick(this)">
-                            tip
-                          </button>
-                        </p>
-                        <label for="product-varient-2-status"
-                          class="radio-button radio-button_large">
-                          <input type="checkbox"
-                            name="product-varient-2-status"
-                            id="product-varient-2-status" checked>
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="switch switch_small switch_transparent">
-                        <p class="switch__text">
-                          Основная цена
-                          <button class="tip-btn"
-                            data-path="settings.main-settings"
-                            onclick="onTipBtnClick(this)">
-                            tip
-                          </button>
-                        </p>
-                        <label for="product-varient-2-is-main"
-                          class="radio-button radio-button_large">
-                          <input type="radio"
-                            name="is-main"
-                            id="product-varient-2-is-main">
-                          <span></span>
-                        </label>
-                      </div>
-                      <div class="input-wrapper product-varient__discounts">
-                        <span>Скидки</span>
-                        <ul
-                          class="discounts-list">
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Очень длинная скидка
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <li class="discounts-list__item">
-                            Мучное
-                          </li>
-                          <label class="discounts-list__arrow">
-                            <svg viewBox="0 0 19 19" fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                d="M9.49961 11.8063C9.42461 11.8063 9.35586 11.7938 9.29336 11.7688C9.23086 11.7438 9.16836 11.7 9.10586 11.6375L5.39336 7.925C5.28086 7.8125 5.22461 7.68125 5.22461 7.53125C5.22461 7.38125 5.28086 7.25 5.39336 7.1375C5.50586 7.025 5.64023 6.96875 5.79648 6.96875C5.95273 6.96875 6.08711 7.025 6.19961 7.1375L9.49961 10.4375L12.7996 7.1375C12.9121 7.025 13.0434 6.96875 13.1934 6.96875C13.3434 6.96875 13.4746 7.025 13.5871 7.1375C13.6996 7.25 13.7559 7.38438 13.7559 7.54063C13.7559 7.69688 13.6996 7.83125 13.5871 7.94375L9.89336 11.6375C9.83086 11.7 9.76836 11.7438 9.70586 11.7688C9.64336 11.7938 9.57461 11.8063 9.49961 11.8063Z"
-                                fill="#150704" />
-                            </svg>
-                          </label>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
-
-                <button class="btn-secondary btn-secondary_transparent">
-                  <svg viewBox="0 0 18 18" fill="none"
+                <button class="btn-secondary"
+                  onclick="toggleBodyClass('open-add-group')">
+                  <svg viewBox="0 0 19 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
-                      d="M7.95089 9.37911H2.71411C2.51178 9.37911 2.34218 9.31028 2.20531 9.17261C2.06844 9.03493 2 8.86434 2 8.66083C2 8.45731 2.06844 8.28811 2.20531 8.15322C2.34218 8.01834 2.51178 7.95089 2.71411 7.95089L7.95089 7.95089L7.95089 2.71411C7.95089 2.51178 8.01972 2.34218 8.15739 2.20531C8.29507 2.06844 8.46566 2 8.66917 2C8.87269 2 9.04189 2.06844 9.17678 2.20531C9.31166 2.34218 9.37911 2.51178 9.37911 2.71411V7.95089L14.6159 7.95089C14.8182 7.95089 14.9878 8.01972 15.1247 8.15739C15.2616 8.29507 15.33 8.46566 15.33 8.66917C15.33 8.87269 15.2616 9.04189 15.1247 9.17678C14.9878 9.31166 14.8182 9.37911 14.6159 9.37911L9.37911 9.37911L9.37911 14.6159C9.37911 14.8182 9.31028 14.9878 9.17261 15.1247C9.03493 15.2616 8.86434 15.33 8.66083 15.33C8.45731 15.33 8.28811 15.2616 8.15322 15.1247C8.01834 14.9878 7.95089 14.8182 7.95089 14.6159L7.95089 9.37911Z" />
+                      d="M8.45089 9.37894H3.21411C3.01178 9.37894 2.84218 9.31011 2.70531 9.17245C2.56844 9.03477 2.5 8.86418 2.5 8.66067C2.5 8.45715 2.56844 8.28795 2.70531 8.15306C2.84218 8.01817 3.01178 7.95073 3.21411 7.95073L8.45089 7.95073V2.71394C8.45089 2.51161 8.51972 2.34201 8.65739 2.20514C8.79507 2.06827 8.96566 1.99984 9.16917 1.99984C9.37269 1.99984 9.54189 2.06827 9.67678 2.20514C9.81166 2.34201 9.87911 2.51161 9.87911 2.71394V7.95073L15.1159 7.95073C15.3182 7.95073 15.4878 8.01956 15.6247 8.15722C15.7616 8.2949 15.83 8.4655 15.83 8.669C15.83 8.87252 15.7616 9.04173 15.6247 9.17661C15.4878 9.3115 15.3182 9.37894 15.1159 9.37894L9.87911 9.37894L9.87911 14.6157C9.87911 14.8181 9.81028 14.9877 9.67261 15.1245C9.53493 15.2614 9.36434 15.3298 9.16083 15.3298C8.95731 15.3298 8.78811 15.2614 8.65322 15.1245C8.51834 14.9877 8.45089 14.8181 8.45089 14.6157L8.45089 9.37894Z" />
                   </svg>
-                  Добавить вариант
+                  Добавить
                 </button>
-
-              </div>
-            </div>
-
-            <div class="input-wrapper product__discounts">
-              <span>Скидки</span>
-              <ul class="discounts-list">
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Очень длинная скидка
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <li class="discounts-list__item">
-                  Мучное
-                </li>
-                <label class="discounts-list__arrow">
-                  <svg viewBox="0 0 19 19" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.49961 11.8063C9.42461 11.8063 9.35586 11.7938 9.29336 11.7688C9.23086 11.7438 9.16836 11.7 9.10586 11.6375L5.39336 7.925C5.28086 7.8125 5.22461 7.68125 5.22461 7.53125C5.22461 7.38125 5.28086 7.25 5.39336 7.1375C5.50586 7.025 5.64023 6.96875 5.79648 6.96875C5.95273 6.96875 6.08711 7.025 6.19961 7.1375L9.49961 10.4375L12.7996 7.1375C12.9121 7.025 13.0434 6.96875 13.1934 6.96875C13.3434 6.96875 13.4746 7.025 13.5871 7.1375C13.6996 7.25 13.7559 7.38438 13.7559 7.54063C13.7559 7.69688 13.6996 7.83125 13.5871 7.94375L9.89336 11.6375C9.83086 11.7 9.76836 11.7438 9.70586 11.7688C9.64336 11.7938 9.57461 11.8063 9.49961 11.8063Z"
-                      fill="#150704" />
-                  </svg>
-                </label>
-              </ul>
-            </div>
-
-            <div class="input-wrapper">
-              <span>Описание</span>
-              <div class="textarea">
-                <textarea maxlength="1000" name="category-description"
-                  id="category-description"></textarea>
-                <p class="textarea__length">0 / 1000</p>
-              </div>
-            </div>
-
-            <div class="input-wrapper">
-              <div class="input-wrapper__header">
-                <span>Выбрать категорию <span>*</span></span>
-                <button class="tip-btn"
-                  data-path="settings.main-settings"
-                  onclick="onTipBtnClick(this)">
-                  tip
-                </button>
-              </div>
-              <div class="select-hierarchy custom-select"
-                data-current-value>
-                <button class="select-hierarchy__btn custom-select__btn"
-                  onclick="onSelectOpenBtnClick(this)">
-                  <span class="select-hierarchy__value">
-                    Не выбрано
-                  </span>
-                  <span class="select-hierarchy__arrow">
-                    <svg width="18" height="18" viewBox="0 0 18 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
-                        fill="#150704" />
-                    </svg>
-                  </span>
-                </button>
-                <div class="select-hierarchy__options"
-                  onchange="onHierarchyMultiplySelectClick(event)">
-                  <div
-                    class="select-hierarchy__option select-hierarchy__option_with-list">
-                    <div class="select-hierarchy__option-content">
-                      <div class="select-hierarchy__option-arrow"
-                        onclick="openSelectDropdown(this)"></div>
-                      <label for="category1" class="checkbox">
-                        <input type="checkbox" value="category1"
-                          id="category1">
-                        <span></span>
-                        Категория 1
-                      </label>
-                    </div>
-                    <ul>
-                      <li
-                        class="select-hierarchy__option select-hierarchy__option_with-list">
-                        <div class="select-hierarchy__option-content">
-                          <div class="select-hierarchy__option-arrow"
-                            onclick="openSelectDropdown(this)"></div>
-                          <label for="subcategory1" class="checkbox">
-                            <input type="checkbox" value="subcategory1"
-                              id="subcategory1">
-                            <span></span>
-                            Подкатегория 1
-                          </label>
-                        </div>
-                        <ul>
-                          <li class="select-hierarchy__option">
-                            <label for="subsubcategory1"
-                              class="checkbox">
-                              <input type="checkbox" value="subsubcategory1"
-                                id="subsubcategory1">
-                              <span></span>
-                              Подподкатегория 1
-                            </label>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
 
             <div class="switch">
               <p class="switch__text">
-                Показывать товар
+                Обязательная группа
                 <button class="tip-btn" data-path="settings.main-settings"
                   onclick="onTipBtnClick(this)">
                   tip
                 </button>
               </p>
-              <label for="show-product" class="radio-button radio-button_large">
+              <label for="required-group"
+                class="radio-button radio-button_large">
                 <input type="checkbox"
-                  name="show-product" id="show-product" checked>
+                  name="required-group" id="required-group">
                 <span></span>
               </label>
             </div>
 
-          </div>
-        </div>
+            <div class="switch">
+              <p class="switch__text">
+                Можно выбрать несколько вариантов
+                <button class="tip-btn" data-path="settings.main-settings"
+                  onclick="onTipBtnClick(this)">
+                  tip
+                </button>
+              </p>
+              <label for="variety"
+                class="radio-button radio-button_large">
+                <input type="checkbox"
+                  name="variety" id="variety">
+                <span></span>
+              </label>
+            </div>
 
+            <div class="switch">
+              <p class="switch__text">
+                Влияет на цену
+                <button class="tip-btn" data-path="settings.main-settings"
+                  onclick="onTipBtnClick(this)">
+                  tip
+                </button>
+              </p>
+              <label for="affects"
+                class="radio-button radio-button_large">
+                <input type="checkbox"
+                  name="affects" id="affects"
+                  onchange="onAffectsSwitchChange(this)">
+                <span></span>
+              </label>
+            </div>
+
+            <div class="main__varients varients"
+              ondragover="onListDragOver(event, this)"
+              ontouchmove="onListDragOver(event, this)">
+              <div class="varients__item draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="varients__header">
+                  <div class="varients__group">
+                    <div class="input-wrapper input-wrapper_gap-8px">
+                      <span>Название варианта <span>*</span></span>
+                      <div class="input-wrapper__group">
+                        <button class="drag-btn"></button>
+                        <div
+                          data-varient="select"
+                          class="select-hierarchy custom-select main__width-492px"
+                          data-current-value>
+                          <button
+                            class="select-hierarchy__btn custom-select__btn"
+                            onclick="onSelectOpenBtnClick(this)">
+                            <span class="select-hierarchy__value">
+                              Не выбрано
+                            </span>
+                            <span class="select-hierarchy__arrow">
+                              <svg width="18" height="18" viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                                  fill="#150704" />
+                              </svg>
+                            </span>
+                          </button>
+                          <div class="select-hierarchy__options"
+                            onchange="onHierarchySelectClick(event, onVarientSelectChange)">
+                            <div
+                              class="select-hierarchy__option select-hierarchy__option_with-list">
+                              <div class="select-hierarchy__option-content"
+                                onclick="openSelectDropdown(this)">
+                                <div class="select-hierarchy__option-arrow"></div>
+                                Пицца
+                              </div>
+                              <ul>
+                                <li
+                                  class="select-hierarchy__option select-hierarchy__option_with-list">
+                                  <div class="select-hierarchy__option-content"
+                                    onclick="openSelectDropdown(this)">
+                                    <div class="select-hierarchy__option-arrow"></div>
+                                    40 см
+                                  </div>
+                                  <ul>
+                                    <li class="select-hierarchy__option">
+                                      <label
+                                        class="round-radio-button">
+                                        <input type="radio" value="margarita"
+                                          name="parent-category">
+                                        <span></span>
+                                        Маргарита
+                                      </label>
+                                    </li>
+                                    <li class="select-hierarchy__option">
+                                      <label
+                                        class="round-radio-button">
+                                        <input type="radio" value="mocarella"
+                                          name="parent-category">
+                                        <span></span>
+                                        Моцарелла
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="text" data-varient="text"
+                          name="varient1-product"
+                          id="varient1-product"
+                          class="text-input main__width-492px">
+
+                      </div>
+                    </div>
+                    <div class="input-wrapper varients__price">
+                      <span>Цена</span>
+                      <div
+                        class="input-wrapper__group input-wrapper__group_with-badge">
+                        <input type="number" name="varient1-price"
+                          id="varient1-price"
+                          class="text-input">
+                        <div class="badge">
+                          USD
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="trash-btn"></button>
+                </div>
+                <div class="varients__item-switch main__width-492px"
+                  onclick="onSwitchesChange(event, this)">
+                  <div
+                    class="switch switch_small switch_transparent ">
+                    <p class="switch__text">
+                      Использовать готовый товар
+                      <button class="tip-btn" data-path="settings.main-settings"
+                        onclick="onTipBtnClick(this)">
+                        tip
+                      </button>
+                    </p>
+                    <label for="varient1-use-product"
+                      class="radio-button radio-button_large">
+                      <input type="checkbox" data-varient="switch"
+                        name="varient1-use-product"
+                        id="varient1-use-product">
+                      <span></span>
+                    </label>
+                  </div>
+                  <div
+                    data-varient="price"
+                    class="switch switch_small switch_transparent">
+                    <p class="switch__text">
+                      Использовать цену товара
+                      <button class="tip-btn" data-path="settings.main-settings"
+                        onclick="onTipBtnClick(this)">
+                        tip
+                      </button>
+                    </p>
+                    <label for="varient1-price-switch"
+                      class="radio-button radio-button_large">
+                      <input type="checkbox" data-varient="product-price"
+                        name="varient1-price-switch" id="varient1-price-switch">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="varients__item draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="varients__header">
+                  <div class="varients__group">
+                    <div class="input-wrapper input-wrapper_gap-8px">
+                      <span>Название варианта <span>*</span></span>
+                      <div class="input-wrapper__group">
+                        <button class="drag-btn"></button>
+                        <div
+                          data-varient="select"
+                          class="select-hierarchy custom-select main__width-492px"
+                          data-current-value>
+                          <button
+                            class="select-hierarchy__btn custom-select__btn"
+                            onclick="onSelectOpenBtnClick(this)">
+                            <span class="select-hierarchy__value">
+                              Не выбрано
+                            </span>
+                            <span class="select-hierarchy__arrow">
+                              <svg width="18" height="18" viewBox="0 0 18 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                  d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                                  fill="#150704" />
+                              </svg>
+                            </span>
+                          </button>
+                          <div class="select-hierarchy__options"
+                            onchange="onHierarchySelectClick(event, onVarientSelectChange)">
+                            <div
+                              class="select-hierarchy__option select-hierarchy__option_with-list">
+                              <div class="select-hierarchy__option-content"
+                                onclick="openSelectDropdown(this)">
+                                <div class="select-hierarchy__option-arrow"></div>
+                                Пицца
+                              </div>
+                              <ul>
+                                <li
+                                  class="select-hierarchy__option select-hierarchy__option_with-list">
+                                  <div class="select-hierarchy__option-content"
+                                    onclick="openSelectDropdown(this)">
+                                    <div class="select-hierarchy__option-arrow"></div>
+                                    40 см
+                                  </div>
+                                  <ul>
+                                    <li class="select-hierarchy__option">
+                                      <label
+                                        class="round-radio-button">
+                                        <input type="radio" value="margarita"
+                                          name="parent-category">
+                                        <span></span>
+                                        Маргарита
+                                      </label>
+                                    </li>
+                                    <li class="select-hierarchy__option">
+                                      <label
+                                        class="round-radio-button">
+                                        <input type="radio" value="mocarella"
+                                          name="parent-category">
+                                        <span></span>
+                                        Моцарелла
+                                      </label>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="text" data-varient="text"
+                          name="varient2-product"
+                          id="varient2-product"
+                          class="text-input main__width-492px">
+
+                      </div>
+                    </div>
+                    <div class="input-wrapper varients__price">
+                      <span>Цена</span>
+                      <div
+                        class="input-wrapper__group input-wrapper__group_with-badge">
+                        <input type="text"
+                          name="varient2-price"
+                          id="varient2-price"
+                          class="text-input">
+                        <div class="badge">
+                          USD
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="trash-btn"></button>
+                </div>
+                <div class="varients__item-switch main__width-492px"
+                  onclick="onSwitchesChange(event, this)">
+                  <div
+                    class="switch switch_small switch_transparent ">
+                    <p class="switch__text">
+                      Использовать готовый товар
+                      <button class="tip-btn" data-path="settings.main-settings"
+                        onclick="onTipBtnClick(this)">
+                        tip
+                      </button>
+                    </p>
+                    <label for="varient2-use-product"
+                      class="radio-button radio-button_large">
+                      <input type="checkbox" data-varient="switch"
+                        name="varient2-use-product" id="varient2-use-product">
+                      <span></span>
+                    </label>
+                  </div>
+                  <div
+                    data-varient="price"
+                    class="switch switch_small switch_transparent">
+                    <p class="switch__text">
+                      Использовать цену товара
+                      <button class="tip-btn" data-path="settings.main-settings"
+                        onclick="onTipBtnClick(this)">
+                        tip
+                      </button>
+                    </p>
+                    <label for="varient2-price-switch"
+                      class="radio-button radio-button_large">
+                      <input type="checkbox" data-varient="product-price"
+                        name="varient2-price-switch" id="varient2-price-switch">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-secondary varients-add">
+              <svg viewBox="0 0 19 18" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.45089 9.37911H3.21411C3.01178 9.37911 2.84218 9.31028 2.70531 9.17261C2.56844 9.03493 2.5 8.86434 2.5 8.66083C2.5 8.45731 2.56844 8.28811 2.70531 8.15322C2.84218 8.01834 3.01178 7.95089 3.21411 7.95089L8.45089 7.95089V2.71411C8.45089 2.51178 8.51972 2.34218 8.65739 2.20531C8.79507 2.06844 8.96566 2 9.16917 2C9.37269 2 9.54189 2.06844 9.67678 2.20531C9.81166 2.34218 9.87911 2.51178 9.87911 2.71411V7.95089L15.1159 7.95089C15.3182 7.95089 15.4878 8.01972 15.6247 8.15739C15.7616 8.29507 15.83 8.46566 15.83 8.66917C15.83 8.87269 15.7616 9.04189 15.6247 9.17678C15.4878 9.31166 15.3182 9.37911 15.1159 9.37911L9.87911 9.37911L9.87911 14.6159C9.87911 14.8182 9.81028 14.9878 9.67261 15.1247C9.53493 15.2616 9.36434 15.33 9.16083 15.33C8.95731 15.33 8.78811 15.2616 8.65322 15.1247C8.51834 14.9878 8.45089 14.8182 8.45089 14.6159L8.45089 9.37911Z" />
+              </svg>
+              Добавить
+            </button>
+          </div>
+
+        </div>
         <div class="main__mobile-controls">
           <button class="btn-secondary btn-secondary_transparent">
             Отменить
           </button>
-          <button class="btn save-btn" disabled>Сохранить</button>
+          <button class="btn" disabled>Сохранить</button>
         </div>
-      </form>
-    </main>
+      </main>
+    </div>
 
     <button class="icon-btn icon-btn_purple support-btn">
       <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1217,11 +842,187 @@
       </svg>
     </button>
 
+    <div class="modal" id="delete-group">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-delete-group', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-delete-group')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Удаление группы «Для кофе»
+          </h3>
+          <p class="modal__description">В случае удаления «Для кофе» все
+            данные будут безвозвратно утеряны</p>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Удалить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="edit-group">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-edit-group', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-edit-group')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Редактирование группы «Для кофе»
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <div class="input-wrapper">
+              <span>Название <span>*</span></span>
+              <input type="text" id="edit-group-name"
+                class="text-input text-input_grey">
+            </div>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="add-group">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-add-group', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-add-group')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Добавление новой группы
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <div class="input-wrapper input-wrapper_gap-32px">
+              <span>Название <span>*</span></span>
+              <div
+                class="input-wrapper__group input-wrapper__group_mobile-column">
+                <input type="text" id="add-group-name"
+                  class="text-input text-input_grey"
+                  oninput="onGroupAddNameInput(this)">
+                <button onclick="onGroupAddBtnClick()" class="btn-secondary"><svg
+                    viewBox="0 0 19 18"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M8.45089 9.37898H3.21411C3.01178 9.37898 2.84218 9.31015 2.70531 9.17249C2.56844 9.03481 2.5 8.86422 2.5 8.66071C2.5 8.45719 2.56844 8.28799 2.70531 8.1531C2.84218 8.01821 3.01178 7.95077 3.21411 7.95077L8.45089 7.95077V2.71399C8.45089 2.51165 8.51972 2.34205 8.65739 2.20518C8.79507 2.06831 8.96566 1.99988 9.16917 1.99988C9.37269 1.99988 9.54189 2.06831 9.67678 2.20518C9.81166 2.34205 9.87911 2.51165 9.87911 2.71399V7.95077L15.1159 7.95077C15.3182 7.95077 15.4878 8.0196 15.6247 8.15727C15.7616 8.29495 15.83 8.46554 15.83 8.66904C15.83 8.87256 15.7616 9.04177 15.6247 9.17665C15.4878 9.31154 15.3182 9.37898 15.1159 9.37898L9.87911 9.37898L9.87911 14.6158C9.87911 14.8181 9.81028 14.9877 9.67261 15.1246C9.53493 15.2614 9.36434 15.3299 9.16083 15.3299C8.95731 15.3299 8.78811 15.2614 8.65322 15.1246C8.51834 14.9877 8.45089 14.8181 8.45089 14.6158L8.45089 9.37898Z" />
+                  </svg>
+                  Добавить
+                </button>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <span>Добавленные ранее</span>
+              <ul class="modal-form__list"
+                ondragover="onListDragOver(event, this)"
+                ontouchmove="onListDragOver(event, this)">
+                <li
+                  class="modal-form__list-wrapper modal-form__list-wrapper_error draggable"
+                  ondragstart="onDragStart(event, this)"
+                  ontouchstart="onDragStart(event, this)"
+                  ondragend="onDragEnd(this)"
+                  ontouchend="onDragEnd(this)"
+                  draggable="true">
+                  <div class="modal-form__list-item">
+                    <div class="modal-form__list-item-group">
+                      <button class="drag-btn"></button>
+                      Для кофе
+                    </div>
+                    <div class="modal-form__list-item-group">
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-group')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-group')"></button>
+                    </div>
+                  </div>
+                  <p class="error-text modal-form__list-desktop-error">Данную
+                    группу нельзя редактировать или
+                    удалить, так как она еще используется</p>
+                  <p class="error-text modal-form__list-mobile-error">Данный
+                    тип нельзя удалить, так как он еще используется</p>
+                </li>
+                <li class="modal-form__list-wrapper draggable"
+                  ondragstart="onDragStart(event, this)"
+                  ontouchstart="onDragStart(event, this)"
+                  ondragend="onDragEnd(this)"
+                  ontouchend="onDragEnd(this)"
+                  draggable="true">
+                  <div class="modal-form__list-item">
+                    <div class="modal-form__list-item-group">
+                      <button class="drag-btn"></button>
+                      Для пиццы
+                    </div>
+                    <div class="modal-form__list-item-group">
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-group')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-group')"></button>
+                    </div>
+                  </div>
+                </li>
+                <li class="modal-form__list-wrapper draggable"
+                  ondragstart="onDragStart(event, this)"
+                  ontouchstart="onDragStart(event, this)"
+                  ondragend="onDragEnd(this)"
+                  ontouchend="onDragEnd(this)"
+                  draggable="true">
+                  <div class="modal-form__list-item">
+                    <div class="modal-form__list-item-group">
+                      <button class="drag-btn"></button>
+                      Для мороженного
+                    </div>
+                    <div class="modal-form__list-item-group">
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-group')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-group')"></button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn" id="save-add-group" disabled>Сохранить</button>
+        </div>
+      </div>
+    </div>
+
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/select.js"></script>
     <script src="./assets/js/inputs.js"></script>
     <script src="./assets/js/dragAndDrop.js"></script>
-    <script src="./assets/js/validation.js"></script>
-    <script src="./assets/js/discountsList.js"></script>
+    <script src="./assets/js/optionAdd.js"></script>
   </body>
 </html>
