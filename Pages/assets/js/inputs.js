@@ -337,3 +337,21 @@ function onControllerNumberInputPlusClick(elem) {
 
   onNumberInput(input, false)
 }
+
+function onWrapperImgSwitchChange(elem) {
+  const wrapper = elem.closest('.wrapper-img');
+  if (!wrapper) return;
+  const img = wrapper.querySelector('.wrapper-img__img');
+  const input = wrapper.querySelector('.text-input');
+  if (elem.checked) {
+    img.removeAttribute('disabled');
+    img.classList.remove('disabled');
+    input.classList.remove('disabled');
+    input.removeAttribute('disabled');
+  } else {
+    img.setAttribute('disabled', true);
+    img.classList.add('disabled');
+    input.classList.add('disabled');
+    input.setAttribute('disabled', true);
+  }
+}

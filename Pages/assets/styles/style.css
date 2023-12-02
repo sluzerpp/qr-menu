@@ -3974,42 +3974,6 @@ body.open-conflict #conflict {
   font-size: 0;
   color: transparent;
 }
-.wrapper-img_checkbox:has(input[type=checkbox]) .wrapper-img__img img {
-  filter: grayscale(1) opacity(0.5);
-}
-.wrapper-img_checkbox:has(input[type=checkbox]) .wrapper-img__img::after {
-  display: none;
-}
-.wrapper-img_checkbox:has(input[type=checkbox]) .input-wrapper {
-  overflow: hidden;
-  position: relative;
-}
-.wrapper-img_checkbox:has(input[type=checkbox]) .input-wrapper::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 32px;
-}
-.wrapper-img_checkbox:has(input[type=checkbox]) .text-input {
-  filter: grayscale(1) opacity(0.5);
-  position: relative;
-}
-.wrapper-img_checkbox:has(input[type=checkbox]:checked) .wrapper-img__img img {
-  filter: grayscale(0) opacity(1);
-}
-.wrapper-img_checkbox:has(input[type=checkbox]:checked) .wrapper-img__img::after {
-  display: block;
-}
-.wrapper-img_checkbox:has(input[type=checkbox]:checked) .input-wrapper::after {
-  display: none;
-}
-.wrapper-img_checkbox:has(input[type=checkbox]:checked) .text-input {
-  filter: grayscale(0) opacity(1);
-  position: relative;
-}
 .wrapper-img.dragging {
   opacity: 0.4;
 }
