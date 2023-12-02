@@ -804,7 +804,7 @@
                     <div class="main__list-item-text">
                       <h4 class="main__list-item-title">Новый год</h4>
                       <p class="main__list-item-dates">21.08.2023, 22.08.2023,
-                        28.08.2023</p>
+                        28.08.2023...</p>
                     </div>
                     <div class="main__list-item-controls">
                       <button onclick="toggleBodyClass('open-edit-exception')"
@@ -869,8 +869,8 @@
                 </li>
                 <li class="main__list-item">
                   <div class="main__list-item-content">
-                    <label for="nonworking1" class="radio-button">
-                      <input type="checkbox" name="nonworking1" id="nonworking1">
+                    <label for="nonworking2" class="radio-button">
+                      <input type="checkbox" name="nonworking2" id="nonworking2">
                       <span></span>
                     </label>
                     <div class="main__list-item-text">
@@ -961,7 +961,7 @@
               </p>
               <label for="add-modal-switch"
                 class="radio-button radio-button_large">
-                <input type="checkbox" name="add-modal-switch"
+                <input type="checkbox" checked name="add-modal-switch"
                   id="add-modal-switch">
                 <span></span>
               </label>
@@ -983,7 +983,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="add-modal-period-start"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                     <!-- Три формата -->
                     <!-- 1. По умолчанию - dd.mm.yyyy -->
@@ -1002,7 +1002,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="add-modal-period-end"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
 
@@ -1022,7 +1022,7 @@
                       </button>
                       <input type="date" onchange="onDateInputChange(this)">
                       <input type="text" id="add-modal-date1"
-                        data-format="yyyy.mm.dd"
+                        data-format="dd.mm.yyyy"
                         oninput="onDateInputHandler(this)">
                     </div>
                     <button class="small-btn">
@@ -1055,7 +1055,7 @@
                       </button>
                       <input type="date" onchange="onDateInputChange(this)">
                       <input type="text" id="add-modal-date2"
-                        data-format="yyyy.mm.dd"
+                        data-format="dd.mm.yyyy"
                         oninput="onDateInputHandler(this)">
                     </div>
                     <button class="small-btn">
@@ -1088,7 +1088,7 @@
                       </button>
                       <input type="date" onchange="onDateInputChange(this)">
                       <input type="text" id="add-modal-date3"
-                        data-format="yyyy.mm.dd"
+                        data-format="dd.mm.yyyy"
                         oninput="onDateInputHandler(this)">
                     </div>
                     <button class="small-btn">
@@ -1125,13 +1125,13 @@
                     type="text"
                     pattern="^(?:[01]\d|2[0-3]):[0-5]\d$"
                     placeholder="8:00"
-                    value="08:00"
+                    value="00:00"
                     oninput="onTimeInputHandler(this, event)">
                   <input class="time-input" id="add-modal-end"
                     type="text"
                     pattern="^(?:[01]\d|2[0-3]):[0-5]\d$"
                     placeholder="17:00"
-                    value="17:00"
+                    value="00:00"
                     oninput="onTimeInputHandler(this, event)">
                 </div>
               </div>
@@ -1178,7 +1178,7 @@
               </p>
               <label for="edit-modal-switch"
                 class="radio-button radio-button_large">
-                <input type="checkbox" name="edit-modal-switch"
+                <input type="checkbox" checked name="edit-modal-switch"
                   id="edit-modal-switch">
                 <span></span>
               </label>
@@ -1200,7 +1200,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="edit-modal-period-start"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                     <!-- Три формата -->
                     <!-- 1. По умолчанию - dd.mm.yyyy -->
@@ -1219,7 +1219,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="edit-modal-period-end"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
 
@@ -1239,7 +1239,7 @@
                       </button>
                       <input type="date" onchange="onDateInputChange(this)">
                       <input type="text" id="edit-modal-date1"
-                        data-format="yyyy.mm.dd"
+                        data-format="dd.mm.yyyy"
                         oninput="onDateInputHandler(this)">
                     </div>
                     <button class="small-btn">
@@ -1272,7 +1272,7 @@
                       </button>
                       <input type="date" onchange="onDateInputChange(this)">
                       <input type="text" id="edit-modal-date2"
-                        data-format="yyyy.mm.dd"
+                        data-format="dd.mm.yyyy"
                         oninput="onDateInputHandler(this)">
                     </div>
                     <button class="small-btn">
@@ -1305,7 +1305,7 @@
                       </button>
                       <input type="date" onchange="onDateInputChange(this)">
                       <input type="text" id="edit-modal-date3"
-                        data-format="yyyy.mm.dd"
+                        data-format="dd.mm.yyyy"
                         oninput="onDateInputHandler(this)">
                     </div>
                     <button class="small-btn">
@@ -1342,13 +1342,13 @@
                     type="text"
                     pattern="^(?:[01]\d|2[0-3]):[0-5]\d$"
                     placeholder="8:00"
-                    value="08:00"
+                    value="00:00"
                     oninput="onTimeInputHandler(this, event)">
                   <input class="time-input" id="edit-modal-end"
                     type="text"
                     pattern="^(?:[01]\d|2[0-3]):[0-5]\d$"
                     placeholder="17:00"
-                    value="17:00"
+                    value="00:00"
                     oninput="onTimeInputHandler(this, event)">
                 </div>
               </div>
@@ -1420,7 +1420,7 @@
               </p>
               <label for="add-nonworking-days-switch"
                 class="radio-button radio-button_large">
-                <input type="checkbox" name="add-nonworking-days-switch"
+                <input type="checkbox" checked name="add-nonworking-days-switch"
                   id="add-nonworking-days-switch">
                 <span></span>
               </label>
@@ -1441,7 +1441,7 @@
                   </button>
                   <input type="date" onchange="onDateInputChange(this)">
                   <input type="text" id="add-nonworking-days-period-start"
-                    data-format="yyyy.mm.dd"
+                    data-format="dd.mm.yyyy"
                     oninput="onDateInputHandler(this)">
                   <!-- Три формата -->
                   <!-- 1. По умолчанию - dd.mm.yyyy -->
@@ -1460,7 +1460,7 @@
                   </button>
                   <input type="date" onchange="onDateInputChange(this)">
                   <input type="text" id="add-nonworking-days-period-end"
-                    data-format="yyyy.mm.dd"
+                    data-format="dd.mm.yyyy"
                     oninput="onDateInputHandler(this)">
                 </div>
 
@@ -1480,7 +1480,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="add-nonworking-days-day-date1"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
                   <button class="small-btn">
@@ -1513,7 +1513,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="add-nonworking-days-day-date2"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
                   <button class="small-btn">
@@ -1546,7 +1546,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="add-nonworking-days-day-date3"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
                   <button class="small-btn">
@@ -1618,7 +1618,8 @@
               </p>
               <label for="edit-nonworking-days-switch"
                 class="radio-button radio-button_large">
-                <input type="checkbox" name="edit-nonworking-days-switch"
+                <input type="checkbox" checked
+                  name="edit-nonworking-days-switch"
                   id="edit-nonworking-days-switch">
                 <span></span>
               </label>
@@ -1639,7 +1640,7 @@
                   </button>
                   <input type="date" onchange="onDateInputChange(this)">
                   <input type="text" id="modal-period-start"
-                    data-format="yyyy.mm.dd"
+                    data-format="dd.mm.yyyy"
                     oninput="onDateInputHandler(this)">
                   <!-- Три формата -->
                   <!-- 1. По умолчанию - dd.mm.yyyy -->
@@ -1658,7 +1659,7 @@
                   </button>
                   <input type="date" onchange="onDateInputChange(this)">
                   <input type="text" id="modal-period-end"
-                    data-format="yyyy.mm.dd"
+                    data-format="dd.mm.yyyy"
                     oninput="onDateInputHandler(this)">
                 </div>
 
@@ -1678,7 +1679,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="nonworking-day-date1"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
                   <button class="small-btn">
@@ -1711,7 +1712,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="nonworking-day-date2"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
                   <button class="small-btn">
@@ -1744,7 +1745,7 @@
                     </button>
                     <input type="date" onchange="onDateInputChange(this)">
                     <input type="text" id="nonworking-day-date3"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       oninput="onDateInputHandler(this)">
                   </div>
                   <button class="small-btn">

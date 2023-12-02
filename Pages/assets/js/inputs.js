@@ -103,7 +103,7 @@ function onDateInputChange(elem, empty = '') {
   } else if (dateFormat === "yyyy.mm.dd") {
     textInput.value = `${year}.${month}.${day}`;
   } else {
-    textInput.value = `${year}.${month}.${year}`;
+    textInput.value = `${day}.${month}.${year}`;
   }
 }
 

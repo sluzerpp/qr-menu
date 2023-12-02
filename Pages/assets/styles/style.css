@@ -22,7 +22,7 @@
   --line-strong-red: #D4492A;
   --line-gray: #D9D7D7;
   --line-purple: #5E31BD;
-  --line-grayish-red: #FBEDEA;
+  --line-grayish-red: #FFF7F3;
   --line-bright-orange: #ED9139;
   --bg-strong-red: #D4492A;
   --bg-purple: #5E31BD;
@@ -161,7 +161,7 @@ body {
   border-radius: 4px;
   color: var(--button-white);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.1s linear;
   font-family: var(--montserrat);
@@ -202,11 +202,6 @@ body {
   background-color: transparent;
 }
 
-@media (max-width: 1440px) {
-  .btn, .btn-secondary {
-    font-size: 14px;
-  }
-}
 .link {
   display: inline-block;
   color: var(--button-bright-orange);
@@ -3096,7 +3091,7 @@ body {
     display: none;
   }
   .main__additional-header-controls {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .main__frame {
     padding: 30px 20px;
