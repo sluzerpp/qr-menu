@@ -1,14 +1,27 @@
+const listItemsMap = new WeakMap();
+
 function initDiscountList(list) {
   list.style.opacity = 0;
   const listWidth = list.getBoundingClientRect().width;
-  const items = list.querySelectorAll('li');
+  let items = [];
+  if (listItemsMap.has(list)) {
+    items = listItemsMap.get(list);
+    items.forEach((item) => item.remove());
+  } else {
+    items = list.querySelectorAll('li');
+    listItemsMap.set(list, items);
+  }
   const arrow = list.querySelector('label');
-  const arrowWidth = arrow.getBoundingClientRect().width;
+  if (listItemsMap.has(list)) {
+    arrow.remove();
+    list.append(...items, arrow);
+  }
+  const arrowWidth = parseInt(window.getComputedStyle(arrow).width);
   let lineWidth = arrowWidth;
   let wasFalse = false;
   const firstLineItems = [...items].filter((item) => {
     if (wasFalse) return false;
-    const itemWidth = item.getBoundingClientRect().width + 3;
+    const itemWidth = parseInt(window.getComputedStyle(item).width) + 3;
     if (lineWidth + itemWidth < listWidth) {
       lineWidth += itemWidth;
       return true;
@@ -17,6 +30,7 @@ function initDiscountList(list) {
     return false;
   });
 
+
   items.forEach((item) => item.remove());
   arrow.remove();
   list.append(...firstLineItems, arrow);
@@ -24,6 +38,8 @@ function initDiscountList(list) {
   list.style.opacity = 1;
 
   let isOpen = false;
+
+  arrow.onclick = null;
   
   const createClickHandler = () => {
     isOpen = !isOpen
@@ -43,21 +59,12 @@ function initDiscountList(list) {
   arrow.onclick = createClickHandler;
 }
 
-// Функция для обработки добавленных элементов списка
-function handleNewItems() {
-  initDiscountList();
-}
-
-let isInit = false;
-
 function initOnChange() {
-  if (!isInit) {
-    const discountLists = document.querySelectorAll('.product-varient__discounts .discounts-list');
-    discountLists.forEach((list) => {
-      initDiscountList(list);
-    })
-    isInit = true;
-  }
+  const discountLists = document.querySelectorAll('.product-varient__discounts .discounts-list');
+  discountLists.forEach((list) => {
+    initDiscountList(list);
+  })
+  isInit = true;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,3 +73,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initDiscountList(list);
   })
 })
+
+let timeoutId = null;
+
+window.addEventListener('resize', () => {
+  console.log('here');
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+  timeoutId = setTimeout(() => {
+    const discountLists = document.querySelectorAll('.product__discounts .discounts-list');
+    discountLists.forEach((list) => {
+      initDiscountList(list);
+    })
+    initOnChange();
+  }, 500);
+});

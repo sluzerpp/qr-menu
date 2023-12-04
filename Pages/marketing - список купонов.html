@@ -429,7 +429,7 @@
                   Список купонов
                 </h3>
                 <div class="main__count">
-                  3 купона
+                  2 купона
                 </div>
               </div>
 
@@ -492,15 +492,13 @@
                   </div>
                   <div class="controls-dropdown">
                     <span class="more-btn"
-                      onclick="toggleDropdown(this, '.controls-dropdown')"></span>
+                      onclick="toggleFixedDropdown(this, '.controls-dropdown')"></span>
                     <div class="controls-dropdown__content">
                       <button class="controls-dropdown__item">
                         Редактировать
                       </button>
-                      <button class="controls-dropdown__item">
-                        Копировать
-                      </button>
                       <button
+                        onclick="toggleBodyClass('open-delete-coupon')"
                         class="controls-dropdown__item controls-dropdown__item_red">
                         Удалить
                       </button>
@@ -533,15 +531,13 @@
                   </div>
                   <div class="controls-dropdown">
                     <span class="more-btn"
-                      onclick="toggleDropdown(this, '.controls-dropdown')"></span>
+                      onclick="toggleFixedDropdown(this, '.controls-dropdown')"></span>
                     <div class="controls-dropdown__content">
                       <button class="controls-dropdown__item">
                         Редактировать
                       </button>
-                      <button class="controls-dropdown__item">
-                        Копировать
-                      </button>
                       <button
+                        onclick="toggleBodyClass('open-delete-coupon')"
                         class="controls-dropdown__item controls-dropdown__item_red">
                         Удалить
                       </button>
@@ -575,6 +571,33 @@
         </defs>
       </svg>
     </button>
+
+    <div class="modal" id="delete-coupon">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-delete-coupon', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-delete-coupon')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Удаление купона «Бесплатная доставка»
+          </h3>
+          <p class="modal__description">В случае удаления купона «Бесплатная
+            доставка» все данные будут безвозвратно утеряны</p>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Удалить</button>
+        </div>
+      </div>
+    </div>
 
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/select.js"></script>

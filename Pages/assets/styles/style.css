@@ -763,6 +763,9 @@ body {
 .text-input_grey {
   background-color: var(--bg-bright-gray);
 }
+.text-input_light-grey {
+  background-color: #fafafa;
+}
 .text-input_link {
   text-decoration: underline;
   color: #5E31BD;
@@ -1555,6 +1558,9 @@ body {
 }
 .input-wrapper__group_with-badge:has(.text-input_grey) {
   background-color: var(--bg-bright-gray);
+}
+.input-wrapper__group_with-badge:has(.text-input_light-grey) {
+  background-color: #fafafa;
 }
 .input-wrapper__group_with-badge_110px {
   width: 100%;
@@ -3702,6 +3708,10 @@ body.open-conflict #conflict {
   display: flex;
 }
 
+body.open-delete-coupon #delete-coupon {
+  display: flex;
+}
+
 @media (max-width: 1080px) {
   .modal {
     padding-left: 0;
@@ -4198,14 +4208,6 @@ body:has(#affects:checked) .varients__group {
 .coupons-table__item-column_centered {
   justify-content: center;
 }
-.coupons-table__item:last-child .controls-dropdown__content {
-  top: auto;
-  bottom: calc(100% + 8px);
-}
-.coupons-table__items:not(:has(.discounts-table__item:nth-child(2))) .discounts-table__item:first-child:first-child .controls-dropdown__content {
-  top: -200%;
-  bottom: auto;
-}
 .coupons-table__header {
   display: flex;
   min-width: 1068px;
@@ -4215,7 +4217,7 @@ body:has(#affects:checked) .varients__group {
   align-items: center;
   border-bottom: 1px solid var(--bg-gray-2, #F5F5F5);
 }
-.coupons-table__header .discounts-table__item-name, .coupons-table__header .discounts-table__item-column {
+.coupons-table__header .coupons-table__item-name, .coupons-table__header .coupons-table__item-column {
   color: var(--text-grayish, #A19C9B);
   font-family: var(--montserrat);
   font-size: 14px;

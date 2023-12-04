@@ -12,7 +12,13 @@ function onSwitchesChange(event, elem) {
     affectsPrice.checked = true;
     const varient = target.closest('.varients__item');
     const priceInput = varient.querySelector('.varients__price input');
-    priceInput.setAttribute('readonly', true)
+    if (target.checked) {
+      priceInput.setAttribute('readonly', true)
+      priceInput.classList.add('text-input_light-grey')
+    } else {
+      priceInput.removeAttribute('readonly')
+      priceInput.classList.remove('text-input_light-grey')
+    }
   }
 }
 
