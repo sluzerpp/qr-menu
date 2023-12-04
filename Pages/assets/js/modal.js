@@ -44,6 +44,9 @@ function onTipBtnClick(elem) {
 let prevState = '';
 
 function toggleBodyClass(className, constraint = null, event = null) {
+  if (event) {
+    event.preventDefault();
+  }
   if (constraint && event && event.target === constraint) {
     if (!document.body.classList.contains(className)) {
       if (document.body.className) {

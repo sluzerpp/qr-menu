@@ -273,17 +273,55 @@ document.addEventListener('click', (e) => {
 });
 
 function onSelectAllCheckboxChange(checkbox) {
+  const checkboxes = document.querySelectorAll('.products__list-content input[type="checkbox"]');
   if (checkbox.checked) {
-    const checkboxes = document.querySelectorAll('.products__list-content input[type="checkbox"]');
     checkboxes.forEach((check) => check.checked = true);
+  } else {
+    checkboxes.forEach((check) => check.checked = false);
   }
+
+  onPricingFormChange();
+}
+
+function onProductCheckboxChange(container) {
+  const selectAllCheckbox = document.querySelector('.products__list-header input[type="checkbox"]');
+  const checkboxes = [...container.querySelectorAll('input[type="checkbox"]')];
+  selectAllCheckbox.checked = checkboxes.every((item) => item.checked);
+
+  onPricingFormChange();
 }
 
 function onPricingCheckboxChange(checkbox) {
+  const items = document.querySelectorAll('.products__item');
   if (!checkbox.checked) {
+    items.forEach((item) => item.setAttribute('draggable', true))
     const checkboxes = document.querySelectorAll('.products__list input[type="checkbox"]');
-    console.log(checkboxes);
     checkboxes.forEach((check) => check.checked = false);
+    const valueInput = document.querySelector('#pricing-value');
+    valueInput.value = '';
+    const radios = document.querySelectorAll('#pricing-form input[type="radio"]');
+    [...radios].forEach((radio) => radio.checked = false);
+    const selectNotChoose = document.querySelector('#pricing-form input[value=""]');
+    selectNotChoose.checked = true;
+    const select = document.querySelector('#pricing-form .custom-select');
+    const selectValueElem = select.querySelector('.custom-select__value');
+    select.dataset.dataCurrentValue = '';
+    selectValueElem.innerHTML = 'Не выбрано'; 
+  } else {
+    items.forEach((item) => item.removeAttribute('draggable'))
+  }
+}
+
+function onPricingFormChange() {
+  const btn = document.querySelector('#pricing-submit');
+  const form = document.querySelector('#pricing-form');
+  const pricingFormat = form['pricing-format'].value;
+  const pricingValue = form['pricing-value'].value;
+  const checkboxes = document.querySelectorAll('.products__list-content input[type="checkbox"]');
+  if (!pricingFormat || !pricingValue || [...checkboxes].every((item) => !item.checked)) {
+    btn.setAttribute('disabled', true);
+  } else {
+    btn.removeAttribute('disabled');
   }
 }
 

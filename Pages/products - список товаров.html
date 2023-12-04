@@ -768,7 +768,10 @@
                   </label>
                 </div>
 
-                <div class="products__pricing-controls">
+                <form class="products__pricing-controls"
+                  id="pricing-form"
+                  onchange="onPricingFormChange(event, this)"
+                  oninput="onPricingFormChange(event, this)">
                   <div class="input-wrapper">
                     <div class="input-wrapper__header">
                       <span>
@@ -777,7 +780,7 @@
                     </div>
                     <div class="custom-select" data-current-value>
                       <button class="custom-select__btn"
-                        onclick="onSelectOpenBtnClick(this)">
+                        onclick="onSelectOpenBtnClick(this, event)">
                         <span class="custom-select__value">
                           Не выбрано
                         </span>
@@ -791,53 +794,65 @@
                           </svg>
                         </span>
                       </button>
-                      <div class="custom-select__options">
-                        <button data-value="fixed"
-                          onclick="onSelectOptionClick(this)"
+                      <div class="custom-select__options"
+                        onchange="onSelectChange(event)">
+                        <label
                           class="custom-select__option">
+                          <input type="radio" required
+                            name="pricing-format"
+                            value>
+                          Не выбрано
+                        </label>
+                        <label
+                          class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="fixed">
                           Фиксированное число
-                        </button>
-                        <button data-value="price+number"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
+                        </label>
+                        <label class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="price+number">
                           Цена + число
-                        </button>
-                        <button data-value="price-number"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
+                        </label>
+                        <label class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="price-number">
                           Цена - число
-                        </button>
-                        <button data-value="price*number"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
+                        </label>
+                        <label class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="price*number">
                           Цена * число
-                        </button>
-                        <button data-value="price/number"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
+                        </label>
+                        <label class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="price/number">
                           Цена / число
-                        </button>
-                        <button data-value="price-percent"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
+                        </label>
+                        <label class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="price-percent">
                           Цена - процент
-                        </button>
-                        <button data-value="price+percent"
-                          onclick="onSelectOptionClick(this)"
-                          class="custom-select__option">
+                        </label>
+                        <label class="custom-select__option">
+                          <input type="radio" required name="pricing-format"
+                            value="price+percent">
                           Цена + процент
-                        </button>
+                        </label>
 
                       </div>
                     </div>
                   </div>
                   <div class="input-wrapper">
                     <span>Значение</span>
-                    <input type="text" oninput="onNumberInput(this, event)"
+                    <input type="text" name="pricing-value" id="pricing-value"
+                      oninput="onNumberInput(this, event)"
                       class="text-input text-input_grey">
                   </div>
-                  <button class="btn">Применить</button>
-                </div>
+                  <button id="pricing-submit"
+                    onclick="toggleBodyClass('open-pricing-confirmation', this, event)"
+                    disabled class="btn">Применить</button>
+                </form>
 
               </div>
 
@@ -873,6 +888,7 @@
                 </div>
 
                 <ul class="products__list-content"
+                  onchange="onProductCheckboxChange(this)"
                   ondragover="onListDragOver(event, this)"
                   ontouchmove="onListDragOver(event, this)">
                   <li draggable="true" class="products__item draggable"
@@ -921,7 +937,9 @@
                         </div>
                         <div
                           class="products__item-column products__item-column_centered">
-                          <a href="#">3 Скидки</a>
+                          <button
+                            onclick="toggleBodyClass('open-product-discounts', this, event)">3
+                            Скидки</button>
                         </div>
                         <div
                           class="products__item-column products__item-column_centered">
@@ -968,7 +986,9 @@
                           </div>
                           <div
                             class="products__item-column products__item-column_centered">
-                            <a href="#">3 Скидки</a>
+                            <button
+                              onclick="toggleBodyClass('open-product-discounts', this, event)">3
+                              Скидки</button>
                           </div>
                           <div
                             class="products__item-column products__item-column_centered">
@@ -999,7 +1019,9 @@
                           </div>
                           <div
                             class="products__item-column products__item-column_centered">
-                            <a href="#">3 Скидки</a>
+                            <button
+                              onclick="toggleBodyClass('open-product-discounts', this, event)">3
+                              Скидки</button>
                           </div>
                           <div
                             class="products__item-column products__item-column_centered">
@@ -1045,7 +1067,9 @@
                         </div>
                         <div
                           class="products__item-column products__item-column_centered">
-                          <a href="#">3 Скидки</a>
+                          <button
+                            onclick="toggleBodyClass('open-product-discounts', this, event)">3
+                            Скидки</button>
                         </div>
                         <div
                           class="products__item-column products__item-column_centered">
@@ -1105,7 +1129,9 @@
                         </div>
                         <div
                           class="products__item-column products__item-column_centered">
-                          <a href="#">3 Скидки</a>
+                          <button
+                            onclick="toggleBodyClass('open-product-discounts', this, event)">3
+                            Скидки</button>
                         </div>
                         <div
                           class="products__item-column products__item-column_centered">
@@ -1217,9 +1243,11 @@
     </button>
 
     <div class="modal" id="pricing-confirmation">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-pricing-confirmation', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-pricing-confirmation')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -1261,9 +1289,11 @@
     </div>
 
     <div class="modal" id="product-discounts">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-product-discounts', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-product-discounts')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path

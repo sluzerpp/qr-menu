@@ -57,6 +57,29 @@ function onPhoneNumberInput(elem) {
   elem.value = format+inputValue;
 }
 
+function onSelectChange(event, callback = null) {
+  event.preventDefault();
+  let content = event.target.parentElement.textContent;
+  const select = event.currentTarget.parentElement;
+  if (select.classList.contains('custom-select_number') || select.classList.contains('custom-select_with-img')) {
+    content = event.target.parentElement.innerHTML.replace(/<input.*>/, '');
+  }
+  const value = event.target.value;
+  if (select.classList.contains('disabled-select')) {
+    event.target.checked = false;
+    return;
+  }
+  select.dataset.currentValue = value;
+  const valueElem = select.querySelector('.custom-select__value');
+  valueElem.innerHTML = content;
+  select.classList.remove('open');
+  if (callback) {
+    callback(value, select);
+  }
+}
+
+
+
 function onHierarchySelectClick(event, callback = null) {
   event.preventDefault();
   const text = event.target.parentElement.textContent;
