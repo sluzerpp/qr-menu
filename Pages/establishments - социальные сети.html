@@ -461,7 +461,7 @@
                       ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
-                      <button class="wrapper-img__img">
+                      <button class="wrapper-img__img disabled" disabled>
                         <img src="./assets/imgs/icons/mail.svg"
                           alt="contact icon">
                       </button>
@@ -470,13 +470,14 @@
                           <button class="drag-btn"></button>
                           <label for="instagram-radio" class="radio-button">
                             <input type="checkbox" name="instagram-radio"
-                              id="instagram-radio">
+                              id="instagram-radio"
+                              oninput="onWrapperImgSwitchChange(this)">
                             <span></span>
                           </label>
                           <span>Instagram</span>
                         </span>
                         <input type="text" id="instagram-contact"
-                          class="text-input text-input_link">
+                          class="text-input disabled text-input_link" disabled>
                       </div>
                     </div>
 
@@ -485,7 +486,7 @@
                       ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
-                      <button class="wrapper-img__img">
+                      <button disabled class="wrapper-img__img disabled">
                         <img src="./assets/imgs/icons/facebook.svg"
                           alt="contact icon">
                       </button>
@@ -494,13 +495,14 @@
                           <button class="drag-btn"></button>
                           <label for="facebook-radio" class="radio-button">
                             <input type="checkbox" name="facebook-radio"
-                              id="facebook-radio">
+                              id="facebook-radio"
+                              oninput="onWrapperImgSwitchChange(this)">
                             <span></span>
                           </label>
                           <span>Facebook</span>
                         </span>
                         <input type="text" id="facebook-contact"
-                          class="text-input text-input_link">
+                          class="text-input disabled text-input_link" disabled>
                       </div>
                     </div>
 
@@ -509,7 +511,7 @@
                       ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
-                      <button class="wrapper-img__img">
+                      <button disabled class="wrapper-img__img disabled">
                         <img src="./assets/imgs/icons/twitter.svg"
                           alt="contact icon">
                       </button>
@@ -518,14 +520,15 @@
                           <button class="drag-btn"></button>
                           <label for="twitter-radio" class="radio-button">
                             <input type="checkbox" name="twitter-radio"
-                              id="twitter-radio">
+                              id="twitter-radio"
+                              oninput="onWrapperImgSwitchChange(this)">
                             <span></span>
                           </label>
                           <span>Twitter</span>
                         </span>
 
                         <input type="text" id="twitter-contact"
-                          class="text-input text-input_link">
+                          class="text-input disabled text-input_link" disabled>
                       </div>
                     </div>
 
@@ -534,7 +537,7 @@
                       ontouchstart="onDragStart(event, this)"
                       ontouchend="onDragEnd(this)"
                       class="wrapper-img draggable wrapper-img_checkbox">
-                      <button class="wrapper-img__img">
+                      <button disabled class="wrapper-img__img disabled">
                         <img src="./assets/imgs/icons/youtube.svg"
                           alt="contact icon">
                       </button>
@@ -543,13 +546,14 @@
                           <button class="drag-btn"></button>
                           <label for="youtube-radio" class="radio-button">
                             <input type="checkbox" name="youtube-radio"
-                              id="youtube-radio">
+                              id="youtube-radio"
+                              oninput="onWrapperImgSwitchChange(this)">
                             <span></span>
                           </label>
                           <span>Youtube</span>
                         </span>
                         <input type="text" id="youtube-contact"
-                          class="text-input text-input_link">
+                          class="text-input disabled text-input_link" disabled>
                       </div>
                     </div>
 
@@ -651,7 +655,7 @@
             Добавить социальную сеть
           </h3>
           <p class="modal__description">Введите название социальной сети и
-            добавте ссылку</p>
+            добавьте ссылку</p>
         </div>
         <div class="modal__content">
           <div class="modal-form">

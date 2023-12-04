@@ -37,22 +37,6 @@ function getDragAfterElement(container, y) {
   }, { offset: Number.NEGATIVE_INFINITY }).element
 }
 
-// function onGridListDragOver(e, list) {
-//   e.preventDefault();
-//   const draggable = list.querySelector('.dragging');
-//   const target = e.target.closest('.draggable:not(.dragging)');
-//   if (target && draggable) {
-//     const targetIndex = Array.from(list.children).indexOf(target);
-//     const draggedIndex = Array.from(list.children).indexOf(draggable);
-    
-//     if (targetIndex < draggedIndex) {
-//       list.insertBefore(draggable, target);
-//     } else {
-//       list.insertBefore(draggable, target.nextSibling);
-//     }
-//   }
-// }
-
 function onGridListDragOver(e, list) {
   e.preventDefault();
   const draggable = list.querySelector('.dragging');
