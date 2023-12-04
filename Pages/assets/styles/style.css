@@ -7,10 +7,21 @@
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("ttf-variations");
-  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("ttf") tech("variations");
-  font-weight: 100 1000;
+  src: url("../fonts/Montserrat-Regular.ttf");
   font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+  font-style: normal;
+  font-weight: 600;
 }
 :root {
   --text-black: #150704;
@@ -876,7 +887,7 @@ body {
   margin: 0;
   min-width: 71px;
   max-width: 80px;
-  width: auto;
+  width: 100%;
 }
 .date-input__picker-btn {
   display: block;
@@ -3713,6 +3724,7 @@ body.open-conflict #conflict {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 }
 .modal-form__group {
   padding: 20px;
@@ -3751,6 +3763,9 @@ body.open-conflict #conflict {
   right: -24px;
   background-color: var(--bg-bright-gray);
   position: absolute;
+}
+.modal-form__two-columns:not(:has(.input-wrapper:nth-child(2))) > *:first-child::after {
+  display: none;
 }
 .modal-form__times {
   display: flex;
@@ -3884,12 +3899,25 @@ body.open-conflict #conflict {
   }
   .modal-form__two-columns {
     grid-template-columns: 1fr !important;
+    gap: 24px;
   }
   .modal-form__two-columns::after {
     display: none;
   }
-  .modal-form__period > * {
+  .modal-form .input-wrapper {
     width: 100%;
+  }
+  .modal-form__period {
+    justify-content: center;
+    width: 100%;
+    justify-self: center;
+    flex-wrap: wrap;
+    min-width: 100%;
+  }
+  .modal-form__period > * {
+    width: calc(50% - 4px);
+    max-width: 50%;
+    min-width: 140px;
   }
   .modal-form__dates {
     flex-wrap: nowrap;
