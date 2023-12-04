@@ -660,7 +660,7 @@
         </div>
         <div class="modal__content">
           <div class="modal-form">
-            <button
+            <button id="additional-image-upload-btn"
               class="image-upload">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -691,13 +691,15 @@
                 </p>
 
                 <label for="is-video" class="radio-button radio-button_large">
-                  <input type="checkbox" name="is-video" id="is-video">
+                  <input type="checkbox"
+                    onchange="onVideoLinkSwitchChange(event)" name="is-video"
+                    id="is-video">
                   <span></span>
                 </label>
               </div>
               <input type="text" placeholder="Вставьте URL видео"
                 name="video-link" id="video-link"
-                class="text-input">
+                class="text-input disabled" disabled>
             </div>
 
           </div>

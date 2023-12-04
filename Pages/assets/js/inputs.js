@@ -355,3 +355,22 @@ function onWrapperImgSwitchChange(elem) {
     input.setAttribute('disabled', true);
   }
 }
+
+const linkInput = document.querySelector('#video-link');
+const uploadBtn = document.querySelector('#additional-image-upload-btn');
+
+function onVideoLinkSwitchChange(event) {
+  const target = event.target;
+  if (!linkInput || !uploadBtn) return;
+  if (target.checked) {
+    linkInput.classList.remove('disabled');
+    linkInput.removeAttribute('disabled');
+    uploadBtn.classList.add('disabled');
+    uploadBtn.setAttribute('disabled', true);
+  } else {
+    linkInput.classList.add('disabled');
+    linkInput.setAttribute('disabled', true);
+    uploadBtn.classList.remove('disabled');
+    uploadBtn.removeAttribute('disabled');
+  }
+}
