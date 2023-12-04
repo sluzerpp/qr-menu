@@ -451,7 +451,7 @@
             <div class="input-wrapper">
               <span>Тип <span>*</span></span>
               <div class="custom-select" data-current-value id="product-type">
-                <button class="custom-select__btn"
+                <div class="custom-select__btn"
                   onclick="onSelectOpenBtnClick(this)">
                   <span class="custom-select__value">
                     Не выбрано
@@ -465,18 +465,18 @@
                         fill="#150704" />
                     </svg>
                   </span>
-                </button>
+                </div>
                 <div class="custom-select__options">
-                  <button data-value="product"
+                  <div onsubmit="() => {}" data-value="product"
                     onclick="onSelectOptionClick(this)"
                     class="custom-select__option">
                     Товар
-                  </button>
-                  <button data-value="dish"
+                  </div>
+                  <div onsubmit="() => {}" data-value="dish"
                     onclick="onSelectOptionClick(this)"
                     class="custom-select__option">
                     Блюдо
-                  </button>
+                  </div>
                 </div>
               </div>
               <!-- <p class="input-wrapper__error">Ошибка!</p> -->
@@ -517,7 +517,7 @@
             <div class="main__group" id="weight-time-group">
               <div class="main__group-content main__group-content_two-columns">
                 <div class="input-wrapper">
-                  <span>Вес блюда</span>
+                  <span>Вес</span>
                   <div
                     class="input-wrapper__group input-wrapper__group_with-badge">
                     <input type="text" oninput="onNumberInput(this)"
@@ -569,7 +569,7 @@
                   <span>Время приготовления</span>
                   <div
                     class="input-wrapper__group input-wrapper__group_with-badge">
-                    <input type="text" oninput="onNumberInput(this)"
+                    <input type="text" oninput="onNumberInput(this, false)"
                       name="product-time" id="product-time"
                       class="text-input">
                     <div class="badge">
@@ -694,7 +694,8 @@
                           <span>Время приготовления</span>
                           <div
                             class="input-wrapper__group input-wrapper__group_with-badge">
-                            <input type="text" oninput="onNumberInput(this)"
+                            <input type="text"
+                              oninput="onNumberInput(this, false)"
                               name="product-varient-1-time"
                               id="product-varient-1-time"
                               class="text-input text-input_grey">
