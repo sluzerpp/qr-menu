@@ -8,7 +8,7 @@ function initDiscountList(list) {
   let wasFalse = false;
   const firstLineItems = [...items].filter((item) => {
     if (wasFalse) return false;
-    const itemWidth = item.getBoundingClientRect().width;
+    const itemWidth = item.getBoundingClientRect().width + 3;
     if (lineWidth + itemWidth < listWidth) {
       lineWidth += itemWidth;
       return true;

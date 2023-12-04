@@ -737,7 +737,7 @@ body {
 .text-input {
   height: 50px;
   border-radius: 4px;
-  font-size: 18px;
+  font-size: 14px;
   font-family: var(--montserrat);
   outline: transparent;
   padding: 14.5px 20px;
@@ -769,11 +769,6 @@ body {
   border: 1px solid var(--error);
 }
 
-@media (max-width: 1440px) {
-  .text-input {
-    font-size: 14px;
-  }
-}
 .time-input {
   padding: 8px;
   border-radius: 4px;
@@ -4721,6 +4716,9 @@ body:has(#affects:checked) .varients__group {
   align-items: center;
   position: relative;
   width: 100%;
+}
+.product-varient__discounts {
+  font-size: 14px;
 }
 .product-varient.dragging {
   filter: grayscale(0.7) opacity(0.7);
