@@ -279,9 +279,9 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  font-size: 18px;
   color: var(--text-black);
   align-items: center;
+  font-size: 14px;
 }
 .round-radio-button input {
   width: 0;
@@ -296,8 +296,8 @@ body {
 }
 .round-radio-button span {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border: 1.5px solid var(--line-gray);
   border-radius: 50%;
   position: relative;
@@ -306,8 +306,8 @@ body {
 .round-radio-button span::before {
   display: block;
   content: "";
-  width: 9px;
-  height: 9px;
+  width: 6.5px;
+  height: 6.5px;
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -327,19 +327,6 @@ body {
   scale: 1;
 }
 
-@media (max-width: 1440px) {
-  .round-radio-button {
-    font-size: 14px;
-  }
-  .round-radio-button span {
-    width: 14px;
-    height: 14px;
-  }
-  .round-radio-button span::before {
-    width: 6.5px;
-    height: 6.5px;
-  }
-}
 .time-input {
   padding: 8px;
   border-radius: 4px;

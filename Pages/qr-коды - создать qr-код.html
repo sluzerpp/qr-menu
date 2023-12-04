@@ -436,8 +436,8 @@
               </div>
 
               <div class="input-wrapper">
-                <span>Номер <span>*</span></span>
-                <input type="text" id="qr-code-number"
+                <span>Название <span>*</span></span>
+                <input type="text" id="qr-code-name"
                   class="text-input">
               </div>
 
@@ -465,7 +465,7 @@
                     </span>
                   </button>
                   <ul class="select-hierarchy__options"
-                    onchange="onHierarchyMultiplySelectClick(event)">
+                    onchange="onHierarchyMultiplySelectClick(event, { message: 'товаров' })">
                     <li class="select-hierarchy__option">
                       <label for="menu1"
                         class="checkbox">

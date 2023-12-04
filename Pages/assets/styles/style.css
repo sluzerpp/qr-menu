@@ -452,7 +452,7 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  font-size: 18px;
+  font-size: 14px;
 }
 .checkbox input {
   width: 0;
@@ -467,8 +467,8 @@ body {
 }
 .checkbox span {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 13.5px;
+  height: 13.5px;
   border-radius: 1.5px;
   border: 1.5px solid var(--line-gray);
   transition: border-color 0.15s linear;
@@ -477,8 +477,8 @@ body {
 .checkbox span::before {
   display: block;
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -491,8 +491,8 @@ body {
 .checkbox span::after {
   display: block;
   content: "";
-  width: 12px;
-  height: 8.7px;
+  width: 8px;
+  height: 5.8px;
   background-image: url('data:image/svg+xml,<svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.77486 4.575L7.01236 0.3375C7.11236 0.2375 7.23111 0.1875 7.36861 0.1875C7.50611 0.1875 7.62486 0.2375 7.72486 0.3375C7.82486 0.4375 7.87486 0.55625 7.87486 0.69375C7.87486 0.83125 7.82486 0.95 7.72486 1.05L3.12486 5.65C3.02486 5.75 2.90819 5.8 2.77486 5.8C2.64153 5.8 2.52486 5.75 2.42486 5.65L0.274859 3.5C0.174859 3.4 0.126943 3.28125 0.131109 3.14375C0.135276 3.00625 0.187359 2.8875 0.287359 2.7875C0.387359 2.6875 0.506109 2.6375 0.643609 2.6375C0.781109 2.6375 0.899859 2.6875 0.999859 2.7875L2.77486 4.575Z" fill="white"/></svg>');
   background-position: center;
   background-repeat: no-repeat;
@@ -511,23 +511,6 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 1440px) {
-  .checkbox {
-    font-size: 14px;
-  }
-  .checkbox span {
-    width: 13.5px;
-    height: 13.5px;
-  }
-  .checkbox span::before {
-    width: 6px;
-    height: 6px;
-  }
-  .checkbox span::after {
-    width: 8px;
-    height: 5.8px;
-  }
-}
 .switch {
   display: flex;
   justify-content: space-between;
@@ -1875,9 +1858,9 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  font-size: 18px;
   color: var(--text-black);
   align-items: center;
+  font-size: 14px;
 }
 .round-radio-button input {
   width: 0;
@@ -1892,8 +1875,8 @@ body {
 }
 .round-radio-button span {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border: 1.5px solid var(--line-gray);
   border-radius: 50%;
   position: relative;
@@ -1902,8 +1885,8 @@ body {
 .round-radio-button span::before {
   display: block;
   content: "";
-  width: 9px;
-  height: 9px;
+  width: 6.5px;
+  height: 6.5px;
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -1923,19 +1906,6 @@ body {
   scale: 1;
 }
 
-@media (max-width: 1440px) {
-  .round-radio-button {
-    font-size: 14px;
-  }
-  .round-radio-button span {
-    width: 14px;
-    height: 14px;
-  }
-  .round-radio-button span::before {
-    width: 6.5px;
-    height: 6.5px;
-  }
-}
 .controlled-number-input {
   width: 100%;
   gap: 8px;

@@ -17,7 +17,10 @@ function onSelectOptionClick(elem) {
   selectElem.classList.remove('open');
 }
 
-function onSelectOpenBtnClick(elem) {
+function onSelectOpenBtnClick(elem, event = null) {
+  if (event) {
+    event.preventDefault();
+  }
   const selectElem = elem.parentElement;
   if (selectElem.classList.contains('disabled-select')) {
     return;
@@ -76,9 +79,9 @@ function openSelectDropdown(elem) {
   elem.closest('.select-hierarchy__option_with-list').classList.toggle('open');
 }
 
-function onHierarchyMultiplySelectClick(event, checkbox) {
+function onHierarchyMultiplySelectClick(event, options = { message: '', checkbox: null }) {
   event.preventDefault();
-  const target = checkbox || event.target
+  const target = options.checkbox || event.target;
   const value = target.value;
   const select = event.currentTarget.parentElement;
   if (select.classList.contains('disabled-select')) {
@@ -93,13 +96,14 @@ function onHierarchyMultiplySelectClick(event, checkbox) {
   }
   if (target.checked) {
     if (valuesArray.includes(value)) return;
-    valuesArray.push(value);
+    valuesArray.push(value);  
   } else {
+    if (!valuesArray.includes(value)) return;
     valuesArray = valuesArray.filter((val) => val !== value);
   }
   if (valuesArray.length > 0) {
     select.dataset.currentValue = valuesArray.join(', ');
-    valueElem.textContent = `Выбрано - ${valuesArray.length}`;
+    valueElem.textContent = `Выбрано - ${valuesArray.length} ${options.message || ''}`;
   } else {
     select.dataset.currentValue = '';
     valueElem.textContent = 'Не выбрано';
@@ -110,7 +114,7 @@ function onHierarchyMultiplySelectClick(event, checkbox) {
       const checkbox = option.querySelector('input');
       checkbox.checked = target.checked;
       event.target = checkbox;
-      onHierarchyMultiplySelectClick(event, checkbox);
+      onHierarchyMultiplySelectClick(event, { ...options, checkbox });
     });
   }
 }
