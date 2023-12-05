@@ -345,8 +345,8 @@ function selectDatePickerBtnClick(elem) {
   }
 }
 
-function onControllerNumberInputMinusClick(elem) {
-  const input = elem.nextElementSibling;
+function onControllerNumberInputMinusClick(event) {
+  const input = event.target.nextElementSibling;
   let currentValue = parseInt(input.value);
 
   if (isNaN(currentValue)) {
@@ -361,8 +361,8 @@ function onControllerNumberInputMinusClick(elem) {
   onNumberInput(input, false)
 }
 
-function onControllerNumberInputPlusClick(elem) {
-  const input = elem.previousElementSibling;
+function onControllerNumberInputPlusClick(event) {
+  const input = event.target.previousElementSibling;
   let currentValue = parseInt(input.value);
   
   if (isNaN(currentValue)) {
@@ -411,4 +411,42 @@ function onVideoLinkSwitchChange(event) {
     uploadBtn.classList.remove('disabled');
     uploadBtn.removeAttribute('disabled');
   }
+}
+
+const numerations = ['letter', 'number'];
+
+function onNumerationRadioChange(event) {
+  const target = event.target;
+  if (numerations.includes(target.value)) {
+    const textInputs = document.querySelectorAll('#numeration .text-input');
+    textInputs.forEach((input) => {
+      if (input.id.includes(target.value)) {
+        input.classList.remove('hidden');
+        input.setAttribute('required', true);
+      } else {
+        input.classList.add('hidden');
+        input.removeAttribute('required');
+      }
+    });
+  }
+}
+
+function onObjectTypeChange(value) {
+  console.log(value);
+  const numeration = document.querySelector('#numeration');
+  const copyCount = document.querySelector('#copy-count-wrapper');
+  if (!value) {
+    numeration.classList.add('disabled');
+    copyCount.classList.add('disabled');
+  } else {
+    numeration.classList.remove('disabled');
+    copyCount.classList.remove('disabled');
+  }
+}
+
+function onCopyBtnClick(event, id) {
+  event.preventDefault();
+  const input = document.getElementById(id);
+  if (!input) return;
+  navigator.clipboard.writeText(input.value);
 }

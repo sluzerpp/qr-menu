@@ -140,6 +140,10 @@ body {
   font-size: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 1080px) {
   .content {
     padding-left: 30px;

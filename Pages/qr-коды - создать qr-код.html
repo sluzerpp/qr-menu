@@ -464,29 +464,98 @@
                       </svg>
                     </span>
                   </button>
-                  <ul class="select-hierarchy__options"
-                    onchange="onHierarchyMultiplySelectClick(event, { message: 'товаров' })">
-                    <li class="select-hierarchy__option">
-                      <label for="menu1"
-                        class="checkbox">
-                        <input type="checkbox" value="menu1"
-                          name="menu1"
-                          id="menu1">
-                        <span></span>
-                        Меню 1
-                      </label>
-                    </li>
-                    <li class="select-hierarchy__option">
-                      <label for="menu2"
-                        class="checkbox">
-                        <input type="checkbox" value="menu2"
-                          name="menu2"
-                          id="menu2">
-                        <span></span>
-                        Меню 2
-                      </label>
-                    </li>
-                  </ul>
+                  <div class="select-hierarchy__options"
+                    onchange="onHierarchyMultiplySelectClick(event)">
+                    <div
+                      class="select-hierarchy__option select-hierarchy__option_with-list">
+                      <div class="select-hierarchy__option-content">
+                        <div class="select-hierarchy__option-arrow"
+                          onclick="openSelectDropdown(this)"></div>
+                        <label for="category1" class="checkbox">
+                          <input type="checkbox" value="category1"
+                            name="parent-category"
+                            id="category1">
+                          <span></span>
+                          Пицца
+                        </label>
+                      </div>
+                      <ul>
+                        <li
+                          class="select-hierarchy__option select-hierarchy__option_with-list">
+                          <div class="select-hierarchy__option-content">
+                            <div class="select-hierarchy__option-arrow"
+                              onclick="openSelectDropdown(this)"></div>
+                            <label for="subcategory1" class="checkbox">
+                              <input type="checkbox" value="subcategory1"
+                                name="parent-category"
+                                id="subcategory1">
+                              <span></span>
+                              Мясные
+                            </label>
+                          </div>
+                          <ul>
+                            <li class="select-hierarchy__option">
+                              <label for="subsubcategory1"
+                                class="checkbox">
+                                <input type="checkbox" value="subsubcategory1"
+                                  name="parent-category"
+                                  id="subsubcategory1">
+                                <span></span>
+                                Моцарелла
+                              </label>
+                            </li>
+                            <li
+                              class="select-hierarchy__option select-hierarchy__option_with-list">
+                              <div class="select-hierarchy__option-content">
+                                <div class="select-hierarchy__option-arrow"
+                                  onclick="openSelectDropdown(this)"></div>
+                                <label for="margarita" class="checkbox">
+                                  <input type="checkbox" value="margarita"
+                                    name="margarita"
+                                    id="margarita">
+                                  <span></span>
+                                  Маргарита
+                                </label>
+                              </div>
+                              <ul>
+                                <li class="select-hierarchy__option">
+                                  <label for="margarita-30cm"
+                                    class="checkbox">
+                                    <input type="checkbox"
+                                      value="margarita-30cm"
+                                      name="margarita-30cm"
+                                      id="margarita-30cm">
+                                    <span></span>
+                                    30 см
+                                  </label>
+                                </li>
+                                <li class="select-hierarchy__option">
+                                  <label for="margarita-40cm"
+                                    class="checkbox">
+                                    <input type="checkbox"
+                                      value="margarita-40cm"
+                                      name="margarita-40cm"
+                                      id="margarita-40cm">
+                                    <span></span>
+                                    40 см
+                                  </label>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="select-hierarchy__option">
+                          <label for="subcategory2" class="checkbox">
+                            <input type="checkbox" value="subcategory2"
+                              name="parent-category"
+                              id="subcategory2">
+                            <span></span>
+                            Грибные
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -606,7 +675,8 @@
                     </svg>
                     Скачать все
                   </button>
-                  <button class="btn" disabled>
+                  <button class="btn"
+                    onclick="toggleBodyClass('open-add-place')">
                     <svg viewBox="0 0 19 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -628,26 +698,12 @@
                     <div class="switch__text">
                       <div class="drag-btn"></div>
                       Стол 1
-
                     </div>
-                    <div class="controls-dropdown">
-                      <span class="more-btn"
-                        onclick="toggleDropdown(this, '.controls-dropdown')"></span>
-                      <div class="controls-dropdown__content">
-                        <button class="controls-dropdown__item">
-                          Редактировать
-                        </button>
-                        <button class="controls-dropdown__item">
-                          Копировать
-                        </button>
-                        <button
-                          class="controls-dropdown__item controls-dropdown__item_red">
-                          Удалить
-                        </button>
-                      </div>
-                    </div>
+                    <button class="trash-btn trash-btn_gray"></button>
                   </div>
                   <div class="switch__controls">
+                    <button class="eye-btn"
+                      onclick="toggleBodyClass('open-view-place')"></button>
                     <button class="btn-secondary">
                       <svg viewBox="0 0 19 18"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -674,24 +730,11 @@
                       <div class="drag-btn"></div>
                       Стол 2
                     </div>
-                    <div class="controls-dropdown">
-                      <span class="more-btn"
-                        onclick="toggleDropdown(this, '.controls-dropdown')"></span>
-                      <div class="controls-dropdown__content">
-                        <button class="controls-dropdown__item">
-                          Редактировать
-                        </button>
-                        <button class="controls-dropdown__item">
-                          Копировать
-                        </button>
-                        <button
-                          class="controls-dropdown__item controls-dropdown__item_red">
-                          Удалить
-                        </button>
-                      </div>
-                    </div>
+                    <button class="trash-btn trash-btn_gray"></button>
                   </div>
                   <div class="switch__controls">
+                    <button class="eye-btn"
+                      onclick="toggleBodyClass('open-view-place')"></button>
                     <button class="btn-secondary">
                       <svg viewBox="0 0 19 18"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -718,24 +761,11 @@
                       <div class="drag-btn"></div>
                       Стол 3
                     </div>
-                    <div class="controls-dropdown">
-                      <span class="more-btn"
-                        onclick="toggleDropdown(this, '.controls-dropdown')"></span>
-                      <div class="controls-dropdown__content">
-                        <button class="controls-dropdown__item">
-                          Редактировать
-                        </button>
-                        <button class="controls-dropdown__item">
-                          Копировать
-                        </button>
-                        <button
-                          class="controls-dropdown__item controls-dropdown__item_red">
-                          Удалить
-                        </button>
-                      </div>
-                    </div>
+                    <button class="trash-btn trash-btn_gray"></button>
                   </div>
                   <div class="switch__controls">
+                    <button class="eye-btn"
+                      onclick="toggleBodyClass('open-view-place')"></button>
                     <button class="btn-secondary">
                       <svg viewBox="0 0 19 18"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -783,9 +813,11 @@
     </button>
 
     <div class="modal" id="add-place">
-      <div class="modal__bg"></div>
-      <div class="modal__window">
-        <button class="modal__close-btn">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-add-place', this, event)"></div>
+      <div class="modal__window" id="add-place-form">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-add-place', this, event)">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -795,7 +827,7 @@
         </button>
         <div class="modal__header">
           <h3 class="modal__title">
-            Скидки
+            Добавить место
           </h3>
         </div>
         <div class="modal__content">
@@ -805,11 +837,11 @@
               <span>Тип объекта <span>*</span></span>
               <div class="input-wrapper__group input-wrapper__group_vertical">
                 <div class="custom-select custom-select_gray width-100p"
-                  data-current-value="table" id="object-type-select">
+                  data-current-value id="object-type-select">
                   <button class="custom-select__btn"
-                    onclick="onSelectOpenBtnClick(this)">
+                    onclick="onSelectOpenBtnClick(this, event)">
                     <span class="custom-select__value">
-                      Стол
+                      Не выбрано
                     </span>
                     <span class="custom-select__arrow">
                       <svg width="18" height="18" viewBox="0 0 18 18"
@@ -821,25 +853,33 @@
                       </svg>
                     </span>
                   </button>
-                  <div class="custom-select__options">
-                    <button data-value
-                      onclick="onSelectOptionClick(this)"
+                  <div class="custom-select__options"
+                    onchange="onSelectChange(event, onObjectTypeChange)">
+                    <label
                       class="custom-select__option">
+                      <input type="radio" checked required
+                        name="object-type"
+                        value>
                       Не выбрано
-                    </button>
-                    <button data-value="table"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio" required
+                        name="object-type"
+                        value="table">
                       Стол
-                    </button>
-                    <button data-value="chair"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio" required
+                        name="object-type"
+                        value="chair">
                       Стул
-                    </button>
+                    </label>
                   </div>
                 </div>
-                <button class="btn-secondary">
+                <button class="btn-secondary"
+                  onclick="toggleBodyClass('open-add-type')">
                   <svg viewBox="0 0 19 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -850,57 +890,57 @@
               </div>
             </div>
 
-            <div class="modal-form__row">
-              <div class="input-wrapper">
-                <span>Порядковый номер <span>*</span></span>
-                <input type="text" name="order-number" id="order-number"
-                  oninput="onNumberInput(this)"
-                  class="text-input text-input_grey">
-              </div>
-              <div class="input-wrapper">
-                <span>Количество копий <span>*</span></span>
-                <div class="controlled-number-input">
-                  <button class="controlled-number-input__btn"
-                    onclick="onControllerNumberInputMinusClick(this)">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M1.69643 8.39286C1.49911 8.39286 1.33371 8.32573 1.20022 8.19147C1.06674 8.0572 1 7.89083 1 7.69237C1 7.49388 1.06674 7.32887 1.20022 7.19732C1.33371 7.06577 1.49911 7 1.69643 7H13.3036C13.5009 7 13.6663 7.06713 13.7998 7.20138C13.9333 7.33566 14 7.50202 14 7.70049C14 7.89897 13.9333 8.06399 13.7998 8.19554C13.6663 8.32708 13.5009 8.39286 13.3036 8.39286H1.69643Z"
-                        fill="#150704" />
-                    </svg>
-                  </button>
+            <div class="input-wrapper qr-numeration disabled" id="numeration"
+              onchange="onNumerationRadioChange(event)">
+              <span>Нумерация <span>*</span></span>
+              <label class="round-radio-button">
+                <input type="radio" name="numeration" value="number" id="number">
+                <span></span>
+                Численная
+              </label>
+              <input type="text" oninput="onNumberInput(this, false)" value="1"
+                name="number-start" id="number-start"
+                class="text-input text-input_grey hidden">
+              <label class="round-radio-button">
+                <input type="radio" name="numeration" value="letter" id="letter">
+                <span></span>
+                Буквенная
+              </label>
+              <input type="text" value="A" name="letter-start" id="letter-start"
+                class="text-input text-input_grey hidden">
+            </div>
 
-                  <input type="number" name="copy-count" id="copy-count"
-                    value="0"
-                    oninput="onNumberInput(this, false)">
+            <div class="input-wrapper qr-add-number-input disabled"
+              id="copy-count-wrapper">
+              <span>Количество копий <span>*</span></span>
+              <div class="controlled-number-input">
+                <button class="controlled-number-input__btn"
+                  onclick="onControllerNumberInputMinusClick(event)">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.69643 8.39286C1.49911 8.39286 1.33371 8.32573 1.20022 8.19147C1.06674 8.0572 1 7.89083 1 7.69237C1 7.49388 1.06674 7.32887 1.20022 7.19732C1.33371 7.06577 1.49911 7 1.69643 7H13.3036C13.5009 7 13.6663 7.06713 13.7998 7.20138C13.9333 7.33566 14 7.50202 14 7.70049C14 7.89897 13.9333 8.06399 13.7998 8.19554C13.6663 8.32708 13.5009 8.39286 13.3036 8.39286H1.69643Z"
+                      fill="#150704" />
+                  </svg>
+                </button>
 
-                  <button class="controlled-number-input__btn"
-                    onclick="onControllerNumberInputPlusClick(this)">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M6.95089 8.37911H1.71411C1.51178 8.37911 1.34218 8.31028 1.20531 8.17261C1.06844 8.03493 1 7.86434 1 7.66083C1 7.45731 1.06844 7.28811 1.20531 7.15322C1.34218 7.01834 1.51178 6.95089 1.71411 6.95089H6.95089V1.71411C6.95089 1.51178 7.01972 1.34218 7.15739 1.20531C7.29507 1.06844 7.46566 1 7.66917 1C7.87269 1 8.04189 1.06844 8.17678 1.20531C8.31166 1.34218 8.37911 1.51178 8.37911 1.71411V6.95089H13.6159C13.8182 6.95089 13.9878 7.01972 14.1247 7.15739C14.2616 7.29507 14.33 7.46566 14.33 7.66917C14.33 7.87269 14.2616 8.04189 14.1247 8.17678C13.9878 8.31166 13.8182 8.37911 13.6159 8.37911H8.37911V13.6159C8.37911 13.8182 8.31028 13.9878 8.17261 14.1247C8.03493 14.2616 7.86434 14.33 7.66083 14.33C7.45731 14.33 7.28811 14.2616 7.15322 14.1247C7.01834 13.9878 6.95089 13.8182 6.95089 13.6159V8.37911Z"
-                        fill="#150704" />
-                    </svg>
-                  </button>
+                <input type="number" name="copy-count" id="copy-count"
+                  value="0"
+                  oninput="onNumberInput(this, false)">
 
-                </div>
+                <button class="controlled-number-input__btn"
+                  onclick="onControllerNumberInputPlusClick(event)">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6.95089 8.37911H1.71411C1.51178 8.37911 1.34218 8.31028 1.20531 8.17261C1.06844 8.03493 1 7.86434 1 7.66083C1 7.45731 1.06844 7.28811 1.20531 7.15322C1.34218 7.01834 1.51178 6.95089 1.71411 6.95089H6.95089V1.71411C6.95089 1.51178 7.01972 1.34218 7.15739 1.20531C7.29507 1.06844 7.46566 1 7.66917 1C7.87269 1 8.04189 1.06844 8.17678 1.20531C8.31166 1.34218 8.37911 1.51178 8.37911 1.71411V6.95089H13.6159C13.8182 6.95089 13.9878 7.01972 14.1247 7.15739C14.2616 7.29507 14.33 7.46566 14.33 7.66917C14.33 7.87269 14.2616 8.04189 14.1247 8.17678C13.9878 8.31166 13.8182 8.37911 13.6159 8.37911H8.37911V13.6159C8.37911 13.8182 8.31028 13.9878 8.17261 14.1247C8.03493 14.2616 7.86434 14.33 7.66083 14.33C7.45731 14.33 7.28811 14.2616 7.15322 14.1247C7.01834 13.9878 6.95089 13.8182 6.95089 13.6159V8.37911Z"
+                      fill="#150704" />
+                  </svg>
+                </button>
+
               </div>
             </div>
 
-            <div class="input-wrapper" id="url-address-wrapper">
-              <span>URL-адрес</span>
-              <input type="text" name="url-address" id="url-address"
-                class="text-input text-input_grey">
-            </div>
-
-            <div class="qr-code-view">
-              <div class="qr-code-view__img">
-                <img
-                  src="https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg"
-                  alt="qr-code image">
-              </div>
-            </div>
           </div>
 
         </div>
@@ -913,10 +953,10 @@
 
     <div class="modal" id="add-type">
       <div class="modal__bg"
-        onclick="toggleBodyClass('open-type', this, event)"></div>
+        onclick="toggleBodyClass('open-add-type', this, event)"></div>
       <div class="modal__window">
         <button class="modal__close-btn"
-          onclick="toggleBodyClass('open-type')">
+          onclick="toggleBodyClass('open-add-type')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -964,8 +1004,10 @@
                       Для пляжа
                     </div>
                     <div class="modal-form__list-item-group">
-                      <button class="edit-btn edit-btn_gray"></button>
-                      <button class="trash-btn trash-btn_gray"></button>
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-type')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-type')"></button>
                     </div>
                   </div>
                   <p class="error-text modal-form__list-desktop-error">Данную
@@ -986,8 +1028,10 @@
                       Для номеров
                     </div>
                     <div class="modal-form__list-item-group">
-                      <button class="edit-btn edit-btn_gray"></button>
-                      <button class="trash-btn trash-btn_gray"></button>
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-type')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-type')"></button>
                     </div>
                   </div>
                 </li>
@@ -1003,8 +1047,10 @@
                       Для зала
                     </div>
                     <div class="modal-form__list-item-group">
-                      <button class="edit-btn edit-btn_gray"></button>
-                      <button class="trash-btn trash-btn_gray"></button>
+                      <button class="edit-btn edit-btn_gray"
+                        onclick="toggleBodyClass('open-edit-type')"></button>
+                      <button class="trash-btn trash-btn_gray"
+                        onclick="toggleBodyClass('open-delete-type')"></button>
                     </div>
                   </div>
                 </li>
@@ -1020,9 +1066,11 @@
     </div>
 
     <div class="modal" id="delete-type">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-delete-type', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-delete-type')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -1045,9 +1093,11 @@
     </div>
 
     <div class="modal" id="edit-type">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-edit-type', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-edit-type')">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -1072,6 +1122,61 @@
         <div class="modal__controls">
           <button class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="view-place">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-view-place', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-view-place')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Просмотр «Стол 1»
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <div class="qr-code-view">
+              <div class="qr-code-view__img">
+                <img
+                  src="https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg"
+                  alt="qr-code image">
+              </div>
+              Стол 1
+            </div>
+            <div class="input-wrapper">
+              <span>URL</span>
+              <div
+                class="input-wrapper__group input-wrapper__group_with-badge input-wrapper__group_lg-padding">
+                <input type="text"
+                  class="text-input text-input_grey text-input_link" readonly
+                  value="https://dnm.com/street-food/restoran/stol-1"
+                  id="qr-code-view-url">
+                <button class="copy-btn"
+                  onclick="onCopyBtnClick(event, 'qr-code-view-url')"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary">
+            <svg viewBox="0 0 19 18"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3 8.64583C2.72386 8.64583 2.5 8.42198 2.5 8.14583L2.5 2.5C2.5 2.22386 2.72386 2 3 2L8.64583 2C8.92198 2 9.14583 2.22386 9.14583 2.5V8.14583C9.14583 8.42198 8.92198 8.64583 8.64583 8.64583H3ZM3.70833 6.9375C3.70833 7.21364 3.93219 7.4375 4.20833 7.4375L7.4375 7.4375C7.71364 7.4375 7.9375 7.21364 7.9375 6.9375L7.9375 3.70833C7.9375 3.43219 7.71364 3.20833 7.4375 3.20833L4.20833 3.20833C3.93219 3.20833 3.70833 3.43219 3.70833 3.70833L3.70833 6.9375ZM3 16.5C2.72386 16.5 2.5 16.2761 2.5 16L2.5 10.3542C2.5 10.078 2.72386 9.85417 3 9.85417H8.64583C8.92198 9.85417 9.14583 10.078 9.14583 10.3542L9.14583 16C9.14583 16.2761 8.92198 16.5 8.64583 16.5H3ZM3.70833 14.7917C3.70833 15.0678 3.93219 15.2917 4.20833 15.2917H7.4375C7.71364 15.2917 7.9375 15.0678 7.9375 14.7917L7.9375 11.5625C7.9375 11.2864 7.71364 11.0625 7.4375 11.0625H4.20833C3.93219 11.0625 3.70833 11.2864 3.70833 11.5625L3.70833 14.7917ZM10.8542 8.64583C10.578 8.64583 10.3542 8.42198 10.3542 8.14583V2.5C10.3542 2.22386 10.578 2 10.8542 2L16.5 2C16.7761 2 17 2.22386 17 2.5V8.14583C17 8.42198 16.7761 8.64583 16.5 8.64583L10.8542 8.64583ZM11.5625 6.9375C11.5625 7.21364 11.7864 7.4375 12.0625 7.4375L15.2917 7.4375C15.5678 7.4375 15.7917 7.21364 15.7917 6.9375V3.70833C15.7917 3.43219 15.5678 3.20833 15.2917 3.20833L12.0625 3.20833C11.7864 3.20833 11.5625 3.43219 11.5625 3.70833V6.9375ZM15.8486 16.5C15.5725 16.5 15.3486 16.2761 15.3486 16V14.8486H16.5C16.7761 14.8486 17 15.0725 17 15.3486V16C17 16.2761 16.7761 16.5 16.5 16.5H15.8486ZM10.8542 11.5257C10.578 11.5257 10.3542 11.3018 10.3542 11.0257V10.3542C10.3542 10.078 10.578 9.85417 10.8542 9.85417H11.5056C11.7817 9.85417 12.0056 10.078 12.0056 10.3542V11.5257H10.8542ZM12.0056 13.1771V11.5257H13.6771V13.1771H12.0056ZM10.8542 14.8486C10.578 14.8486 10.3542 14.6248 10.3542 14.3486V13.6771C10.3542 13.4009 10.578 13.1771 10.8542 13.1771H12.0056V14.8486H10.8542ZM12.5056 16.5C12.2294 16.5 12.0056 16.2761 12.0056 16V14.8486H13.6771V16C13.6771 16.2761 13.4532 16.5 13.1771 16.5H12.5056ZM13.6771 14.8486V13.1771H15.3486V14.8486H13.6771ZM13.6771 11.5257V10.3542C13.6771 10.078 13.9009 9.85417 14.1771 9.85417H14.8486C15.1248 9.85417 15.3486 10.078 15.3486 10.3542V11.5257H13.6771ZM15.3486 13.1771V11.5257H16.5C16.7761 11.5257 17 11.7496 17 12.0257V12.6771C17 12.9532 16.7761 13.1771 16.5 13.1771H15.3486Z" />
+            </svg>
+            Скачать
+          </button>
         </div>
       </div>
     </div>

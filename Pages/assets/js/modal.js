@@ -41,7 +41,7 @@ function onTipBtnClick(elem) {
   tutorialItemsElem.scrollTo(0, lastElem.offsetTop)
 } 
 
-let prevState = '';
+let prevState = []
 
 function toggleBodyClass(className, constraint = null, event = null) {
   if (event) {
@@ -50,22 +50,20 @@ function toggleBodyClass(className, constraint = null, event = null) {
   if (constraint && event && event.target === constraint) {
     if (!document.body.classList.contains(className)) {
       if (document.body.className) {
-        prevState = document.body.className;
+        prevState.push(document.body.className);
       }
     } else {
-      document.body.className = prevState;
-      prevState = '';
+      document.body.className = prevState.pop();
       return;
     }
     document.body.className = (className);
   } else {
     if (!document.body.classList.contains(className)) {
       if (document.body.className) {
-        prevState = document.body.className;
+        prevState.push(document.body.className);
       }
     } else {
-      document.body.className = prevState;
-      prevState = '';
+      document.body.className = prevState.pop();
       return;
     }
     document.body.className = (className);
