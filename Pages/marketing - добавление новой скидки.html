@@ -500,7 +500,7 @@
                               name="parent-category"
                               id="subcategory1">
                             <span></span>
-                            40 см
+                            Мясные
                           </label>
                         </div>
                         <ul>
@@ -514,15 +514,41 @@
                               Моцарелла
                             </label>
                           </li>
-                          <li class="select-hierarchy__option">
-                            <label for="subsubcategory2"
-                              class="checkbox">
-                              <input type="checkbox" value="subsubcategory2"
-                                name="parent-category"
-                                id="subsubcategory2">
-                              <span></span>
-                              Маргарита
-                            </label>
+                          <li
+                            class="select-hierarchy__option select-hierarchy__option_with-list">
+                            <div class="select-hierarchy__option-content">
+                              <div class="select-hierarchy__option-arrow"
+                                onclick="openSelectDropdown(this)"></div>
+                              <label for="margarita" class="checkbox">
+                                <input type="checkbox" value="margarita"
+                                  name="margarita"
+                                  id="margarita">
+                                <span></span>
+                                Маргарита
+                              </label>
+                            </div>
+                            <ul>
+                              <li class="select-hierarchy__option">
+                                <label for="margarita-30cm"
+                                  class="checkbox">
+                                  <input type="checkbox" value="margarita-30cm"
+                                    name="margarita-30cm"
+                                    id="margarita-30cm">
+                                  <span></span>
+                                  30 см
+                                </label>
+                              </li>
+                              <li class="select-hierarchy__option">
+                                <label for="margarita-40cm"
+                                  class="checkbox">
+                                  <input type="checkbox" value="margarita-40cm"
+                                    name="margarita-40cm"
+                                    id="margarita-40cm">
+                                  <span></span>
+                                  40 см
+                                </label>
+                              </li>
+                            </ul>
                           </li>
                         </ul>
                       </li>
@@ -532,7 +558,7 @@
                             name="parent-category"
                             id="subcategory2">
                           <span></span>
-                          35 см
+                          Грибные
                         </label>
                       </li>
                     </ul>
