@@ -533,7 +533,7 @@
 
             <div class="input-wrapper marketing-select-category">
               <div class="input-wrapper__header">
-                <span>Выбрать категорию <span>*</span></span>
+                <span>Выберите категории и товары <span>*</span></span>
                 <button class="tip-btn" data-path="settings.main-settings"
                   onclick="onTipBtnClick(this)">
                   tip
@@ -569,7 +569,7 @@
                           name="parent-category"
                           id="category1">
                         <span></span>
-                        Категория 1
+                        Пицца
                       </label>
                     </div>
                     <ul>
@@ -583,7 +583,7 @@
                               name="parent-category"
                               id="subcategory1">
                             <span></span>
-                            Подкатегория 1
+                            Мясные
                           </label>
                         </div>
                         <ul>
@@ -594,18 +594,46 @@
                                 name="parent-category"
                                 id="subsubcategory1">
                               <span></span>
-                              Подподкатегория 1
+                              Моцарелла
                             </label>
                           </li>
-                          <li class="select-hierarchy__option">
-                            <label for="subsubcategory2"
-                              class="checkbox">
-                              <input type="checkbox" value="subsubcategory2"
-                                name="parent-category"
-                                id="subsubcategory2">
-                              <span></span>
-                              Подподкатегория 2
-                            </label>
+                          <li
+                            class="select-hierarchy__option select-hierarchy__option_with-list">
+                            <div class="select-hierarchy__option-content">
+                              <div class="select-hierarchy__option-arrow"
+                                onclick="openSelectDropdown(this)"></div>
+                              <label for="margarita" class="checkbox">
+                                <input type="checkbox" value="margarita"
+                                  name="margarita"
+                                  id="margarita">
+                                <span></span>
+                                Маргарита
+                              </label>
+                            </div>
+                            <ul>
+                              <li class="select-hierarchy__option">
+                                <label for="margarita-30cm"
+                                  class="checkbox">
+                                  <input type="checkbox"
+                                    value="margarita-30cm"
+                                    name="margarita-30cm"
+                                    id="margarita-30cm">
+                                  <span></span>
+                                  30 см
+                                </label>
+                              </li>
+                              <li class="select-hierarchy__option">
+                                <label for="margarita-40cm"
+                                  class="checkbox">
+                                  <input type="checkbox"
+                                    value="margarita-40cm"
+                                    name="margarita-40cm"
+                                    id="margarita-40cm">
+                                  <span></span>
+                                  40 см
+                                </label>
+                              </li>
+                            </ul>
                           </li>
                         </ul>
                       </li>
@@ -615,7 +643,7 @@
                             name="parent-category"
                             id="subcategory2">
                           <span></span>
-                          Подкатегория 2
+                          Грибные
                         </label>
                       </li>
                     </ul>
@@ -639,7 +667,7 @@
                     <input type="date"
                       onchange="onDateInputChange(this, 'Не выбрано')">
                     <input type="text" id="coupon-start"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       readonly value="Не выбрано">
                     <span class="date-input-select__arrow">
                       <svg width="18" height="18" viewBox="0 0 18 18"
@@ -665,7 +693,7 @@
                     <input type="date"
                       onchange="onDateInputChange(this, 'Не выбрано')">
                     <input type="text" id="coupon-end"
-                      data-format="yyyy.mm.dd"
+                      data-format="dd.mm.yyyy"
                       readonly value="Не выбрано">
                     <span class="date-input-select__arrow">
                       <svg width="18" height="18" viewBox="0 0 18 18"
@@ -685,7 +713,7 @@
               <div class="input-wrapper__header">
                 <span>Количество применений купона</span>
               </div>
-              <input type="text" oninput="onNumberInput(this)"
+              <input type="text" oninput="onNumberInput(this, false)"
                 name="coupon-count" id="coupon-count"
                 class="text-input">
               <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
@@ -700,7 +728,8 @@
                 </button>
               </p>
               <label for="coupon-status" class="radio-button radio-button_large">
-                <input type="checkbox" name="coupon-status" id="coupon-status">
+                <input type="checkbox" checked name="coupon-status"
+                  id="coupon-status">
                 <span></span>
               </label>
             </div>

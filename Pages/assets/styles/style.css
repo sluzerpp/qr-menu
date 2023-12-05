@@ -1379,6 +1379,7 @@ body {
   height: -moz-max-content;
   height: max-content;
   gap: 8px;
+  padding: 8px 20px;
 }
 .select-hierarchy__option_with-list .select-hierarchy__option-content {
   color: var(--button-strong-red, #D4492A);
@@ -1394,7 +1395,7 @@ body {
   height: max-content;
   display: none;
   overflow: hidden;
-  padding-left: 40px;
+  padding-left: 32px;
   flex-direction: column;
 }
 .select-hierarchy__option_with-list.open > ul {
@@ -1402,6 +1403,12 @@ body {
 }
 .select-hierarchy__option_with-list.open > .select-hierarchy__option-content .select-hierarchy__option-arrow {
   rotate: 180deg;
+}
+.select-hierarchy__option_with-list:has(.select-hierarchy__option_with-list) > ul > .select-hierarchy__option:not(.select-hierarchy__option_with-list) {
+  padding-left: 52px;
+}
+.select-hierarchy__options:has(.select-hierarchy__option_with-list) > ul > .select-hierarchy__option:not(.select-hierarchy__option_with-list) {
+  padding-left: 52px;
 }
 
 .badge-select {
@@ -5837,6 +5844,11 @@ body:has(#affects:checked) .varients__group {
   font-weight: 500;
   line-height: 100%; /* 12px */
   cursor: pointer;
+}
+.calendar__year-item-column_active {
+  border-radius: 5px;
+  background: var(--text-bright-orange, #ED9139);
+  color: var(--text-white);
 }
 .calendar__year-item-column_disabled {
   filter: grayscale(1) opacity(0.4);
