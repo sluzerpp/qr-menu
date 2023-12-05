@@ -3743,6 +3743,10 @@ body.open-view-place #view-place {
   display: flex;
 }
 
+body.open-edit-wifi #edit-wifi {
+  display: flex;
+}
+
 @media (max-width: 1080px) {
   .modal {
     padding-left: 0;
@@ -5265,16 +5269,14 @@ body:has(#affects:checked) .varients__group {
   width: max-content;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
   margin: 0 auto;
 }
 .qr-code-view > * {
   grid-column: 2;
 }
 .qr-code-view__img {
-  max-width: 300px;
-  width: 100%;
-  min-width: 242px;
+  width: 300px;
   height: 300px;
   position: relative;
   grid-column: 2;
@@ -5302,8 +5304,7 @@ body:has(#affects:checked) .varients__group {
 @media (max-width: 560px) {
   .qr-code-view__img {
     height: 242px;
-    max-width: 242px;
-    min-width: 180px;
+    width: 242px;
   }
   .qr-type__options {
     flex-direction: column;

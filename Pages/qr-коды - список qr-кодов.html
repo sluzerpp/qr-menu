@@ -429,7 +429,7 @@
 
             <div class="qr-codes">
               <div class="qr-codes__header">
-                <h4 class="qr-codes__title">QR-Коды</h4>
+                <h4 class="qr-codes__title">QR-коды</h4>
                 <button class="btn-secondary">
                   <svg viewBox="0 0 19 18"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -525,7 +525,8 @@
                     <span class="more-btn"
                       onclick="toggleDropdown(this, '.controls-dropdown')"></span>
                     <div class="controls-dropdown__content">
-                      <button class="controls-dropdown__item">
+                      <button class="controls-dropdown__item"
+                        onclick="toggleBodyClass('open-edit-wifi')">
                         Редактировать
                       </button>
                       <button class="controls-dropdown__item">
@@ -538,7 +539,8 @@
                     </div>
                   </div>
                 </div>
-                <button class="qr-codes__add">
+                <button class="qr-codes__add"
+                  onclick="toggleBodyClass('open-add-wifi', this, event)">
                   <svg width="44" height="45" viewBox="0 0 44 45" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -572,9 +574,11 @@
     </button>
 
     <div class="modal" id="add-wifi">
-      <div class="modal__bg"></div>
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-add-wifi', this, event)"></div>
       <div class="modal__window">
-        <button class="modal__close-btn">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-add-wifi', this, event)">
           <svg viewBox="0 0 24 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -644,6 +648,99 @@
                   alt="qr-code image">
               </div>
             </div>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="edit-wifi">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-edit-wifi', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-edit-wifi')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Добавить Wi-Fi
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <div class="input-wrapper">
+              <span>Укажите название <span>*</span></span>
+              <input type="text" id="add-wifi-name"
+                class="text-input text-input_grey">
+            </div>
+            <div class="input-wrapper">
+              <span>Encryption <span>*</span></span>
+              <div class="custom-select custom-select_gray"
+                data-current-value="wpa/wpa2">
+                <button class="custom-select__btn"
+                  onclick="onSelectOpenBtnClick(this)">
+                  <span class="custom-select__value">
+                    WPA/WPA2
+                  </span>
+                  <span class="custom-select__arrow">
+                    <svg width="18" height="18" viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9.0001 7.8187L5.7001 11.1187C5.5876 11.2312 5.45322 11.2906 5.29697 11.2968C5.14072 11.3031 5.00635 11.25 4.89385 11.1375C4.78135 11.025 4.7251 10.8906 4.7251 10.7343C4.7251 10.5781 4.78135 10.4437 4.89385 10.3312L8.60635 6.6187C8.66885 6.5562 8.73135 6.51245 8.79385 6.48745C8.85635 6.46245 8.9251 6.44995 9.0001 6.44995C9.0751 6.44995 9.14385 6.46245 9.20635 6.48745C9.26885 6.51245 9.33135 6.5562 9.39385 6.6187L13.0876 10.3125C13.2001 10.425 13.2595 10.5562 13.2657 10.7062C13.272 10.8562 13.2188 10.9875 13.1063 11.1C12.9938 11.2125 12.8595 11.2687 12.7032 11.2687C12.547 11.2687 12.4126 11.2125 12.3001 11.1L9.0001 7.8187Z"
+                        fill="#150704" />
+                    </svg>
+                  </span>
+                </button>
+                <div class="custom-select__options">
+                  <button data-value="wpa/wpa2"
+                    onclick="onSelectOptionClick(this)"
+                    class="custom-select__option">
+                    WPA/WPA2
+                  </button>
+                  <button data-value="other"
+                    onclick="onSelectOptionClick(this)"
+                    class="custom-select__option">
+                    Другое шифрование
+                  </button>
+                </div>
+              </div>
+              <!-- <p class="input-wrapper__error">Ошибка!</p> -->
+            </div>
+            <div class="input-wrapper">
+              <span>Пароль <span>*</span></span>
+              <div class="password-input">
+                <input type="password" id="add-wifi-password"
+                  class="text-input text-input_grey">
+                <button class="password-input__icon"
+                  onclick="onPasswordIconClick(this)"></button>
+              </div>
+            </div>
+            <div class="qr-code-view">
+              <div class="qr-code-view__img">
+                <img
+                  src="https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg"
+                  alt="qr-code image">
+              </div>
+              Холл
+            </div>
+            <button class="btn-secondary">
+              <svg viewBox="0 0 19 18"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3 8.64583C2.72386 8.64583 2.5 8.42198 2.5 8.14583L2.5 2.5C2.5 2.22386 2.72386 2 3 2L8.64583 2C8.92198 2 9.14583 2.22386 9.14583 2.5V8.14583C9.14583 8.42198 8.92198 8.64583 8.64583 8.64583H3ZM3.70833 6.9375C3.70833 7.21364 3.93219 7.4375 4.20833 7.4375L7.4375 7.4375C7.71364 7.4375 7.9375 7.21364 7.9375 6.9375L7.9375 3.70833C7.9375 3.43219 7.71364 3.20833 7.4375 3.20833L4.20833 3.20833C3.93219 3.20833 3.70833 3.43219 3.70833 3.70833L3.70833 6.9375ZM3 16.5C2.72386 16.5 2.5 16.2761 2.5 16L2.5 10.3542C2.5 10.078 2.72386 9.85417 3 9.85417H8.64583C8.92198 9.85417 9.14583 10.078 9.14583 10.3542L9.14583 16C9.14583 16.2761 8.92198 16.5 8.64583 16.5H3ZM3.70833 14.7917C3.70833 15.0678 3.93219 15.2917 4.20833 15.2917H7.4375C7.71364 15.2917 7.9375 15.0678 7.9375 14.7917L7.9375 11.5625C7.9375 11.2864 7.71364 11.0625 7.4375 11.0625H4.20833C3.93219 11.0625 3.70833 11.2864 3.70833 11.5625L3.70833 14.7917ZM10.8542 8.64583C10.578 8.64583 10.3542 8.42198 10.3542 8.14583V2.5C10.3542 2.22386 10.578 2 10.8542 2L16.5 2C16.7761 2 17 2.22386 17 2.5V8.14583C17 8.42198 16.7761 8.64583 16.5 8.64583L10.8542 8.64583ZM11.5625 6.9375C11.5625 7.21364 11.7864 7.4375 12.0625 7.4375L15.2917 7.4375C15.5678 7.4375 15.7917 7.21364 15.7917 6.9375V3.70833C15.7917 3.43219 15.5678 3.20833 15.2917 3.20833L12.0625 3.20833C11.7864 3.20833 11.5625 3.43219 11.5625 3.70833V6.9375ZM15.8486 16.5C15.5725 16.5 15.3486 16.2761 15.3486 16V14.8486H16.5C16.7761 14.8486 17 15.0725 17 15.3486V16C17 16.2761 16.7761 16.5 16.5 16.5H15.8486ZM10.8542 11.5257C10.578 11.5257 10.3542 11.3018 10.3542 11.0257V10.3542C10.3542 10.078 10.578 9.85417 10.8542 9.85417H11.5056C11.7817 9.85417 12.0056 10.078 12.0056 10.3542V11.5257H10.8542ZM12.0056 13.1771V11.5257H13.6771V13.1771H12.0056ZM10.8542 14.8486C10.578 14.8486 10.3542 14.6248 10.3542 14.3486V13.6771C10.3542 13.4009 10.578 13.1771 10.8542 13.1771H12.0056V14.8486H10.8542ZM12.5056 16.5C12.2294 16.5 12.0056 16.2761 12.0056 16V14.8486H13.6771V16C13.6771 16.2761 13.4532 16.5 13.1771 16.5H12.5056ZM13.6771 14.8486V13.1771H15.3486V14.8486H13.6771ZM13.6771 11.5257V10.3542C13.6771 10.078 13.9009 9.85417 14.1771 9.85417H14.8486C15.1248 9.85417 15.3486 10.078 15.3486 10.3542V11.5257H13.6771ZM15.3486 13.1771V11.5257H16.5C16.7761 11.5257 17 11.7496 17 12.0257V12.6771C17 12.9532 16.7761 13.1771 16.5 13.1771H15.3486Z" />
+              </svg>
+              Скачать
+            </button>
           </div>
         </div>
         <div class="modal__controls">
