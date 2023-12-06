@@ -3750,6 +3750,10 @@ body.open-view-place #view-place {
   display: flex;
 }
 
+body.open-delete-place #delete-place {
+  display: flex;
+}
+
 body.open-edit-wifi #edit-wifi {
   display: flex;
 }
