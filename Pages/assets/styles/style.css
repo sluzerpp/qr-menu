@@ -4624,6 +4624,7 @@ body:has(#affects:checked) .varients__group {
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  cursor: pointer;
 }
 .products__item-columns a:hover, .products__item-columns button:hover {
   text-decoration: underline;
@@ -4859,7 +4860,6 @@ body:has(#affects:checked) .varients__group {
 .products-changes__name {
   display: flex;
   gap: 16px;
-  max-width: 242px;
   width: 100%;
   align-items: center;
   color: var(--text-black, #150704);
@@ -4891,12 +4891,15 @@ body:has(#affects:checked) .varients__group {
   display: flex;
   flex-wrap: nowrap;
 }
-.products-changes__bg-gray {
+.products-changes__input {
   border-radius: 4px;
   background: var(--bg-bright-gray);
   width: 90px;
+  height: 24px;
+  padding: 0 4px;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 .products-changes__column {
   width: 120px;
@@ -4937,6 +4940,8 @@ body:has(#affects:checked) .varients__group {
 .products-changes__item-varients {
   padding-left: 86px;
   list-style: none;
+  display: grid;
+  gap: 16px;
 }
 .products-changes__item-varients .products-changes__img {
   width: 50px;
@@ -4947,6 +4952,9 @@ body:has(#affects:checked) .varients__group {
   font-weight: 400;
 }
 .products-changes__arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 12px;
   min-width: 12px;
 }
