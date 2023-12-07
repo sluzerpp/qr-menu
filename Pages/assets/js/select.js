@@ -17,6 +17,8 @@ function onSelectOptionClick(elem) {
   selectElem.classList.remove('open');
 }
 
+let openedSelect = null;
+
 function onSelectOpenBtnClick(elem, event = null) {
   if (event) {
     event.preventDefault();
@@ -26,6 +28,21 @@ function onSelectOpenBtnClick(elem, event = null) {
     return;
   }
   selectElem.classList.toggle('open');
+  if (selectElem.classList.contains('open')) {
+    openedSelect = selectElem;
+  } else {
+    if (openedSelect === selectElem) {
+      openedSelect = null;
+    }
+  }
+  const options = selectElem.querySelector('.custom-select__options');
+  const rect = selectElem.getBoundingClientRect();
+  options.style.left = rect.left + 'px'; 
+  options.style.top = rect.top + rect.height + 2 + 'px';
+  options.style.setProperty('--width', `${selectElem.clientWidth}px`);
+  if (options.getBoundingClientRect().bottom > window.innerHeight) {
+    options.style.top = rect.top - options.clientHeight - 2 + 'px';
+  }
 }
 
 function closeAllSelects(target = null) {
@@ -36,6 +53,25 @@ function closeAllSelects(target = null) {
     }
   });
 }
+
+function updateOpenedSelectPosition() {
+  if (openedSelect) {
+    const options = openedSelect.querySelector('.custom-select__options');
+    const rect = openedSelect.getBoundingClientRect();
+    options.style.left = rect.left + 'px';
+    options.style.top = rect.top + rect.height + 2 + 'px';
+    options.style.bottom = 'auto';
+    options.style.setProperty('--width', `${openedSelect.clientWidth}px`);
+    if (options.getBoundingClientRect().bottom > window.innerHeight) {
+      options.style.top = rect.top - options.clientHeight - 2 + 'px';
+    }
+  }
+}
+
+document.addEventListener('scroll', updateOpenedSelectPosition, { capture: true });
+
+
+window.addEventListener('resize', updateOpenedSelectPosition);
 
 document.addEventListener('click', (event) => {
   closeAllSelects(event.target);
@@ -72,6 +108,10 @@ function onSelectChange(event, callback = null) {
   select.dataset.currentValue = value;
   const valueElem = select.querySelector('.custom-select__value');
   valueElem.innerHTML = content;
+  if (select.classList.contains('custom-select_colors')) {
+    const color = event.target.dataset.color;
+    select.style.setProperty('--color', color);
+  }
   select.classList.remove('open');
   if (callback) {
     callback(value, select);

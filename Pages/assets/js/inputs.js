@@ -176,18 +176,51 @@ function onNumberInput(elem, fraction = true) {
   elem.value = inputValue;
 }
 
-function toggleDropdown(elem, parentSelector) {
-  elem.closest(parentSelector).classList.toggle('open');
+let openedDropdown = null;
+let openedDropdownSelector = '';
+
+function toggleSimpleDropdown(elem, parentSelector) {
+  const parent = elem.closest(parentSelector);
+  parent.classList.toggle('open');
 }
 
-function toggleFixedDropdown(elem, parentSelector) {
+function toggleDropdown(elem, parentSelector) {
   const parent = elem.closest(parentSelector);
-  parent.classList.toggle('fixed');
+  parent.classList.toggle('open');
+  if (parent.classList.contains('open')) {
+    openedDropdown = parent;
+    openedDropdownSelector = parentSelector;
+  } else {
+    if (openedDropdown === parent) {
+      openedDropdown = null;
+      openedDropdownSelector = null;
+    }
+  }
   const rect = elem.getBoundingClientRect();
   const dropdown = parent.querySelector(parentSelector + '__content');
   dropdown.style.right = (window.innerWidth - rect.right) + 'px'; 
-  dropdown.style.top = rect.top + rect.height + 8 + 'px'; 
+  dropdown.style.top = rect.top + rect.height + 8 + 'px';
+  if (dropdown.getBoundingClientRect().bottom > window.innerHeight) {
+    dropdown.style.top = rect.top - dropdown.clientHeight - 8 + 'px';
+  }
 }
+
+function updateOpenedDropdownPosition() {
+  if (openedDropdown && openedDropdownSelector) {
+    const dropdown = openedDropdown.querySelector(openedDropdownSelector + '__content');
+    const rect = openedDropdown.getBoundingClientRect();
+    dropdown.style.right = (window.innerWidth - rect.right) + 'px'; 
+    dropdown.style.top = rect.top + rect.height + 8 + 'px';
+    if (dropdown.getBoundingClientRect().bottom > window.innerHeight) {
+      dropdown.style.top = rect.top - dropdown.clientHeight - 8 + 'px';
+    }
+  }
+}
+
+document.addEventListener('scroll', updateOpenedDropdownPosition, { capture: true });
+
+
+window.addEventListener('resize', updateOpenedDropdownPosition);
 
 function onSwitchListChange(elem) {
   if (elem.checked) {
@@ -258,17 +291,15 @@ function createSelectedItem(title, group) {
 
 document.addEventListener('click', (e) => {
   const target = e.target;
-  const dropdowns = [...document.querySelectorAll('.controls-dropdown.open'), ...document.querySelectorAll('.controls-dropdown.fixed')];
+  const dropdowns = [...document.querySelectorAll('.controls-dropdown.open')];
   dropdowns.forEach((dropdown) => {
     if (!(target.classList.contains('more-btn') && dropdown.contains(target))) {
       dropdown.classList.remove('open')
-      dropdown.classList.remove('fixed')
     }
   });
   const closestDropdown = e.target.closest('.controls-dropdown');
   if (!target.classList.contains('more-btn') && closestDropdown && closestDropdown.contains(target)) {
     closestDropdown.classList.add('open');
-    closestDropdown.classList.add('fixed');
   }
 });
 
@@ -283,12 +314,14 @@ function onSelectAllCheckboxChange(checkbox) {
   onPricingFormChange();
 }
 
-function onProductCheckboxChange(container) {
+function onProductCheckboxChange(container, callback = null) {
   const selectAllCheckbox = document.querySelector('.products__list-header input[type="checkbox"]');
   const checkboxes = [...container.querySelectorAll('input[type="checkbox"]')];
   selectAllCheckbox.checked = checkboxes.every((item) => item.checked);
 
-  onPricingFormChange();
+  if (callback) {
+    callback();
+  }
 }
 
 function onPricingCheckboxChange(checkbox) {
