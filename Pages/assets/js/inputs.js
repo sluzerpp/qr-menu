@@ -379,7 +379,7 @@ function selectDatePickerBtnClick(elem) {
 }
 
 function onControllerNumberInputMinusClick(event) {
-  const input = event.target.nextElementSibling;
+  const input = event.currentTarget.nextElementSibling;
   let currentValue = parseInt(input.value);
 
   if (isNaN(currentValue)) {
@@ -395,7 +395,7 @@ function onControllerNumberInputMinusClick(event) {
 }
 
 function onControllerNumberInputPlusClick(event) {
-  const input = event.target.previousElementSibling;
+  const input = event.currentTarget.previousElementSibling;
   let currentValue = parseInt(input.value);
   
   if (isNaN(currentValue)) {

@@ -142,7 +142,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 1080px) {
@@ -297,13 +297,12 @@ body {
   left: -100%;
   padding: 0;
   margin: 0;
-  top: -100%;
 }
 .round-radio-button span {
   display: block;
   width: 14px;
   height: 14px;
-  border: 1.5px solid var(--line-gray);
+  border: 2px solid var(--line-gray);
   border-radius: 50%;
   position: relative;
   transition: border-color 0.15s linear;
@@ -311,8 +310,8 @@ body {
 .round-radio-button span::before {
   display: block;
   content: "";
-  width: 6.5px;
-  height: 6.5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   position: absolute;
   left: 50%;
