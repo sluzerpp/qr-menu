@@ -78,9 +78,9 @@ function isHexColor(str) {
 }
 
 function colorPickerBtnClick(elem) {
-  const dateElem = elem.nextElementSibling;
-  if ('showPicker' in dateElem) {
-    dateElem.showPicker();
+  const colorElem = elem.nextElementSibling;
+  if ('showPicker' in colorElem) {
+    colorElem.showPicker();
   }
 }
 
