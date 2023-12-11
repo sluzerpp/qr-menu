@@ -176,6 +176,12 @@ function onNumberInput(elem, fraction = true) {
   elem.value = inputValue;
 }
 
+function onLetterInput(event) {
+  const input = event.currentTarget;
+
+  input.value = input.value.replace(/[^a-zA-Zа-яА-Я]/g, '')
+}
+
 let openedDropdown = null;
 let openedDropdownSelector = '';
 
@@ -465,7 +471,6 @@ function onNumerationRadioChange(event) {
 }
 
 function onObjectTypeChange(value) {
-  console.log(value);
   const numeration = document.querySelector('#numeration');
   const copyCount = document.querySelector('#copy-count-wrapper');
   if (!value) {
