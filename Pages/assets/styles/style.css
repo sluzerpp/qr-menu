@@ -7428,6 +7428,10 @@ body:has(#affects:checked) .varients__group {
     overflow-x: auto;
     align-self: initial;
   }
+  .preview__list::-webkit-scrollbar {
+    height: 0;
+    opacity: 0;
+  }
   .preview__item {
     width: 230px;
     min-width: 230px;
