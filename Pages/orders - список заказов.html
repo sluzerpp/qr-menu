@@ -486,7 +486,8 @@
                   </label>
                 </div>
 
-                <div class="orders__settings">
+                <button class="orders__settings"
+                  onclick="toggleBodyClass('open-statuses')">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -496,7 +497,7 @@
                       d="M13.5625 9.99998C13.5625 11.9675 11.9676 13.5625 10 13.5625C8.03245 13.5625 6.4375 11.9675 6.4375 9.99998C6.4375 8.03243 8.03245 6.43748 10 6.43748C11.9676 6.43748 13.5625 8.03243 13.5625 9.99998ZM10 12.3625C11.3048 12.3625 12.3625 11.3048 12.3625 9.99998C12.3625 8.69518 11.3048 7.63748 10 7.63748C8.69519 7.63748 7.6375 8.69518 7.6375 9.99998C7.6375 11.3048 8.69519 12.3625 10 12.3625Z"
                       fill="#150704" />
                   </svg>
-                </div>
+                </button>
               </div>
 
               <div class="orders__controls">
@@ -1167,6 +1168,242 @@
         </defs>
       </svg>
     </button>
+
+    <div class="modal" id="statuses">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-statuses', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-statuses')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Статусы
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <ul class="modal-form__list"
+              ondragover="onListDragOver(event, this)"
+              ontouchmove="onListDragOver(event, this)">
+              <li
+                class="modal-form__list-wrapper draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="modal-form__list-item">
+                  <div class="modal-form__list-item-group">
+                    <button class="drag-btn"></button>
+                    Новый
+                    <span class="modal-form__list-item-color"
+                      style="--color: #FFF9EC"></span>
+                  </div>
+                  <div class="modal-form__list-item-group">
+                    <button class="lock-btn lock-btn_gray"></button>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-form__list-wrapper draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="modal-form__list-item">
+                  <div class="modal-form__list-item-group">
+                    <button class="drag-btn"></button>
+                    Отменен
+                    <span class="modal-form__list-item-color"
+                      style="--color: #FFECE5"></span>
+                  </div>
+                  <div class="modal-form__list-item-group">
+                    <button class="lock-btn lock-btn_gray"></button>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-form__list-wrapper draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="modal-form__list-item">
+                  <div class="modal-form__list-item-group">
+                    <button class="drag-btn"></button>
+                    Выполнен
+                    <span class="modal-form__list-item-color"
+                      style="--color: #F1F4FF"></span>
+                  </div>
+                  <div class="modal-form__list-item-group">
+                    <button class="lock-btn lock-btn_gray"></button>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-form__list-wrapper draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="modal-form__list-item">
+                  <div class="modal-form__list-item-group">
+                    <button class="drag-btn"></button>
+                    Принят
+                    <span class="modal-form__list-item-color"
+                      style="--color: #F4FFF4"></span>
+                  </div>
+                  <div class="modal-form__list-item-group orders-disabled-group">
+                    <button class="edit-btn edit-btn_gray disabled"
+                      disabled></button>
+                    <button class="trash-btn trash-btn_gray disabled"
+                      disabled></button>
+                  </div>
+                </div>
+              </li>
+              <li class="modal-form__list-wrapper draggable"
+                ondragstart="onDragStart(event, this)"
+                ontouchstart="onDragStart(event, this)"
+                ondragend="onDragEnd(this)"
+                ontouchend="onDragEnd(this)"
+                draggable="true">
+                <div class="modal-form__list-item">
+                  <div class="modal-form__list-item-group">
+                    <button class="drag-btn"></button>
+                    Отложено
+                    <span class="modal-form__list-item-color"
+                      style="--color: #EBCBFF"></span>
+                  </div>
+                  <div class="modal-form__list-item-group">
+                    <button class="edit-btn edit-btn_gray"
+                      onclick="toggleBodyClass('open-edit-status')"></button>
+                    <button class="trash-btn trash-btn_gray"
+                      onclick="toggleBodyClass('open-delete-status')"></button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <button class="btn-secondary btn_min-width"
+              onclick="toggleBodyClass('open-add-status')">
+              <svg viewBox="0 0 19 18"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.45089 9.37898H3.21411C3.01178 9.37898 2.84218 9.31015 2.70531 9.17249C2.56844 9.03481 2.5 8.86422 2.5 8.66071C2.5 8.45719 2.56844 8.28799 2.70531 8.1531C2.84218 8.01821 3.01178 7.95077 3.21411 7.95077L8.45089 7.95077V2.71399C8.45089 2.51165 8.51972 2.34205 8.65739 2.20518C8.79507 2.06831 8.96566 1.99988 9.16917 1.99988C9.37269 1.99988 9.54189 2.06831 9.67678 2.20518C9.81166 2.34205 9.87911 2.51165 9.87911 2.71399V7.95077L15.1159 7.95077C15.3182 7.95077 15.4878 8.0196 15.6247 8.15727C15.7616 8.29495 15.83 8.46554 15.83 8.66904C15.83 8.87256 15.7616 9.04177 15.6247 9.17665C15.4878 9.31154 15.3182 9.37898 15.1159 9.37898L9.87911 9.37898L9.87911 14.6158C9.87911 14.8181 9.81028 14.9877 9.67261 15.1246C9.53493 15.2614 9.36434 15.3299 9.16083 15.3299C8.95731 15.3299 8.78811 15.2614 8.65322 15.1246C8.51834 14.9877 8.45089 14.8181 8.45089 14.6158L8.45089 9.37898Z" />
+              </svg>
+              Добавить новый статус
+            </button>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="add-status">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-add-status', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-add-status')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Добавить новый статус
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <div class="modal-form__row modal-form__row_with-color-input">
+              <div class="input-wrapper">
+                <span>Название</span>
+                <input type="text" id="edit-type-name"
+                  class="text-input text-input_grey">
+              </div>
+              <div class="input-wrapper">
+                <span>Цвет</span>
+                <div class="color-input">
+                  <button class="color-input__picker-btn"
+                    style="--color: transparent"
+                    onclick="colorPickerBtnClick(this)">
+                  </button>
+                  <input type="color" onchange="onColorInputChange(this)">
+                  <input type="text" id="add-status-color"
+                    oninput="onColorInputHandler(this)">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Сохранить</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="edit-status">
+      <div class="modal__bg"
+        onclick="toggleBodyClass('open-edit-status', this, event)"></div>
+      <div class="modal__window">
+        <button class="modal__close-btn"
+          onclick="toggleBodyClass('open-edit-status')">
+          <svg viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 12.9261L5.13497 19.7911C5.01251 19.9136 4.86236 19.979 4.68452 19.9874C4.50668 19.9958 4.34814 19.9304 4.20888 19.7911C4.06963 19.6519 4 19.4975 4 19.3281C4 19.1586 4.06963 19.0043 4.20888 18.865L11.0739 12L4.20888 5.13497C4.08642 5.01251 4.02099 4.86236 4.01259 4.68452C4.0042 4.50668 4.06963 4.34814 4.20888 4.20888C4.34814 4.06963 4.50249 4 4.67193 4C4.84137 4 4.99571 4.06963 5.13497 4.20888L12 11.0739L18.865 4.20888C18.9875 4.08642 19.1376 4.02099 19.3155 4.0126C19.4933 4.0042 19.6519 4.06963 19.7911 4.20888C19.9304 4.34814 20 4.50249 20 4.67193C20 4.84137 19.9304 4.99571 19.7911 5.13497L12.9261 12L19.7911 18.865C19.9136 18.9875 19.979 19.1376 19.9874 19.3155C19.9958 19.4933 19.9304 19.6519 19.7911 19.7911C19.6519 19.9304 19.4975 20 19.3281 20C19.1586 20 19.0043 19.9304 18.865 19.7911L12 12.9261Z"
+              fill="#A19C9B" />
+          </svg>
+        </button>
+        <div class="modal__header">
+          <h3 class="modal__title">
+            Редактирование статуса
+          </h3>
+        </div>
+        <div class="modal__content">
+          <div class="modal-form">
+            <div class="modal-form__row modal-form__row_with-color-input">
+              <div class="input-wrapper">
+                <span>Название</span>
+                <input type="text" id="edit-type-name"
+                  class="text-input text-input_grey">
+              </div>
+              <div class="input-wrapper">
+                <span>Цвет</span>
+                <div class="color-input">
+                  <button class="color-input__picker-btn"
+                    style="--color: #8E21D2"
+                    onclick="colorPickerBtnClick(this)">
+                  </button>
+                  <input type="color" value="#8E21D2"
+                    onchange="onColorInputChange(this)">
+                  <input type="text" id="add-status-color"
+                    oninput="onColorInputHandler(this)" value="#8E21D2">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__controls">
+          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button class="btn">Сохранить</button>
+        </div>
+      </div>
+    </div>
 
     <div class="modal" id="delete-status">
       <div class="modal__bg"

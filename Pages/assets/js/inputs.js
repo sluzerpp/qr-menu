@@ -73,7 +73,41 @@ function onTimePeriodInputsHandler(elem, event, classStart, classEnd) {
   }
 }
 
+function isHexColor(str) {
+  return /^#([A-Fa-f0-9]{6})$/.test(str);
+}
 
+function colorPickerBtnClick(elem) {
+  const dateElem = elem.nextElementSibling;
+  if ('showPicker' in dateElem) {
+    dateElem.showPicker();
+  }
+}
+
+function onColorInputChange(elem) {
+  const color = elem.value;
+  const textInput = elem.nextElementSibling;
+  const btn = elem.previousElementSibling;
+
+  textInput.value = color;
+  btn.style.setProperty('--color', color);
+}
+
+function onColorInputHandler(elem) {
+  const inputValue = elem.value.replace(/[^0-9A-Fa-f]/g, '').slice(0, 6);
+
+  const btn = elem.parentElement.firstElementChild;
+  const colorInput = elem.previousElementSibling;
+  if (isHexColor('#' + inputValue)) {
+    colorInput.value = '#' + inputValue;
+    btn.style.setProperty('--color', '#' + inputValue);
+  } else {
+    colorInput.value = '#000000';
+    btn.style.setProperty('--color', 'transparent');
+  }
+
+  elem.value = '#' + inputValue;
+}
 
 function datePickerBtnClick(elem) {
   const dateElem = elem.nextElementSibling;
