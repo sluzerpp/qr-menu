@@ -22,6 +22,19 @@ function toggleMobileMenu() {
   document.body.classList.toggle('open-mobile');
 }
 
+function toggleUserAdd(event, elem = null) {
+  event.preventDefault();
+  if (elem && event.target !== elem) return;
+  const userAdd = document.getElementById('user-add');
+  if (document.body.classList.contains('open-user-add')) {
+    toggleBodyClass('open-user-add');
+    userAdd.classList.add('close');
+  } else {
+    toggleBodyClass('open-user-add');
+    userAdd.classList.remove('close');
+  }
+}
+
 function onTipBtnClick(elem) {
   const tutorialItemsElem = document.querySelector('.tutorial__items');
   if (!tutorialItemsElem) {
@@ -53,7 +66,7 @@ function toggleBodyClass(className, constraint = null, event = null) {
         prevState.push(document.body.className);
       }
     } else {
-      document.body.className = prevState.pop();
+      document.body.className = prevState.pop() || '';
       return;
     }
     document.body.className = (className);
@@ -63,7 +76,7 @@ function toggleBodyClass(className, constraint = null, event = null) {
         prevState.push(document.body.className);
       }
     } else {
-      document.body.className = prevState.pop();
+      document.body.className = prevState.pop() || '';
       return;
     }
     document.body.className = (className);
