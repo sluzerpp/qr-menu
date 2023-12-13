@@ -147,6 +147,12 @@ body {
   display: none !important;
 }
 
+.transparent {
+  opacity: 0 !important;
+  cursor: default !important;
+  font-size: 0;
+}
+
 @media (max-width: 1080px) {
   .content {
     padding-left: 30px;
