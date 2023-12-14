@@ -1433,8 +1433,8 @@ body {
   rotate: 0deg;
 }
 .select-hierarchy__options {
-  position: absolute;
-  width: 100%;
+  --width: 200px;
+  position: fixed;
   display: grid;
   background-color: var(--bg-white);
   max-height: 0;
@@ -1446,7 +1446,10 @@ body {
   height: max-content;
   bottom: calc(100% + 2px);
   width: 100%;
-  max-width: 100%;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  min-width: var(--width);
+  z-index: 10;
 }
 .select-hierarchy.open .select-hierarchy__arrow {
   rotate: 180deg;
@@ -1569,7 +1572,8 @@ body {
   background-color: var(--bg-white);
 }
 .badge-select .custom-select__options {
-  max-width: initial;
+  max-width: -moz-max-content;
+  max-width: max-content;
   width: auto;
   top: calc(100% + 3px);
   right: 0;
@@ -4779,10 +4783,6 @@ body:has(#affects:checked) .varients__group {
   width: -moz-max-content;
   width: max-content;
   min-width: 14px;
-}
-.products__item:last-child .controls-dropdown__content {
-  top: auto;
-  bottom: calc(100% + 8px);
 }
 .products__item-group {
   display: flex;

@@ -35,13 +35,16 @@ function onSelectOpenBtnClick(elem, event = null) {
       openedSelect = null;
     }
   }
-  const options = selectElem.querySelector('.custom-select__options');
+  const options = selectElem.querySelector('.custom-select__options') 
+    || selectElem.querySelector('.select-hierarchy__options');
   const rect = selectElem.getBoundingClientRect();
   options.style.left = rect.left + 'px'; 
   options.style.top = rect.top + rect.height + 2 + 'px';
   options.style.setProperty('--width', `${selectElem.clientWidth}px`);
-  if (options.getBoundingClientRect().bottom > window.innerHeight) {
-    options.style.top = rect.top - options.clientHeight - 2 + 'px';
+  if (options.getBoundingClientRect().bottom > window.innerHeight 
+    || selectElem.classList.contains('custom-select_top')) {
+    options.style.top = 'auto';
+    options.style.bottom = (window.innerHeight - rect.bottom) + rect.height + 2 + 'px';
   }
 }
 
@@ -56,14 +59,17 @@ function closeAllSelects(target = null) {
 
 function updateOpenedSelectPosition() {
   if (openedSelect) {
-    const options = openedSelect.querySelector('.custom-select__options');
+    const options = openedSelect.querySelector('.custom-select__options') 
+      || openedSelect.querySelector('.select-hierarchy__options');
     const rect = openedSelect.getBoundingClientRect();
     options.style.left = rect.left + 'px';
     options.style.top = rect.top + rect.height + 2 + 'px';
     options.style.bottom = 'auto';
     options.style.setProperty('--width', `${openedSelect.clientWidth}px`);
-    if (options.getBoundingClientRect().bottom > window.innerHeight) {
-      options.style.top = rect.top - options.clientHeight - 2 + 'px';
+    if (options.getBoundingClientRect().bottom > window.innerHeight 
+      || openedSelect.classList.contains('custom-select_top')) {
+      options.style.top = 'auto';
+      options.style.bottom = (window.innerHeight - rect.bottom) + rect.height + 2 + 'px';
     }
   }
 }
@@ -71,7 +77,7 @@ function updateOpenedSelectPosition() {
 document.addEventListener('scroll', updateOpenedSelectPosition, { capture: true });
 
 
-window.addEventListener('resize', updateOpenedSelectPosition);
+window.addEventListener('resize', updateOpenedSelectPosition, { capture: true });
 
 document.addEventListener('click', (event) => {
   closeAllSelects(event.target);
@@ -140,6 +146,7 @@ function onHierarchySelectClick(event, callback = null) {
 
 function openSelectDropdown(elem) {
   elem.closest('.select-hierarchy__option_with-list').classList.toggle('open');
+  updateOpenedSelectPosition();
 }
 
 function onHierarchyMultiplySelectClick(event, options = { message: '', checkbox: null }) {
