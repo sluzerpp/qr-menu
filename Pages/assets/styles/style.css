@@ -4778,6 +4778,7 @@ body:has(#affects:checked) .varients__group {
 .products__item-checkbox {
   width: -moz-max-content;
   width: max-content;
+  min-width: 14px;
 }
 .products__item:last-child .controls-dropdown__content {
   top: auto;
@@ -6740,6 +6741,7 @@ body:has(#affects:checked) .varients__group {
   line-height: 110%;
   color: var(--text-black);
   font-family: var(--montserrat);
+  text-decoration: none;
 }
 .orders__item-name span {
   font-size: 14px;
@@ -6928,6 +6930,28 @@ body:has(#affects:checked) .varients__group {
   }
   .orders__controls-two-inputs > * {
     width: calc(50% - 4px);
+    max-width: 100%;
+    min-width: 130px;
+  }
+  .orders__controls-two-inputs .date-input {
+    justify-content: flex-start;
+  }
+  .orders__controls-two-inputs .date-input input[type=text] {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .orders__controls-two-inputs {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    justify-self: center;
+    flex-wrap: wrap;
+    min-width: 100%;
+  }
+  .orders__controls-two-inputs > * {
+    width: 100%;
     max-width: 100%;
     min-width: 130px;
   }
@@ -7436,6 +7460,7 @@ body:has(#affects:checked) .varients__group {
   scale: 0.8;
   transform: translate3d(-12.5%, -12.5%, 0);
   border-radius: 45px;
+  background-color: var(--bg-white);
 }
 .preview__mobile-controls {
   display: none;
@@ -8549,7 +8574,6 @@ body.open-user-add .user-add__bg {
   width: 0;
 }
 .user-tabs__item {
-  padding: 14px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8562,6 +8586,9 @@ body.open-user-add .user-add__bg {
   line-height: 100%; /* 14px */
   border-radius: 4px;
   white-space: nowrap;
+}
+.user-tabs__item label {
+  padding: 14px 16px;
 }
 .user-tabs__item input {
   width: 0;
