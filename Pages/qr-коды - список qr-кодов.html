@@ -642,16 +642,20 @@
                   </span>
                 </button>
                 <div class="custom-select__options">
-                  <button data-value="wpa/wpa2"
-                    onclick="onSelectOptionClick(this)"
+                  <label
                     class="custom-select__option">
+                    <input type="radio" required
+                      name="pricing-format"
+                      value="wpa/wpa2">
                     WPA/WPA2
-                  </button>
-                  <button data-value="other"
-                    onclick="onSelectOptionClick(this)"
+                  </label>
+                  <label
                     class="custom-select__option">
+                    <input type="radio" required
+                      name="pricing-format"
+                      value="other">
                     Другое шифрование
-                  </button>
+                  </label>
                 </div>
               </div>
               <!-- <p class="input-wrapper__error">Ошибка!</p> -->
@@ -675,7 +679,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
         </div>
       </div>
@@ -725,7 +730,8 @@
                     </svg>
                   </span>
                 </button>
-                <div class="custom-select__options">
+                <div class="custom-select__options"
+                  onchange="onSelectChange(event)">
                   <button data-value="wpa/wpa2"
                     onclick="onSelectOptionClick(this)"
                     class="custom-select__option">
@@ -768,7 +774,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
         </div>
       </div>

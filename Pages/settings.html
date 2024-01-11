@@ -221,7 +221,7 @@
                     Персонал
                   </a>
                 </li>
-                <li class="aside-nav__item">
+                <li class="aside-nav__item disabled">
                   <a href="#">
                     <svg viewBox="0 0 18 18" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -399,7 +399,7 @@
                 Персонал
               </a>
             </li>
-            <li class="aside-nav__item">
+            <li class="aside-nav__item disabled">
               <a href="#">
                 <svg viewBox="0 0 18 18" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -484,15 +484,20 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="custom-select__options">
-                      <button data-value
-                        onclick="onSelectOptionClick(this)"
+                    <div class="custom-select__options"
+                      onchange="onSelectChange(event)">
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="language"
+                          value>
                         Не выбрано
-                      </button>
-                      <button data-value="russian"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="language"
+                          value="russian">
                         <svg viewBox="0 0 18 18"
                           fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g clip-path="url(#clip0_3736_40412)">
@@ -505,13 +510,13 @@
                           </g>
                           <defs>
                             <clippath>
-                              <rect width="18" height="18" rx="9" fill="white" />
+                              <rect width="18" height="18" rx="9"
+                                fill="white" />
                             </clippath>
                           </defs>
                         </svg>
-
                         Русский
-                      </button>
+                      </label>
                     </div>
                   </div>
                   <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
@@ -534,52 +539,71 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="custom-select__options">
-                      <button data-value
-                        onclick="onSelectOptionClick(this)"
+                    <div class="custom-select__options"
+                      onchange="onSelectChange(event)">
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency" checked
+                          value>
                         Не выбрано
-                      </button>
-                      <button data-value="usd"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="usd">
                         USD - US Dollar
-                      </button>
-                      <button data-value="eur"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="eur">
                         EUR - Euro
-                      </button>
-                      <button data-value="chf"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="chf">
                         CHF - Swiss franc
-                      </button>
-                      <button data-value="gbp"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="gbp">
                         GBP - Pound Sterling
-                      </button>
-                      <button data-value="pln"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="pln">
                         PLN - Polish zloty
-                      </button>
-                      <button data-value="uah"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="pln">
                         UAH - Ukrainian hryvnia
-                      </button>
-                      <button data-value="rub"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="rub">
                         RUB - Russian ruble
-                      </button>
-                      <button data-value="try"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio" required
+                          name="currency"
+                          value="rub">
                         TRY - Turkish Lira
-                      </button>
+                      </label>
                     </div>
                   </div>
                   <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
@@ -723,7 +747,8 @@
             <div class="tutorial__item-wrapper">
               <ul>
 
-                <li class="tutorial__item tutorial__sub-item" id="main-settings">
+                <li class="tutorial__item tutorial__sub-item"
+                  id="main-settings">
                   <div class="tutorial__item-header"
                     onclick="onTutorialItemClick(this)">
                     <h3 class="tutorial__item-title">

@@ -475,7 +475,7 @@
             <div class="input-wrapper">
               <span>Тип <span>*</span></span>
               <div class="custom-select" data-current-value id="product-type">
-                <div class="custom-select__btn"
+                <button type="button" class="custom-select__btn"
                   onclick="onSelectOpenBtnClick(this)">
                   <span class="custom-select__value">
                     Не выбрано
@@ -489,18 +489,23 @@
                         fill="#150704" />
                     </svg>
                   </span>
-                </div>
-                <div class="custom-select__options">
-                  <div onsubmit="() => {}" data-value="product"
-                    onclick="onSelectOptionClick(this)"
+                </button>
+                <div class="custom-select__options"
+                  onchange="onSelectChange(event)">
+                  <label
                     class="custom-select__option">
+                    <input type="radio"
+                      name="type"
+                      value="product">
                     Товар
-                  </div>
-                  <div onsubmit="() => {}" data-value="dish"
-                    onclick="onSelectOptionClick(this)"
+                  </label>
+                  <label
                     class="custom-select__option">
+                    <input type="radio"
+                      name="type"
+                      value="dish">
                     Блюдо
-                  </div>
+                  </label>
                 </div>
               </div>
               <!-- <p class="input-wrapper__error">Ошибка!</p> -->
@@ -564,27 +569,36 @@
                           </svg>
                         </span>
                       </button>
-                      <div class="custom-select__options">
-                        <button data-value="gr"
-                          onclick="onSelectOptionClick(this)"
+                      <div class="custom-select__options"
+                        onchange="onSelectChange(event)">
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="weight-type" checked
+                            value="gr">
                           гр.
-                        </button>
-                        <button data-value="kg"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="weight-type" checked
+                            value="kg">
                           кг.
-                        </button>
-                        <button data-value="l"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="weight" checked
+                            value="l">
                           л.
-                        </button>
-                        <button data-value="ml"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="weight" checked
+                            value="ml">
                           мл.
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -689,27 +703,36 @@
                                   </svg>
                                 </span>
                               </button>
-                              <div class="custom-select__options">
-                                <button data-value="gr"
-                                  onclick="onSelectOptionClick(this)"
+                              <div class="custom-select__options"
+                                onchange="onSelectChange(event)">
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="product1-weight-type" checked
+                                    value="gr">
                                   гр.
-                                </button>
-                                <button data-value="kg"
-                                  onclick="onSelectOptionClick(this)"
+                                </label>
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="product1-weight-type" checked
+                                    value="kg">
                                   кг.
-                                </button>
-                                <button data-value="l"
-                                  onclick="onSelectOptionClick(this)"
+                                </label>
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="weight" checked
+                                    value="l">
                                   л.
-                                </button>
-                                <button data-value="ml"
-                                  onclick="onSelectOptionClick(this)"
+                                </label>
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="weight" checked
+                                    value="ml">
                                   мл.
-                                </button>
+                                </label>
                               </div>
                             </div>
                           </div>
@@ -878,7 +901,7 @@
                             <div
                               class="custom-select badge-select badge-select_white"
                               data-current-value="gr">
-                              <button class="custom-select__btn"
+                              <button type="button" class="custom-select__btn"
                                 onclick="onSelectOpenBtnClick(this)">
                                 <span class="custom-select__value">
                                   гр.
@@ -893,27 +916,36 @@
                                   </svg>
                                 </span>
                               </button>
-                              <div class="custom-select__options">
-                                <button data-value="gr"
-                                  onclick="onSelectOptionClick(this)"
+                              <div class="custom-select__options"
+                                onchange="onSelectChange(event)">
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="product2-weight-type" checked
+                                    value="gr">
                                   гр.
-                                </button>
-                                <button data-value="kg"
-                                  onclick="onSelectOptionClick(this)"
+                                </label>
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="product2-weight-type" checked
+                                    value="kg">
                                   кг.
-                                </button>
-                                <button data-value="l"
-                                  onclick="onSelectOptionClick(this)"
+                                </label>
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="weight" checked
+                                    value="l">
                                   л.
-                                </button>
-                                <button data-value="ml"
-                                  onclick="onSelectOptionClick(this)"
+                                </label>
+                                <label
                                   class="custom-select__option">
+                                  <input type="radio"
+                                    name="weight" checked
+                                    value="ml">
                                   мл.
-                                </button>
+                                </label>
                               </div>
                             </div>
                           </div>

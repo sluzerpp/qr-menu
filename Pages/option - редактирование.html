@@ -483,17 +483,22 @@
                       </svg>
                     </span>
                   </button>
-                  <div class="custom-select__options">
-                    <button data-value="for-coffee"
-                      onclick="onSelectOptionClick(this)"
+                  <div class="custom-select__options"
+                    onchange="onSelectChange(event)">
+                    <label
                       class="custom-select__option">
+                      <input type="radio" required
+                        name="group"
+                        value="for-coffee">
                       Для кофе
-                    </button>
-                    <button data-value="for-pizza"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio" required
+                        name="group"
+                        value="for-pizza">
                       Для пиццы
-                    </button>
+                    </label>
                   </div>
                 </div>
                 <button class="btn-secondary"
@@ -598,7 +603,8 @@
                               class="select-hierarchy__option select-hierarchy__option_with-list">
                               <div class="select-hierarchy__option-content"
                                 onclick="openSelectDropdown(this)">
-                                <div class="select-hierarchy__option-arrow"></div>
+                                <div
+                                  class="select-hierarchy__option-arrow"></div>
                                 Пицца
                               </div>
                               <ul>
@@ -606,7 +612,8 @@
                                   class="select-hierarchy__option select-hierarchy__option_with-list">
                                   <div class="select-hierarchy__option-content"
                                     onclick="openSelectDropdown(this)">
-                                    <div class="select-hierarchy__option-arrow"></div>
+                                    <div
+                                      class="select-hierarchy__option-arrow"></div>
                                     40 см
                                   </div>
                                   <ul>
@@ -732,7 +739,8 @@
                               class="select-hierarchy__option select-hierarchy__option_with-list">
                               <div class="select-hierarchy__option-content"
                                 onclick="openSelectDropdown(this)">
-                                <div class="select-hierarchy__option-arrow"></div>
+                                <div
+                                  class="select-hierarchy__option-arrow"></div>
                                 Пицца
                               </div>
                               <ul>
@@ -740,7 +748,8 @@
                                   class="select-hierarchy__option select-hierarchy__option_with-list">
                                   <div class="select-hierarchy__option-content"
                                     onclick="openSelectDropdown(this)">
-                                    <div class="select-hierarchy__option-arrow"></div>
+                                    <div
+                                      class="select-hierarchy__option-arrow"></div>
                                     40 см
                                   </div>
                                   <ul>
@@ -887,7 +896,8 @@
             данные будут безвозвратно утеряны</p>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Удалить</button>
         </div>
       </div>
@@ -921,7 +931,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
         </div>
       </div>
@@ -954,7 +965,8 @@
                 <input type="text" id="add-group-name"
                   class="text-input text-input_grey"
                   oninput="onGroupAddNameInput(this)">
-                <button onclick="onGroupAddBtnClick()" class="btn-secondary"><svg
+                <button onclick="onGroupAddBtnClick()"
+                  class="btn-secondary"><svg
                     viewBox="0 0 19 18"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -1037,7 +1049,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn" id="save-add-group" disabled>Сохранить</button>
         </div>
       </div>

@@ -461,7 +461,8 @@
             </div>
 
             <div class="main__group">
-              <div class="main__group-content main__group-content_three-columns">
+              <div
+                class="main__group-content main__group-content_three-columns">
                 <div class="input-wrapper">
                   <div class="input-wrapper__header">
                     <span>Название <span>*</span></span>
@@ -512,17 +513,22 @@
                         </svg>
                       </span>
                     </button>
-                    <div class="custom-select__options">
-                      <button data-value="fixed"
-                        onclick="onSelectOptionClick(this)"
+                    <div class="custom-select__options"
+                      onchange="onSelectChange(event)">
+                      <label
                         class="custom-select__option">
+                        <input type="radio"
+                          name="type"
+                          value="fixed">
                         Фиксированное число
-                      </button>
-                      <button data-value="percent"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio"
+                          name="type"
+                          value="percent">
                         Процент
-                      </button>
+                      </label>
                     </div>
                   </div>
                   <!-- <p class="input-wrapper__error">Ошибочка!</p> -->
@@ -751,7 +757,8 @@
                   tip
                 </button>
               </p>
-              <label for="coupon-status" class="radio-button radio-button_large">
+              <label for="coupon-status"
+                class="radio-button radio-button_large">
                 <input type="checkbox" checked name="coupon-status"
                   id="coupon-status">
                 <span></span>

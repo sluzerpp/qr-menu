@@ -716,7 +716,8 @@
 
                   <div class="orders__controls-btns">
                     <button class="btn-secondary">Применить</button>
-                    <button class="btn-secondary btn-secondary_transparent">Сбросить</button>
+                    <button
+                      class="btn-secondary btn-secondary_transparent">Сбросить</button>
                   </div>
 
                 </div>
@@ -1147,21 +1148,27 @@
                     </span>
                   </button>
                   <div class="custom-select__options">
-                    <button data-value="100"
-                      onclick="onSelectOptionClick(this)"
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page"
+                        value="100">
                       По 100 позиций
-                    </button>
-                    <button data-value="50"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page"
+                        value="50">
                       По 50 позиций
-                    </button>
-                    <button data-value="20"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page" checked
+                        value="20">
                       По 20 позиций
-                    </button>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -1284,7 +1291,8 @@
                     <span class="modal-form__list-item-color"
                       style="--color: #F4FFF4"></span>
                   </div>
-                  <div class="modal-form__list-item-group orders-disabled-group">
+                  <div
+                    class="modal-form__list-item-group orders-disabled-group">
                     <button class="edit-btn edit-btn_gray disabled"
                       disabled></button>
                     <button class="trash-btn trash-btn_gray disabled"
@@ -1326,7 +1334,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
         </div>
       </div>
@@ -1374,7 +1383,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
         </div>
       </div>
@@ -1423,7 +1433,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Сохранить</button>
         </div>
       </div>
@@ -1448,7 +1459,8 @@
           </h3>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Удалить</button>
         </div>
       </div>

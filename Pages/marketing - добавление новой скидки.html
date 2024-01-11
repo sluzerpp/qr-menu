@@ -613,22 +613,27 @@
                       </span>
                     </button>
                     <div class="custom-select__options">
-                      <button data-value="price-number"
-                        onclick="onSelectOptionClick(this)"
+                      <label
                         class="custom-select__option">
+                        <input type="radio"
+                          name="format"
+                          value="price-number">
                         Цена - число
-                      </button>
-                      <button data-value="price/number"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio"
+                          name="format"
+                          value="price/number">
                         Цена / число
-                      </button>
-                      <button data-value="price-percent"
-                        onclick="onSelectOptionClick(this)"
+                      </label>
+                      <label
                         class="custom-select__option">
+                        <input type="radio"
+                          name="format"
+                          value="price-percent">
                         Цена - процент
-                      </button>
-
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -708,7 +713,8 @@
                 </p>
                 <label for="is-period"
                   class="radio-button">
-                  <input type="checkbox" name="is-period" checked id="is-period">
+                  <input type="checkbox" name="is-period" checked
+                    id="is-period">
                   <span></span>
                 </label>
               </div>
@@ -842,7 +848,8 @@
                   tip
                 </button>
               </p>
-              <label for="coupon-status" class="radio-button radio-button_large">
+              <label for="coupon-status"
+                class="radio-button radio-button_large">
                 <input checked type="checkbox" name="coupon-status"
                   id="coupon-status">
                 <span></span>

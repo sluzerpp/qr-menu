@@ -8669,3 +8669,16 @@ body.open-user-add .user-add__bg {
   border-radius: 4px;
   background: #FFF4ED;
 }
+
+.main-page {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: var(--bg-white);
+}
+.main-page__content {
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+}

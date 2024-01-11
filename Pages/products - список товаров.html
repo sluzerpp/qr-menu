@@ -585,7 +585,7 @@
                       </span>
                     </div>
                     <div class="custom-select" data-current-value>
-                      <button class="custom-select__btn"
+                      <button type="button" class="custom-select__btn"
                         onclick="onSelectOpenBtnClick(this)">
                         <span class="custom-select__value">
                           Не выбрано
@@ -600,22 +600,29 @@
                           </svg>
                         </span>
                       </button>
-                      <div class="custom-select__options">
-                        <button data-value
-                          onclick="onSelectOptionClick(this)"
+                      <div class="custom-select__options"
+                        onchange="onSelectChange(event)">
+                        <label
                           class="custom-select__option">
+                          <input type="radio" checked
+                            name="status"
+                            value>
                           Не выбрано
-                        </button>
-                        <button data-value="on"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="status"
+                            value="on">
                           Включено
-                        </button>
-                        <button data-value="off"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="status"
+                            value="off">
                           Выключено
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -634,7 +641,7 @@
                       </span>
                     </div>
                     <div class="custom-select" data-current-value>
-                      <button class="custom-select__btn"
+                      <button type="button" class="custom-select__btn"
                         onclick="onSelectOpenBtnClick(this)">
                         <span class="custom-select__value">
                           Не выбрано
@@ -649,22 +656,29 @@
                           </svg>
                         </span>
                       </button>
-                      <div class="custom-select__options">
-                        <button data-value
-                          onclick="onSelectOptionClick(this)"
+                      <div class="custom-select__options"
+                        onchange="onSelectChange(event)">
+                        <label
                           class="custom-select__option">
+                          <input type="radio" checked
+                            name="discounts"
+                            value>
                           Не выбрано
-                        </button>
-                        <button data-value="with-discount"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio" checked
+                            name="discounts"
+                            value="with-discount">
                           Со скидкой
-                        </button>
-                        <button data-value="without-discount"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio" checked
+                            name="discounts"
+                            value="without-discount">
                           Без скидки
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -683,7 +697,7 @@
                       </span>
                     </div>
                     <div class="custom-select" data-current-value>
-                      <button class="custom-select__btn"
+                      <button type="button" class="custom-select__btn"
                         onclick="onSelectOpenBtnClick(this)">
                         <span class="custom-select__value">
                           Не выбрано
@@ -699,21 +713,27 @@
                         </span>
                       </button>
                       <div class="custom-select__options">
-                        <button data-value
-                          onclick="onSelectOptionClick(this)"
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="type" checked
+                            value>
                           Не выбрано
-                        </button>
-                        <button data-value="dish"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="type"
+                            value="dish">
                           Блюдо
-                        </button>
-                        <button data-value="product"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="type"
+                            value="product">
                           Товар
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
@@ -732,7 +752,7 @@
                       </span>
                     </div>
                     <div class="custom-select" data-current-value>
-                      <button class="custom-select__btn"
+                      <button type="button" class="custom-select__btn"
                         onclick="onSelectOpenBtnClick(this)">
                         <span class="custom-select__value">
                           Не выбрано
@@ -748,28 +768,35 @@
                         </span>
                       </button>
                       <div class="custom-select__options">
-                        <button data-value
-                          onclick="onSelectOptionClick(this)"
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="varients"
+                            value]>
                           Не выбрано
-                        </button>
-                        <button data-value="dish"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="varients"
+                            value="with-varients">
                           С вариантами
-                        </button>
-                        <button data-value="product"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio"
+                            name="varients"
+                            value="without-varients">
                           Без вариантов
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
 
                   <div class="products__controls-btns">
                     <button class="btn-secondary">Применить</button>
-                    <button class="btn-secondary btn-secondary_transparent">Сбросить</button>
+                    <button
+                      class="btn-secondary btn-secondary_transparent">Сбросить</button>
                   </div>
 
                 </div>
@@ -803,7 +830,7 @@
                       </span>
                     </div>
                     <div class="custom-select" data-current-value>
-                      <button class="custom-select__btn"
+                      <button type="button" class="custom-select__btn"
                         onclick="onSelectOpenBtnClick(this, event)">
                         <span class="custom-select__value">
                           Не выбрано
@@ -935,7 +962,8 @@
                         <button class="drag-btn"></button>
                         <div class="input-wrapper products__item-checkbox">
                           <label for="product1" class="checkbox">
-                            <input type="checkbox" name="product1" id="product1">
+                            <input type="checkbox" name="product1"
+                              id="product1">
                             <span></span>
                           </label>
                         </div>
@@ -1079,7 +1107,8 @@
                         <button class="drag-btn"></button>
                         <div class="input-wrapper products__item-checkbox">
                           <label for="product2" class="checkbox">
-                            <input type="checkbox" name="product2" id="product2">
+                            <input type="checkbox" name="product2"
+                              id="product2">
                             <span></span>
                           </label>
                         </div>
@@ -1141,7 +1170,8 @@
                         <button class="drag-btn"></button>
                         <div class="input-wrapper products__item-checkbox">
                           <label for="product3" class="checkbox">
-                            <input type="checkbox" name="product3" id="product3">
+                            <input type="checkbox" name="product3"
+                              id="product3">
                             <span></span>
                           </label>
                         </div>
@@ -1230,21 +1260,27 @@
                     </span>
                   </button>
                   <div class="custom-select__options">
-                    <button data-value="100"
-                      onclick="onSelectOptionClick(this)"
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page"
+                        value="100">
                       По 100 позиций
-                    </button>
-                    <button data-value="50"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page"
+                        value="50">
                       По 50 позиций
-                    </button>
-                    <button data-value="20"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page" checked
+                        value="20">
                       По 20 позиций
-                    </button>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -1570,7 +1606,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Подтвердить</button>
         </div>
       </div>

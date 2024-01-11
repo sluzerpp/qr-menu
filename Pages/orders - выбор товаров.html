@@ -462,7 +462,8 @@
               </div>
 
               <div class="main__header-controls">
-                <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+                <button
+                  class="btn-secondary btn-secondary_transparent">Отменить</button>
                 <button class="btn">Добавить</button>
               </div>
             </div>
@@ -601,29 +602,37 @@
                           </svg>
                         </span>
                       </button>
-                      <div class="custom-select__options">
-                        <button data-value
-                          onclick="onSelectOptionClick(this)"
+                      <div class="custom-select__options"
+                        onchange="onSelectChange(event)">
+                        <label
                           class="custom-select__option">
+                          <input type="radio" required
+                            name="type" checked
+                            value>
                           Не выбрано
-                        </button>
-                        <button data-value="dish"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio" required
+                            name="type"
+                            value="dish">
                           Блюдо
-                        </button>
-                        <button data-value="product"
-                          onclick="onSelectOptionClick(this)"
+                        </label>
+                        <label
                           class="custom-select__option">
+                          <input type="radio" required
+                            name="type"
+                            value="product">
                           Товар
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
 
                   <div class="products__controls-btns">
                     <button class="btn-secondary">Применить</button>
-                    <button class="btn-secondary btn-secondary_transparent">Сбросить</button>
+                    <button
+                      class="btn-secondary btn-secondary_transparent">Сбросить</button>
                   </div>
 
                 </div>
@@ -765,7 +774,8 @@
 
                         <div class="input-wrapper products__item-checkbox">
                           <label for="product2" class="checkbox">
-                            <input type="checkbox" name="product2" id="product2">
+                            <input type="checkbox" name="product2"
+                              id="product2">
                             <span></span>
                           </label>
                         </div>
@@ -827,22 +837,29 @@
                       </svg>
                     </span>
                   </button>
-                  <div class="custom-select__options">
-                    <button data-value="100"
-                      onclick="onSelectOptionClick(this)"
+                  <div class="custom-select__options"
+                    onchange="onSelectChange(event)">
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page"
+                        value="100">
                       По 100 позиций
-                    </button>
-                    <button data-value="50"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page"
+                        value="50">
                       По 50 позиций
-                    </button>
-                    <button data-value="20"
-                      onclick="onSelectOptionClick(this)"
+                    </label>
+                    <label
                       class="custom-select__option">
+                      <input type="radio"
+                        name="page" checked
+                        value="20">
                       По 20 позиций
-                    </button>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -853,7 +870,8 @@
         </div>
 
         <div class="main__mobile-controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Добавить</button>
         </div>
       </main>
@@ -1169,7 +1187,8 @@
           </div>
         </div>
         <div class="modal__controls">
-          <button class="btn-secondary btn-secondary_transparent">Отменить</button>
+          <button
+            class="btn-secondary btn-secondary_transparent">Отменить</button>
           <button class="btn">Подтвердить</button>
         </div>
       </div>
